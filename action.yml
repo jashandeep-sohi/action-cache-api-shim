@@ -1,0 +1,13 @@
+name: action-cache-api-shim
+description: >-
+  This action will let you continue using other actions and tools that need
+  access to the (soon-to-be) deactivated GHA Cache Service v1 API.
+author: Jashandeep Sohi
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: layers
+  color: red
+
+runs:
+  using: node20
+  main: dist/index.js

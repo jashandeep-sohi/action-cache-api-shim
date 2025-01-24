@@ -1,0 +1,66 @@
+{
+  "name": "action-cache-api-shim",
+  "description": "GitHub Actions TypeScript template",
+  "version": "0.0.0",
+  "author": "Jashandeep Sohi",
+  "type": "module",
+  "private": true,
+  "homepage": "https://github.com/jashandeep-sohi/action-cache-api-shim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jashandeep-sohi/action-cache-api-shim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jashandeep-sohi/action-cache-api-shim/issues"
+  },
+  "keywords": [
+    "actions"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "bundle": "pnpm format:write && pnpm package",
+    "format:write": "pnpx prettier --write .",
+    "format:check": "pnpx prettier --check .",
+    "lint": "pnpx eslint .",
+    "package": "pnpm exec rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package:watch": "pnpm package -- --watch",
+    "all": "pnpm format:write && pnpm lint && pnpm package"
+  },
+  "license": "GPLv3",
+  "dependencies": {
+    "@actions/cache": "^4.0.0",
+    "@actions/core": "^1.11.1",
+    "@azure/storage-blob": "^12.26.0",
+    "@fastify/type-provider-typebox": "^5.1.0",
+    "@sinclair/typebox": "^0.34.14",
+    "content-range": "^2.0.2",
+    "fastify": "^5.2.1",
+    "qs": "^6.14.0"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.5",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^20.17.16",
+    "@types/qs": "^6.9.18",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2",
+    "prettier-eslint": "^16.3.0",
+    "rollup": "^4.32.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
