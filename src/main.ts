@@ -41,7 +41,6 @@ export async function run(): Promise<void> {
     });
 
     child.on("message", (msg) => {
-      core.info(`${msg}`);
       if (msg.kind === "ready") {
         const cacheUrl = `${msg.address}/`;
         core.exportVariable("ACTIONS_CACHE_URL", cacheUrl);

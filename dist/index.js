@@ -118567,7 +118567,6 @@ async function run() {
             process.exit(1);
         });
         child.on("message", (msg) => {
-            coreExports.info(`${msg}`);
             if (msg.kind === "ready") {
                 const cacheUrl = `${msg.address}/`;
                 coreExports.exportVariable("ACTIONS_CACHE_URL", cacheUrl);

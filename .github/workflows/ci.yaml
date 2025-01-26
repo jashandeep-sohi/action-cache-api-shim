@@ -18,6 +18,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test Local Action
+        env:
+          # Force @actions/core to think v2 API is running on the Runner
+          ACTIONS_CACHE_SERVICE_V2: "true"
         uses: ./
 
       - name: Set up Docker Buildx
