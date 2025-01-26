@@ -8,6 +8,9 @@ responses to/from the new v2 API. The server is launched as a daemon and
 `ACTIONS_CACHE_URL` environment variable is updated to its address. Any actions
 that follow this one will proxy their requests through the shim.
 
+If v2 Cache API is not available on the runner, this action is effectively a
+no-op.
+
 ## Usage
 
 ```yaml
