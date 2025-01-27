@@ -11,17 +11,17 @@ export async function run(): Promise<void> {
   if (process.argv[2] == "child") {
     await setupServer();
   } else {
-    Object.keys(process.env).forEach(function (key) {
-      if (key.startsWith("ACTIONS_")) {
-        core.info(`${key}=${process.env[key]}`);
-        core.exportVariable(key, process.env[key]);
-      }
-    });
-
     if (!("ACTIONS_CACHE_SERVICE_V2" in process.env)) {
+      if (core.getBooleanInput("require-v2")) {
+        core.setFailed("Actions Cache Service v2 is required");
+        process.exit(1);
+      }
+
       core.warning(
-        "Actions Cache Service v2 API is not enabled. Skip setting up shim."
+        "Actions Cache Service v2 is not enabled. Skip setting up shim."
       );
+
+      exportActionsVariables();
       process.exit(0);
     }
 
@@ -43,11 +43,24 @@ export async function run(): Promise<void> {
     child.on("message", (msg) => {
       if (msg.kind === "ready") {
         const cacheUrl = `${msg.address}/`;
-        core.exportVariable("ACTIONS_CACHE_URL", cacheUrl);
-        core.info(`Server ready on ${cacheUrl}`);
+
+        core.info(`Serving on ${cacheUrl}`);
+
+        process.env.ACTIONS_CACHE_URL = cacheUrl;
+        exportActionsVariables();
+
         child.disconnect();
         process.exit(0);
       }
     });
   }
+}
+
+function exportActionsVariables() {
+  Object.keys(process.env).forEach(function (key) {
+    if (key.startsWith("ACTIONS_")) {
+      core.info(`${key}=${process.env[key]}`);
+      core.exportVariable(key, process.env[key]);
+    }
+  });
 }

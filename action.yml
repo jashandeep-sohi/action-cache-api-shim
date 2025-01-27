@@ -8,6 +8,14 @@ branding:
   icon: layers
   color: red
 
+inputs:
+  require-v2:
+    description: >-
+      Fail if GHA Cache Service v2 is not available on the runner. By default,
+      it will simply skip setting up the shim, but still report a success.
+    required: false
+    default: "fasle"
+
 runs:
   using: node20
   main: dist/index.js

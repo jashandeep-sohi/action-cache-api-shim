@@ -118544,14 +118544,13 @@ async function run() {
         await setupServer();
     }
     else {
-        Object.keys(process.env).forEach(function (key) {
-            if (key.startsWith("ACTIONS_")) {
-                coreExports.info(`${key}=${process.env[key]}`);
-                coreExports.exportVariable(key, process.env[key]);
-            }
-        });
         if (!("ACTIONS_CACHE_SERVICE_V2" in process.env)) {
-            coreExports.warning("Actions Cache Service v2 API is not enabled. Skip setting up shim.");
+            if (coreExports.getBooleanInput("require-v2")) {
+                coreExports.setFailed("Actions Cache Service v2 is required");
+                process.exit(1);
+            }
+            coreExports.warning("Actions Cache Service v2 is not enabled. Skip setting up shim.");
+            exportActionsVariables();
             process.exit(0);
         }
         const child = fork("dist/index.js", ["child"], {
@@ -118569,13 +118568,22 @@ async function run() {
         child.on("message", (msg) => {
             if (msg.kind === "ready") {
                 const cacheUrl = `${msg.address}/`;
-                coreExports.exportVariable("ACTIONS_CACHE_URL", cacheUrl);
-                coreExports.info(`Server ready on ${cacheUrl}`);
+                coreExports.info(`Serving on ${cacheUrl}`);
+                process.env.ACTIONS_CACHE_URL = cacheUrl;
+                exportActionsVariables();
                 child.disconnect();
                 process.exit(0);
             }
         });
     }
+}
+function exportActionsVariables() {
+    Object.keys(process.env).forEach(function (key) {
+        if (key.startsWith("ACTIONS_")) {
+            coreExports.info(`${key}=${process.env[key]}`);
+            coreExports.exportVariable(key, process.env[key]);
+        }
+    });
 }
 
 /**
