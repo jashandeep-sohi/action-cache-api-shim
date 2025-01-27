@@ -118545,11 +118545,11 @@ async function run() {
     }
     else {
         if (!("ACTIONS_CACHE_SERVICE_V2" in process.env)) {
+            coreExports.warning("Actions Cache Service v2 is not enabled. Skip setting up shim.");
             if (coreExports.getBooleanInput("require-v2")) {
                 coreExports.setFailed("Actions Cache Service v2 is required");
                 process.exit(1);
             }
-            coreExports.warning("Actions Cache Service v2 is not enabled. Skip setting up shim.");
             exportActionsVariables();
             process.exit(0);
         }

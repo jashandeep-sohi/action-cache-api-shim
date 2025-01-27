@@ -12,14 +12,14 @@ export async function run(): Promise<void> {
     await setupServer();
   } else {
     if (!("ACTIONS_CACHE_SERVICE_V2" in process.env)) {
+      core.warning(
+        "Actions Cache Service v2 is not enabled. Skip setting up shim."
+      );
+
       if (core.getBooleanInput("require-v2")) {
         core.setFailed("Actions Cache Service v2 is required");
         process.exit(1);
       }
-
-      core.warning(
-        "Actions Cache Service v2 is not enabled. Skip setting up shim."
-      );
 
       exportActionsVariables();
       process.exit(0);
