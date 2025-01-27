@@ -6,10 +6,13 @@ import typescript from "@rollup/plugin-typescript";
 import json from "@rollup/plugin-json";
 
 const config = {
-  input: "src/index.ts",
+  input: {
+    pre: "pre/index.ts",
+    main: "src/index.ts"
+  },
   output: {
     esModule: true,
-    file: "dist/index.js",
+    dir: "dist",
     format: "es",
     sourcemap: true
   },
