@@ -18,12 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Patch for local testing
-        run: |-
-          # Pre is not supported with "uses: ./", which is stupid
-          # But since we're not doing anything in main anyways, this will work
-          yq --inplace '(.runs.main = .runs.pre) | del(.runs.pre)' action.yml
-
       - name: Test Local Action
         uses: ./
         with:
