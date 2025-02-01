@@ -28,7 +28,7 @@ jobs:
 
             const [major, minor, patch] = tagName.slice(1).split(".");
 
-            const [major, `${major}.${minor}`].forEach((elm) => {
+            const [`${major}`, `${major}.${minor}`].forEach((elm) => {
               const ref = `refs/heads/v${elm}`;
               try {
                 await github.rest.git.createRef({
