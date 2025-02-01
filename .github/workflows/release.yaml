@@ -18,7 +18,7 @@ jobs:
       - name: Update semver major & minor branches
         uses: actions/github-script@v7
         with:
-          script: |
+          script: |-
             const tagName = context.payload.release.tag_name;
 
             if (!(new RegExp(/^v\d+[.]\d+[.]\d+$/)).test(tagName)) {
@@ -26,9 +26,9 @@ jobs:
               return
             }
 
-            const [major, minor, patch] = tagName.slice(1).split(".");
+            const [x, y, z] = tagName.slice(1).split(".");
 
-            const [`${major}`, `${major}.${minor}`].forEach((elm) => {
+            for (const elm of [`${x}`, `${x}.${y}`]) {
               const ref = `refs/heads/v${elm}`;
               try {
                 await github.rest.git.createRef({
@@ -46,4 +46,4 @@ jobs:
                   force: true,
                 });
               }
-            });
+            }
