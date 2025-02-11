@@ -118525,12 +118525,12 @@ async function setupServer() {
                 message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
             });
         }
-        const blockIds = blocks
+        blocks
             .sort((a, b) => a.start - b.start)
             .map((x) => x.id);
         const blobClient = new BlobClient(uploadUrl);
-        const blockClient = blobClient.getBlockBlobClient();
-        await blockClient.commitBlockList(blockIds);
+        blobClient.getBlockBlobClient();
+        //await blockClient.commitBlockList(blockIds);
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const finalizeResp = await cacheClient.FinalizeCacheEntryUpload({
             key,

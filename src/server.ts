@@ -234,7 +234,7 @@ export async function setupServer() {
       const blobClient = new BlobClient(uploadUrl);
       const blockClient = blobClient.getBlockBlobClient();
 
-      await blockClient.commitBlockList(blockIds);
+      //await blockClient.commitBlockList(blockIds);
 
       const cacheClient = internalCacheTwirpClient();
 
