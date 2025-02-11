@@ -118403,15 +118403,15 @@ async function setupServer() {
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const cacheEntryResp = await cacheClient.GetCacheEntryDownloadURL({
             key: primaryKey,
-            restoreKeys,
+            restoreKeys: req.query.keys,
             version: req.query.version
         });
         if (!cacheEntryResp.ok) {
-            resp
-                .code(404)
-                .send({
-                message: `Cache entry not found for primaryKey=${primaryKey}, restoreKeys=${restoreKeys}`
-            });
+            return {
+                cacheKey: "",
+                scope: "",
+                archiveLocation: ""
+            };
         }
         return {
             cacheKey: cacheEntryResp.matchedKey,
