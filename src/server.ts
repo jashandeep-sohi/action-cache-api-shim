@@ -59,6 +59,9 @@ export async function setupServer() {
             cacheKey: Type.String(),
             scope: Type.String(),
             archiveLocation: Type.String()
+          }),
+          "404": Type.Object({
+            message: Type.String()
           })
         }
       }
@@ -75,11 +78,7 @@ export async function setupServer() {
       });
 
       if (!cacheEntryResp.ok) {
-        return {
-          cacheKey: "",
-          scope: "",
-          archiveLocation: ""
-        };
+        resp.code(404).send({ message: "Cache entry not found" });
       }
 
       return {
@@ -219,11 +218,9 @@ export async function setupServer() {
       const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
 
       if (totalSize != req.body.size) {
-        return resp
-          .code(400)
-          .send({
-            message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
-          });
+        return resp.code(400).send({
+          message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
+        });
       }
 
       const blockIds = blocks

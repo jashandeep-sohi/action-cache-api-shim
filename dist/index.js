@@ -118392,6 +118392,9 @@ async function setupServer() {
                     cacheKey: Type.String(),
                     scope: Type.String(),
                     archiveLocation: Type.String()
+                }),
+                "404": Type.Object({
+                    message: Type.String()
                 })
             }
         }
@@ -118404,11 +118407,7 @@ async function setupServer() {
             version: req.query.version
         });
         if (!cacheEntryResp.ok) {
-            return {
-                cacheKey: "",
-                scope: "",
-                archiveLocation: ""
-            };
+            resp.code(404).send({ message: "Cache entry not found" });
         }
         return {
             cacheKey: cacheEntryResp.matchedKey,
@@ -118518,9 +118517,7 @@ async function setupServer() {
         const { uploadUrl, blocks, key, version } = state.reserved[req.params.cacheID];
         const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
         if (totalSize != req.body.size) {
-            return resp
-                .code(400)
-                .send({
+            return resp.code(400).send({
                 message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
             });
         }
