@@ -78,7 +78,9 @@ export async function setupServer() {
       });
 
       if (!cacheEntryResp.ok) {
-        resp.code(404).send({ message: "Cache entry not found" });
+        resp
+          .code(404)
+          .send({ message: `Cache entry not found for ${req.query.keys}` });
       }
 
       return {
