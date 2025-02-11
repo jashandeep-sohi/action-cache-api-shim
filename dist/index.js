@@ -118409,7 +118409,9 @@ async function setupServer() {
         if (!cacheEntryResp.ok) {
             resp
                 .code(404)
-                .send({ message: `Cache entry not found for ${req.query.keys}` });
+                .send({
+                message: `Cache entry not found for primaryKey=${primaryKey}, restoreKeys=${restoreKeys}`
+            });
         }
         return {
             cacheKey: cacheEntryResp.matchedKey,
