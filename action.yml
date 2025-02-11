@@ -1,7 +1,7 @@
 name: action-cache-api-shim
 description: >-
-  This action will let you use other actions/tools that need access to the legacy
-  GHA Cache Service v1 API.
+  This action will let you use other actions/tools that need access to the
+  legacy GHA Cache Service v1 API.
 author: Jashandeep Sohi
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:

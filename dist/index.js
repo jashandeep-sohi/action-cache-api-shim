@@ -118393,7 +118393,7 @@ async function setupServer() {
                     scope: Type.String(),
                     archiveLocation: Type.String()
                 }),
-                404: Type.Null()
+                404: Type.Object({})
             }
         }
     }, async (req, resp) => {
@@ -118405,7 +118405,7 @@ async function setupServer() {
             version: req.query.version
         });
         if (!cacheEntryResp.ok) {
-            return resp.code(404).send();
+            return resp.code(404).send({});
         }
         return {
             cacheKey: cacheEntryResp.matchedKey,
@@ -118423,7 +118423,7 @@ async function setupServer() {
                 200: Type.Object({
                     cacheID: Type.Integer()
                 }),
-                404: Type.Null()
+                404: Type.Object({})
             }
         }
     }, async (req, resp) => {
@@ -118433,7 +118433,7 @@ async function setupServer() {
             version: req.body.version
         });
         if (!createResp.ok) {
-            return resp.code(400).send();
+            return resp.code(400).send({});
         }
         const cacheId = state.cacheIdCounter++;
         state.reserved[cacheId] = {

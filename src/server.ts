@@ -60,7 +60,7 @@ export async function setupServer() {
             scope: Type.String(),
             archiveLocation: Type.String()
           }),
-          404: Type.Null()
+          404: Type.Object({})
         }
       }
     },
@@ -76,7 +76,7 @@ export async function setupServer() {
       });
 
       if (!cacheEntryResp.ok) {
-        return resp.code(404).send();
+        return resp.code(404).send({});
       }
 
       return {
@@ -99,7 +99,7 @@ export async function setupServer() {
           200: Type.Object({
             cacheID: Type.Integer()
           }),
-          404: Type.Null()
+          404: Type.Object({})
         }
       }
     },
@@ -112,7 +112,7 @@ export async function setupServer() {
       });
 
       if (!createResp.ok) {
-        return resp.code(400).send();
+        return resp.code(400).send({});
       }
 
       const cacheId = state.cacheIdCounter++;
