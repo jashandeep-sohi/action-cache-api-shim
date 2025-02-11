@@ -118377,7 +118377,7 @@ async function setupServer() {
         done(null);
     });
     const state = {
-        cacheIdCounter: 0,
+        cacheIdCounter: 1,
         reserved: {}
     };
     const routePrefix = "/_apis/artifactcache";

@@ -40,7 +40,7 @@ export async function setupServer() {
   };
 
   const state: State = {
-    cacheIdCounter: 0,
+    cacheIdCounter: 1,
     reserved: {}
   };
 
