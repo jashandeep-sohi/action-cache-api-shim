@@ -200,14 +200,18 @@ export async function setupServer() {
         }),
         response: {
           200: Type.Null(),
-          404: Type.Null(),
-          400: Type.Null()
+          404: Type.Object({
+            message: Type.String()
+          }),
+          400: Type.Object({
+            message: Type.String()
+          })
         }
       }
     },
     async (req, resp) => {
       if (!(req.params.cacheID in state.reserved)) {
-        return resp.code(404).send();
+        return resp.code(404).send({ message: "cache id not found" });
       }
       const { uploadUrl, blocks, key, version } =
         state.reserved[req.params.cacheID];
@@ -215,7 +219,7 @@ export async function setupServer() {
       const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
 
       if (totalSize != req.body.size) {
-        return resp.code(400).send();
+        return resp.code(400).send({ message: "total size incorrect" });
       }
 
       const blockIds = blocks
@@ -236,7 +240,7 @@ export async function setupServer() {
       });
 
       if (!finalizeResp.ok) {
-        return resp.code(400).send();
+        return resp.code(400).send({ message: "v2 API did not like it" });
       }
 
       delete state.reserved[req.params.cacheID];
