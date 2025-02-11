@@ -118461,7 +118461,9 @@ async function setupServer() {
             response: {
                 200: Type.Null(),
                 404: Type.Null(),
-                500: Type.Null()
+                500: Type.Object({
+                    message: Type.String()
+                })
             }
         }
     }, async (req, resp) => {
@@ -118470,11 +118472,13 @@ async function setupServer() {
         }
         const contentRange = parse(req.headers["content-range"]);
         if (contentRange === null) {
-            return resp.code(500).send();
+            return resp.code(500).send({ message: "content range is null" });
         }
         const { start, end, size } = contentRange;
         if (start == null || end == null || size == null) {
-            return resp.code(500).send();
+            return resp
+                .code(500)
+                .send({ message: "content range components are null" });
         }
         const { uploadUrl, blocks } = state.reserved[req.params.cacheID];
         const blobClient = new BlobClient(uploadUrl);
