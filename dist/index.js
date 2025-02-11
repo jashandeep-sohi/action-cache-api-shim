@@ -118392,8 +118392,7 @@ async function setupServer() {
                     cacheKey: Type.String(),
                     scope: Type.String(),
                     archiveLocation: Type.String()
-                }),
-                404: Type.Object({})
+                })
             }
         }
     }, async (req, resp) => {
@@ -118405,7 +118404,11 @@ async function setupServer() {
             version: req.query.version
         });
         if (!cacheEntryResp.ok) {
-            return resp.code(404).send({});
+            return {
+                cacheKey: "",
+                scope: "",
+                archiveLocation: ""
+            };
         }
         return {
             cacheKey: cacheEntryResp.matchedKey,

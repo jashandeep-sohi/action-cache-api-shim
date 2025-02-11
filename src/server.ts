@@ -59,8 +59,7 @@ export async function setupServer() {
             cacheKey: Type.String(),
             scope: Type.String(),
             archiveLocation: Type.String()
-          }),
-          404: Type.Object({})
+          })
         }
       }
     },
@@ -76,7 +75,11 @@ export async function setupServer() {
       });
 
       if (!cacheEntryResp.ok) {
-        return resp.code(404).send({});
+        return {
+          cacheKey: "",
+          scope: "",
+          archiveLocation: ""
+        };
       }
 
       return {
