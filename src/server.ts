@@ -161,12 +161,14 @@ export async function setupServer() {
       if (contentRange === null) {
         return resp.code(500).send({ message: "content range is null" });
       }
-      const { start, end, size } = contentRange;
-      if (start == null || end == null || size == null) {
+      const { start, end } = contentRange;
+      if (start == null || end == null) {
         return resp
           .code(500)
           .send({ message: "content range components are null" });
       }
+
+      const size = end - start;
 
       const { uploadUrl, blocks } = state.reserved[req.params.cacheID];
 
