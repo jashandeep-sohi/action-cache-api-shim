@@ -168,7 +168,7 @@ export async function setupServer() {
           .send({ message: "content range components are null" });
       }
 
-      const size = end - start;
+      const size = end - start + 1;
 
       const { uploadUrl, blocks } = state.reserved[req.params.cacheID];
 
@@ -219,7 +219,11 @@ export async function setupServer() {
       const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
 
       if (totalSize != req.body.size) {
-        return resp.code(400).send({ message: "total size incorrect" });
+        return resp
+          .code(400)
+          .send({
+            message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
+          });
       }
 
       const blockIds = blocks
