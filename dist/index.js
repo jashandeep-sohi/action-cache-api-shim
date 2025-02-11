@@ -118403,7 +118403,7 @@ async function setupServer() {
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const cacheEntryResp = await cacheClient.GetCacheEntryDownloadURL({
             key: primaryKey,
-            restoreKeys: req.query.keys,
+            restoreKeys: restoreKeys,
             version: req.query.version
         });
         if (!cacheEntryResp.ok) {
@@ -118443,8 +118443,8 @@ async function setupServer() {
         }
         const cacheId = state.cacheIdCounter++;
         state.reserved[cacheId] = {
-            key: req.body.key,
-            version: req.body.version,
+            key: `${req.body.key}`,
+            version: `${req.body.version}`,
             uploadUrl: createResp.signedUploadUrl,
             blocks: []
         };
@@ -118525,12 +118525,12 @@ async function setupServer() {
                 message: `total size incorrect: totalSize=${totalSize}, size=${req.body.size}`
             });
         }
-        blocks
+        const blockIds = blocks
             .sort((a, b) => a.start - b.start)
             .map((x) => x.id);
         const blobClient = new BlobClient(uploadUrl);
-        blobClient.getBlockBlobClient();
-        //await blockClient.commitBlockList(blockIds);
+        const blockClient = blobClient.getBlockBlobClient();
+        await blockClient.commitBlockList(blockIds);
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const finalizeResp = await cacheClient.FinalizeCacheEntryUpload({
             key,

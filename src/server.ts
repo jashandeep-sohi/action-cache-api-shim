@@ -73,7 +73,7 @@ export async function setupServer() {
 
       const cacheEntryResp = await cacheClient.GetCacheEntryDownloadURL({
         key: primaryKey,
-        restoreKeys: req.query.keys,
+        restoreKeys: restoreKeys,
         version: req.query.version
       });
 
@@ -123,8 +123,8 @@ export async function setupServer() {
 
       const cacheId = state.cacheIdCounter++;
       state.reserved[cacheId] = {
-        key: req.body.key,
-        version: req.body.version,
+        key: `${req.body.key}`,
+        version: `${req.body.version}`,
         uploadUrl: createResp.signedUploadUrl,
         blocks: []
       };
@@ -234,7 +234,7 @@ export async function setupServer() {
       const blobClient = new BlobClient(uploadUrl);
       const blockClient = blobClient.getBlockBlobClient();
 
-      //await blockClient.commitBlockList(blockIds);
+      await blockClient.commitBlockList(blockIds);
 
       const cacheClient = internalCacheTwirpClient();
 
