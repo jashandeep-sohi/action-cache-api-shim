@@ -6,7 +6,6 @@ import { internalCacheTwirpClient } from "../node_modules/@actions/cache/lib/int
 import { BlobClient } from "@azure/storage-blob";
 import { randomBytes } from "crypto";
 import { parse as parseContentRange } from "content-range";
-import { Mutex } from "async-mutex";
 import { createHash } from "crypto";
 
 export async function setupServer() {
@@ -37,13 +36,11 @@ export async function setupServer() {
   };
 
   type State = {
-    mutex: Mutex;
     cacheIdCounter: CacheId;
     reserved: Record<CacheId, ReservedKey>;
   };
 
   const state: State = {
-    mutex: new Mutex(),
     cacheIdCounter: 1,
     reserved: {}
   };
@@ -128,9 +125,7 @@ export async function setupServer() {
         return resp.code(400).send({});
       }
 
-      const cacheId = await state.mutex.runExclusive(async () => {
-        return state.cacheIdCounter++;
-      });
+      const cacheId = state.cacheIdCounter++;
 
       state.reserved[cacheId] = {
         key: req.body.key,
