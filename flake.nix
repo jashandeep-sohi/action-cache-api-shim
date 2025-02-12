@@ -32,7 +32,8 @@
         # system.
 
         packages.ci-test-cache-one = pkgs.runCommand "ci-test-cache-one" {} ''
-          sleep 30s
+          # simulate work
+          sleep 300s
           mkdir $out
           echo "Done" > $out/message
         '';
