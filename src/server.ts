@@ -39,7 +39,7 @@ export async function setupServer() {
   type State = {
     mutex: Mutex;
     cacheIdCounter: CacheId;
-    reserved: Record<string, ReservedKey>;
+    reserved: Record<CacheId, ReservedKey>;
   };
 
   const state: State = {
@@ -49,7 +49,7 @@ export async function setupServer() {
   };
 
   const saltVersion = (v: string) =>
-    createHash("sha256").update(`v1|${v}`).digest("hex");
+    createHash("sha256").update(`v2|${v}`).digest("hex");
 
   const routePrefix = "/_apis/artifactcache";
 
@@ -132,7 +132,7 @@ export async function setupServer() {
         return state.cacheIdCounter++;
       });
 
-      state.reserved[`${cacheId}`] = {
+      state.reserved[cacheId] = {
         key: req.body.key,
         version: req.body.version,
         uploadUrl: createResp.signedUploadUrl,
@@ -166,7 +166,7 @@ export async function setupServer() {
       }
     },
     async (req, resp) => {
-      const cacheID = `${req.params.cacheID}`;
+      const cacheID = req.params.cacheID;
       if (!(cacheID in state.reserved)) {
         return resp.code(404).send();
       }
@@ -224,7 +224,7 @@ export async function setupServer() {
       }
     },
     async (req, resp) => {
-      const cacheID = `${req.params.cacheID}`;
+      const cacheID = req.params.cacheID;
       if (!(cacheID in state.reserved)) {
         return resp.code(404).send({ message: "cache id not found" });
       }

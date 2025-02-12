@@ -118401,7 +118401,7 @@ async function setupServer() {
         cacheIdCounter: 1,
         reserved: {}
     };
-    const saltVersion = (v) => createHash("sha256").update(`v1|${v}`).digest("hex");
+    const saltVersion = (v) => createHash("sha256").update(`v2|${v}`).digest("hex");
     const routePrefix = "/_apis/artifactcache";
     svc.get(`${routePrefix}/cache`, {
         schema: {
@@ -118466,7 +118466,7 @@ async function setupServer() {
         const cacheId = await state.mutex.runExclusive(async () => {
             return state.cacheIdCounter++;
         });
-        state.reserved[`${cacheId}`] = {
+        state.reserved[cacheId] = {
             key: req.body.key,
             version: req.body.version,
             uploadUrl: createResp.signedUploadUrl,
@@ -118494,7 +118494,7 @@ async function setupServer() {
             }
         }
     }, async (req, resp) => {
-        const cacheID = `${req.params.cacheID}`;
+        const cacheID = req.params.cacheID;
         if (!(cacheID in state.reserved)) {
             return resp.code(404).send();
         }
@@ -118540,7 +118540,7 @@ async function setupServer() {
             }
         }
     }, async (req, resp) => {
-        const cacheID = `${req.params.cacheID}`;
+        const cacheID = req.params.cacheID;
         if (!(cacheID in state.reserved)) {
             return resp.code(404).send({ message: "cache id not found" });
         }
