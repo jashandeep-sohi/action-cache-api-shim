@@ -5,14 +5,14 @@ import * as require$$1$1 from 'fs';
 import require$$1__default from 'fs';
 import require$$3$2 from 'path';
 import require$$2 from 'http';
-import require$$1$3 from 'https';
-import require$$0$9 from 'net';
-import require$$1$2 from 'tls';
-import require$$1$4, { EventEmitter } from 'events';
+import require$$1$2 from 'https';
+import require$$0$8 from 'net';
+import require$$1$4 from 'tls';
+import require$$1$3, { EventEmitter } from 'events';
 import require$$0$7 from 'assert';
 import * as require$$0$4 from 'util';
 import require$$0__default from 'util';
-import require$$0$8, { Readable as Readable$1 } from 'stream';
+import require$$0$9, { Readable as Readable$1 } from 'stream';
 import require$$7 from 'buffer';
 import require$$8 from 'querystring';
 import require$$14 from 'stream/web';
@@ -92,7 +92,7 @@ function requireUtils$3 () {
 	// We use any as a valid input type
 	/* eslint-disable @typescript-eslint/no-explicit-any */
 	Object.defineProperty(utils$3, "__esModule", { value: true });
-	utils$3.toCommandProperties = utils$3.toCommandValue = undefined;
+	utils$3.toCommandProperties = utils$3.toCommandValue = void 0;
 	/**
 	 * Sanitizes an input into a string so it can be passed into issueCommand safely
 	 * @param input input to sanitize into a string
@@ -136,7 +136,7 @@ var hasRequiredCommand;
 function requireCommand () {
 	if (hasRequiredCommand) return command;
 	hasRequiredCommand = 1;
-	var __createBinding = (command.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (command && command.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -147,12 +147,12 @@ function requireCommand () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (command.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (command && command.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (command.__importStar) || function (mod) {
+	var __importStar = (command && command.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -160,7 +160,7 @@ function requireCommand () {
 	    return result;
 	};
 	Object.defineProperty(command, "__esModule", { value: true });
-	command.issue = command.issueCommand = undefined;
+	command.issue = command.issueCommand = void 0;
 	const os = __importStar(require$$0$5);
 	const utils_1 = requireUtils$3();
 	/**
@@ -242,7 +242,7 @@ function requireFileCommand () {
 	if (hasRequiredFileCommand) return fileCommand;
 	hasRequiredFileCommand = 1;
 	// For internal use, subject to change.
-	var __createBinding = (fileCommand.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (fileCommand && fileCommand.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -253,12 +253,12 @@ function requireFileCommand () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (fileCommand.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (fileCommand && fileCommand.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (fileCommand.__importStar) || function (mod) {
+	var __importStar = (fileCommand && fileCommand.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -266,7 +266,7 @@ function requireFileCommand () {
 	    return result;
 	};
 	Object.defineProperty(fileCommand, "__esModule", { value: true });
-	fileCommand.prepareKeyValueMessage = fileCommand.issueFileCommand = undefined;
+	fileCommand.prepareKeyValueMessage = fileCommand.issueFileCommand = void 0;
 	// We use any as a valid input type
 	/* eslint-disable @typescript-eslint/no-explicit-any */
 	const crypto = __importStar(require$$0$6);
@@ -317,7 +317,7 @@ function requireProxy () {
 	if (hasRequiredProxy) return proxy;
 	hasRequiredProxy = 1;
 	Object.defineProperty(proxy, "__esModule", { value: true });
-	proxy.checkBypass = proxy.getProxyUrl = undefined;
+	proxy.checkBypass = proxy.getProxyUrl = void 0;
 	function getProxyUrl(reqUrl) {
 	    const usingSsl = reqUrl.protocol === 'https:';
 	    if (checkBypass(reqUrl)) {
@@ -420,10 +420,10 @@ var hasRequiredTunnel$1;
 function requireTunnel$1 () {
 	if (hasRequiredTunnel$1) return tunnel$1;
 	hasRequiredTunnel$1 = 1;
-	var tls = require$$1$2;
+	var tls = require$$1$4;
 	var http = require$$2;
-	var https = require$$1$3;
-	var events = require$$1$4;
+	var https = require$$1$2;
+	var events = require$$1$3;
 	var util = require$$0__default;
 
 
@@ -1141,8 +1141,8 @@ function requireUtil$9 () {
 	const assert = require$$0$7;
 	const { kDestroyed, kBodyUsed } = requireSymbols$7();
 	const { IncomingMessage } = require$$2;
-	const stream = require$$0$8;
-	const net = require$$0$9;
+	const stream = require$$0$9;
+	const net = require$$0$8;
 	const { InvalidArgumentError } = requireErrors$6();
 	const { Blob } = require$$7;
 	const nodeUtil = require$$0__default;
@@ -1766,7 +1766,7 @@ function requireTimers () {
 	return timers;
 }
 
-var main$2 = {exports: {}};
+var main = {exports: {}};
 
 var sbmh;
 var hasRequiredSbmh;
@@ -3304,7 +3304,7 @@ function requireUrlencoded () {
 var hasRequiredMain;
 
 function requireMain () {
-	if (hasRequiredMain) return main$2.exports;
+	if (hasRequiredMain) return main.exports;
 	hasRequiredMain = 1;
 
 	const WritableStream = require$$0$b.Writable;
@@ -3385,12 +3385,12 @@ function requireMain () {
 	  this._parser.write(chunk, cb);
 	};
 
-	main$2.exports = Busboy;
-	main$2.exports.default = Busboy;
-	main$2.exports.Busboy = Busboy;
+	main.exports = Busboy;
+	main.exports.default = Busboy;
+	main.exports.Busboy = Busboy;
 
-	main$2.exports.Dicer = Dicer;
-	return main$2.exports;
+	main.exports.Dicer = Dicer;
+	return main.exports;
 }
 
 var constants$6;
@@ -7819,7 +7819,7 @@ function requireDispatcher () {
 	if (hasRequiredDispatcher) return dispatcher;
 	hasRequiredDispatcher = 1;
 
-	const EventEmitter = require$$1$4;
+	const EventEmitter = require$$1$3;
 
 	class Dispatcher extends EventEmitter {
 	  dispatch () {
@@ -8046,7 +8046,7 @@ function requireConnect () {
 	if (hasRequiredConnect) return connect;
 	hasRequiredConnect = 1;
 
-	const net = require$$0$9;
+	const net = require$$0$8;
 	const assert = require$$0$7;
 	const util = requireUtil$9();
 	const { InvalidArgumentError, ConnectTimeoutError } = requireErrors$6();
@@ -8132,7 +8132,7 @@ function requireConnect () {
 	    let socket;
 	    if (protocol === 'https:') {
 	      if (!tls) {
-	        tls = require$$1$2;
+	        tls = require$$1$4;
 	      }
 	      servername = servername || options.servername || util.getServerName(host) || null;
 
@@ -8246,7 +8246,7 @@ function requireUtils$2 () {
 	if (hasRequiredUtils$2) return utils$2;
 	hasRequiredUtils$2 = 1;
 	Object.defineProperty(utils$2, "__esModule", { value: true });
-	utils$2.enumToMap = undefined;
+	utils$2.enumToMap = void 0;
 	function enumToMap(obj) {
 	    const res = {};
 	    Object.keys(obj).forEach((key) => {
@@ -8269,7 +8269,7 @@ function requireConstants$5 () {
 	hasRequiredConstants$5 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = undefined;
+		exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
 		const utils_1 = requireUtils$2();
 		(function (ERROR) {
 		    ERROR[ERROR["OK"] = 0] = "OK";
@@ -8554,7 +8554,7 @@ function requireRedirectHandler () {
 	const { kBodyUsed } = requireSymbols$7();
 	const assert = require$$0$7;
 	const { InvalidArgumentError } = requireErrors$6();
-	const EE = require$$1$4;
+	const EE = require$$1$3;
 
 	const redirectableStatusCodes = [300, 301, 302, 303, 307, 308];
 
@@ -8813,9 +8813,9 @@ function requireClient () {
 	/* global WebAssembly */
 
 	const assert = require$$0$7;
-	const net = require$$0$9;
+	const net = require$$0$8;
 	const http = require$$2;
-	const { pipeline } = require$$0$8;
+	const { pipeline } = require$$0$9;
 	const util = requireUtil$9();
 	const timers = requireTimers();
 	const Request = requireRequest$4();
@@ -11984,7 +11984,7 @@ function requireReadable () {
 	hasRequiredReadable = 1;
 
 	const assert = require$$0$7;
-	const { Readable } = require$$0$8;
+	const { Readable } = require$$0$9;
 	const { RequestAbortedError, NotSupportedError, InvalidArgumentError } = requireErrors$6();
 	const util = requireUtil$9();
 	const { ReadableStreamFrom, toUSVString } = requireUtil$9();
@@ -12616,7 +12616,7 @@ function requireApiStream () {
 	if (hasRequiredApiStream) return apiStream;
 	hasRequiredApiStream = 1;
 
-	const { finished, PassThrough } = require$$0$8;
+	const { finished, PassThrough } = require$$0$9;
 	const {
 	  InvalidArgumentError,
 	  InvalidReturnValueError,
@@ -12848,7 +12848,7 @@ function requireApiPipeline () {
 	  Readable,
 	  Duplex,
 	  PassThrough
-	} = require$$0$8;
+	} = require$$0$9;
 	const {
 	  InvalidArgumentError,
 	  InvalidReturnValueError,
@@ -14141,7 +14141,7 @@ function requirePendingInterceptorsFormatter () {
 	if (hasRequiredPendingInterceptorsFormatter) return pendingInterceptorsFormatter;
 	hasRequiredPendingInterceptorsFormatter = 1;
 
-	const { Transform } = require$$0$8;
+	const { Transform } = require$$0$9;
 	const { Console } = require$$1$6;
 
 	/**
@@ -16190,7 +16190,7 @@ function requireRequest$3 () {
 	const { URLSerializer } = requireDataURL();
 	const { kHeadersList, kConstruct } = requireSymbols$7();
 	const assert = require$$0$7;
-	const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = require$$1$4;
+	const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = require$$1$3;
 
 	let TransformStream = globalThis.TransformStream;
 
@@ -17166,8 +17166,8 @@ function requireFetch () {
 	  DOMException
 	} = requireConstants$6();
 	const { kHeadersList } = requireSymbols$7();
-	const EE = require$$1$4;
-	const { Readable, pipeline } = require$$0$8;
+	const EE = require$$1$3;
+	const { Readable, pipeline } = require$$0$9;
 	const { addAbortListener, isErrored, isReadable, nodeMajor, nodeMinor } = requireUtil$9();
 	const { dataURLProcessor, serializeAMimeType } = requireDataURL();
 	const { TransformStream } = require$$14;
@@ -23230,7 +23230,7 @@ function requireReceiver () {
 	if (hasRequiredReceiver) return receiver;
 	hasRequiredReceiver = 1;
 
-	const { Writable } = require$$0$8;
+	const { Writable } = require$$0$9;
 	const diagnosticsChannel = require$$0$c;
 	const { parserStates, opcodes, states, emptyBuffer } = requireConstants$3();
 	const { kReadyState, kSentClose, kResponse, kReceivedClose } = requireSymbols$3();
@@ -24401,7 +24401,7 @@ function requireLib$2 () {
 	if (hasRequiredLib$2) return lib$2;
 	hasRequiredLib$2 = 1;
 	/* eslint-disable @typescript-eslint/no-explicit-any */
-	var __createBinding = (lib$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (lib$2 && lib$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -24412,19 +24412,19 @@ function requireLib$2 () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (lib$2.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (lib$2 && lib$2.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (lib$2.__importStar) || function (mod) {
+	var __importStar = (lib$2 && lib$2.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (lib$2.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (lib$2 && lib$2.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -24434,9 +24434,9 @@ function requireLib$2 () {
 	    });
 	};
 	Object.defineProperty(lib$2, "__esModule", { value: true });
-	lib$2.HttpClient = lib$2.isHttps = lib$2.HttpClientResponse = lib$2.HttpClientError = lib$2.getProxyUrl = lib$2.MediaTypes = lib$2.Headers = lib$2.HttpCodes = undefined;
+	lib$2.HttpClient = lib$2.isHttps = lib$2.HttpClientResponse = lib$2.HttpClientError = lib$2.getProxyUrl = lib$2.MediaTypes = lib$2.Headers = lib$2.HttpCodes = void 0;
 	const http = __importStar(require$$2);
-	const https = __importStar(require$$1$3);
+	const https = __importStar(require$$1$2);
 	const pm = __importStar(requireProxy());
 	const tunnel = __importStar(requireTunnel());
 	const undici_1 = requireUndici();
@@ -24517,8 +24517,8 @@ function requireLib$2 () {
 	        this.message = message;
 	    }
 	    readBody() {
-	        return __awaiter(this, undefined, undefined, function* () {
-	            return new Promise((resolve) => __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
 	                let output = Buffer.alloc(0);
 	                this.message.on('data', (chunk) => {
 	                    output = Buffer.concat([output, chunk]);
@@ -24530,8 +24530,8 @@ function requireLib$2 () {
 	        });
 	    }
 	    readBodyBuffer() {
-	        return __awaiter(this, undefined, undefined, function* () {
-	            return new Promise((resolve) => __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
 	                const chunks = [];
 	                this.message.on('data', (chunk) => {
 	                    chunks.push(chunk);
@@ -24588,42 +24588,42 @@ function requireLib$2 () {
 	        }
 	    }
 	    options(requestUrl, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('OPTIONS', requestUrl, null, additionalHeaders || {});
 	        });
 	    }
 	    get(requestUrl, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('GET', requestUrl, null, additionalHeaders || {});
 	        });
 	    }
 	    del(requestUrl, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('DELETE', requestUrl, null, additionalHeaders || {});
 	        });
 	    }
 	    post(requestUrl, data, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('POST', requestUrl, data, additionalHeaders || {});
 	        });
 	    }
 	    patch(requestUrl, data, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('PATCH', requestUrl, data, additionalHeaders || {});
 	        });
 	    }
 	    put(requestUrl, data, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('PUT', requestUrl, data, additionalHeaders || {});
 	        });
 	    }
 	    head(requestUrl, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request('HEAD', requestUrl, null, additionalHeaders || {});
 	        });
 	    }
 	    sendStream(verb, requestUrl, stream, additionalHeaders) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return this.request(verb, requestUrl, stream, additionalHeaders);
 	        });
 	    }
@@ -24632,14 +24632,14 @@ function requireLib$2 () {
 	     * Be aware that not found returns a null.  Other errors (4xx, 5xx) reject the promise
 	     */
 	    getJson(requestUrl, additionalHeaders = {}) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
 	            const res = yield this.get(requestUrl, additionalHeaders);
 	            return this._processResponse(res, this.requestOptions);
 	        });
 	    }
 	    postJson(requestUrl, obj, additionalHeaders = {}) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const data = JSON.stringify(obj, null, 2);
 	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
 	            additionalHeaders[Headers.ContentType] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.ContentType, MediaTypes.ApplicationJson);
@@ -24648,7 +24648,7 @@ function requireLib$2 () {
 	        });
 	    }
 	    putJson(requestUrl, obj, additionalHeaders = {}) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const data = JSON.stringify(obj, null, 2);
 	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
 	            additionalHeaders[Headers.ContentType] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.ContentType, MediaTypes.ApplicationJson);
@@ -24657,7 +24657,7 @@ function requireLib$2 () {
 	        });
 	    }
 	    patchJson(requestUrl, obj, additionalHeaders = {}) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const data = JSON.stringify(obj, null, 2);
 	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
 	            additionalHeaders[Headers.ContentType] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.ContentType, MediaTypes.ApplicationJson);
@@ -24671,7 +24671,7 @@ function requireLib$2 () {
 	     * Prefer get, del, post and patch
 	     */
 	    request(verb, requestUrl, data, headers) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            if (this._disposed) {
 	                throw new Error('Client has already been disposed.');
 	            }
@@ -24767,7 +24767,7 @@ function requireLib$2 () {
 	     * @param data
 	     */
 	    requestRaw(info, data) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return new Promise((resolve, reject) => {
 	                function callbackForResult(err, res) {
 	                    if (err) {
@@ -24976,15 +24976,15 @@ function requireLib$2 () {
 	        return proxyAgent;
 	    }
 	    _performExponentialBackoff(retryNumber) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            retryNumber = Math.min(ExponentialBackoffCeiling, retryNumber);
 	            const ms = ExponentialBackoffTimeSlice * Math.pow(2, retryNumber);
 	            return new Promise(resolve => setTimeout(() => resolve(), ms));
 	        });
 	    }
 	    _processResponse(res, options) {
-	        return __awaiter(this, undefined, undefined, function* () {
-	            return new Promise((resolve, reject) => __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
 	                const statusCode = res.message.statusCode || 0;
 	                const response = {
 	                    statusCode,
@@ -25061,7 +25061,7 @@ var hasRequiredAuth;
 function requireAuth () {
 	if (hasRequiredAuth) return auth;
 	hasRequiredAuth = 1;
-	var __awaiter = (auth.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (auth && auth.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25071,7 +25071,7 @@ function requireAuth () {
 	    });
 	};
 	Object.defineProperty(auth, "__esModule", { value: true });
-	auth.PersonalAccessTokenCredentialHandler = auth.BearerCredentialHandler = auth.BasicCredentialHandler = undefined;
+	auth.PersonalAccessTokenCredentialHandler = auth.BearerCredentialHandler = auth.BasicCredentialHandler = void 0;
 	class BasicCredentialHandler {
 	    constructor(username, password) {
 	        this.username = username;
@@ -25088,7 +25088,7 @@ function requireAuth () {
 	        return false;
 	    }
 	    handleAuthentication() {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            throw new Error('not implemented');
 	        });
 	    }
@@ -25111,7 +25111,7 @@ function requireAuth () {
 	        return false;
 	    }
 	    handleAuthentication() {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            throw new Error('not implemented');
 	        });
 	    }
@@ -25134,7 +25134,7 @@ function requireAuth () {
 	        return false;
 	    }
 	    handleAuthentication() {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            throw new Error('not implemented');
 	        });
 	    }
@@ -25149,7 +25149,7 @@ var hasRequiredOidcUtils;
 function requireOidcUtils () {
 	if (hasRequiredOidcUtils) return oidcUtils;
 	hasRequiredOidcUtils = 1;
-	var __awaiter = (oidcUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (oidcUtils && oidcUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25159,7 +25159,7 @@ function requireOidcUtils () {
 	    });
 	};
 	Object.defineProperty(oidcUtils, "__esModule", { value: true });
-	oidcUtils.OidcClient = undefined;
+	oidcUtils.OidcClient = void 0;
 	const http_client_1 = requireLib$2();
 	const auth_1 = requireAuth();
 	const core_1 = requireCore$2();
@@ -25187,7 +25187,7 @@ function requireOidcUtils () {
 	    }
 	    static getCall(id_token_url) {
 	        var _a;
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const httpclient = OidcClient.createHttpClient();
 	            const res = yield httpclient
 	                .getJson(id_token_url)
@@ -25196,7 +25196,7 @@ function requireOidcUtils () {
         Error Code : ${error.statusCode}\n 
         Error Message: ${error.message}`);
 	            });
-	            const id_token = (_a = res.result) === null || _a === undefined ? undefined : _a.value;
+	            const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
 	            if (!id_token) {
 	                throw new Error('Response json body do not have ID Token field');
 	            }
@@ -25204,7 +25204,7 @@ function requireOidcUtils () {
 	        });
 	    }
 	    static getIDToken(audience) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            try {
 	                // New ID Token is requested from action service
 	                let id_token_url = OidcClient.getIDTokenUrl();
@@ -25236,7 +25236,7 @@ function requireSummary () {
 	if (hasRequiredSummary) return summary;
 	hasRequiredSummary = 1;
 	(function (exports) {
-		var __awaiter = (summary.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (summary && summary.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25246,7 +25246,7 @@ function requireSummary () {
 		    });
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.summary = exports.markdownSummary = exports.SUMMARY_DOCS_URL = exports.SUMMARY_ENV_VAR = undefined;
+		exports.summary = exports.markdownSummary = exports.SUMMARY_DOCS_URL = exports.SUMMARY_ENV_VAR = void 0;
 		const os_1 = require$$0$5;
 		const fs_1 = require$$1__default;
 		const { access, appendFile, writeFile } = fs_1.promises;
@@ -25263,7 +25263,7 @@ function requireSummary () {
 		     * @returns step summary file path
 		     */
 		    filePath() {
-		        return __awaiter(this, undefined, undefined, function* () {
+		        return __awaiter(this, void 0, void 0, function* () {
 		            if (this._filePath) {
 		                return this._filePath;
 		            }
@@ -25307,8 +25307,8 @@ function requireSummary () {
 		     * @returns {Promise<Summary>} summary instance
 		     */
 		    write(options) {
-		        return __awaiter(this, undefined, undefined, function* () {
-		            const overwrite = !!(options === null || options === undefined ? undefined : options.overwrite);
+		        return __awaiter(this, void 0, void 0, function* () {
+		            const overwrite = !!(options === null || options === void 0 ? void 0 : options.overwrite);
 		            const filePath = yield this.filePath();
 		            const writeFunc = overwrite ? writeFile : appendFile;
 		            yield writeFunc(filePath, this._buffer, { encoding: 'utf8' });
@@ -25321,7 +25321,7 @@ function requireSummary () {
 		     * @returns {Summary} summary instance
 		     */
 		    clear() {
-		        return __awaiter(this, undefined, undefined, function* () {
+		        return __awaiter(this, void 0, void 0, function* () {
 		            return this.emptyBuffer().write({ overwrite: true });
 		        });
 		    }
@@ -25529,7 +25529,7 @@ var hasRequiredPathUtils;
 function requirePathUtils () {
 	if (hasRequiredPathUtils) return pathUtils;
 	hasRequiredPathUtils = 1;
-	var __createBinding = (pathUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (pathUtils && pathUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -25540,12 +25540,12 @@ function requirePathUtils () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (pathUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (pathUtils && pathUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (pathUtils.__importStar) || function (mod) {
+	var __importStar = (pathUtils && pathUtils.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -25553,7 +25553,7 @@ function requirePathUtils () {
 	    return result;
 	};
 	Object.defineProperty(pathUtils, "__esModule", { value: true });
-	pathUtils.toPlatformPath = pathUtils.toWin32Path = pathUtils.toPosixPath = undefined;
+	pathUtils.toPlatformPath = pathUtils.toWin32Path = pathUtils.toPosixPath = void 0;
 	const path = __importStar(require$$3$2);
 	/**
 	 * toPosixPath converts the given path to the posix form. On Windows, \\ will be
@@ -25609,26 +25609,26 @@ function requireIoUtil () {
 	if (hasRequiredIoUtil) return ioUtil;
 	hasRequiredIoUtil = 1;
 	(function (exports) {
-		var __createBinding = (ioUtil.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (ioUtil && ioUtil.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 		}) : (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (ioUtil.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (ioUtil && ioUtil.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (ioUtil.__importStar) || function (mod) {
+		var __importStar = (ioUtil && ioUtil.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (ioUtil.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (ioUtil && ioUtil.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25639,7 +25639,7 @@ function requireIoUtil () {
 		};
 		var _a;
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.getCmdPath = exports.tryGetExecutablePath = exports.isRooted = exports.isDirectory = exports.exists = exports.READONLY = exports.UV_FS_O_EXLOCK = exports.IS_WINDOWS = exports.unlink = exports.symlink = exports.stat = exports.rmdir = exports.rm = exports.rename = exports.readlink = exports.readdir = exports.open = exports.mkdir = exports.lstat = exports.copyFile = exports.chmod = undefined;
+		exports.getCmdPath = exports.tryGetExecutablePath = exports.isRooted = exports.isDirectory = exports.exists = exports.READONLY = exports.UV_FS_O_EXLOCK = exports.IS_WINDOWS = exports.unlink = exports.symlink = exports.stat = exports.rmdir = exports.rm = exports.rename = exports.readlink = exports.readdir = exports.open = exports.mkdir = exports.lstat = exports.copyFile = exports.chmod = void 0;
 		const fs = __importStar(require$$1__default);
 		const path = __importStar(require$$3$2);
 		_a = fs.promises
@@ -25651,7 +25651,7 @@ function requireIoUtil () {
 		exports.UV_FS_O_EXLOCK = 0x10000000;
 		exports.READONLY = fs.constants.O_RDONLY;
 		function exists(fsPath) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        try {
 		            yield exports.stat(fsPath);
 		        }
@@ -25666,7 +25666,7 @@ function requireIoUtil () {
 		}
 		exports.exists = exists;
 		function isDirectory(fsPath, useStat = false) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        const stats = useStat ? yield exports.stat(fsPath) : yield exports.lstat(fsPath);
 		        return stats.isDirectory();
 		    });
@@ -25695,7 +25695,7 @@ function requireIoUtil () {
 		 * @return if file exists and is executable, returns the file path. otherwise empty string.
 		 */
 		function tryGetExecutablePath(filePath, extensions) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let stats = undefined;
 		        try {
 		            // test file exists
@@ -25787,7 +25787,7 @@ function requireIoUtil () {
 		// Get the path of cmd.exe in windows
 		function getCmdPath() {
 		    var _a;
-		    return (_a = process.env['COMSPEC']) !== null && _a !== undefined ? _a : `cmd.exe`;
+		    return (_a = process.env['COMSPEC']) !== null && _a !== void 0 ? _a : `cmd.exe`;
 		}
 		exports.getCmdPath = getCmdPath;
 		
@@ -25800,26 +25800,26 @@ var hasRequiredIo;
 function requireIo () {
 	if (hasRequiredIo) return io;
 	hasRequiredIo = 1;
-	var __createBinding = (io.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (io && io.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (io.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (io && io.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (io.__importStar) || function (mod) {
+	var __importStar = (io && io.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (io.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (io && io.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25829,7 +25829,7 @@ function requireIo () {
 	    });
 	};
 	Object.defineProperty(io, "__esModule", { value: true });
-	io.findInPath = io.which = io.mkdirP = io.rmRF = io.mv = io.cp = undefined;
+	io.findInPath = io.which = io.mkdirP = io.rmRF = io.mv = io.cp = void 0;
 	const assert_1 = require$$0$7;
 	const path = __importStar(require$$3$2);
 	const ioUtil = __importStar(requireIoUtil());
@@ -25842,7 +25842,7 @@ function requireIo () {
 	 * @param     options   optional. See CopyOptions.
 	 */
 	function cp(source, dest, options = {}) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        const { force, recursive, copySourceDirectory } = readCopyOptions(options);
 	        const destStat = (yield ioUtil.exists(dest)) ? yield ioUtil.stat(dest) : null;
 	        // Dest is an existing file, but not forcing
@@ -25883,7 +25883,7 @@ function requireIo () {
 	 * @param     options   optional. See MoveOptions.
 	 */
 	function mv(source, dest, options = {}) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if (yield ioUtil.exists(dest)) {
 	            let destExists = true;
 	            if (yield ioUtil.isDirectory(dest)) {
@@ -25911,7 +25911,7 @@ function requireIo () {
 	 * @param inputPath path to remove
 	 */
 	function rmRF(inputPath) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if (ioUtil.IS_WINDOWS) {
 	            // Check for invalid characters
 	            // https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file
@@ -25942,7 +25942,7 @@ function requireIo () {
 	 * @returns Promise<void>
 	 */
 	function mkdirP(fsPath) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        assert_1.ok(fsPath, 'a path argument must be provided');
 	        yield ioUtil.mkdir(fsPath, { recursive: true });
 	    });
@@ -25957,7 +25957,7 @@ function requireIo () {
 	 * @returns   Promise<string>   path to tool
 	 */
 	function which(tool, check) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if (!tool) {
 	            throw new Error("parameter 'tool' is required");
 	        }
@@ -25988,7 +25988,7 @@ function requireIo () {
 	 * @returns   Promise<string[]>  the paths of the tool
 	 */
 	function findInPath(tool) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if (!tool) {
 	            throw new Error("parameter 'tool' is required");
 	        }
@@ -26048,7 +26048,7 @@ function requireIo () {
 	    return { force, recursive, copySourceDirectory };
 	}
 	function cpDirRecursive(sourceDir, destDir, currentDepth, force) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        // Ensure there is not a run away recursive copy
 	        if (currentDepth >= 255)
 	            return;
@@ -26073,7 +26073,7 @@ function requireIo () {
 	}
 	// Buffered file copy
 	function copyFile(srcFile, destFile, force) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if ((yield ioUtil.lstat(srcFile)).isSymbolicLink()) {
 	            // unlink/re-link it
 	            try {
@@ -26106,26 +26106,26 @@ var hasRequiredToolrunner;
 function requireToolrunner () {
 	if (hasRequiredToolrunner) return toolrunner;
 	hasRequiredToolrunner = 1;
-	var __createBinding = (toolrunner.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (toolrunner && toolrunner.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (toolrunner.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (toolrunner && toolrunner.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (toolrunner.__importStar) || function (mod) {
+	var __importStar = (toolrunner && toolrunner.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (toolrunner.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (toolrunner && toolrunner.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26135,9 +26135,9 @@ function requireToolrunner () {
 	    });
 	};
 	Object.defineProperty(toolrunner, "__esModule", { value: true });
-	toolrunner.argStringToArray = toolrunner.ToolRunner = undefined;
+	toolrunner.argStringToArray = toolrunner.ToolRunner = void 0;
 	const os = __importStar(require$$0$5);
-	const events = __importStar(require$$1$4);
+	const events = __importStar(require$$1$3);
 	const child = __importStar(require$$2$3);
 	const path = __importStar(require$$3$2);
 	const io = __importStar(requireIo());
@@ -26488,7 +26488,7 @@ function requireToolrunner () {
 	     * @returns   number
 	     */
 	    exec() {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            // root the tool path if it is unrooted and contains relative pathing
 	            if (!ioUtil.isRooted(this.toolPath) &&
 	                (this.toolPath.includes('/') ||
@@ -26499,7 +26499,7 @@ function requireToolrunner () {
 	            // if the tool is only a file name, then resolve it from the PATH
 	            // otherwise verify it exists (add extension on Windows if necessary)
 	            this.toolPath = yield io.which(this.toolPath, true);
-	            return new Promise((resolve, reject) => __awaiter(this, undefined, undefined, function* () {
+	            return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
 	                this._debug(`exec tool: ${this.toolPath}`);
 	                this._debug('arguments:');
 	                for (const arg of this.args) {
@@ -26731,26 +26731,26 @@ var hasRequiredExec;
 function requireExec () {
 	if (hasRequiredExec) return exec;
 	hasRequiredExec = 1;
-	var __createBinding = (exec.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (exec && exec.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (exec.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (exec && exec.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (exec.__importStar) || function (mod) {
+	var __importStar = (exec && exec.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (exec.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (exec && exec.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26760,7 +26760,7 @@ function requireExec () {
 	    });
 	};
 	Object.defineProperty(exec, "__esModule", { value: true });
-	exec.getExecOutput = exec.exec = undefined;
+	exec.getExecOutput = exec.exec = void 0;
 	const string_decoder_1 = require$$6;
 	const tr = __importStar(requireToolrunner());
 	/**
@@ -26774,7 +26774,7 @@ function requireExec () {
 	 * @returns   Promise<number>    exit code
 	 */
 	function exec$1(commandLine, args, options) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        const commandArgs = tr.argStringToArray(commandLine);
 	        if (commandArgs.length === 0) {
 	            throw new Error(`Parameter 'commandLine' cannot be null or empty.`);
@@ -26799,14 +26799,14 @@ function requireExec () {
 	 */
 	function getExecOutput(commandLine, args, options) {
 	    var _a, _b;
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        let stdout = '';
 	        let stderr = '';
 	        //Using string decoder covers the case where a mult-byte character is split
 	        const stdoutDecoder = new string_decoder_1.StringDecoder('utf8');
 	        const stderrDecoder = new string_decoder_1.StringDecoder('utf8');
-	        const originalStdoutListener = (_a = options === null || options === undefined ? undefined : options.listeners) === null || _a === undefined ? undefined : _a.stdout;
-	        const originalStdErrListener = (_b = options === null || options === undefined ? undefined : options.listeners) === null || _b === undefined ? undefined : _b.stderr;
+	        const originalStdoutListener = (_a = options === null || options === void 0 ? void 0 : options.listeners) === null || _a === void 0 ? void 0 : _a.stdout;
+	        const originalStdErrListener = (_b = options === null || options === void 0 ? void 0 : options.listeners) === null || _b === void 0 ? void 0 : _b.stderr;
 	        const stdErrListener = (data) => {
 	            stderr += stderrDecoder.write(data);
 	            if (originalStdErrListener) {
@@ -26819,7 +26819,7 @@ function requireExec () {
 	                originalStdoutListener(data);
 	            }
 	        };
-	        const listeners = Object.assign(Object.assign({}, options === null || options === undefined ? undefined : options.listeners), { stdout: stdOutListener, stderr: stdErrListener });
+	        const listeners = Object.assign(Object.assign({}, options === null || options === void 0 ? void 0 : options.listeners), { stdout: stdOutListener, stderr: stdErrListener });
 	        const exitCode = yield exec$1(commandLine, args, Object.assign(Object.assign({}, options), { listeners }));
 	        //flush any remaining characters
 	        stdout += stdoutDecoder.end();
@@ -26842,7 +26842,7 @@ function requirePlatform () {
 	if (hasRequiredPlatform) return platform;
 	hasRequiredPlatform = 1;
 	(function (exports) {
-		var __createBinding = (platform.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (platform && platform.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -26853,19 +26853,19 @@ function requirePlatform () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (platform.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (platform && platform.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (platform.__importStar) || function (mod) {
+		var __importStar = (platform && platform.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (platform.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (platform && platform.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26874,14 +26874,14 @@ function requirePlatform () {
 		        step((generator = generator.apply(thisArg, _arguments || [])).next());
 		    });
 		};
-		var __importDefault = (platform.__importDefault) || function (mod) {
+		var __importDefault = (platform && platform.__importDefault) || function (mod) {
 		    return (mod && mod.__esModule) ? mod : { "default": mod };
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.getDetails = exports.isLinux = exports.isMacOS = exports.isWindows = exports.arch = exports.platform = undefined;
+		exports.getDetails = exports.isLinux = exports.isMacOS = exports.isWindows = exports.arch = exports.platform = void 0;
 		const os_1 = __importDefault(require$$0$5);
 		const exec = __importStar(requireExec());
-		const getWindowsInfo = () => __awaiter(undefined, undefined, undefined, function* () {
+		const getWindowsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
 		    const { stdout: version } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Version"', undefined, {
 		        silent: true
 		    });
@@ -26893,19 +26893,19 @@ function requirePlatform () {
 		        version: version.trim()
 		    };
 		});
-		const getMacOsInfo = () => __awaiter(undefined, undefined, undefined, function* () {
+		const getMacOsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
 		    var _a, _b, _c, _d;
 		    const { stdout } = yield exec.getExecOutput('sw_vers', undefined, {
 		        silent: true
 		    });
-		    const version = (_b = (_a = stdout.match(/ProductVersion:\s*(.+)/)) === null || _a === undefined ? undefined : _a[1]) !== null && _b !== undefined ? _b : '';
-		    const name = (_d = (_c = stdout.match(/ProductName:\s*(.+)/)) === null || _c === undefined ? undefined : _c[1]) !== null && _d !== undefined ? _d : '';
+		    const version = (_b = (_a = stdout.match(/ProductVersion:\s*(.+)/)) === null || _a === void 0 ? void 0 : _a[1]) !== null && _b !== void 0 ? _b : '';
+		    const name = (_d = (_c = stdout.match(/ProductName:\s*(.+)/)) === null || _c === void 0 ? void 0 : _c[1]) !== null && _d !== void 0 ? _d : '';
 		    return {
 		        name,
 		        version
 		    };
 		});
-		const getLinuxInfo = () => __awaiter(undefined, undefined, undefined, function* () {
+		const getLinuxInfo = () => __awaiter(void 0, void 0, void 0, function* () {
 		    const { stdout } = yield exec.getExecOutput('lsb_release', ['-i', '-r', '-s'], {
 		        silent: true
 		    });
@@ -26921,7 +26921,7 @@ function requirePlatform () {
 		exports.isMacOS = exports.platform === 'darwin';
 		exports.isLinux = exports.platform === 'linux';
 		function getDetails() {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        return Object.assign(Object.assign({}, (yield (exports.isWindows
 		            ? getWindowsInfo()
 		            : exports.isMacOS
@@ -26945,7 +26945,7 @@ function requireCore$2 () {
 	if (hasRequiredCore$2) return core$2;
 	hasRequiredCore$2 = 1;
 	(function (exports) {
-		var __createBinding = (core$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (core$2 && core$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -26956,19 +26956,19 @@ function requireCore$2 () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (core$2.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (core$2 && core$2.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (core$2.__importStar) || function (mod) {
+		var __importStar = (core$2 && core$2.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (core$2.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (core$2 && core$2.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26978,7 +26978,7 @@ function requireCore$2 () {
 		    });
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.platform = exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = exports.markdownSummary = exports.summary = exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = undefined;
+		exports.platform = exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = exports.markdownSummary = exports.summary = exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
 		const command_1 = requireCommand();
 		const file_command_1 = requireFileCommand();
 		const utils_1 = requireUtils$3();
@@ -27219,7 +27219,7 @@ function requireCore$2 () {
 		 * @param fn The function to wrap in the group
 		 */
 		function group(name, fn) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        startGroup(name);
 		        let result;
 		        try {
@@ -27261,7 +27261,7 @@ function requireCore$2 () {
 		}
 		exports.getState = getState;
 		function getIDToken(aud) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        return yield oidc_utils_1.OidcClient.getIDToken(aud);
 		    });
 		}
@@ -33016,7 +33016,7 @@ function requireSonicBoom () {
 	hasRequiredSonicBoom = 1;
 
 	const fs = require$$1__default;
-	const EventEmitter = require$$1$4;
+	const EventEmitter = require$$1$3;
 	const inherits = require$$0__default.inherits;
 	const path = require$$3$2;
 	const sleep = requireAtomicSleep();
@@ -33851,78 +33851,9 @@ function requireOnExitLeakFree () {
 	return onExitLeakFree;
 }
 
-var name$1 = "thread-stream";
 var version$2 = "3.1.0";
-var description$2 = "A streaming way to send data to a Node.js Worker Thread";
-var main$1 = "index.js";
-var types$5 = "index.d.ts";
-var dependencies$2 = {
-	"real-require": "^0.2.0"
-};
-var devDependencies$1 = {
-	"@types/node": "^20.1.0",
-	"@types/tap": "^15.0.0",
-	"@yao-pkg/pkg": "^5.11.5",
-	desm: "^1.3.0",
-	fastbench: "^1.0.1",
-	husky: "^9.0.6",
-	"pino-elasticsearch": "^8.0.0",
-	"sonic-boom": "^4.0.1",
-	standard: "^17.0.0",
-	tap: "^16.2.0",
-	"ts-node": "^10.8.0",
-	typescript: "^5.3.2",
-	"why-is-node-running": "^2.2.2"
-};
-var scripts$1 = {
-	build: "tsc --noEmit",
-	test: "standard && npm run build && npm run transpile && tap \"test/**/*.test.*js\" && tap --ts test/*.test.*ts",
-	"test:ci": "standard && npm run transpile && npm run test:ci:js && npm run test:ci:ts",
-	"test:ci:js": "tap --no-check-coverage --timeout=120 --coverage-report=lcovonly \"test/**/*.test.*js\"",
-	"test:ci:ts": "tap --ts --no-check-coverage --coverage-report=lcovonly \"test/**/*.test.*ts\"",
-	"test:yarn": "npm run transpile && tap \"test/**/*.test.js\" --no-check-coverage",
-	transpile: "sh ./test/ts/transpile.sh",
-	prepare: "husky install"
-};
-var standard = {
-	ignore: [
-		"test/ts/**/*",
-		"test/syntax-error.mjs"
-	]
-};
-var repository$1 = {
-	type: "git",
-	url: "git+https://github.com/mcollina/thread-stream.git"
-};
-var keywords$1 = [
-	"worker",
-	"thread",
-	"threads",
-	"stream"
-];
-var author = "Matteo Collina <hello@matteocollina.com>";
-var license$1 = "MIT";
-var bugs$1 = {
-	url: "https://github.com/mcollina/thread-stream/issues"
-};
-var homepage$1 = "https://github.com/mcollina/thread-stream#readme";
 var require$$0$2 = {
-	name: name$1,
-	version: version$2,
-	description: description$2,
-	main: main$1,
-	types: types$5,
-	dependencies: dependencies$2,
-	devDependencies: devDependencies$1,
-	scripts: scripts$1,
-	standard: standard,
-	repository: repository$1,
-	keywords: keywords$1,
-	author: author,
-	license: license$1,
-	bugs: bugs$1,
-	homepage: homepage$1
-};
+	version: version$2};
 
 var wait_1;
 var hasRequiredWait;
@@ -34018,7 +33949,7 @@ function requireThreadStream () {
 	hasRequiredThreadStream = 1;
 
 	const { version } = require$$0$2;
-	const { EventEmitter } = require$$1$4;
+	const { EventEmitter } = require$$1$3;
 	const { Worker } = require$$2$1;
 	const { join } = require$$3$2;
 	const { pathToFileURL } = require$$5$1;
@@ -42719,7 +42650,7 @@ function requireCode$1 () {
 	hasRequiredCode$1 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = undefined;
+		exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = void 0;
 		// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 		class _CodeOrName {
 		}
@@ -42759,11 +42690,11 @@ function requireCode$1 () {
 		    }
 		    get str() {
 		        var _a;
-		        return ((_a = this._str) !== null && _a !== undefined ? _a : (this._str = this._items.reduce((s, c) => `${s}${c}`, "")));
+		        return ((_a = this._str) !== null && _a !== void 0 ? _a : (this._str = this._items.reduce((s, c) => `${s}${c}`, "")));
 		    }
 		    get names() {
 		        var _a;
-		        return ((_a = this._names) !== null && _a !== undefined ? _a : (this._names = this._items.reduce((names, c) => {
+		        return ((_a = this._names) !== null && _a !== void 0 ? _a : (this._names = this._items.reduce((names, c) => {
 		            if (c instanceof Name)
 		                names[c.str] = (names[c.str] || 0) + 1;
 		            return names;
@@ -42886,7 +42817,7 @@ function requireScope () {
 	hasRequiredScope = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = undefined;
+		exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = void 0;
 		const code_1 = requireCode$1();
 		class ValueError extends Error {
 		    constructor(name) {
@@ -42922,7 +42853,7 @@ function requireScope () {
 		    }
 		    _nameGroup(prefix) {
 		        var _a, _b;
-		        if (((_b = (_a = this._parent) === null || _a === undefined ? undefined : _a._prefixes) === null || _b === undefined ? undefined : _b.has(prefix)) || (this._prefixes && !this._prefixes.has(prefix))) {
+		        if (((_b = (_a = this._parent) === null || _a === void 0 ? void 0 : _a._prefixes) === null || _b === void 0 ? void 0 : _b.has(prefix)) || (this._prefixes && !this._prefixes.has(prefix))) {
 		            throw new Error(`CodeGen: prefix "${prefix}" is not allowed in this scope`);
 		        }
 		        return (this._names[prefix] = { prefix, index: 0 });
@@ -42960,7 +42891,7 @@ function requireScope () {
 		            throw new Error("CodeGen: ref must be passed in value");
 		        const name = this.toName(nameOrPrefix);
 		        const { prefix } = name;
-		        const valueKey = (_a = value.key) !== null && _a !== undefined ? _a : value.ref;
+		        const valueKey = (_a = value.key) !== null && _a !== void 0 ? _a : value.ref;
 		        let vs = this._values[prefix];
 		        if (vs) {
 		            const _name = vs.get(valueKey);
@@ -43013,7 +42944,7 @@ function requireScope () {
 		                    const def = this.opts.es5 ? exports.varKinds.var : exports.varKinds.const;
 		                    code = (0, code_1._) `${code}${def} ${name} = ${c};${this.opts._n}`;
 		                }
-		                else if ((c = getCode === null || getCode === undefined ? undefined : getCode(name))) {
+		                else if ((c = getCode === null || getCode === void 0 ? void 0 : getCode(name))) {
 		                    code = (0, code_1._) `${code}${c}${this.opts._n}`;
 		                }
 		                else {
@@ -43038,7 +42969,7 @@ function requireCodegen () {
 	hasRequiredCodegen = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = undefined;
+		exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = void 0;
 		const code_1 = requireCode$1();
 		const scope_1 = requireScope();
 		var code_2 = requireCode$1();
@@ -43263,7 +43194,7 @@ function requireCodegen () {
 		    }
 		    optimizeNames(names, constants) {
 		        var _a;
-		        this.else = (_a = this.else) === null || _a === undefined ? undefined : _a.optimizeNames(names, constants);
+		        this.else = (_a = this.else) === null || _a === void 0 ? void 0 : _a.optimizeNames(names, constants);
 		        if (!(super.optimizeNames(names, constants) || this.else))
 		            return;
 		        this.condition = optimizeExpr(this.condition, names, constants);
@@ -43369,15 +43300,15 @@ function requireCodegen () {
 		    optimizeNodes() {
 		        var _a, _b;
 		        super.optimizeNodes();
-		        (_a = this.catch) === null || _a === undefined ? undefined : _a.optimizeNodes();
-		        (_b = this.finally) === null || _b === undefined ? undefined : _b.optimizeNodes();
+		        (_a = this.catch) === null || _a === void 0 ? void 0 : _a.optimizeNodes();
+		        (_b = this.finally) === null || _b === void 0 ? void 0 : _b.optimizeNodes();
 		        return this;
 		    }
 		    optimizeNames(names, constants) {
 		        var _a, _b;
 		        super.optimizeNames(names, constants);
-		        (_a = this.catch) === null || _a === undefined ? undefined : _a.optimizeNames(names, constants);
-		        (_b = this.finally) === null || _b === undefined ? undefined : _b.optimizeNames(names, constants);
+		        (_a = this.catch) === null || _a === void 0 ? void 0 : _a.optimizeNames(names, constants);
+		        (_b = this.finally) === null || _b === void 0 ? void 0 : _b.optimizeNames(names, constants);
 		        return this;
 		    }
 		    get names() {
@@ -43745,7 +43676,7 @@ function requireUtil$2 () {
 	if (hasRequiredUtil$2) return util$2;
 	hasRequiredUtil$2 = 1;
 	Object.defineProperty(util$2, "__esModule", { value: true });
-	util$2.checkStrictMode = util$2.getErrorPath = util$2.Type = util$2.useFunc = util$2.setEvaluated = util$2.evaluatedPropsToName = util$2.mergeEvaluated = util$2.eachItem = util$2.unescapeJsonPointer = util$2.escapeJsonPointer = util$2.escapeFragment = util$2.unescapeFragment = util$2.schemaRefOrVal = util$2.schemaHasRulesButRef = util$2.schemaHasRules = util$2.checkUnknownRules = util$2.alwaysValidSchema = util$2.toHash = undefined;
+	util$2.checkStrictMode = util$2.getErrorPath = util$2.Type = util$2.useFunc = util$2.setEvaluated = util$2.evaluatedPropsToName = util$2.mergeEvaluated = util$2.eachItem = util$2.unescapeJsonPointer = util$2.escapeJsonPointer = util$2.escapeFragment = util$2.unescapeFragment = util$2.schemaRefOrVal = util$2.schemaHasRulesButRef = util$2.schemaHasRules = util$2.checkUnknownRules = util$2.alwaysValidSchema = util$2.toHash = void 0;
 	const codegen_1 = requireCodegen();
 	const code_1 = requireCode$1();
 	// TODO refactor to use Set
@@ -43968,7 +43899,7 @@ function requireErrors$3 () {
 	hasRequiredErrors$3 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = undefined;
+		exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
 		const codegen_1 = requireCodegen();
 		const util_1 = requireUtil$2();
 		const names_1 = requireNames();
@@ -43984,7 +43915,7 @@ function requireErrors$3 () {
 		    const { it } = cxt;
 		    const { gen, compositeRule, allErrors } = it;
 		    const errObj = errorObjectCode(cxt, error, errorPaths);
-		    if (overrideAllErrors !== null && overrideAllErrors !== undefined ? overrideAllErrors : (compositeRule || allErrors)) {
+		    if (overrideAllErrors !== null && overrideAllErrors !== void 0 ? overrideAllErrors : (compositeRule || allErrors)) {
 		        addError(gen, errObj);
 		    }
 		    else {
@@ -44099,7 +44030,7 @@ function requireBoolSchema () {
 	if (hasRequiredBoolSchema) return boolSchema;
 	hasRequiredBoolSchema = 1;
 	Object.defineProperty(boolSchema, "__esModule", { value: true });
-	boolSchema.boolOrEmptySchema = boolSchema.topBoolOrEmptySchema = undefined;
+	boolSchema.boolOrEmptySchema = boolSchema.topBoolOrEmptySchema = void 0;
 	const errors_1 = requireErrors$3();
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
@@ -44160,7 +44091,7 @@ function requireRules () {
 	if (hasRequiredRules) return rules;
 	hasRequiredRules = 1;
 	Object.defineProperty(rules, "__esModule", { value: true });
-	rules.getRules = rules.isJSONType = undefined;
+	rules.getRules = rules.isJSONType = void 0;
 	const _jsonTypes = ["string", "number", "integer", "boolean", "null", "object", "array"];
 	const jsonTypes = new Set(_jsonTypes);
 	function isJSONType(x) {
@@ -44195,7 +44126,7 @@ function requireApplicability () {
 	if (hasRequiredApplicability) return applicability;
 	hasRequiredApplicability = 1;
 	Object.defineProperty(applicability, "__esModule", { value: true });
-	applicability.shouldUseRule = applicability.shouldUseGroup = applicability.schemaHasRulesForType = undefined;
+	applicability.shouldUseRule = applicability.shouldUseGroup = applicability.schemaHasRulesForType = void 0;
 	function schemaHasRulesForType({ schema, self }, type) {
 	    const group = self.RULES.types[type];
 	    return group && group !== true && shouldUseGroup(schema, group);
@@ -44208,7 +44139,7 @@ function requireApplicability () {
 	function shouldUseRule(schema, rule) {
 	    var _a;
 	    return (schema[rule.keyword] !== undefined ||
-	        ((_a = rule.definition.implements) === null || _a === undefined ? undefined : _a.some((kwd) => schema[kwd] !== undefined)));
+	        ((_a = rule.definition.implements) === null || _a === void 0 ? void 0 : _a.some((kwd) => schema[kwd] !== undefined)));
 	}
 	applicability.shouldUseRule = shouldUseRule;
 	
@@ -44221,7 +44152,7 @@ function requireDataType () {
 	if (hasRequiredDataType) return dataType;
 	hasRequiredDataType = 1;
 	Object.defineProperty(dataType, "__esModule", { value: true });
-	dataType.reportTypeError = dataType.checkDataTypes = dataType.checkDataType = dataType.coerceAndCheckDataType = dataType.getJSONTypes = dataType.getSchemaTypes = dataType.DataType = undefined;
+	dataType.reportTypeError = dataType.checkDataTypes = dataType.checkDataType = dataType.coerceAndCheckDataType = dataType.getJSONTypes = dataType.getSchemaTypes = dataType.DataType = void 0;
 	const rules_1 = requireRules();
 	const applicability_1 = requireApplicability();
 	const errors_1 = requireErrors$3();
@@ -44433,7 +44364,7 @@ function requireDefaults () {
 	if (hasRequiredDefaults) return defaults;
 	hasRequiredDefaults = 1;
 	Object.defineProperty(defaults, "__esModule", { value: true });
-	defaults.assignDefaults = undefined;
+	defaults.assignDefaults = void 0;
 	const codegen_1 = requireCodegen();
 	const util_1 = requireUtil$2();
 	function assignDefaults(it, ty) {
@@ -44479,7 +44410,7 @@ function requireCode () {
 	if (hasRequiredCode) return code;
 	hasRequiredCode = 1;
 	Object.defineProperty(code, "__esModule", { value: true });
-	code.validateUnion = code.validateArray = code.usePattern = code.callValidateCode = code.schemaProperties = code.allSchemaProperties = code.noPropertyInData = code.propertyInData = code.isOwnProperty = code.hasPropFunc = code.reportMissingProp = code.checkMissingProp = code.checkReportMissingProp = undefined;
+	code.validateUnion = code.validateArray = code.usePattern = code.callValidateCode = code.schemaProperties = code.allSchemaProperties = code.noPropertyInData = code.propertyInData = code.isOwnProperty = code.hasPropFunc = code.reportMissingProp = code.checkMissingProp = code.checkReportMissingProp = void 0;
 	const codegen_1 = requireCodegen();
 	const util_1 = requireUtil$2();
 	const names_1 = requireNames();
@@ -44617,7 +44548,7 @@ function requireKeyword () {
 	if (hasRequiredKeyword) return keyword;
 	hasRequiredKeyword = 1;
 	Object.defineProperty(keyword, "__esModule", { value: true });
-	keyword.validateKeywordUsage = keyword.validSchemaType = keyword.funcKeywordCode = keyword.macroKeywordCode = undefined;
+	keyword.validateKeywordUsage = keyword.validSchemaType = keyword.funcKeywordCode = keyword.macroKeywordCode = void 0;
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
 	const code_1 = requireCode();
@@ -44647,7 +44578,7 @@ function requireKeyword () {
 	    const validateRef = useKeyword(gen, keyword, validate);
 	    const valid = gen.let("valid");
 	    cxt.block$data(valid, validateKeyword);
-	    cxt.ok((_a = def.valid) !== null && _a !== undefined ? _a : valid);
+	    cxt.ok((_a = def.valid) !== null && _a !== void 0 ? _a : valid);
 	    function validateKeyword() {
 	        if (def.errors === false) {
 	            assignValid();
@@ -44680,7 +44611,7 @@ function requireKeyword () {
 	    }
 	    function reportErrs(errors) {
 	        var _a;
-	        gen.if((0, codegen_1.not)((_a = def.valid) !== null && _a !== undefined ? _a : valid), errors);
+	        gen.if((0, codegen_1.not)((_a = def.valid) !== null && _a !== void 0 ? _a : valid), errors);
 	    }
 	}
 	keyword.funcKeywordCode = funcKeywordCode;
@@ -44722,7 +44653,7 @@ function requireKeyword () {
 	        throw new Error("ajv implementation error");
 	    }
 	    const deps = def.dependencies;
-	    if (deps === null || deps === undefined ? undefined : deps.some((kwd) => !Object.prototype.hasOwnProperty.call(schema, kwd))) {
+	    if (deps === null || deps === void 0 ? void 0 : deps.some((kwd) => !Object.prototype.hasOwnProperty.call(schema, kwd))) {
 	        throw new Error(`parent schema must have dependencies of ${keyword}: ${deps.join(",")}`);
 	    }
 	    if (def.validateSchema) {
@@ -44750,7 +44681,7 @@ function requireSubschema () {
 	if (hasRequiredSubschema) return subschema;
 	hasRequiredSubschema = 1;
 	Object.defineProperty(subschema, "__esModule", { value: true });
-	subschema.extendSubschemaMode = subschema.extendSubschemaData = subschema.getSubschema = undefined;
+	subschema.extendSubschemaMode = subschema.extendSubschemaData = subschema.getSubschema = void 0;
 	const codegen_1 = requireCodegen();
 	const util_1 = requireUtil$2();
 	function getSubschema(it, { keyword, schemaProp, schema, schemaPath, errSchemaPath, topSchemaRef }) {
@@ -44996,7 +44927,7 @@ function requireResolve () {
 	if (hasRequiredResolve) return resolve;
 	hasRequiredResolve = 1;
 	Object.defineProperty(resolve, "__esModule", { value: true });
-	resolve.getSchemaRefs = resolve.resolveUrl = resolve.normalizeId = resolve._getFullPath = resolve.getFullPath = resolve.inlineRef = undefined;
+	resolve.getSchemaRefs = resolve.resolveUrl = resolve.normalizeId = resolve._getFullPath = resolve.getFullPath = resolve.inlineRef = void 0;
 	const util_1 = requireUtil$2();
 	const equal = requireFastDeepEqual();
 	const traverse = requireJsonSchemaTraverse();
@@ -45158,7 +45089,7 @@ function requireValidate () {
 	if (hasRequiredValidate) return validate;
 	hasRequiredValidate = 1;
 	Object.defineProperty(validate, "__esModule", { value: true });
-	validate.getData = validate.KeywordCxt = validate.validateFunctionCode = undefined;
+	validate.getData = validate.KeywordCxt = validate.validateFunctionCode = void 0;
 	const boolSchema_1 = requireBoolSchema();
 	const dataType_1 = requireDataType();
 	const applicability_1 = requireApplicability();
@@ -45727,7 +45658,7 @@ function requireCompile () {
 	if (hasRequiredCompile) return compile;
 	hasRequiredCompile = 1;
 	Object.defineProperty(compile, "__esModule", { value: true });
-	compile.resolveSchema = compile.getCompilingSchema = compile.resolveRef = compile.compileSchema = compile.SchemaEnv = undefined;
+	compile.resolveSchema = compile.getCompilingSchema = compile.resolveRef = compile.compileSchema = compile.SchemaEnv = void 0;
 	const codegen_1 = requireCodegen();
 	const validation_error_1 = requireValidation_error();
 	const names_1 = requireNames();
@@ -45745,11 +45676,11 @@ function requireCompile () {
 	        this.schema = env.schema;
 	        this.schemaId = env.schemaId;
 	        this.root = env.root || this;
-	        this.baseId = (_a = env.baseId) !== null && _a !== undefined ? _a : (0, resolve_1.normalizeId)(schema === null || schema === undefined ? undefined : schema[env.schemaId || "$id"]);
+	        this.baseId = (_a = env.baseId) !== null && _a !== void 0 ? _a : (0, resolve_1.normalizeId)(schema === null || schema === void 0 ? void 0 : schema[env.schemaId || "$id"]);
 	        this.schemaPath = env.schemaPath;
 	        this.localRefs = env.localRefs;
 	        this.meta = env.meta;
-	        this.$async = schema === null || schema === undefined ? undefined : schema.$async;
+	        this.$async = schema === null || schema === void 0 ? void 0 : schema.$async;
 	        this.refs = {};
 	    }
 	}
@@ -45859,7 +45790,7 @@ function requireCompile () {
 	        return schOrFunc;
 	    let _sch = resolve.call(this, root, ref);
 	    if (_sch === undefined) {
-	        const schema = (_a = root.localRefs) === null || _a === undefined ? undefined : _a[ref]; // TODO maybe localRefs should hold SchemaEnv
+	        const schema = (_a = root.localRefs) === null || _a === void 0 ? void 0 : _a[ref]; // TODO maybe localRefs should hold SchemaEnv
 	        const { schemaId } = this.opts;
 	        if (schema)
 	            _sch = new SchemaEnv({ schema, schemaId, root, baseId });
@@ -45910,11 +45841,11 @@ function requireCompile () {
 	    const schOrRef = this.refs[id] || this.schemas[id];
 	    if (typeof schOrRef == "string") {
 	        const sch = resolveSchema.call(this, root, schOrRef);
-	        if (typeof (sch === null || sch === undefined ? undefined : sch.schema) !== "object")
+	        if (typeof (sch === null || sch === void 0 ? void 0 : sch.schema) !== "object")
 	            return;
 	        return getJsonPointer.call(this, p, sch);
 	    }
-	    if (typeof (schOrRef === null || schOrRef === undefined ? undefined : schOrRef.schema) !== "object")
+	    if (typeof (schOrRef === null || schOrRef === void 0 ? void 0 : schOrRef.schema) !== "object")
 	        return;
 	    if (!schOrRef.validate)
 	        compileSchema.call(this, schOrRef);
@@ -45938,7 +45869,7 @@ function requireCompile () {
 	]);
 	function getJsonPointer(parsedRef, { baseId, schema, root }) {
 	    var _a;
-	    if (((_a = parsedRef.fragment) === null || _a === undefined ? undefined : _a[0]) !== "/")
+	    if (((_a = parsedRef.fragment) === null || _a === void 0 ? void 0 : _a[0]) !== "/")
 	        return;
 	    for (const part of parsedRef.fragment.slice(1).split("/")) {
 	        if (typeof schema === "boolean")
@@ -45971,7 +45902,7 @@ function requireCompile () {
 }
 
 var $id$1 = "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#";
-var description$1 = "Meta-schema for $data reference (JSON AnySchema extension proposal)";
+var description = "Meta-schema for $data reference (JSON AnySchema extension proposal)";
 var type$3 = "object";
 var required$1 = [
 	"$data"
@@ -45992,7 +45923,7 @@ var properties$3 = {
 var additionalProperties$1 = false;
 var require$$9 = {
 	$id: $id$1,
-	description: description$1,
+	description: description,
 	type: type$3,
 	required: required$1,
 	properties: properties$3,
@@ -46818,7 +46749,7 @@ function requireCore$1 () {
 	hasRequiredCore$1 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = undefined;
+		exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
 		var validate_1 = requireValidate();
 		Object.defineProperty(exports, "KeywordCxt", { enumerable: true, get: function () { return validate_1.KeywordCxt; } });
 		var codegen_1 = requireCodegen();
@@ -46883,28 +46814,28 @@ function requireCore$1 () {
 		function requiredOptions(o) {
 		    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
 		    const s = o.strict;
-		    const _optz = (_a = o.code) === null || _a === undefined ? undefined : _a.optimize;
+		    const _optz = (_a = o.code) === null || _a === void 0 ? void 0 : _a.optimize;
 		    const optimize = _optz === true || _optz === undefined ? 1 : _optz || 0;
-		    const regExp = (_c = (_b = o.code) === null || _b === undefined ? undefined : _b.regExp) !== null && _c !== undefined ? _c : defaultRegExp;
-		    const uriResolver = (_d = o.uriResolver) !== null && _d !== undefined ? _d : uri_1.default;
+		    const regExp = (_c = (_b = o.code) === null || _b === void 0 ? void 0 : _b.regExp) !== null && _c !== void 0 ? _c : defaultRegExp;
+		    const uriResolver = (_d = o.uriResolver) !== null && _d !== void 0 ? _d : uri_1.default;
 		    return {
-		        strictSchema: (_f = (_e = o.strictSchema) !== null && _e !== undefined ? _e : s) !== null && _f !== undefined ? _f : true,
-		        strictNumbers: (_h = (_g = o.strictNumbers) !== null && _g !== undefined ? _g : s) !== null && _h !== undefined ? _h : true,
-		        strictTypes: (_k = (_j = o.strictTypes) !== null && _j !== undefined ? _j : s) !== null && _k !== undefined ? _k : "log",
-		        strictTuples: (_m = (_l = o.strictTuples) !== null && _l !== undefined ? _l : s) !== null && _m !== undefined ? _m : "log",
-		        strictRequired: (_p = (_o = o.strictRequired) !== null && _o !== undefined ? _o : s) !== null && _p !== undefined ? _p : false,
+		        strictSchema: (_f = (_e = o.strictSchema) !== null && _e !== void 0 ? _e : s) !== null && _f !== void 0 ? _f : true,
+		        strictNumbers: (_h = (_g = o.strictNumbers) !== null && _g !== void 0 ? _g : s) !== null && _h !== void 0 ? _h : true,
+		        strictTypes: (_k = (_j = o.strictTypes) !== null && _j !== void 0 ? _j : s) !== null && _k !== void 0 ? _k : "log",
+		        strictTuples: (_m = (_l = o.strictTuples) !== null && _l !== void 0 ? _l : s) !== null && _m !== void 0 ? _m : "log",
+		        strictRequired: (_p = (_o = o.strictRequired) !== null && _o !== void 0 ? _o : s) !== null && _p !== void 0 ? _p : false,
 		        code: o.code ? { ...o.code, optimize, regExp } : { optimize, regExp },
-		        loopRequired: (_q = o.loopRequired) !== null && _q !== undefined ? _q : MAX_EXPRESSION,
-		        loopEnum: (_r = o.loopEnum) !== null && _r !== undefined ? _r : MAX_EXPRESSION,
-		        meta: (_s = o.meta) !== null && _s !== undefined ? _s : true,
-		        messages: (_t = o.messages) !== null && _t !== undefined ? _t : true,
-		        inlineRefs: (_u = o.inlineRefs) !== null && _u !== undefined ? _u : true,
-		        schemaId: (_v = o.schemaId) !== null && _v !== undefined ? _v : "$id",
-		        addUsedSchema: (_w = o.addUsedSchema) !== null && _w !== undefined ? _w : true,
-		        validateSchema: (_x = o.validateSchema) !== null && _x !== undefined ? _x : true,
-		        validateFormats: (_y = o.validateFormats) !== null && _y !== undefined ? _y : true,
-		        unicodeRegExp: (_z = o.unicodeRegExp) !== null && _z !== undefined ? _z : true,
-		        int32range: (_0 = o.int32range) !== null && _0 !== undefined ? _0 : true,
+		        loopRequired: (_q = o.loopRequired) !== null && _q !== void 0 ? _q : MAX_EXPRESSION,
+		        loopEnum: (_r = o.loopEnum) !== null && _r !== void 0 ? _r : MAX_EXPRESSION,
+		        meta: (_s = o.meta) !== null && _s !== void 0 ? _s : true,
+		        messages: (_t = o.messages) !== null && _t !== void 0 ? _t : true,
+		        inlineRefs: (_u = o.inlineRefs) !== null && _u !== void 0 ? _u : true,
+		        schemaId: (_v = o.schemaId) !== null && _v !== void 0 ? _v : "$id",
+		        addUsedSchema: (_w = o.addUsedSchema) !== null && _w !== void 0 ? _w : true,
+		        validateSchema: (_x = o.validateSchema) !== null && _x !== void 0 ? _x : true,
+		        validateFormats: (_y = o.validateFormats) !== null && _y !== void 0 ? _y : true,
+		        unicodeRegExp: (_z = o.unicodeRegExp) !== null && _z !== void 0 ? _z : true,
+		        int32range: (_0 = o.int32range) !== null && _0 !== void 0 ? _0 : true,
 		        uriResolver: uriResolver,
 		    };
 		}
@@ -47382,7 +47313,7 @@ function requireCore$1 () {
 		}
 		function addRule(keyword, definition, dataType) {
 		    var _a;
-		    const post = definition === null || definition === undefined ? undefined : definition.post;
+		    const post = definition === null || definition === void 0 ? void 0 : definition.post;
 		    if (dataType && post)
 		        throw new Error('keyword with "post" flag cannot have "type"');
 		    const { RULES } = this;
@@ -47407,7 +47338,7 @@ function requireCore$1 () {
 		    else
 		        ruleGroup.rules.push(rule);
 		    RULES.all[keyword] = rule;
-		    (_a = definition.implements) === null || _a === undefined ? undefined : _a.forEach((kwd) => this.addKeyword(kwd));
+		    (_a = definition.implements) === null || _a === void 0 ? void 0 : _a.forEach((kwd) => this.addKeyword(kwd));
 		}
 		function addBeforeRule(ruleGroup, rule, before) {
 		    const i = ruleGroup.rules.findIndex((_rule) => _rule.keyword === before);
@@ -47469,7 +47400,7 @@ function requireRef$2 () {
 	if (hasRequiredRef$2) return ref$2;
 	hasRequiredRef$2 = 1;
 	Object.defineProperty(ref$2, "__esModule", { value: true });
-	ref$2.callRef = ref$2.getValidate = undefined;
+	ref$2.callRef = ref$2.getValidate = void 0;
 	const ref_error_1 = requireRef_error();
 	const code_1 = requireCode();
 	const codegen_1 = requireCodegen();
@@ -47560,7 +47491,7 @@ function requireRef$2 () {
 	        var _a;
 	        if (!it.opts.unevaluated)
 	            return;
-	        const schEvaluated = (_a = sch === null || sch === undefined ? undefined : sch.validate) === null || _a === undefined ? undefined : _a.evaluated;
+	        const schEvaluated = (_a = sch === null || sch === void 0 ? void 0 : sch.validate) === null || _a === void 0 ? void 0 : _a.evaluated;
 	        // TODO refactor
 	        if (it.props !== true) {
 	            if (schEvaluated && !schEvaluated.dynamicProps) {
@@ -47858,7 +47789,7 @@ function requireRequired () {
 	            const props = cxt.parentSchema.properties;
 	            const { definedProperties } = cxt.it;
 	            for (const requiredKey of schema) {
-	                if ((props === null || props === undefined ? undefined : props[requiredKey]) === undefined && !definedProperties.has(requiredKey)) {
+	                if ((props === null || props === void 0 ? void 0 : props[requiredKey]) === undefined && !definedProperties.has(requiredKey)) {
 	                    const schemaPath = it.schemaEnv.baseId + it.errSchemaPath;
 	                    const msg = `required property "${requiredKey}" is not defined at "${schemaPath}" (strictRequired)`;
 	                    (0, util_1.checkStrictMode)(it, msg, it.opts.strictRequired);
@@ -48093,7 +48024,7 @@ function require_enum$1 () {
 	            throw new Error("enum must have non-empty array");
 	        const useLoop = schema.length >= it.opts.loopEnum;
 	        let eql;
-	        const getEql = () => (eql !== null && eql !== undefined ? eql : (eql = (0, util_1.useFunc)(gen, equal_1.default)));
+	        const getEql = () => (eql !== null && eql !== void 0 ? eql : (eql = (0, util_1.useFunc)(gen, equal_1.default)));
 	        let valid;
 	        if (useLoop || $data) {
 	            valid = gen.let("valid");
@@ -48174,7 +48105,7 @@ function requireAdditionalItems () {
 	if (hasRequiredAdditionalItems) return additionalItems;
 	hasRequiredAdditionalItems = 1;
 	Object.defineProperty(additionalItems, "__esModule", { value: true });
-	additionalItems.validateAdditionalItems = undefined;
+	additionalItems.validateAdditionalItems = void 0;
 	const codegen_1 = requireCodegen();
 	const util_1 = requireUtil$2();
 	const error = {
@@ -48234,7 +48165,7 @@ function requireItems () {
 	if (hasRequiredItems) return items;
 	hasRequiredItems = 1;
 	Object.defineProperty(items, "__esModule", { value: true });
-	items.validateTuple = undefined;
+	items.validateTuple = void 0;
 	const codegen_1 = requireCodegen();
 	const util_1 = requireUtil$2();
 	const code_1 = requireCode();
@@ -48449,16 +48380,16 @@ function requireContains () {
 	return contains;
 }
 
-var dependencies$1 = {};
+var dependencies = {};
 
 var hasRequiredDependencies;
 
 function requireDependencies () {
-	if (hasRequiredDependencies) return dependencies$1;
+	if (hasRequiredDependencies) return dependencies;
 	hasRequiredDependencies = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = undefined;
+		exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
 		const codegen_1 = requireCodegen();
 		const util_1 = requireUtil$2();
 		const code_1 = requireCode();
@@ -48541,8 +48472,8 @@ function requireDependencies () {
 		exports.validateSchemaDeps = validateSchemaDeps;
 		exports.default = def;
 		
-	} (dependencies$1));
-	return dependencies$1;
+	} (dependencies));
+	return dependencies;
 }
 
 var propertyNames = {};
@@ -49283,7 +49214,7 @@ function requireMetadata$1 () {
 	if (hasRequiredMetadata$1) return metadata$2;
 	hasRequiredMetadata$1 = 1;
 	Object.defineProperty(metadata$2, "__esModule", { value: true });
-	metadata$2.contentVocabulary = metadata$2.metadataVocabulary = undefined;
+	metadata$2.contentVocabulary = metadata$2.metadataVocabulary = void 0;
 	metadata$2.metadataVocabulary = [
 	    "title",
 	    "description",
@@ -49328,22 +49259,22 @@ function requireDraft7 () {
 
 var discriminator$1 = {};
 
-var types$4 = {};
+var types$3 = {};
 
 var hasRequiredTypes$3;
 
 function requireTypes$3 () {
-	if (hasRequiredTypes$3) return types$4;
+	if (hasRequiredTypes$3) return types$3;
 	hasRequiredTypes$3 = 1;
-	Object.defineProperty(types$4, "__esModule", { value: true });
-	types$4.DiscrError = undefined;
+	Object.defineProperty(types$3, "__esModule", { value: true });
+	types$3.DiscrError = void 0;
 	var DiscrError;
 	(function (DiscrError) {
 	    DiscrError["Tag"] = "tag";
 	    DiscrError["Mapping"] = "mapping";
-	})(DiscrError || (types$4.DiscrError = DiscrError = {}));
+	})(DiscrError || (types$3.DiscrError = DiscrError = {}));
 	
-	return types$4;
+	return types$3;
 }
 
 var hasRequiredDiscriminator$1;
@@ -49409,7 +49340,7 @@ function requireDiscriminator$1 () {
 	            let tagRequired = true;
 	            for (let i = 0; i < oneOf.length; i++) {
 	                let sch = oneOf[i];
-	                if ((sch === null || sch === undefined ? undefined : sch.$ref) && !(0, util_1.schemaHasRulesButRef)(sch, it.self.RULES)) {
+	                if ((sch === null || sch === void 0 ? void 0 : sch.$ref) && !(0, util_1.schemaHasRulesButRef)(sch, it.self.RULES)) {
 	                    const ref = sch.$ref;
 	                    sch = compile_1.resolveRef.call(it.self, it.schemaEnv.root, it.baseId, ref);
 	                    if (sch instanceof compile_1.SchemaEnv)
@@ -49417,7 +49348,7 @@ function requireDiscriminator$1 () {
 	                    if (sch === undefined)
 	                        throw new ref_error_1.default(it.opts.uriResolver, it.baseId, ref);
 	                }
-	                const propSch = (_a = sch === null || sch === undefined ? undefined : sch.properties) === null || _a === undefined ? undefined : _a[tagName];
+	                const propSch = (_a = sch === null || sch === void 0 ? void 0 : sch.properties) === null || _a === void 0 ? void 0 : _a[tagName];
 	                if (typeof propSch != "object") {
 	                    throw new Error(`discriminator: oneOf subschemas (or referenced schemas) must have "properties/${tagName}"`);
 	                }
@@ -49716,7 +49647,7 @@ function requireAjv () {
 	hasRequiredAjv = 1;
 	(function (module, exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = undefined;
+		exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = void 0;
 		const core_1 = requireCore$1();
 		const draft7_1 = requireDraft7();
 		const discriminator_1 = requireDiscriminator$1();
@@ -49779,7 +49710,7 @@ function requireFormats$1 () {
 	hasRequiredFormats$1 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.formatNames = exports.fastFormats = exports.fullFormats = undefined;
+		exports.formatNames = exports.fastFormats = exports.fullFormats = void 0;
 		function fmtDef(validate, compare) {
 		    return { validate, compare };
 		}
@@ -49998,7 +49929,7 @@ function requireLimit () {
 	hasRequiredLimit = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.formatLimitDefinition = undefined;
+		exports.formatLimitDefinition = void 0;
 		const ajv_1 = requireAjv();
 		const codegen_1 = requireCodegen();
 		const ops = codegen_1.operators;
@@ -50103,7 +50034,7 @@ function requireDist$5 () {
 		function addFormats(ajv, list, fs, exportName) {
 		    var _a;
 		    var _b;
-		    (_a = (_b = ajv.opts.code).formats) !== null && _a !== undefined ? _a : (_b.formats = (0, codegen_1._) `require("ajv-formats/dist/formats").${exportName}`);
+		    (_a = (_b = ajv.opts.code).formats) !== null && _a !== void 0 ? _a : (_b.formats = (0, codegen_1._) `require("ajv-formats/dist/formats").${exportName}`);
 		    for (const f of list)
 		        ajv.addFormat(f, fs[f]);
 		}
@@ -50260,7 +50191,7 @@ function requireSchemaValidator () {
 	hasRequiredSchemaValidator = 1;
 	schemaValidator.exports = validate10;
 	schemaValidator.exports.default = validate10;
-	const schema11 = {"$schema":"http://json-schema.org/draft-07/schema#","$id":"http://json-schema.org/draft-07/schema#","title":"Core schema meta-schema","definitions":{"schemaArray":{"type":"array","minItems":1,"items":{"$ref":"#"}},"nonNegativeInteger":{"type":"integer","minimum":0},"nonNegativeIntegerDefault0":{"allOf":[{"$ref":"#/definitions/nonNegativeInteger"},{"default":0}]},"simpleTypes":{"enum":["array","boolean","integer","null","number","object","string"]},"stringArray":{"type":"array","items":{"type":"string"},"uniqueItems":true,"default":[]}},"type":["object","boolean"],"properties":{"$id":{"type":"string","format":"uri-reference"},"$schema":{"type":"string","format":"uri"},"$ref":{"type":"string","format":"uri-reference"},"$comment":{"type":"string"},"title":{"type":"string"},"description":{"type":"string"},"default":true,"readOnly":{"type":"boolean","default":false},"examples":{"type":"array","items":true},"multipleOf":{"type":"number","exclusiveMinimum":0},"maximum":{"type":"number"},"exclusiveMaximum":{"type":"number"},"minimum":{"type":"number"},"exclusiveMinimum":{"type":"number"},"maxLength":{"$ref":"#/definitions/nonNegativeInteger"},"minLength":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"pattern":{"type":"string","format":"regex"},"additionalItems":{"$ref":"#"},"items":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/schemaArray"}],"default":true},"maxItems":{"$ref":"#/definitions/nonNegativeInteger"},"minItems":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"uniqueItems":{"type":"boolean","default":false},"contains":{"$ref":"#"},"maxProperties":{"$ref":"#/definitions/nonNegativeInteger"},"minProperties":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"required":{"$ref":"#/definitions/stringArray"},"additionalProperties":{"$ref":"#"},"definitions":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"properties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"patternProperties":{"type":"object","additionalProperties":{"$ref":"#"},"propertyNames":{"format":"regex"},"default":{}},"dependencies":{"type":"object","additionalProperties":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/stringArray"}]}},"propertyNames":{"$ref":"#"},"const":true,"enum":{"type":"array","items":true,"minItems":1,"uniqueItems":true},"type":{"anyOf":[{"$ref":"#/definitions/simpleTypes"},{"type":"array","items":{"$ref":"#/definitions/simpleTypes"},"minItems":1,"uniqueItems":true}]},"format":{"type":"string"},"contentMediaType":{"type":"string"},"contentEncoding":{"type":"string"},"if":{"$ref":"#"},"then":{"$ref":"#"},"else":{"$ref":"#"},"allOf":{"$ref":"#/definitions/schemaArray"},"anyOf":{"$ref":"#/definitions/schemaArray"},"oneOf":{"$ref":"#/definitions/schemaArray"},"not":{"$ref":"#"}},"default":true};
+	const schema11 = {"type":["object","boolean"]};
 	const schema20 = {"enum":["array","boolean","integer","null","number","object","string"]};
 	const formats0 = /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'"()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?$/i;
 	const formats2 = requireFormats$1().fullFormats.uri;
@@ -53118,7 +53049,7 @@ function requireMetadata () {
 	if (hasRequiredMetadata) return metadata$1;
 	hasRequiredMetadata = 1;
 	Object.defineProperty(metadata$1, "__esModule", { value: true });
-	metadata$1.checkMetadata = undefined;
+	metadata$1.checkMetadata = void 0;
 	const util_1 = requireUtil$2();
 	const def = {
 	    keyword: "metadata",
@@ -53150,7 +53081,7 @@ function requireRef$1 () {
 	if (hasRequiredRef$1) return ref$1;
 	hasRequiredRef$1 = 1;
 	Object.defineProperty(ref$1, "__esModule", { value: true });
-	ref$1.hasRef = undefined;
+	ref$1.hasRef = void 0;
 	const compile_1 = requireCompile();
 	const codegen_1 = requireCodegen();
 	const ref_error_1 = requireRef_error();
@@ -53176,7 +53107,7 @@ function requireRef$1 () {
 	        cxt.ok(valid);
 	        function validateJtdRef() {
 	            var _a;
-	            const refSchema = (_a = root.schema.definitions) === null || _a === undefined ? undefined : _a[ref];
+	            const refSchema = (_a = root.schema.definitions) === null || _a === void 0 ? void 0 : _a[ref];
 	            if (!refSchema) {
 	                throw new ref_error_1.default(it.opts.uriResolver, "", ref, `No definition ${ref}`);
 	            }
@@ -53279,7 +53210,7 @@ function requireError () {
 	if (hasRequiredError) return error;
 	hasRequiredError = 1;
 	Object.defineProperty(error, "__esModule", { value: true });
-	error.typeErrorParams = error.typeErrorMessage = error.typeError = undefined;
+	error.typeErrorParams = error.typeErrorMessage = error.typeError = void 0;
 	const codegen_1 = requireCodegen();
 	function typeError(t) {
 	    return {
@@ -53289,11 +53220,11 @@ function requireError () {
 	}
 	error.typeError = typeError;
 	function typeErrorMessage({ parentSchema }, t) {
-	    return (parentSchema === null || parentSchema === undefined ? undefined : parentSchema.nullable) ? `must be ${t} or null` : `must be ${t}`;
+	    return (parentSchema === null || parentSchema === void 0 ? void 0 : parentSchema.nullable) ? `must be ${t} or null` : `must be ${t}`;
 	}
 	error.typeErrorMessage = typeErrorMessage;
 	function typeErrorParams({ parentSchema }, t) {
-	    return (0, codegen_1._) `{type: ${t}, nullable: ${!!(parentSchema === null || parentSchema === undefined ? undefined : parentSchema.nullable)}}`;
+	    return (0, codegen_1._) `{type: ${t}, nullable: ${!!(parentSchema === null || parentSchema === void 0 ? void 0 : parentSchema.nullable)}}`;
 	}
 	error.typeErrorParams = typeErrorParams;
 	
@@ -53307,7 +53238,7 @@ function requireType$1 () {
 	hasRequiredType$1 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.intRange = undefined;
+		exports.intRange = void 0;
 		const codegen_1 = requireCodegen();
 		const timestamp_1 = requireTimestamp$1();
 		const util_1 = requireUtil$2();
@@ -53388,7 +53319,7 @@ function requireNullable () {
 	if (hasRequiredNullable) return nullable;
 	hasRequiredNullable = 1;
 	Object.defineProperty(nullable, "__esModule", { value: true });
-	nullable.checkNullableObject = nullable.checkNullable = undefined;
+	nullable.checkNullableObject = nullable.checkNullable = void 0;
 	const codegen_1 = requireCodegen();
 	function checkNullable({ gen, data, parentSchema }, cond = codegen_1.nil) {
 	    const valid = gen.name("valid");
@@ -53503,7 +53434,7 @@ function requireProperties () {
 	hasRequiredProperties = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.validateProperties = exports.error = undefined;
+		exports.validateProperties = exports.error = void 0;
 		const code_1 = requireCode();
 		const util_1 = requireUtil$2();
 		const codegen_1 = requireCodegen();
@@ -54004,16 +53935,16 @@ function requireJtdSchema () {
 
 var serialize = {};
 
-var types$3 = {};
+var types$2 = {};
 
 var hasRequiredTypes$2;
 
 function requireTypes$2 () {
-	if (hasRequiredTypes$2) return types$3;
+	if (hasRequiredTypes$2) return types$2;
 	hasRequiredTypes$2 = 1;
-	Object.defineProperty(types$3, "__esModule", { value: true });
-	types$3.jtdForms = undefined;
-	types$3.jtdForms = [
+	Object.defineProperty(types$2, "__esModule", { value: true });
+	types$2.jtdForms = void 0;
+	types$2.jtdForms = [
 	    "elements",
 	    "values",
 	    "discriminator",
@@ -54024,7 +53955,7 @@ function requireTypes$2 () {
 	    "ref",
 	];
 	
-	return types$3;
+	return types$2;
 }
 
 var quote = {};
@@ -54312,7 +54243,7 @@ function requireParseJson () {
 	if (hasRequiredParseJson) return parseJson;
 	hasRequiredParseJson = 1;
 	Object.defineProperty(parseJson, "__esModule", { value: true });
-	parseJson.parseJsonString = parseJson.parseJsonNumber = parseJson.parseJson = undefined;
+	parseJson.parseJsonString = parseJson.parseJsonNumber = parseJson.parseJson = void 0;
 	const rxParseJson = /position\s(\d+)(?: \(line \d+ column \d+\))?$/;
 	function parseJson$1(s, pos) {
 	    let endPos;
@@ -54832,7 +54763,7 @@ function requireParse$3 () {
 	    skipWhitespace(cxt);
 	    gen.if((0, codegen_1._) `${jsonSlice(n)} === ${tok}`, () => {
 	        gen.add(names_1.default.jsonPos, n);
-	        success === null || success === undefined ? undefined : success(cxt);
+	        success === null || success === void 0 ? void 0 : success(cxt);
 	    }, () => fail(cxt));
 	}
 	function skipWhitespace({ gen, char: c }) {
@@ -54862,7 +54793,7 @@ function requireJtd () {
 	hasRequiredJtd = 1;
 	(function (module, exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = undefined;
+		exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = void 0;
 		const core_1 = requireCore$1();
 		const jtd_1 = requireJtd$1();
 		const jtd_schema_1 = requireJtdSchema();
@@ -55088,7 +55019,7 @@ function requireStandalone$1 () {
 		    }
 		    function funcExportCode(source) {
 		        const usedValues = {};
-		        const n = source === null || source === undefined ? undefined : source.validateName;
+		        const n = source === null || source === void 0 ? void 0 : source.validateName;
 		        const vCode = validateCode(usedValues, source);
 		        if (ajv.opts.code.esm) {
 		            // Always do named export as `validate` rather than the variable `n` which is `validateXX` for known export value
@@ -55107,7 +55038,7 @@ function requireStandalone$1 () {
 		                const exportSyntax = ajv.opts.code.esm
 		                    ? (0, code_1._) `export const ${(0, code_1.getEsmExportName)(name)}`
 		                    : (0, code_1._) `exports${(0, code_1.getProperty)(name)}`;
-		                code = (0, code_1._) `${code}${_n}${exportSyntax} = ${(_a = v.source) === null || _a === undefined ? undefined : _a.validateName};${_n}${vCode}`;
+		                code = (0, code_1._) `${code}${_n}${exportSyntax} = ${(_a = v.source) === null || _a === void 0 ? void 0 : _a.validateName};${_n}${vCode}`;
 		            }
 		        }
 		        return `${code}`;
@@ -55123,7 +55054,7 @@ function requireStandalone$1 () {
 		        return s.evaluated ? (0, code_1._) `${code}${s.validateName}.evaluated = ${s.evaluated};${_n}` : code;
 		        function refValidateCode(n) {
 		            var _a;
-		            const vRef = (_a = n.value) === null || _a === undefined ? undefined : _a.ref;
+		            const vRef = (_a = n.value) === null || _a === void 0 ? void 0 : _a.ref;
 		            if (n.prefix === "validate" && typeof vRef == "function") {
 		                const v = vRef;
 		                return validateCode(usedValues, v.source);
@@ -55136,14 +55067,14 @@ function requireStandalone$1 () {
 		                const wrapper = (0, code_1._) `${def} ${n} = {validate: ${validateName}};`;
 		                if (usedState(validateName) === scope_1.UsedValueState.Started)
 		                    return wrapper;
-		                const vCode = validateCode(usedValues, validate === null || validate === undefined ? undefined : validate.source);
+		                const vCode = validateCode(usedValues, validate === null || validate === void 0 ? void 0 : validate.source);
 		                return (0, code_1._) `${wrapper}${_n}${vCode}`;
 		            }
 		            return undefined;
 		        }
 		        function usedState(name) {
 		            var _a;
-		            return (_a = usedValues[name.prefix]) === null || _a === undefined ? undefined : _a.get(name);
+		            return (_a = usedValues[name.prefix]) === null || _a === void 0 ? void 0 : _a.get(name);
 		        }
 		        function setUsedState(name, state) {
 		            const { prefix } = name;
@@ -58796,7 +58727,7 @@ var safeRegex2 = {exports: {}};
 
 var dist$5 = {exports: {}};
 
-var types$2 = {};
+var types$1 = {};
 
 var tokens = {};
 
@@ -58810,16 +58741,16 @@ function requireTokens () {
 	return tokens;
 }
 
-var types$1 = {};
+var types = {};
 
 var hasRequiredTypes$1;
 
 function requireTypes$1 () {
-	if (hasRequiredTypes$1) return types$1;
+	if (hasRequiredTypes$1) return types;
 	hasRequiredTypes$1 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.types = undefined;
+		exports.types = void 0;
 		(function (types) {
 		    types[types["ROOT"] = 0] = "ROOT";
 		    types[types["GROUP"] = 1] = "GROUP";
@@ -58831,8 +58762,8 @@ function requireTypes$1 () {
 		    types[types["CHAR"] = 7] = "CHAR";
 		})(exports.types || (exports.types = {}));
 		
-	} (types$1));
-	return types$1;
+	} (types));
+	return types;
 }
 
 var setLookup = {};
@@ -58850,17 +58781,17 @@ function requireSetLookup () {
 var hasRequiredTypes;
 
 function requireTypes () {
-	if (hasRequiredTypes) return types$2;
+	if (hasRequiredTypes) return types$1;
 	hasRequiredTypes = 1;
 	(function (exports) {
-		var __createBinding = (types$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (types$1 && types$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 		}) : (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __exportStar = (types$2.__exportStar) || function(m, exports) {
+		var __exportStar = (types$1 && types$1.__exportStar) || function(m, exports) {
 		    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
@@ -58868,8 +58799,8 @@ function requireTypes () {
 		__exportStar(requireTypes$1(), exports);
 		__exportStar(requireSetLookup(), exports);
 		
-	} (types$2));
-	return types$2;
+	} (types$1));
+	return types$1;
 }
 
 var tokenizer = {};
@@ -58884,7 +58815,7 @@ function requireSets () {
 	if (hasRequiredSets) return sets;
 	hasRequiredSets = 1;
 	Object.defineProperty(sets, "__esModule", { value: true });
-	sets.anyChar = sets.notWhitespace = sets.whitespace = sets.notInts = sets.ints = sets.notWords = sets.words = undefined;
+	sets.anyChar = sets.notWhitespace = sets.whitespace = sets.notInts = sets.ints = sets.notWords = sets.words = void 0;
 	const types_1 = requireTypes();
 	const INTS = () => [{ type: types_1.types.RANGE, from: 48, to: 57 }];
 	const WORDS = () => [
@@ -58933,19 +58864,19 @@ var hasRequiredUtil$1;
 function requireUtil$1 () {
 	if (hasRequiredUtil$1) return util$1;
 	hasRequiredUtil$1 = 1;
-	var __createBinding = (util$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (util$1 && util$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (util$1.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (util$1 && util$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (util$1.__importStar) || function (mod) {
+	var __importStar = (util$1 && util$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -58953,7 +58884,7 @@ function requireUtil$1 () {
 	    return result;
 	};
 	Object.defineProperty(util$1, "__esModule", { value: true });
-	util$1.tokenizeClass = util$1.strToChars = undefined;
+	util$1.tokenizeClass = util$1.strToChars = void 0;
 	const types_1 = requireTypes();
 	const sets = __importStar(requireSets());
 	const CTRL = '@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ ?';
@@ -58999,11 +58930,11 @@ function requireUtil$1 () {
 	    let tokens = [], rs, c;
 	    const regexp = /\\(?:(w)|(d)|(s)|(W)|(D)|(S))|((?:(?:\\)(.)|([^\]\\]))-(((?:\\)])|(((?:\\)?([^\]])))))|(\])|(?:\\)?([^])/g;
 	    while ((rs = regexp.exec(str)) !== null) {
-	        const p = (_g = (_f = (_e = (_d = (_c = (_b = (_a = (rs[1] && sets.words())) !== null && _a !== undefined ? _a : (rs[2] && sets.ints())) !== null && _b !== undefined ? _b : (rs[3] && sets.whitespace())) !== null && _c !== undefined ? _c : (rs[4] && sets.notWords())) !== null && _d !== undefined ? _d : (rs[5] && sets.notInts())) !== null && _e !== undefined ? _e : (rs[6] && sets.notWhitespace())) !== null && _f !== undefined ? _f : (rs[7] && {
+	        const p = (_g = (_f = (_e = (_d = (_c = (_b = (_a = (rs[1] && sets.words())) !== null && _a !== void 0 ? _a : (rs[2] && sets.ints())) !== null && _b !== void 0 ? _b : (rs[3] && sets.whitespace())) !== null && _c !== void 0 ? _c : (rs[4] && sets.notWords())) !== null && _d !== void 0 ? _d : (rs[5] && sets.notInts())) !== null && _e !== void 0 ? _e : (rs[6] && sets.notWhitespace())) !== null && _f !== void 0 ? _f : (rs[7] && {
 	            type: types_1.types.RANGE,
 	            from: (rs[8] || rs[9]).charCodeAt(0),
 	            to: (c = rs[10]).charCodeAt(c.length - 1),
-	        })) !== null && _g !== undefined ? _g : ((c = rs[16]) && { type: types_1.types.CHAR, value: c.charCodeAt(0) });
+	        })) !== null && _g !== void 0 ? _g : ((c = rs[16]) && { type: types_1.types.CHAR, value: c.charCodeAt(0) });
 	        if (p) {
 	            tokens.push(p);
 	        }
@@ -59022,19 +58953,19 @@ var hasRequiredTokenizer;
 function requireTokenizer () {
 	if (hasRequiredTokenizer) return tokenizer;
 	hasRequiredTokenizer = 1;
-	var __createBinding = (tokenizer.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (tokenizer && tokenizer.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (tokenizer.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (tokenizer && tokenizer.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (tokenizer.__importStar) || function (mod) {
+	var __importStar = (tokenizer && tokenizer.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -59042,7 +58973,7 @@ function requireTokenizer () {
 	    return result;
 	};
 	Object.defineProperty(tokenizer, "__esModule", { value: true });
-	tokenizer.tokenizer = undefined;
+	tokenizer.tokenizer = void 0;
 	const util = __importStar(requireUtil$1());
 	const types_1 = requireTypes();
 	const sets = __importStar(requireSets());
@@ -59396,19 +59327,19 @@ var hasRequiredSetsLookup;
 function requireSetsLookup () {
 	if (hasRequiredSetsLookup) return setsLookup;
 	hasRequiredSetsLookup = 1;
-	var __createBinding = (setsLookup.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (setsLookup && setsLookup.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (setsLookup.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (setsLookup && setsLookup.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (setsLookup.__importStar) || function (mod) {
+	var __importStar = (setsLookup && setsLookup.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -59416,7 +59347,7 @@ function requireSetsLookup () {
 	    return result;
 	};
 	Object.defineProperty(setsLookup, "__esModule", { value: true });
-	setsLookup.NOTANYCHAR = setsLookup.WHITESPACE = setsLookup.WORDS = setsLookup.INTS = undefined;
+	setsLookup.NOTANYCHAR = setsLookup.WHITESPACE = setsLookup.WORDS = setsLookup.INTS = void 0;
 	const Sets = __importStar(requireSets());
 	const types_1 = requireTypes();
 	function setToLookup(tokens) {
@@ -59454,19 +59385,19 @@ var hasRequiredWriteSetTokens;
 function requireWriteSetTokens () {
 	if (hasRequiredWriteSetTokens) return writeSetTokens;
 	hasRequiredWriteSetTokens = 1;
-	var __createBinding = (writeSetTokens.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (writeSetTokens && writeSetTokens.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (writeSetTokens.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (writeSetTokens && writeSetTokens.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (writeSetTokens.__importStar) || function (mod) {
+	var __importStar = (writeSetTokens && writeSetTokens.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -59474,7 +59405,7 @@ function requireWriteSetTokens () {
 	    return result;
 	};
 	Object.defineProperty(writeSetTokens, "__esModule", { value: true });
-	writeSetTokens.writeSetTokens = writeSetTokens.setChar = undefined;
+	writeSetTokens.writeSetTokens = writeSetTokens.setChar = void 0;
 	const types_1 = requireTypes();
 	const sets = __importStar(requireSetsLookup());
 	/**
@@ -59571,7 +59502,7 @@ function requireReconstruct () {
 	hasRequiredReconstruct = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.reconstruct = undefined;
+		exports.reconstruct = void 0;
 		const types_1 = requireTypes();
 		const write_set_tokens_1 = requireWriteSetTokens();
 		const reduceStack = (stack) => stack.map(exports.reconstruct).join('');
@@ -59669,7 +59600,7 @@ function requireDist$4 () {
 		    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.types = undefined;
+		exports.types = void 0;
 		/* istanbul ignore file */
 		const types_1 = requireTypes();
 		Object.defineProperty(exports, "types", { enumerable: true, get: function () { return types_1.types; } });
@@ -61943,7 +61874,7 @@ function requireRoute () {
 	      }
 
 	      for (const hook of lifecycleHooks) {
-	        if (hook in opts) {
+	        if (opts && hook in opts) {
 	          if (Array.isArray(opts[hook])) {
 	            for (const func of opts[hook]) {
 	              if (typeof func !== 'function') {
@@ -62461,7 +62392,7 @@ function requireConfigValidator$1 () {
 	hasRequiredConfigValidator$1 = 1;
 	configValidator$1.exports = validate10;
 	configValidator$1.exports.default = validate10;
-	const schema11 = {"type":"object","additionalProperties":false,"properties":{"connectionTimeout":{"type":"integer","default":0},"keepAliveTimeout":{"type":"integer","default":72000},"forceCloseConnections":{"oneOf":[{"type":"string","pattern":"idle"},{"type":"boolean"}]},"maxRequestsPerSocket":{"type":"integer","default":0,"nullable":true},"requestTimeout":{"type":"integer","default":0},"bodyLimit":{"type":"integer","default":1048576},"caseSensitive":{"type":"boolean","default":true},"allowUnsafeRegex":{"type":"boolean","default":false},"http2":{"type":"boolean"},"https":{"if":{"not":{"oneOf":[{"type":"boolean"},{"type":"null"},{"type":"object","additionalProperties":false,"required":["allowHTTP1"],"properties":{"allowHTTP1":{"type":"boolean"}}}]}},"then":{"setDefaultValue":true}},"ignoreTrailingSlash":{"type":"boolean","default":false},"ignoreDuplicateSlashes":{"type":"boolean","default":false},"disableRequestLogging":{"type":"boolean","default":false},"maxParamLength":{"type":"integer","default":100},"onProtoPoisoning":{"type":"string","default":"error"},"onConstructorPoisoning":{"type":"string","default":"error"},"pluginTimeout":{"type":"integer","default":10000},"requestIdHeader":{"anyOf":[{"type":"boolean"},{"type":"string"}],"default":false},"requestIdLogLabel":{"type":"string","default":"reqId"},"http2SessionTimeout":{"type":"integer","default":72000},"exposeHeadRoutes":{"type":"boolean","default":true},"useSemicolonDelimiter":{"type":"boolean","default":false},"constraints":{"type":"object","additionalProperties":{"type":"object","required":["name","storage","validate","deriveConstraint"],"additionalProperties":true,"properties":{"name":{"type":"string"},"storage":{},"validate":{},"deriveConstraint":{}}}}}};
+	const schema11 = {"properties":{"connectionTimeout":{"type":"integer","default":0},"keepAliveTimeout":{"type":"integer","default":72000},"forceCloseConnections":{"oneOf":[{"type":"string","pattern":"idle"},{"type":"boolean"}]},"maxRequestsPerSocket":{"type":"integer","default":0,"nullable":true},"requestTimeout":{"type":"integer","default":0},"bodyLimit":{"type":"integer","default":1048576},"caseSensitive":{"type":"boolean","default":true},"allowUnsafeRegex":{"type":"boolean","default":false},"http2":{"type":"boolean"},"https":{"if":{"not":{"oneOf":[{"type":"boolean"},{"type":"null"},{"type":"object","additionalProperties":false,"required":["allowHTTP1"],"properties":{"allowHTTP1":{"type":"boolean"}}}]}},"then":{"setDefaultValue":true}},"ignoreTrailingSlash":{"type":"boolean","default":false},"ignoreDuplicateSlashes":{"type":"boolean","default":false},"disableRequestLogging":{"type":"boolean","default":false},"maxParamLength":{"type":"integer","default":100},"onProtoPoisoning":{"type":"string","default":"error"},"onConstructorPoisoning":{"type":"string","default":"error"},"pluginTimeout":{"type":"integer","default":10000},"requestIdHeader":{"anyOf":[{"type":"boolean"},{"type":"string"}],"default":false},"requestIdLogLabel":{"type":"string","default":"reqId"},"http2SessionTimeout":{"type":"integer","default":72000},"exposeHeadRoutes":{"type":"boolean","default":true},"useSemicolonDelimiter":{"type":"boolean","default":false},"constraints":{"type":"object","additionalProperties":{"type":"object","required":["name","storage","validate","deriveConstraint"],"additionalProperties":true,"properties":{"name":{"type":"string"},"storage":{},"validate":{},"deriveConstraint":{}}}}}};
 	const func2 = Object.prototype.hasOwnProperty;
 	const pattern0 = new RegExp("idle", "u");
 
@@ -64895,7 +64826,7 @@ function requireConfigValidator () {
 	hasRequiredConfigValidator = 1;
 	configValidator.exports = validate10;
 	configValidator.exports.default = validate10;
-	const schema11 = {"type":"object","properties":{"url":{"oneOf":[{"type":"string"},{"type":"object","properties":{"protocol":{"type":"string"},"hostname":{"type":"string"},"pathname":{"type":"string"}},"additionalProperties":true,"required":["pathname"]}]},"path":{"oneOf":[{"type":"string"},{"type":"object","properties":{"protocol":{"type":"string"},"hostname":{"type":"string"},"pathname":{"type":"string"}},"additionalProperties":true,"required":["pathname"]}]},"cookies":{"type":"object","additionalProperties":true},"headers":{"type":"object","additionalProperties":true},"query":{"anyOf":[{"type":"object","additionalProperties":true},{"type":"string"}]},"simulate":{"type":"object","properties":{"end":{"type":"boolean"},"split":{"type":"boolean"},"error":{"type":"boolean"},"close":{"type":"boolean"}}},"authority":{"type":"string"},"remoteAddress":{"type":"string"},"method":{"type":"string","enum":["ACL","BIND","CHECKOUT","CONNECT","COPY","DELETE","GET","HEAD","LINK","LOCK","M-SEARCH","MERGE","MKACTIVITY","MKCALENDAR","MKCOL","MOVE","NOTIFY","OPTIONS","PATCH","POST","PROPFIND","PROPPATCH","PURGE","PUT","QUERY","REBIND","REPORT","SEARCH","SOURCE","SUBSCRIBE","TRACE","UNBIND","UNLINK","UNLOCK","UNSUBSCRIBE","acl","bind","checkout","connect","copy","delete","get","head","link","lock","m-search","merge","mkactivity","mkcalendar","mkcol","move","notify","options","patch","post","propfind","proppatch","purge","put","query","rebind","report","search","source","subscribe","trace","unbind","unlink","unlock","unsubscribe"]},"validate":{"type":"boolean"}},"additionalProperties":true,"oneOf":[{"required":["url"]},{"required":["path"]}]};
+	const schema11 = {"properties":{"method":{"enum":["ACL","BIND","CHECKOUT","CONNECT","COPY","DELETE","GET","HEAD","LINK","LOCK","M-SEARCH","MERGE","MKACTIVITY","MKCALENDAR","MKCOL","MOVE","NOTIFY","OPTIONS","PATCH","POST","PROPFIND","PROPPATCH","PURGE","PUT","QUERY","REBIND","REPORT","SEARCH","SOURCE","SUBSCRIBE","TRACE","UNBIND","UNLINK","UNLOCK","UNSUBSCRIBE","acl","bind","checkout","connect","copy","delete","get","head","link","lock","m-search","merge","mkactivity","mkcalendar","mkcol","move","notify","options","patch","post","propfind","proppatch","purge","put","query","rebind","report","search","source","subscribe","trace","unbind","unlink","unlock","unsubscribe"]}}};
 
 	function validate10(data, {instancePath="", parentData, parentDataProperty, rootData=data}={}){
 	let vErrors = null;
@@ -69023,7 +68954,7 @@ function Const(T, options) {
 
 /** `[JavaScript]` Extracts the ConstructorParameters from the given Constructor type */
 function ConstructorParameters(schema, options) {
-    return Tuple(schema.parameters, options);
+    return (IsConstructor$1(schema) ? Tuple(schema.parameters, options) : Never(options));
 }
 
 /** `[Json]` Creates a Enum type */
@@ -69794,7 +69725,7 @@ function ExtractFromMappedResult(R, T) {
 
 /** `[JavaScript]` Extracts the InstanceType from the given Constructor type */
 function InstanceType(schema, options) {
-    return CreateType(schema.returns, options);
+    return (IsConstructor$1(schema) ? CreateType(schema.returns, options) : Never(options));
 }
 
 /** `[Json]` Creates an Integer type */
@@ -70446,7 +70377,7 @@ function Not(type, options) {
 
 /** `[JavaScript]` Extracts the Parameters from the given Function type */
 function Parameters(schema, options) {
-    return Tuple(schema.parameters, options);
+    return (IsFunction$1(schema) ? Tuple(schema.parameters, options) : Never());
 }
 
 /** `[Json]` Creates a Readonly and Optional property */
@@ -70489,7 +70420,7 @@ function Rest(T) {
 
 /** `[JavaScript]` Extracts the ReturnType from the given Function type */
 function ReturnType(schema, options) {
-    return CreateType(schema.returns, options);
+    return (IsFunction$1(schema) ? CreateType(schema.returns, options) : Never(options));
 }
 
 // ------------------------------------------------------------------
@@ -71225,7 +71156,7 @@ function requireSideChannelList () {
 	/** @type {import('./list.d.ts').listGet} */
 	var listGet = function (objects, key) {
 		if (!objects) {
-			return undefined;
+			return void 0;
 		}
 		var node = listGetNode(objects, key);
 		return node && node.value;
@@ -71278,7 +71209,7 @@ function requireSideChannelList () {
 				var root = $o && $o.next;
 				var deletedNode = listDelete($o, key);
 				if (deletedNode && root && root === deletedNode) {
-					$o = undefined;
+					$o = void 0;
 				}
 				return !!deletedNode;
 			},
@@ -71292,7 +71223,7 @@ function requireSideChannelList () {
 				if (!$o) {
 					// Initialize the linked list as an empty node, so that we don't have to special-case handling of the first node: we can always refer to it as (previous node).next, instead of something like (list).head
 					$o = {
-						next: undefined
+						next: void 0
 					};
 				}
 				// eslint-disable-next-line no-extra-parens
@@ -72275,7 +72206,7 @@ function requireGetIntrinsic () {
 					if (!allowMissing) {
 						throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
 					}
-					return undefined;
+					return void 0;
 				}
 				if ($gOPD && (i + 1) >= parts.length) {
 					var desc = $gOPD(value, part);
@@ -72378,7 +72309,7 @@ function requireSideChannelMap () {
 				if ($m) {
 					var result = $mapDelete($m, key);
 					if ($mapSize($m) === 0) {
-						$m = undefined;
+						$m = void 0;
 					}
 					return result;
 				}
@@ -72907,7 +72838,7 @@ function requireStringify () {
 	    encodeDotInKeys: false,
 	    encoder: utils.encode,
 	    encodeValuesOnly: false,
-	    filter: undefined,
+	    filter: void 0,
 	    format: defaultFormat,
 	    formatter: formats.formatters[defaultFormat],
 	    // deprecated
@@ -72954,7 +72885,7 @@ function requireStringify () {
 	    var tmpSc = sideChannel;
 	    var step = 0;
 	    var findFlag = false;
-	    while ((tmpSc = tmpSc.get(sentinel)) !== undefined && !findFlag) {
+	    while ((tmpSc = tmpSc.get(sentinel)) !== void 0 && !findFlag) {
 	        // Where object last appeared in the ref tree
 	        var pos = tmpSc.get(object);
 	        step += 1;
@@ -73011,7 +72942,7 @@ function requireStringify () {
 	        if (encodeValuesOnly && encoder) {
 	            obj = utils.maybeMap(obj, encoder);
 	        }
-	        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : undefined }];
+	        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void 0 }];
 	    } else if (isArray(filter)) {
 	        objKeys = filter;
 	    } else {
@@ -73586,79 +73517,9 @@ var cacheTwirpClient = {};
 
 var userAgent = {};
 
-var name = "@actions/cache";
 var version$1 = "4.0.0";
-var preview = true;
-var description = "Actions cache lib";
-var keywords = [
-	"github",
-	"actions",
-	"cache"
-];
-var homepage = "https://github.com/actions/toolkit/tree/main/packages/cache";
-var license = "MIT";
-var main = "lib/cache.js";
-var types = "lib/cache.d.ts";
-var directories = {
-	lib: "lib",
-	test: "__tests__"
-};
-var files = [
-	"lib",
-	"!.DS_Store"
-];
-var publishConfig = {
-	access: "public"
-};
-var repository = {
-	type: "git",
-	url: "git+https://github.com/actions/toolkit.git",
-	directory: "packages/cache"
-};
-var scripts = {
-	"audit-moderate": "npm install && npm audit --json --audit-level=moderate > audit.json",
-	test: "echo \"Error: run tests from root\" && exit 1",
-	tsc: "tsc"
-};
-var bugs = {
-	url: "https://github.com/actions/toolkit/issues"
-};
-var dependencies = {
-	"@actions/core": "^1.11.1",
-	"@actions/exec": "^1.0.1",
-	"@actions/glob": "^0.1.0",
-	"@actions/http-client": "^2.1.1",
-	"@actions/io": "^1.0.1",
-	"@azure/abort-controller": "^1.1.0",
-	"@azure/ms-rest-js": "^2.6.0",
-	"@azure/storage-blob": "^12.13.0",
-	"@protobuf-ts/plugin": "^2.9.4",
-	semver: "^6.3.1",
-	"twirp-ts": "^2.5.0"
-};
-var devDependencies = {
-	"@types/semver": "^6.0.0",
-	typescript: "^5.2.2"
-};
 var require$$0$1 = {
-	name: name,
-	version: version$1,
-	preview: preview,
-	description: description,
-	keywords: keywords,
-	homepage: homepage,
-	license: license,
-	main: main,
-	types: types,
-	directories: directories,
-	files: files,
-	publishConfig: publishConfig,
-	repository: repository,
-	scripts: scripts,
-	bugs: bugs,
-	dependencies: dependencies,
-	devDependencies: devDependencies
-};
+	version: version$1};
 
 var hasRequiredUserAgent;
 
@@ -73666,7 +73527,7 @@ function requireUserAgent () {
 	if (hasRequiredUserAgent) return userAgent;
 	hasRequiredUserAgent = 1;
 	Object.defineProperty(userAgent, "__esModule", { value: true });
-	userAgent.getUserAgentString = undefined;
+	userAgent.getUserAgentString = void 0;
 	// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
 	const packageJson = require$$0$1;
 	/**
@@ -73688,7 +73549,7 @@ function requireErrors$1 () {
 	if (hasRequiredErrors$1) return errors$1;
 	hasRequiredErrors$1 = 1;
 	Object.defineProperty(errors$1, "__esModule", { value: true });
-	errors$1.UsageError = errors$1.NetworkError = errors$1.GHESNotSupportedError = errors$1.CacheNotFoundError = errors$1.InvalidResponseError = errors$1.FilesNotFoundError = undefined;
+	errors$1.UsageError = errors$1.NetworkError = errors$1.GHESNotSupportedError = errors$1.CacheNotFoundError = errors$1.InvalidResponseError = errors$1.FilesNotFoundError = void 0;
 	class FilesNotFoundError extends Error {
 	    constructor(files = []) {
 	        let message = 'No files were found to upload';
@@ -73767,7 +73628,7 @@ function requireConfig () {
 	if (hasRequiredConfig) return config;
 	hasRequiredConfig = 1;
 	Object.defineProperty(config, "__esModule", { value: true });
-	config.getCacheServiceURL = config.getCacheServiceVersion = config.isGhes = undefined;
+	config.getCacheServiceURL = config.getCacheServiceVersion = config.isGhes = void 0;
 	function isGhes() {
 	    const ghUrl = new URL(process.env['GITHUB_SERVER_URL'] || 'https://github.com');
 	    const hostname = ghUrl.hostname.trimEnd().toUpperCase();
@@ -73818,19 +73679,19 @@ var hasRequiredInternalGlobOptionsHelper;
 function requireInternalGlobOptionsHelper () {
 	if (hasRequiredInternalGlobOptionsHelper) return internalGlobOptionsHelper;
 	hasRequiredInternalGlobOptionsHelper = 1;
-	var __createBinding = (internalGlobOptionsHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalGlobOptionsHelper && internalGlobOptionsHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalGlobOptionsHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalGlobOptionsHelper && internalGlobOptionsHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalGlobOptionsHelper.__importStar) || function (mod) {
+	var __importStar = (internalGlobOptionsHelper && internalGlobOptionsHelper.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -73838,7 +73699,7 @@ function requireInternalGlobOptionsHelper () {
 	    return result;
 	};
 	Object.defineProperty(internalGlobOptionsHelper, "__esModule", { value: true });
-	internalGlobOptionsHelper.getOptions = undefined;
+	internalGlobOptionsHelper.getOptions = void 0;
 	const core = __importStar(requireCore$2());
 	/**
 	 * Returns a copy with defaults filled in.
@@ -73879,30 +73740,30 @@ var hasRequiredInternalPathHelper;
 function requireInternalPathHelper () {
 	if (hasRequiredInternalPathHelper) return internalPathHelper;
 	hasRequiredInternalPathHelper = 1;
-	var __createBinding = (internalPathHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalPathHelper && internalPathHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalPathHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalPathHelper && internalPathHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalPathHelper.__importStar) || function (mod) {
+	var __importStar = (internalPathHelper && internalPathHelper.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __importDefault = (internalPathHelper.__importDefault) || function (mod) {
+	var __importDefault = (internalPathHelper && internalPathHelper.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(internalPathHelper, "__esModule", { value: true });
-	internalPathHelper.safeTrimTrailingSeparator = internalPathHelper.normalizeSeparators = internalPathHelper.hasRoot = internalPathHelper.hasAbsoluteRoot = internalPathHelper.ensureAbsoluteRoot = internalPathHelper.dirname = undefined;
+	internalPathHelper.safeTrimTrailingSeparator = internalPathHelper.normalizeSeparators = internalPathHelper.hasRoot = internalPathHelper.hasAbsoluteRoot = internalPathHelper.ensureAbsoluteRoot = internalPathHelper.dirname = void 0;
 	const path = __importStar(require$$3$2);
 	const assert_1 = __importDefault(require$$0$7);
 	const IS_WINDOWS = process.platform === 'win32';
@@ -74086,7 +73947,7 @@ function requireInternalMatchKind () {
 	hasRequiredInternalMatchKind = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.MatchKind = undefined;
+		exports.MatchKind = void 0;
 		(function (MatchKind) {
 		    /** Not matched */
 		    MatchKind[MatchKind["None"] = 0] = "None";
@@ -74107,19 +73968,19 @@ var hasRequiredInternalPatternHelper;
 function requireInternalPatternHelper () {
 	if (hasRequiredInternalPatternHelper) return internalPatternHelper;
 	hasRequiredInternalPatternHelper = 1;
-	var __createBinding = (internalPatternHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalPatternHelper && internalPatternHelper.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalPatternHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalPatternHelper && internalPatternHelper.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalPatternHelper.__importStar) || function (mod) {
+	var __importStar = (internalPatternHelper && internalPatternHelper.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -74127,7 +73988,7 @@ function requireInternalPatternHelper () {
 	    return result;
 	};
 	Object.defineProperty(internalPatternHelper, "__esModule", { value: true });
-	internalPatternHelper.partialMatch = internalPatternHelper.match = internalPatternHelper.getSearchPaths = undefined;
+	internalPatternHelper.partialMatch = internalPatternHelper.match = internalPatternHelper.getSearchPaths = void 0;
 	const pathHelper = __importStar(requireInternalPathHelper());
 	const internal_match_kind_1 = requireInternalMatchKind();
 	const IS_WINDOWS = process.platform === 'win32';
@@ -75465,30 +75326,30 @@ var hasRequiredInternalPath;
 function requireInternalPath () {
 	if (hasRequiredInternalPath) return internalPath;
 	hasRequiredInternalPath = 1;
-	var __createBinding = (internalPath.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalPath && internalPath.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalPath.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalPath && internalPath.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalPath.__importStar) || function (mod) {
+	var __importStar = (internalPath && internalPath.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __importDefault = (internalPath.__importDefault) || function (mod) {
+	var __importDefault = (internalPath && internalPath.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(internalPath, "__esModule", { value: true });
-	internalPath.Path = undefined;
+	internalPath.Path = void 0;
 	const path = __importStar(require$$3$2);
 	const pathHelper = __importStar(requireInternalPathHelper());
 	const assert_1 = __importDefault(require$$0$7);
@@ -75585,30 +75446,30 @@ var hasRequiredInternalPattern;
 function requireInternalPattern () {
 	if (hasRequiredInternalPattern) return internalPattern;
 	hasRequiredInternalPattern = 1;
-	var __createBinding = (internalPattern.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalPattern && internalPattern.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalPattern.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalPattern && internalPattern.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalPattern.__importStar) || function (mod) {
+	var __importStar = (internalPattern && internalPattern.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __importDefault = (internalPattern.__importDefault) || function (mod) {
+	var __importDefault = (internalPattern && internalPattern.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(internalPattern, "__esModule", { value: true });
-	internalPattern.Pattern = undefined;
+	internalPattern.Pattern = void 0;
 	const os = __importStar(require$$0$5);
 	const path = __importStar(require$$3$2);
 	const pathHelper = __importStar(requireInternalPathHelper());
@@ -75850,7 +75711,7 @@ function requireInternalSearchState () {
 	if (hasRequiredInternalSearchState) return internalSearchState;
 	hasRequiredInternalSearchState = 1;
 	Object.defineProperty(internalSearchState, "__esModule", { value: true });
-	internalSearchState.SearchState = undefined;
+	internalSearchState.SearchState = void 0;
 	class SearchState {
 	    constructor(path, level) {
 	        this.path = path;
@@ -75867,26 +75728,26 @@ var hasRequiredInternalGlobber;
 function requireInternalGlobber () {
 	if (hasRequiredInternalGlobber) return internalGlobber;
 	hasRequiredInternalGlobber = 1;
-	var __createBinding = (internalGlobber.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (internalGlobber && internalGlobber.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (internalGlobber.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (internalGlobber && internalGlobber.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (internalGlobber.__importStar) || function (mod) {
+	var __importStar = (internalGlobber && internalGlobber.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (internalGlobber.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (internalGlobber && internalGlobber.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -75895,15 +75756,15 @@ function requireInternalGlobber () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	var __asyncValues = (internalGlobber.__asyncValues) || function (o) {
+	var __asyncValues = (internalGlobber && internalGlobber.__asyncValues) || function (o) {
 	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
 	    var m = o[Symbol.asyncIterator], i;
 	    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
 	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
 	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 	};
-	var __await = (internalGlobber.__await) || function (v) { return this instanceof __await ? (this.v = v, this) : new __await(v); };
-	var __asyncGenerator = (internalGlobber.__asyncGenerator) || function (thisArg, _arguments, generator) {
+	var __await = (internalGlobber && internalGlobber.__await) || function (v) { return this instanceof __await ? (this.v = v, this) : new __await(v); };
+	var __asyncGenerator = (internalGlobber && internalGlobber.__asyncGenerator) || function (thisArg, _arguments, generator) {
 	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
 	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
 	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
@@ -75915,7 +75776,7 @@ function requireInternalGlobber () {
 	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
 	};
 	Object.defineProperty(internalGlobber, "__esModule", { value: true });
-	internalGlobber.DefaultGlobber = undefined;
+	internalGlobber.DefaultGlobber = void 0;
 	const core = __importStar(requireCore$2());
 	const fs = __importStar(require$$1__default);
 	const globOptionsHelper = __importStar(requireInternalGlobOptionsHelper());
@@ -75937,7 +75798,7 @@ function requireInternalGlobber () {
 	    }
 	    glob() {
 	        var e_1, _a;
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const result = [];
 	            try {
 	                for (var _b = __asyncValues(this.globGenerator()), _c; _c = yield _b.next(), !_c.done;) {
@@ -76032,7 +75893,7 @@ function requireInternalGlobber () {
 	     * Constructs a DefaultGlobber
 	     */
 	    static create(patterns, options) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const result = new DefaultGlobber(options);
 	            if (IS_WINDOWS) {
 	                patterns = patterns.replace(/\r\n/g, '\n');
@@ -76054,7 +75915,7 @@ function requireInternalGlobber () {
 	        });
 	    }
 	    static stat(item, options, traversalChain) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            // Note:
 	            // `stat` returns info about the target of a symlink (or symlink chain)
 	            // `lstat` returns info about a symlink itself
@@ -76109,7 +75970,7 @@ var hasRequiredGlob;
 function requireGlob () {
 	if (hasRequiredGlob) return glob;
 	hasRequiredGlob = 1;
-	var __awaiter = (glob.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (glob && glob.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -76119,7 +75980,7 @@ function requireGlob () {
 	    });
 	};
 	Object.defineProperty(glob, "__esModule", { value: true });
-	glob.create = undefined;
+	glob.create = void 0;
 	const internal_globber_1 = requireInternalGlobber();
 	/**
 	 * Constructs a globber
@@ -76128,7 +75989,7 @@ function requireGlob () {
 	 * @param options   Glob options
 	 */
 	function create(patterns, options) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        return yield internal_globber_1.DefaultGlobber.create(patterns, options);
 	    });
 	}
@@ -77800,7 +77661,7 @@ function requireConstants () {
 	if (hasRequiredConstants) return constants;
 	hasRequiredConstants = 1;
 	Object.defineProperty(constants, "__esModule", { value: true });
-	constants.CacheFileSizeLimit = constants.ManifestFilename = constants.TarFilename = constants.SystemTarPathOnWindows = constants.GnuTarPathOnWindows = constants.SocketTimeout = constants.DefaultRetryDelay = constants.DefaultRetryAttempts = constants.ArchiveToolType = constants.CompressionMethod = constants.CacheFilename = undefined;
+	constants.CacheFileSizeLimit = constants.ManifestFilename = constants.TarFilename = constants.SystemTarPathOnWindows = constants.GnuTarPathOnWindows = constants.SocketTimeout = constants.DefaultRetryDelay = constants.DefaultRetryAttempts = constants.ArchiveToolType = constants.CompressionMethod = constants.CacheFilename = void 0;
 	var CacheFilename;
 	(function (CacheFilename) {
 	    CacheFilename["Gzip"] = "cache.tgz";
@@ -77843,7 +77704,7 @@ var hasRequiredCacheUtils;
 function requireCacheUtils () {
 	if (hasRequiredCacheUtils) return cacheUtils;
 	hasRequiredCacheUtils = 1;
-	var __createBinding = (cacheUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (cacheUtils && cacheUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -77854,19 +77715,19 @@ function requireCacheUtils () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (cacheUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (cacheUtils && cacheUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (cacheUtils.__importStar) || function (mod) {
+	var __importStar = (cacheUtils && cacheUtils.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (cacheUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (cacheUtils && cacheUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -77875,7 +77736,7 @@ function requireCacheUtils () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	var __asyncValues = (cacheUtils.__asyncValues) || function (o) {
+	var __asyncValues = (cacheUtils && cacheUtils.__asyncValues) || function (o) {
 	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
 	    var m = o[Symbol.asyncIterator], i;
 	    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
@@ -77883,7 +77744,7 @@ function requireCacheUtils () {
 	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 	};
 	Object.defineProperty(cacheUtils, "__esModule", { value: true });
-	cacheUtils.getRuntimeToken = cacheUtils.getCacheVersion = cacheUtils.assertDefined = cacheUtils.getGnuTarPathOnWindows = cacheUtils.getCacheFileName = cacheUtils.getCompressionMethod = cacheUtils.unlinkFile = cacheUtils.resolvePaths = cacheUtils.getArchiveFileSizeInBytes = cacheUtils.createTempDirectory = undefined;
+	cacheUtils.getRuntimeToken = cacheUtils.getCacheVersion = cacheUtils.assertDefined = cacheUtils.getGnuTarPathOnWindows = cacheUtils.getCacheFileName = cacheUtils.getCompressionMethod = cacheUtils.unlinkFile = cacheUtils.resolvePaths = cacheUtils.getArchiveFileSizeInBytes = cacheUtils.createTempDirectory = void 0;
 	const core = __importStar(requireCore$2());
 	const exec = __importStar(requireExec());
 	const glob = __importStar(requireGlob());
@@ -77897,7 +77758,7 @@ function requireCacheUtils () {
 	const versionSalt = '1.0';
 	// From https://github.com/actions/toolkit/blob/main/packages/tool-cache/src/tool-cache.ts#L23
 	function createTempDirectory() {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        const IS_WINDOWS = process.platform === 'win32';
 	        let tempDirectory = process.env['RUNNER_TEMP'] || '';
 	        if (!tempDirectory) {
@@ -77929,9 +77790,9 @@ function requireCacheUtils () {
 	function resolvePaths(patterns) {
 	    var _a, e_1, _b, _c;
 	    var _d;
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        const paths = [];
-	        const workspace = (_d = process.env['GITHUB_WORKSPACE']) !== null && _d !== undefined ? _d : process.cwd();
+	        const workspace = (_d = process.env['GITHUB_WORKSPACE']) !== null && _d !== void 0 ? _d : process.cwd();
 	        const globber = yield glob.create(patterns.join('\n'), {
 	            implicitDescendants: false
 	        });
@@ -77966,13 +77827,13 @@ function requireCacheUtils () {
 	}
 	cacheUtils.resolvePaths = resolvePaths;
 	function unlinkFile(filePath) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        return util.promisify(fs.unlink)(filePath);
 	    });
 	}
 	cacheUtils.unlinkFile = unlinkFile;
 	function getVersion(app, additionalArgs = []) {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        let versionOutput = '';
 	        additionalArgs.push('--version');
 	        core.debug(`Checking ${app} ${additionalArgs.join(' ')}`);
@@ -77996,7 +77857,7 @@ function requireCacheUtils () {
 	}
 	// Use zstandard if possible to maximize cache performance
 	function getCompressionMethod() {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        const versionOutput = yield getVersion('zstd', ['--quiet']);
 	        const version = semver.clean(versionOutput);
 	        core.debug(`zstd version: ${version}`);
@@ -78016,7 +77877,7 @@ function requireCacheUtils () {
 	}
 	cacheUtils.getCacheFileName = getCacheFileName;
 	function getGnuTarPathOnWindows() {
-	    return __awaiter(this, undefined, undefined, function* () {
+	    return __awaiter(this, void 0, void 0, function* () {
 	        if (fs.existsSync(constants_1.GnuTarPathOnWindows)) {
 	            return constants_1.GnuTarPathOnWindows;
 	        }
@@ -78085,7 +77946,7 @@ var hasRequiredHooks;
 function requireHooks () {
 	if (hasRequiredHooks) return hooks;
 	hasRequiredHooks = 1;
-	var __awaiter = (hooks.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (hooks && hooks.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -78095,7 +77956,7 @@ function requireHooks () {
 	    });
 	};
 	Object.defineProperty(hooks, "__esModule", { value: true });
-	hooks.isHook = hooks.chainHooks = undefined;
+	hooks.isHook = hooks.chainHooks = void 0;
 	// ChainHooks creates a new ServerHook which chains the callbacks in
 	// each of the constituent hooks passed in. Each hook function will be
 	// called in the order of the ServerHooks values passed in.
@@ -78111,7 +77972,7 @@ function requireHooks () {
 	    }
 	    const serverHook = {
 	        requestReceived(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.requestReceived) {
 	                        continue;
@@ -78121,7 +77982,7 @@ function requireHooks () {
 	            });
 	        },
 	        requestPrepared(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.requestPrepared) {
 	                        continue;
@@ -78133,7 +77994,7 @@ function requireHooks () {
 	            });
 	        },
 	        responsePrepared(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.responsePrepared) {
 	                        continue;
@@ -78143,7 +78004,7 @@ function requireHooks () {
 	            });
 	        },
 	        requestSent(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.requestSent) {
 	                        continue;
@@ -78155,7 +78016,7 @@ function requireHooks () {
 	            });
 	        },
 	        responseSent(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.responseSent) {
 	                        continue;
@@ -78165,7 +78026,7 @@ function requireHooks () {
 	            });
 	        },
 	        requestRouted(ctx) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.requestRouted) {
 	                        continue;
@@ -78175,7 +78036,7 @@ function requireHooks () {
 	            });
 	        },
 	        error(ctx, err) {
-	            return __awaiter(this, undefined, undefined, function* () {
+	            return __awaiter(this, void 0, void 0, function* () {
 	                for (const hook of hooks) {
 	                    if (!hook.error) {
 	                        continue;
@@ -78212,7 +78073,7 @@ function requireErrors () {
 	hasRequiredErrors = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.isValidErrorCode = exports.httpStatusFromErrorCode = exports.TwirpErrorCode = exports.BadRouteError = exports.InternalServerErrorWith = exports.InternalServerError = exports.RequiredArgumentError = exports.InvalidArgumentError = exports.NotFoundError = exports.TwirpError = undefined;
+		exports.isValidErrorCode = exports.httpStatusFromErrorCode = exports.TwirpErrorCode = exports.BadRouteError = exports.InternalServerErrorWith = exports.InternalServerError = exports.RequiredArgumentError = exports.InvalidArgumentError = exports.NotFoundError = exports.TwirpError = void 0;
 		/**
 		 * Represents a twirp error
 		 */
@@ -78491,7 +78352,7 @@ function requireRequest () {
 	if (hasRequiredRequest) return request;
 	hasRequiredRequest = 1;
 	(function (exports) {
-		var __awaiter = (request.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (request && request.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -78501,7 +78362,7 @@ function requireRequest () {
 		    });
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.parseTwirpPath = exports.getRequestData = exports.validateRequest = exports.getContentType = exports.TwirpContentType = undefined;
+		exports.parseTwirpPath = exports.getRequestData = exports.validateRequest = exports.getContentType = exports.TwirpContentType = void 0;
 		const errors_1 = requireErrors();
 		/**
 		 * Supported Twirp Content-Type
@@ -78569,7 +78430,7 @@ function requireRequest () {
 		        }
 		        const chunks = [];
 		        req.on("data", (chunk) => chunks.push(chunk));
-		        req.on("end", () => __awaiter(this, undefined, undefined, function* () {
+		        req.on("end", () => __awaiter(this, void 0, void 0, function* () {
 		            const data = Buffer.concat(chunks);
 		            resolve(data);
 		        }));
@@ -78616,7 +78477,7 @@ var hasRequiredServer;
 function requireServer () {
 	if (hasRequiredServer) return server;
 	hasRequiredServer = 1;
-	var __awaiter = (server.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (server && server.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -78626,7 +78487,7 @@ function requireServer () {
 	    });
 	};
 	Object.defineProperty(server, "__esModule", { value: true });
-	server.writeError = server.TwirpServer = undefined;
+	server.writeError = server.TwirpServer = void 0;
 	const hooks_1 = requireHooks();
 	const request_1 = requireRequest();
 	const errors_1 = requireErrors();
@@ -78657,7 +78518,7 @@ function requireServer () {
 	    httpHandler(options) {
 	        return (req, resp) => {
 	            // setup prefix
-	            if ((options === null || options === undefined ? undefined : options.prefix) !== undefined) {
+	            if ((options === null || options === void 0 ? void 0 : options.prefix) !== undefined) {
 	                this.withPrefix(options.prefix);
 	            }
 	            return this._httpHandler(req, resp);
@@ -78726,7 +78587,7 @@ function requireServer () {
 	     * @private
 	     */
 	    _httpHandler(req, resp) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const ctx = this.createContext(req, resp);
 	            try {
 	                yield this.invokeHook("requestReceived", ctx);
@@ -78774,12 +78635,12 @@ function requireServer () {
 	     * @protected
 	     */
 	    invokeHook(hookName, ctx, err) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            if (this.hooks.length === 0) {
 	                return;
 	            }
 	            const chainedHooks = hooks_1.chainHooks(...this.hooks);
-	            const hook = chainedHooks === null || chainedHooks === undefined ? undefined : chainedHooks[hookName];
+	            const hook = chainedHooks === null || chainedHooks === void 0 ? void 0 : chainedHooks[hookName];
 	            if (hook) {
 	                yield hook(ctx, err || new errors_1.InternalServerError("internal server error"));
 	            }
@@ -78820,7 +78681,7 @@ var hasRequiredInterceptors;
 function requireInterceptors () {
 	if (hasRequiredInterceptors) return interceptors;
 	hasRequiredInterceptors = 1;
-	var __awaiter = (interceptors.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (interceptors && interceptors.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -78830,7 +78691,7 @@ function requireInterceptors () {
 	    });
 	};
 	Object.defineProperty(interceptors, "__esModule", { value: true });
-	interceptors.chainInterceptors = undefined;
+	interceptors.chainInterceptors = void 0;
 	// chains multiple Interceptors into a single Interceptor.
 	// The first interceptor wraps the second one, and so on.
 	// Returns null if interceptors is empty.
@@ -78842,7 +78703,7 @@ function requireInterceptors () {
 	        return interceptors[0];
 	    }
 	    const first = interceptors[0];
-	    return (ctx, request, handler) => __awaiter(this, undefined, undefined, function* () {
+	    return (ctx, request, handler) => __awaiter(this, void 0, void 0, function* () {
 	        let next = handler;
 	        for (let i = interceptors.length - 1; i > 0; i--) {
 	            next = ((next) => (ctx, typedRequest) => {
@@ -79458,26 +79319,26 @@ var hasRequiredHttp_client;
 function requireHttp_client () {
 	if (hasRequiredHttp_client) return http_client;
 	hasRequiredHttp_client = 1;
-	var __createBinding = (http_client.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (http_client && http_client.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (http_client.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (http_client && http_client.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (http_client.__importStar) || function (mod) {
+	var __importStar = (http_client && http_client.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (http_client.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (http_client && http_client.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -79487,9 +79348,9 @@ function requireHttp_client () {
 	    });
 	};
 	Object.defineProperty(http_client, "__esModule", { value: true });
-	http_client.FetchRPC = http_client.wrapErrorResponseToTwirpError = http_client.NodeHttpRPC = undefined;
+	http_client.FetchRPC = http_client.wrapErrorResponseToTwirpError = http_client.NodeHttpRPC = void 0;
 	const http = __importStar(require$$2);
-	const https = __importStar(require$$1$3);
+	const https = __importStar(require$$1$2);
 	const url_1 = require$$5$1;
 	const errors_1 = requireErrors();
 	/**
@@ -79554,7 +79415,7 @@ function requireHttp_client () {
 	 */
 	const FetchRPC = (options) => ({
 	    request(service, method, contentType, data) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const headers = new Headers(options.headers);
 	            headers.set("content-type", contentType);
 	            const response = yield fetch(`${options.baseUrl}/${service}/${method}`, Object.assign(Object.assign({}, options), { method: "POST", headers, body: data instanceof Uint8Array ? data : JSON.stringify(data) }));
@@ -79578,26 +79439,26 @@ function requireGateway () {
 	if (hasRequiredGateway) return gateway;
 	hasRequiredGateway = 1;
 	(function (exports) {
-		var __createBinding = (gateway.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (gateway && gateway.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 		}) : (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (gateway.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (gateway && gateway.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (gateway.__importStar) || function (mod) {
+		var __importStar = (gateway && gateway.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (gateway.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (gateway && gateway.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -79606,7 +79467,7 @@ function requireGateway () {
 		        step((generator = generator.apply(thisArg, _arguments || [])).next());
 		    });
 		};
-		var __rest = (gateway.__rest) || function (s, e) {
+		var __rest = (gateway && gateway.__rest) || function (s, e) {
 		    var t = {};
 		    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
 		        t[p] = s[p];
@@ -79618,7 +79479,7 @@ function requireGateway () {
 		    return t;
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.Gateway = exports.Pattern = undefined;
+		exports.Gateway = exports.Pattern = void 0;
 		const querystring_1 = require$$8;
 		const dotObject = __importStar(requireDotObject());
 		const request_1 = requireRequest();
@@ -79667,7 +79528,7 @@ function requireGateway () {
 		     * @param prefix
 		     */
 		    rewrite(req, resp, prefix = "/twirp") {
-		        return __awaiter(this, undefined, undefined, function* () {
+		        return __awaiter(this, void 0, void 0, function* () {
 		            const [match, route] = this.matchRoute(req);
 		            const body = yield this.prepareTwirpBody(req, match, route);
 		            const twirpUrl = `${prefix}/${route.packageName}.${route.serviceName}/${route.methodName}`;
@@ -79696,7 +79557,7 @@ function requireGateway () {
 		     */
 		    reverseProxy(httpClientOption) {
 		        const client = http_client_1.NodeHttpRPC(httpClientOption);
-		        return (req, res) => __awaiter(this, undefined, undefined, function* () {
+		        return (req, res) => __awaiter(this, void 0, void 0, function* () {
 		            try {
 		                const [match, route] = this.matchRoute(req);
 		                const body = yield this.prepareTwirpBody(req, match, route);
@@ -79727,7 +79588,7 @@ function requireGateway () {
 		     * @protected
 		     */
 		    prepareTwirpBody(req, match, route) {
-		        return __awaiter(this, undefined, undefined, function* () {
+		        return __awaiter(this, void 0, void 0, function* () {
 		            const _a = match.params, { query_string } = _a, params = __rest(_a, ["query_string"]);
 		            let requestBody = Object.assign({}, params);
 		            if (query_string && route.bodyKey !== "*") {
@@ -79760,7 +79621,7 @@ function requireGateway () {
 		     */
 		    matchRoute(req) {
 		        var _a;
-		        const httpMethod = (_a = req.method) === null || _a === undefined ? undefined : _a.toLowerCase();
+		        const httpMethod = (_a = req.method) === null || _a === void 0 ? void 0 : _a.toLowerCase();
 		        if (!httpMethod) {
 		            throw new errors_1.BadRouteError(`method not allowed`, req.method || "", req.url || "");
 		        }
@@ -79793,18 +79654,18 @@ function requireTwirp () {
 	if (hasRequiredTwirp) return twirp;
 	hasRequiredTwirp = 1;
 	(function (exports) {
-		var __createBinding = (twirp.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (twirp && twirp.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 		}) : (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __exportStar = (twirp.__exportStar) || function(m, exports) {
+		var __exportStar = (twirp && twirp.__exportStar) || function(m, exports) {
 		    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.TwirpContentType = undefined;
+		exports.TwirpContentType = void 0;
 		__exportStar(requireContext(), exports);
 		__exportStar(requireServer(), exports);
 		__exportStar(requireInterceptors(), exports);
@@ -80643,7 +80504,7 @@ class BinaryReader {
         this.len = buf.length;
         this.pos = 0;
         this.view = new DataView(buf.buffer, buf.byteOffset, buf.byteLength);
-        this.textDecoder = textDecoder !== null && textDecoder !== undefined ? textDecoder : new TextDecoder("utf-8", {
+        this.textDecoder = textDecoder !== null && textDecoder !== void 0 ? textDecoder : new TextDecoder("utf-8", {
             fatal: true,
             ignoreBOM: true,
         });
@@ -80810,7 +80671,7 @@ function assert(condition, msg) {
  * assert that value cannot exist = type `never`. throw runtime error if it does.
  */
 function assertNever(value, msg) {
-    throw new Error(msg !== null && msg !== undefined ? msg : 'Unexpected object: ' + value);
+    throw new Error(msg !== null && msg !== void 0 ? msg : 'Unexpected object: ' + value);
 }
 const FLOAT32_MAX = 3.4028234663852886e+38, FLOAT32_MIN = -34028234663852886e22, UINT32_MAX = 0xFFFFFFFF, INT32_MAX = 0X7FFFFFFF, INT32_MIN = -2147483648;
 function assertInt32(arg) {
@@ -80850,7 +80711,7 @@ class BinaryWriter {
          * Previous fork states.
          */
         this.stack = [];
-        this.textEncoder = textEncoder !== null && textEncoder !== undefined ? textEncoder : new TextEncoder();
+        this.textEncoder = textEncoder !== null && textEncoder !== void 0 ? textEncoder : new TextEncoder();
         this.chunks = [];
         this.buf = [];
     }
@@ -81085,7 +80946,7 @@ function jsonWriteOptions(options) {
 function mergeJsonOptions(a, b) {
     var _a, _b;
     let c = Object.assign(Object.assign({}, a), b);
-    c.typeRegistry = [...((_a = a === null || a === undefined ? undefined : a.typeRegistry) !== null && _a !== undefined ? _a : []), ...((_b = b === null || b === undefined ? undefined : b.typeRegistry) !== null && _b !== undefined ? _b : [])];
+    c.typeRegistry = [...((_a = a === null || a === void 0 ? void 0 : a.typeRegistry) !== null && _a !== void 0 ? _a : []), ...((_b = b === null || b === void 0 ? void 0 : b.typeRegistry) !== null && _b !== void 0 ? _b : [])];
     return c;
 }
 
@@ -81243,10 +81104,10 @@ var RepeatType;
  */
 function normalizeFieldInfo(field) {
     var _a, _b, _c, _d;
-    field.localName = (_a = field.localName) !== null && _a !== undefined ? _a : lowerCamelCase(field.name);
-    field.jsonName = (_b = field.jsonName) !== null && _b !== undefined ? _b : lowerCamelCase(field.name);
-    field.repeat = (_c = field.repeat) !== null && _c !== undefined ? _c : RepeatType.NO;
-    field.opt = (_d = field.opt) !== null && _d !== undefined ? _d : (field.repeat ? false : field.oneof ? false : field.kind == "message");
+    field.localName = (_a = field.localName) !== null && _a !== void 0 ? _a : lowerCamelCase(field.name);
+    field.jsonName = (_b = field.jsonName) !== null && _b !== void 0 ? _b : lowerCamelCase(field.name);
+    field.repeat = (_c = field.repeat) !== null && _c !== void 0 ? _c : RepeatType.NO;
+    field.opt = (_d = field.opt) !== null && _d !== void 0 ? _d : (field.repeat ? false : field.oneof ? false : field.kind == "message");
     return field;
 }
 /**
@@ -81256,12 +81117,12 @@ function normalizeFieldInfo(field) {
  */
 function readFieldOptions(messageType, fieldName, extensionName, extensionType) {
     var _a;
-    const options = (_a = messageType.fields.find((m, i) => m.localName == fieldName || i == fieldName)) === null || _a === undefined ? undefined : _a.options;
+    const options = (_a = messageType.fields.find((m, i) => m.localName == fieldName || i == fieldName)) === null || _a === void 0 ? void 0 : _a.options;
     return options && options[extensionName] ? extensionType.fromJson(options[extensionName]) : undefined;
 }
 function readFieldOption(messageType, fieldName, extensionName, extensionType) {
     var _a;
-    const options = (_a = messageType.fields.find((m, i) => m.localName == fieldName || i == fieldName)) === null || _a === undefined ? undefined : _a.options;
+    const options = (_a = messageType.fields.find((m, i) => m.localName == fieldName || i == fieldName)) === null || _a === void 0 ? void 0 : _a.options;
     if (!options) {
         return undefined;
     }
@@ -81381,7 +81242,7 @@ function getSelectedOneofValue(oneof) {
 class ReflectionTypeCheck {
     constructor(info) {
         var _a;
-        this.fields = (_a = info.fields) !== null && _a !== undefined ? _a : [];
+        this.fields = (_a = info.fields) !== null && _a !== void 0 ? _a : [];
     }
     prepare() {
         if (this.data)
@@ -81635,7 +81496,7 @@ class ReflectionJsonReader {
         var _a;
         if (this.fMap === undefined) {
             this.fMap = {};
-            const fieldsInput = (_a = this.info.fields) !== null && _a !== undefined ? _a : [];
+            const fieldsInput = (_a = this.info.fields) !== null && _a !== void 0 ? _a : [];
             for (const field of fieldsInput) {
                 this.fMap[field.name] = field;
                 this.fMap[field.jsonName] = field;
@@ -81935,7 +81796,7 @@ class ReflectionJsonReader {
 class ReflectionJsonWriter {
     constructor(info) {
         var _a;
-        this.fields = (_a = info.fields) !== null && _a !== undefined ? _a : [];
+        this.fields = (_a = info.fields) !== null && _a !== void 0 ? _a : [];
     }
     /**
      * Converts the message to a JSON object, based on the field descriptors.
@@ -82192,7 +82053,7 @@ class ReflectionBinaryReader {
     prepare() {
         var _a;
         if (!this.fieldNoToField) {
-            const fieldsInput = (_a = this.info.fields) !== null && _a !== undefined ? _a : [];
+            const fieldsInput = (_a = this.info.fields) !== null && _a !== void 0 ? _a : [];
             this.fieldNoToField = new Map(fieldsInput.map(field => [field.no, field]));
         }
     }
@@ -82654,7 +82515,7 @@ function reflectionMergePartial(info, target, source) {
         let name = field.localName;
         if (field.oneof) {
             const group = input[field.oneof]; // this is the oneof`s group in the source
-            if ((group === null || group === undefined ? undefined : group.oneofKind) == undefined) { // the user is free to omit
+            if ((group === null || group === void 0 ? void 0 : group.oneofKind) == undefined) { // the user is free to omit
                 continue; // we skip this field, and all other members too
             }
             fieldValue = group[name]; // our value comes from the the oneof group of the source
@@ -82795,7 +82656,7 @@ class MessageType {
         this.defaultCheckDepth = 16;
         this.typeName = name;
         this.fields = fields.map(normalizeFieldInfo);
-        this.options = options !== null && options !== undefined ? options : {};
+        this.options = options !== null && options !== void 0 ? options : {};
         this.messagePrototype = Object.create(null, Object.assign(Object.assign({}, baseDescriptors), { [MESSAGE_TYPE]: { value: this } }));
         this.refTypeCheck = new ReflectionTypeCheck(this);
         this.refJsonReader = new ReflectionJsonReader(this);
@@ -82883,7 +82744,7 @@ class MessageType {
     toJsonString(message, options) {
         var _a;
         let value = this.toJson(message, options);
-        return JSON.stringify(value, null, (_a = options === null || options === undefined ? undefined : options.prettySpaces) !== null && _a !== undefined ? _a : 0);
+        return JSON.stringify(value, null, (_a = options === null || options === void 0 ? void 0 : options.prettySpaces) !== null && _a !== void 0 ? _a : 0);
     }
     /**
      * Write the message to binary format.
@@ -82902,7 +82763,7 @@ class MessageType {
      */
     internalJsonRead(json, options, target) {
         if (json !== null && typeof json == "object" && !Array.isArray(json)) {
-            let message = target !== null && target !== undefined ? target : this.create();
+            let message = target !== null && target !== void 0 ? target : this.create();
             this.refJsonReader.read(json, message, options);
             return message;
         }
@@ -82937,7 +82798,7 @@ class MessageType {
      * omitted, a new instance is created first.
      */
     internalBinaryRead(reader, length, options, target) {
-        let message = target !== null && target !== undefined ? target : this.create();
+        let message = target !== null && target !== void 0 ? target : this.create();
         this.refBinReader.read(reader, message, options, length);
         return message;
     }
@@ -83101,13 +82962,13 @@ function normalizeMethodInfo(method, service) {
     var _a, _b, _c;
     let m = method;
     m.service = service;
-    m.localName = (_a = m.localName) !== null && _a !== undefined ? _a : lowerCamelCase(m.name);
+    m.localName = (_a = m.localName) !== null && _a !== void 0 ? _a : lowerCamelCase(m.name);
     // noinspection PointlessBooleanExpressionJS
     m.serverStreaming = !!m.serverStreaming;
     // noinspection PointlessBooleanExpressionJS
     m.clientStreaming = !!m.clientStreaming;
-    m.options = (_b = m.options) !== null && _b !== undefined ? _b : {};
-    m.idempotency = (_c = m.idempotency) !== null && _c !== undefined ? _c : undefined;
+    m.options = (_b = m.options) !== null && _b !== void 0 ? _b : {};
+    m.idempotency = (_c = m.idempotency) !== null && _c !== void 0 ? _c : undefined;
     return m;
 }
 /**
@@ -83117,12 +82978,12 @@ function normalizeMethodInfo(method, service) {
  */
 function readMethodOptions(service, methodName, extensionName, extensionType) {
     var _a;
-    const options = (_a = service.methods.find((m, i) => m.localName === methodName || i === methodName)) === null || _a === undefined ? undefined : _a.options;
+    const options = (_a = service.methods.find((m, i) => m.localName === methodName || i === methodName)) === null || _a === void 0 ? void 0 : _a.options;
     return options && options[extensionName] ? extensionType.fromJson(options[extensionName]) : undefined;
 }
 function readMethodOption(service, methodName, extensionName, extensionType) {
     var _a;
-    const options = (_a = service.methods.find((m, i) => m.localName === methodName || i === methodName)) === null || _a === undefined ? undefined : _a.options;
+    const options = (_a = service.methods.find((m, i) => m.localName === methodName || i === methodName)) === null || _a === void 0 ? void 0 : _a.options;
     if (!options) {
         return undefined;
     }
@@ -83148,7 +83009,7 @@ class ServiceType {
     constructor(typeName, methods, options) {
         this.typeName = typeName;
         this.methods = methods.map(i => normalizeMethodInfo(i, this));
-        this.options = options !== null && options !== undefined ? options : {};
+        this.options = options !== null && options !== void 0 ? options : {};
     }
 }
 
@@ -83162,7 +83023,7 @@ class RpcError extends Error {
         // see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#example
         Object.setPrototypeOf(this, new.target.prototype);
         this.code = code;
-        this.meta = meta !== null && meta !== undefined ? meta : {};
+        this.meta = meta !== null && meta !== void 0 ? meta : {};
     }
     toString() {
         const l = [this.name + ': ' + this.message];
@@ -83497,7 +83358,7 @@ class RpcOutputStreamController {
     }
 }
 
-var __awaiter$4 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+var __awaiter$6 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -83528,7 +83389,7 @@ class UnaryCall {
         return this.promiseFinished().then(value => onfulfilled ? Promise.resolve(onfulfilled(value)) : value, reason => onrejected ? Promise.resolve(onrejected(reason)) : Promise.reject(reason));
     }
     promiseFinished() {
-        return __awaiter$4(this, undefined, undefined, function* () {
+        return __awaiter$6(this, void 0, void 0, function* () {
             let [headers, response, status, trailers] = yield Promise.all([this.headers, this.response, this.status, this.trailers]);
             return {
                 method: this.method,
@@ -83543,7 +83404,7 @@ class UnaryCall {
     }
 }
 
-var __awaiter$3 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+var __awaiter$5 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -83576,7 +83437,7 @@ class ServerStreamingCall {
         return this.promiseFinished().then(value => onfulfilled ? Promise.resolve(onfulfilled(value)) : value, reason => onrejected ? Promise.resolve(onrejected(reason)) : Promise.reject(reason));
     }
     promiseFinished() {
-        return __awaiter$3(this, undefined, undefined, function* () {
+        return __awaiter$5(this, void 0, void 0, function* () {
             let [headers, status, trailers] = yield Promise.all([this.headers, this.status, this.trailers]);
             return {
                 method: this.method,
@@ -83590,7 +83451,7 @@ class ServerStreamingCall {
     }
 }
 
-var __awaiter$2 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+var __awaiter$4 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -83623,7 +83484,7 @@ class ClientStreamingCall {
         return this.promiseFinished().then(value => onfulfilled ? Promise.resolve(onfulfilled(value)) : value, reason => onrejected ? Promise.resolve(onrejected(reason)) : Promise.reject(reason));
     }
     promiseFinished() {
-        return __awaiter$2(this, undefined, undefined, function* () {
+        return __awaiter$4(this, void 0, void 0, function* () {
             let [headers, response, status, trailers] = yield Promise.all([this.headers, this.response, this.status, this.trailers]);
             return {
                 method: this.method,
@@ -83637,7 +83498,7 @@ class ClientStreamingCall {
     }
 }
 
-var __awaiter$1 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+var __awaiter$3 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -83670,7 +83531,7 @@ class DuplexStreamingCall {
         return this.promiseFinished().then(value => onfulfilled ? Promise.resolve(onfulfilled(value)) : value, reason => onrejected ? Promise.resolve(onrejected(reason)) : Promise.reject(reason));
     }
     promiseFinished() {
-        return __awaiter$1(this, undefined, undefined, function* () {
+        return __awaiter$3(this, void 0, void 0, function* () {
             let [headers, status, trailers] = yield Promise.all([this.headers, this.status, this.trailers]);
             return {
                 method: this.method,
@@ -83709,7 +83570,7 @@ class TestTransport {
         this.responseDelay = 50;
         this.betweenResponseDelay = 10;
         this.afterResponseDelay = 10;
-        this.data = data !== null && data !== undefined ? data : {};
+        this.data = data !== null && data !== void 0 ? data : {};
     }
     /**
      * Sent message(s) during the last operation.
@@ -83738,7 +83599,7 @@ class TestTransport {
     // Creates a promise for response headers from the mock data.
     promiseHeaders() {
         var _a;
-        const headers = (_a = this.data.headers) !== null && _a !== undefined ? _a : TestTransport.defaultHeaders;
+        const headers = (_a = this.data.headers) !== null && _a !== void 0 ? _a : TestTransport.defaultHeaders;
         return headers instanceof RpcError
             ? Promise.reject(headers)
             : Promise.resolve(headers);
@@ -83772,7 +83633,7 @@ class TestTransport {
      * not reject. If it does, code is broken.
      */
     streamResponses(method, stream, abort) {
-        return __awaiter(this, undefined, undefined, function* () {
+        return __awaiter(this, void 0, void 0, function* () {
             // normalize "data.response" into an array of valid output messages
             const messages = [];
             if (this.data.response === undefined) {
@@ -83832,7 +83693,7 @@ class TestTransport {
     // Creates a promise for response status from the mock data.
     promiseStatus() {
         var _a;
-        const status = (_a = this.data.status) !== null && _a !== undefined ? _a : TestTransport.defaultStatus;
+        const status = (_a = this.data.status) !== null && _a !== void 0 ? _a : TestTransport.defaultStatus;
         return status instanceof RpcError
             ? Promise.reject(status)
             : Promise.resolve(status);
@@ -83840,7 +83701,7 @@ class TestTransport {
     // Creates a promise for response trailers from the mock data.
     promiseTrailers() {
         var _a;
-        const trailers = (_a = this.data.trailers) !== null && _a !== undefined ? _a : TestTransport.defaultTrailers;
+        const trailers = (_a = this.data.trailers) !== null && _a !== void 0 ? _a : TestTransport.defaultTrailers;
         return trailers instanceof RpcError
             ? Promise.reject(trailers)
             : Promise.resolve(trailers);
@@ -83858,7 +83719,7 @@ class TestTransport {
     }
     unary(method, input, options) {
         var _a;
-        const requestHeaders = (_a = options.meta) !== null && _a !== undefined ? _a : {}, headersPromise = this.promiseHeaders()
+        const requestHeaders = (_a = options.meta) !== null && _a !== void 0 ? _a : {}, headersPromise = this.promiseHeaders()
             .then(delay$3(this.headerDelay, options.abort)), responsePromise = headersPromise
             .catch(_ => {
         })
@@ -83878,7 +83739,7 @@ class TestTransport {
     }
     serverStreaming(method, input, options) {
         var _a;
-        const requestHeaders = (_a = options.meta) !== null && _a !== undefined ? _a : {}, headersPromise = this.promiseHeaders()
+        const requestHeaders = (_a = options.meta) !== null && _a !== void 0 ? _a : {}, headersPromise = this.promiseHeaders()
             .then(delay$3(this.headerDelay, options.abort)), outputStream = new RpcOutputStreamController(), responseStreamClosedPromise = headersPromise
             .then(delay$3(this.responseDelay, options.abort))
             .catch(() => {
@@ -83893,7 +83754,7 @@ class TestTransport {
     }
     clientStreaming(method, options) {
         var _a;
-        const requestHeaders = (_a = options.meta) !== null && _a !== undefined ? _a : {}, headersPromise = this.promiseHeaders()
+        const requestHeaders = (_a = options.meta) !== null && _a !== void 0 ? _a : {}, headersPromise = this.promiseHeaders()
             .then(delay$3(this.headerDelay, options.abort)), responsePromise = headersPromise
             .catch(_ => {
         })
@@ -83913,7 +83774,7 @@ class TestTransport {
     }
     duplex(method, options) {
         var _a;
-        const requestHeaders = (_a = options.meta) !== null && _a !== undefined ? _a : {}, headersPromise = this.promiseHeaders()
+        const requestHeaders = (_a = options.meta) !== null && _a !== void 0 ? _a : {}, headersPromise = this.promiseHeaders()
             .then(delay$3(this.headerDelay, options.abort)), outputStream = new RpcOutputStreamController(), responseStreamClosedPromise = headersPromise
             .then(delay$3(this.responseDelay, options.abort))
             .catch(() => {
@@ -83938,7 +83799,7 @@ TestTransport.defaultTrailers = {
 };
 function delay$3(ms, abort) {
     return (v) => new Promise((resolve, reject) => {
-        if (abort === null || abort === undefined ? undefined : abort.aborted) {
+        if (abort === null || abort === void 0 ? void 0 : abort.aborted) {
             reject(new RpcError("user cancel", "CANCELLED"));
         }
         else {
@@ -84002,7 +83863,7 @@ function stackIntercept(kind, transport, method, options, input) {
     var _a, _b, _c, _d;
     if (kind == "unary") {
         let tail = (mtd, inp, opt) => transport.unary(mtd, inp, opt);
-        for (const curr of ((_a = options.interceptors) !== null && _a !== undefined ? _a : []).filter(i => i.interceptUnary).reverse()) {
+        for (const curr of ((_a = options.interceptors) !== null && _a !== void 0 ? _a : []).filter(i => i.interceptUnary).reverse()) {
             const next = tail;
             tail = (mtd, inp, opt) => curr.interceptUnary(next, mtd, inp, opt);
         }
@@ -84010,7 +83871,7 @@ function stackIntercept(kind, transport, method, options, input) {
     }
     if (kind == "serverStreaming") {
         let tail = (mtd, inp, opt) => transport.serverStreaming(mtd, inp, opt);
-        for (const curr of ((_b = options.interceptors) !== null && _b !== undefined ? _b : []).filter(i => i.interceptServerStreaming).reverse()) {
+        for (const curr of ((_b = options.interceptors) !== null && _b !== void 0 ? _b : []).filter(i => i.interceptServerStreaming).reverse()) {
             const next = tail;
             tail = (mtd, inp, opt) => curr.interceptServerStreaming(next, mtd, inp, opt);
         }
@@ -84018,7 +83879,7 @@ function stackIntercept(kind, transport, method, options, input) {
     }
     if (kind == "clientStreaming") {
         let tail = (mtd, opt) => transport.clientStreaming(mtd, opt);
-        for (const curr of ((_c = options.interceptors) !== null && _c !== undefined ? _c : []).filter(i => i.interceptClientStreaming).reverse()) {
+        for (const curr of ((_c = options.interceptors) !== null && _c !== void 0 ? _c : []).filter(i => i.interceptClientStreaming).reverse()) {
             const next = tail;
             tail = (mtd, opt) => curr.interceptClientStreaming(next, mtd, opt);
         }
@@ -84026,7 +83887,7 @@ function stackIntercept(kind, transport, method, options, input) {
     }
     if (kind == "duplex") {
         let tail = (mtd, opt) => transport.duplex(mtd, opt);
-        for (const curr of ((_d = options.interceptors) !== null && _d !== undefined ? _d : []).filter(i => i.interceptDuplex).reverse()) {
+        for (const curr of ((_d = options.interceptors) !== null && _d !== void 0 ? _d : []).filter(i => i.interceptDuplex).reverse()) {
             const next = tail;
             tail = (mtd, opt) => curr.interceptDuplex(next, mtd, opt);
         }
@@ -84158,7 +84019,7 @@ function requireTimestamp () {
 	if (hasRequiredTimestamp) return timestamp;
 	hasRequiredTimestamp = 1;
 	Object.defineProperty(timestamp, "__esModule", { value: true });
-	timestamp.Timestamp = undefined;
+	timestamp.Timestamp = void 0;
 	const runtime_1 = require$$1;
 	const runtime_2 = require$$1;
 	const runtime_3 = require$$1;
@@ -84253,7 +84114,7 @@ function requireTimestamp () {
 	        return message;
 	    }
 	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 	        while (reader.pos < end) {
 	            let [fieldNo, wireType] = reader.tag();
 	            switch (fieldNo) {
@@ -84301,7 +84162,7 @@ function requireCacheentry () {
 	if (hasRequiredCacheentry) return cacheentry;
 	hasRequiredCacheentry = 1;
 	Object.defineProperty(cacheentry, "__esModule", { value: true });
-	cacheentry.CacheEntry = undefined;
+	cacheentry.CacheEntry = void 0;
 	const runtime_1 = require$$1;
 	const runtime_2 = require$$1;
 	const runtime_3 = require$$1;
@@ -84330,7 +84191,7 @@ function requireCacheentry () {
 	        return message;
 	    }
 	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 	        while (reader.pos < end) {
 	            let [fieldNo, wireType] = reader.tag();
 	            switch (fieldNo) {
@@ -84418,7 +84279,7 @@ function requireCachescope () {
 	if (hasRequiredCachescope) return cachescope;
 	hasRequiredCachescope = 1;
 	Object.defineProperty(cachescope, "__esModule", { value: true });
-	cachescope.CacheScope = undefined;
+	cachescope.CacheScope = void 0;
 	const runtime_1 = require$$1;
 	const runtime_2 = require$$1;
 	const runtime_3 = require$$1;
@@ -84440,7 +84301,7 @@ function requireCachescope () {
 	        return message;
 	    }
 	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 	        while (reader.pos < end) {
 	            let [fieldNo, wireType] = reader.tag();
 	            switch (fieldNo) {
@@ -84488,7 +84349,7 @@ function requireCachemetadata () {
 	if (hasRequiredCachemetadata) return cachemetadata;
 	hasRequiredCachemetadata = 1;
 	Object.defineProperty(cachemetadata, "__esModule", { value: true });
-	cachemetadata.CacheMetadata = undefined;
+	cachemetadata.CacheMetadata = void 0;
 	const runtime_1 = require$$1;
 	const runtime_2 = require$$1;
 	const runtime_3 = require$$1;
@@ -84511,7 +84372,7 @@ function requireCachemetadata () {
 	        return message;
 	    }
 	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 	        while (reader.pos < end) {
 	            let [fieldNo, wireType] = reader.tag();
 	            switch (fieldNo) {
@@ -84560,7 +84421,7 @@ function requireCache () {
 	hasRequiredCache = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.CacheService = exports.LookupCacheEntryResponse = exports.LookupCacheEntryRequest = exports.ListCacheEntriesResponse = exports.ListCacheEntriesRequest = exports.DeleteCacheEntryResponse = exports.DeleteCacheEntryRequest = exports.GetCacheEntryDownloadURLResponse = exports.GetCacheEntryDownloadURLRequest = exports.FinalizeCacheEntryUploadResponse = exports.FinalizeCacheEntryUploadRequest = exports.CreateCacheEntryResponse = exports.CreateCacheEntryRequest = undefined;
+		exports.CacheService = exports.LookupCacheEntryResponse = exports.LookupCacheEntryRequest = exports.ListCacheEntriesResponse = exports.ListCacheEntriesRequest = exports.DeleteCacheEntryResponse = exports.DeleteCacheEntryRequest = exports.GetCacheEntryDownloadURLResponse = exports.GetCacheEntryDownloadURLRequest = exports.FinalizeCacheEntryUploadResponse = exports.FinalizeCacheEntryUploadRequest = exports.CreateCacheEntryResponse = exports.CreateCacheEntryRequest = void 0;
 		// @generated by protobuf-ts 2.9.1 with parameter long_type_string,client_none,generate_dependencies
 		// @generated from protobuf file "results/api/v1/cache.proto" (package "github.actions.results.api.v1", syntax proto3)
 		// tslint:disable
@@ -84589,7 +84450,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84649,7 +84510,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84705,7 +84566,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84771,7 +84632,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84827,7 +84688,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84894,7 +84755,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -84954,7 +84815,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85008,7 +84869,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85063,7 +84924,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85122,7 +84983,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85172,7 +85033,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85238,7 +85099,7 @@ function requireCache () {
 		        return message;
 		    }
 		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== undefined ? target : this.create(), end = reader.pos + length;
+		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
 		        while (reader.pos < end) {
 		            let [fieldNo, wireType] = reader.tag();
 		            switch (fieldNo) {
@@ -85298,7 +85159,7 @@ function requireCache_twirp () {
 	if (hasRequiredCache_twirp) return cache_twirp;
 	hasRequiredCache_twirp = 1;
 	(function (exports) {
-		var __awaiter = (cache_twirp.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (cache_twirp && cache_twirp.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -85308,7 +85169,7 @@ function requireCache_twirp () {
 		    });
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.createCacheServiceServer = exports.CacheServiceMethodList = exports.CacheServiceMethod = exports.CacheServiceClientProtobuf = exports.CacheServiceClientJSON = undefined;
+		exports.createCacheServiceServer = exports.CacheServiceMethodList = exports.CacheServiceMethod = exports.CacheServiceClientProtobuf = exports.CacheServiceClientJSON = void 0;
 		const twirp_ts_1 = requireTwirp();
 		const cache_1 = requireCache();
 		class CacheServiceClientJSON {
@@ -85455,37 +85316,37 @@ function requireCache_twirp () {
 		function matchCacheServiceRoute(method, events) {
 		    switch (method) {
 		        case "CreateCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "CreateCacheEntry" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceCreateCacheEntryRequest(ctx, service, data, interceptors);
 		            });
 		        case "FinalizeCacheEntryUpload":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "FinalizeCacheEntryUpload" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceFinalizeCacheEntryUploadRequest(ctx, service, data, interceptors);
 		            });
 		        case "GetCacheEntryDownloadURL":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "GetCacheEntryDownloadURL" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceGetCacheEntryDownloadURLRequest(ctx, service, data, interceptors);
 		            });
 		        case "DeleteCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "DeleteCacheEntry" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceDeleteCacheEntryRequest(ctx, service, data, interceptors);
 		            });
 		        case "ListCacheEntries":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "ListCacheEntries" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceListCacheEntriesRequest(ctx, service, data, interceptors);
 		            });
 		        case "LookupCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, undefined, undefined, function* () {
+		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
 		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "LookupCacheEntry" });
 		                yield events.onMatch(ctx);
 		                return handleCacheServiceLookupCacheEntryRequest(ctx, service, data, interceptors);
@@ -85563,7 +85424,7 @@ function requireCache_twirp () {
 		    }
 		}
 		function handleCacheServiceCreateCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85594,7 +85455,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceFinalizeCacheEntryUploadJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85625,7 +85486,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceGetCacheEntryDownloadURLJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85656,7 +85517,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceDeleteCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85687,7 +85548,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceListCacheEntriesJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85718,7 +85579,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceLookupCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85749,7 +85610,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceCreateCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85774,7 +85635,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceFinalizeCacheEntryUploadProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85799,7 +85660,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceGetCacheEntryDownloadURLProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85824,7 +85685,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceDeleteCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85849,7 +85710,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceListCacheEntriesProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85874,7 +85735,7 @@ function requireCache_twirp () {
 		    });
 		}
 		function handleCacheServiceLookupCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, undefined, undefined, function* () {
+		    return __awaiter(this, void 0, void 0, function* () {
 		        let request;
 		        let response;
 		        try {
@@ -85908,7 +85769,7 @@ var hasRequiredCacheTwirpClient;
 function requireCacheTwirpClient () {
 	if (hasRequiredCacheTwirpClient) return cacheTwirpClient;
 	hasRequiredCacheTwirpClient = 1;
-	var __awaiter = (cacheTwirpClient.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (cacheTwirpClient && cacheTwirpClient.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -85918,7 +85779,7 @@ function requireCacheTwirpClient () {
 	    });
 	};
 	Object.defineProperty(cacheTwirpClient, "__esModule", { value: true });
-	cacheTwirpClient.internalCacheTwirpClient = undefined;
+	cacheTwirpClient.internalCacheTwirpClient = void 0;
 	const core_1 = requireCore$2();
 	const user_agent_1 = requireUserAgent();
 	const errors_1 = requireErrors$1();
@@ -85957,7 +85818,7 @@ function requireCacheTwirpClient () {
 	    // This function satisfies the Rpc interface. It is compatible with the JSON
 	    // JSON generated client.
 	    request(service, method, contentType, data) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            const url = new URL(`/twirp/${service}/${method}`, this.baseUrl).href;
 	            (0, core_1.debug)(`[Request] ${method} ${url}`);
 	            const headers = {
@@ -85973,7 +85834,7 @@ function requireCacheTwirpClient () {
 	        });
 	    }
 	    retryableRequest(operation) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            let attempt = 0;
 	            let errorMessage = '';
 	            let rawBody = '';
@@ -86006,8 +85867,8 @@ function requireCacheTwirpClient () {
 	                    if (error instanceof errors_1.UsageError) {
 	                        throw error;
 	                    }
-	                    if (errors_1.NetworkError.isNetworkErrorCode(error === null || error === undefined ? undefined : error.code)) {
-	                        throw new errors_1.NetworkError(error === null || error === undefined ? undefined : error.code);
+	                    if (errors_1.NetworkError.isNetworkErrorCode(error === null || error === void 0 ? void 0 : error.code)) {
+	                        throw new errors_1.NetworkError(error === null || error === void 0 ? void 0 : error.code);
 	                    }
 	                    isRetryable = true;
 	                    errorMessage = error.message;
@@ -86044,7 +85905,7 @@ function requireCacheTwirpClient () {
 	        return retryableStatusCodes.includes(statusCode);
 	    }
 	    sleep(milliseconds) {
-	        return __awaiter(this, undefined, undefined, function* () {
+	        return __awaiter(this, void 0, void 0, function* () {
 	            return new Promise(resolve => setTimeout(resolve, milliseconds));
 	        });
 	    }
@@ -86062,7 +85923,7 @@ function requireCacheTwirpClient () {
 	    }
 	}
 	function internalCacheTwirpClient(options) {
-	    const client = new CacheServiceClient((0, user_agent_1.getUserAgentString)(), options === null || options === undefined ? undefined : options.maxAttempts, options === null || options === undefined ? undefined : options.retryIntervalMs, options === null || options === undefined ? undefined : options.retryMultiplier);
+	    const client = new CacheServiceClient((0, user_agent_1.getUserAgentString)(), options === null || options === void 0 ? void 0 : options.maxAttempts, options === null || options === void 0 ? void 0 : options.retryIntervalMs, options === null || options === void 0 ? void 0 : options.retryMultiplier);
 	    return new cache_twirp_1.CacheServiceClientJSON(client);
 	}
 	cacheTwirpClient.internalCacheTwirpClient = internalCacheTwirpClient;
@@ -86084,7 +85945,7 @@ class HttpPipeline {
     constructor(policies) {
         var _a;
         this._policies = [];
-        this._policies = (_a = policies === null || policies === undefined ? undefined : policies.slice(0)) !== null && _a !== undefined ? _a : [];
+        this._policies = (_a = policies === null || policies === void 0 ? void 0 : policies.slice(0)) !== null && _a !== void 0 ? _a : [];
         this._orderedPolicies = undefined;
     }
     addPolicy(policy, options = {}) {
@@ -86562,20 +86423,20 @@ class AbortError extends Error {
  * @returns A promise that can be aborted.
  */
 function createAbortablePromise(buildPromise, options) {
-    const { cleanupBeforeAbort, abortSignal, abortErrorMsg } = options !== null && options !== undefined ? options : {};
+    const { cleanupBeforeAbort, abortSignal, abortErrorMsg } = options !== null && options !== void 0 ? options : {};
     return new Promise((resolve, reject) => {
         function rejectOnAbort() {
-            reject(new AbortError(abortErrorMsg !== null && abortErrorMsg !== undefined ? abortErrorMsg : "The operation was aborted."));
+            reject(new AbortError(abortErrorMsg !== null && abortErrorMsg !== void 0 ? abortErrorMsg : "The operation was aborted."));
         }
         function removeListeners() {
-            abortSignal === null || abortSignal === undefined ? undefined : abortSignal.removeEventListener("abort", onAbort);
+            abortSignal === null || abortSignal === void 0 ? void 0 : abortSignal.removeEventListener("abort", onAbort);
         }
         function onAbort() {
-            cleanupBeforeAbort === null || cleanupBeforeAbort === undefined ? undefined : cleanupBeforeAbort();
+            cleanupBeforeAbort === null || cleanupBeforeAbort === void 0 ? void 0 : cleanupBeforeAbort();
             removeListeners();
             rejectOnAbort();
         }
-        if (abortSignal === null || abortSignal === undefined ? undefined : abortSignal.aborted) {
+        if (abortSignal === null || abortSignal === void 0 ? void 0 : abortSignal.aborted) {
             return rejectOnAbort();
         }
         try {
@@ -86590,7 +86451,7 @@ function createAbortablePromise(buildPromise, options) {
         catch (err) {
             reject(err);
         }
-        abortSignal === null || abortSignal === undefined ? undefined : abortSignal.addEventListener("abort", onAbort);
+        abortSignal === null || abortSignal === void 0 ? void 0 : abortSignal.addEventListener("abort", onAbort);
     });
 }
 
@@ -86632,7 +86493,7 @@ function delay$2(timeInMs, options) {
     }, {
         cleanupBeforeAbort: () => clearTimeout(token),
         abortSignal,
-        abortErrorMsg: abortErrorMsg !== null && abortErrorMsg !== undefined ? abortErrorMsg : StandardAbortMessage$1,
+        abortErrorMsg: abortErrorMsg !== null && abortErrorMsg !== void 0 ? abortErrorMsg : StandardAbortMessage$1,
     });
 }
 /**
@@ -86711,7 +86572,7 @@ function getErrorMessage(e) {
 // Licensed under the MIT License.
 var _a$1;
 // NOTE: This is a workaround until we can use `globalThis.crypto.randomUUID` in Node.js 19+.
-const uuidFunction = typeof ((_a$1 = globalThis === null || globalThis === undefined ? undefined : globalThis.crypto) === null || _a$1 === undefined ? undefined : _a$1.randomUUID) === "function"
+const uuidFunction = typeof ((_a$1 = globalThis === null || globalThis === void 0 ? void 0 : globalThis.crypto) === null || _a$1 === void 0 ? void 0 : _a$1.randomUUID) === "function"
     ? globalThis.crypto.randomUUID.bind(globalThis.crypto)
     : randomUUID$1;
 /**
@@ -86730,10 +86591,10 @@ var _a, _b, _c, _d;
  * A constant that indicates whether the environment the code is running is a Web Worker.
  */
 typeof self === "object" &&
-    typeof (self === null || self === undefined ? undefined : self.importScripts) === "function" &&
-    (((_a = self.constructor) === null || _a === undefined ? undefined : _a.name) === "DedicatedWorkerGlobalScope" ||
-        ((_b = self.constructor) === null || _b === undefined ? undefined : _b.name) === "ServiceWorkerGlobalScope" ||
-        ((_c = self.constructor) === null || _c === undefined ? undefined : _c.name) === "SharedWorkerGlobalScope");
+    typeof (self === null || self === void 0 ? void 0 : self.importScripts) === "function" &&
+    (((_a = self.constructor) === null || _a === void 0 ? void 0 : _a.name) === "DedicatedWorkerGlobalScope" ||
+        ((_b = self.constructor) === null || _b === void 0 ? void 0 : _b.name) === "ServiceWorkerGlobalScope" ||
+        ((_c = self.constructor) === null || _c === void 0 ? void 0 : _c.name) === "SharedWorkerGlobalScope");
 /**
  * A constant that indicates whether the environment the code is running is Deno.
  */
@@ -86749,7 +86610,7 @@ typeof Bun !== "undefined" && typeof Bun.version !== "undefined";
  */
 const isNodeLike = typeof globalThis.process !== "undefined" &&
     Boolean(globalThis.process.version) &&
-    Boolean((_d = globalThis.process.versions) === null || _d === undefined ? undefined : _d.node);
+    Boolean((_d = globalThis.process.versions) === null || _d === void 0 ? void 0 : _d.node);
 /**
  * A constant that indicates whether the environment the code is running is a Node.js compatible environment.
  * @deprecated Use `isNodeLike` instead.
@@ -86924,7 +86785,7 @@ const logPolicyName = "logPolicy";
  */
 function logPolicy(options = {}) {
     var _a;
-    const logger = (_a = options.logger) !== null && _a !== undefined ? _a : logger$2.info;
+    const logger = (_a = options.logger) !== null && _a !== void 0 ? _a : logger$2.info;
     const sanitizer = new Sanitizer({
         additionalAllowedHeaderNames: options.additionalAllowedHeaderNames,
         additionalAllowedQueryParameters: options.additionalAllowedQueryParameters,
@@ -87115,7 +86976,7 @@ function __values$1(o) {
     if (m) return m.call(o);
     if (o && typeof o.length === "number") return {
         next: function () {
-            if (o && i >= o.length) o = undefined;
+            if (o && i >= o.length) o = void 0;
             return { value: o && o[i++], done: !o };
         }
     };
@@ -87368,7 +87229,7 @@ function multipartPolicy() {
                 throw new Error("multipartBody and regular body cannot be set at the same time");
             }
             let boundary = request.multipartBody.boundary;
-            const contentTypeHeader = (_a = request.headers.get("Content-Type")) !== null && _a !== undefined ? _a : "multipart/mixed";
+            const contentTypeHeader = (_a = request.headers.get("Content-Type")) !== null && _a !== void 0 ? _a : "multipart/mixed";
             const parsedHeader = contentTypeHeader.match(/^(multipart\/[^ ;]+)(?:; *boundary=(.+))?$/);
             if (!parsedHeader) {
                 throw new Error(`Got multipart request body, but content-type header was not multipart: ${contentTypeHeader}`);
@@ -87377,7 +87238,7 @@ function multipartPolicy() {
             if (parsedBoundary && boundary && parsedBoundary !== boundary) {
                 throw new Error(`Multipart boundary was specified as ${parsedBoundary} in the header, but got ${boundary} in the request body`);
             }
-            boundary !== null && boundary !== undefined ? boundary : (boundary = parsedBoundary);
+            boundary !== null && boundary !== void 0 ? boundary : (boundary = parsedBoundary);
             if (boundary) {
                 assertValidBoundary(boundary);
             }
@@ -87432,10 +87293,10 @@ function delay$1(delayInMs, value, options) {
         let timer = undefined;
         let onAborted = undefined;
         const rejectOnAbort = () => {
-            return reject(new AbortError((options === null || options === undefined ? undefined : options.abortErrorMsg) ? options === null || options === undefined ? undefined : options.abortErrorMsg : StandardAbortMessage));
+            return reject(new AbortError((options === null || options === void 0 ? void 0 : options.abortErrorMsg) ? options === null || options === void 0 ? void 0 : options.abortErrorMsg : StandardAbortMessage));
         };
         const removeListeners = () => {
-            if ((options === null || options === undefined ? undefined : options.abortSignal) && onAborted) {
+            if ((options === null || options === void 0 ? void 0 : options.abortSignal) && onAborted) {
                 options.abortSignal.removeEventListener("abort", onAborted);
             }
         };
@@ -87446,14 +87307,14 @@ function delay$1(delayInMs, value, options) {
             removeListeners();
             return rejectOnAbort();
         };
-        if ((options === null || options === undefined ? undefined : options.abortSignal) && options.abortSignal.aborted) {
+        if ((options === null || options === void 0 ? void 0 : options.abortSignal) && options.abortSignal.aborted) {
             return rejectOnAbort();
         }
         timer = setTimeout(() => {
             removeListeners();
             resolve(value);
         }, delayInMs);
-        if (options === null || options === undefined ? undefined : options.abortSignal) {
+        if (options === null || options === void 0 ? void 0 : options.abortSignal) {
             options.abortSignal.addEventListener("abort", onAborted);
         }
     });
@@ -87557,8 +87418,8 @@ const DEFAULT_CLIENT_MAX_RETRY_INTERVAL = 1000 * 64;
  */
 function exponentialRetryStrategy(options = {}) {
     var _a, _b;
-    const retryInterval = (_a = options.retryDelayInMs) !== null && _a !== undefined ? _a : DEFAULT_CLIENT_RETRY_INTERVAL;
-    const maxRetryInterval = (_b = options.maxRetryDelayInMs) !== null && _b !== undefined ? _b : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
+    const retryInterval = (_a = options.retryDelayInMs) !== null && _a !== void 0 ? _a : DEFAULT_CLIENT_RETRY_INTERVAL;
+    const maxRetryInterval = (_b = options.maxRetryDelayInMs) !== null && _b !== void 0 ? _b : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
     return {
         name: "exponentialRetryStrategy",
         retry({ retryCount, response, responseError }) {
@@ -87646,12 +87507,12 @@ function retryPolicy(strategies, options = { maxRetries: DEFAULT_RETRY_POLICY_CO
                     }
                     response = responseError.response;
                 }
-                if ((_a = request.abortSignal) === null || _a === undefined ? undefined : _a.aborted) {
+                if ((_a = request.abortSignal) === null || _a === void 0 ? void 0 : _a.aborted) {
                     logger.error(`Retry ${retryCount}: Request aborted.`);
                     const abortError = new AbortError();
                     throw abortError;
                 }
-                if (retryCount >= ((_b = options.maxRetries) !== null && _b !== undefined ? _b : DEFAULT_RETRY_POLICY_COUNT)) {
+                if (retryCount >= ((_b = options.maxRetries) !== null && _b !== void 0 ? _b : DEFAULT_RETRY_POLICY_COUNT)) {
                     logger.info(`Retry ${retryCount}: Maximum retries reached. Returning the last received response, or throwing the last received error.`);
                     if (responseError) {
                         throw responseError;
@@ -87725,7 +87586,7 @@ function defaultRetryPolicy(options = {}) {
     return {
         name: defaultRetryPolicyName,
         sendRequest: retryPolicy([throttlingRetryStrategy(), exponentialRetryStrategy(options)], {
-            maxRetries: (_a = options.maxRetries) !== null && _a !== undefined ? _a : DEFAULT_RETRY_POLICY_COUNT,
+            maxRetries: (_a = options.maxRetries) !== null && _a !== void 0 ? _a : DEFAULT_RETRY_POLICY_COUNT,
         }).sendRequest,
     };
 }
@@ -87765,7 +87626,7 @@ class HttpHeadersImpl {
      */
     get(name) {
         var _a;
-        return (_a = this._headersMap.get(normalizeName(name))) === null || _a === undefined ? undefined : _a.value;
+        return (_a = this._headersMap.get(normalizeName(name))) === null || _a === void 0 ? void 0 : _a.value;
     }
     /**
      * Get whether or not this header collection contains a header entry for the provided header name.
@@ -87829,7 +87690,7 @@ function formDataToFormDataMap(formData) {
     var _a;
     const formDataMap = {};
     for (const [key, value] of formData.entries()) {
-        (_a = formDataMap[key]) !== null && _a !== undefined ? _a : (formDataMap[key] = []);
+        (_a = formDataMap[key]) !== null && _a !== void 0 ? _a : (formDataMap[key] = []);
         formDataMap[key].push(value);
     }
     return formDataMap;
@@ -87880,7 +87741,7 @@ async function prepareFormData(formData, request) {
         // content type is specified and is not multipart/form-data. Exit.
         return;
     }
-    request.headers.set("Content-Type", contentType !== null && contentType !== undefined ? contentType : "multipart/form-data");
+    request.headers.set("Content-Type", contentType !== null && contentType !== void 0 ? contentType : "multipart/form-data");
     // set body to MultipartRequestBody using content from FormDataMap
     const parts = [];
     for (const [fieldName, values] of Object.entries(formData)) {
@@ -89133,7 +88994,7 @@ var hasRequiredHelpers;
 function requireHelpers () {
 	if (hasRequiredHelpers) return helpers;
 	hasRequiredHelpers = 1;
-	var __createBinding = (helpers.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (helpers && helpers.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -89144,12 +89005,12 @@ function requireHelpers () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (helpers.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (helpers && helpers.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (helpers.__importStar) || function (mod) {
+	var __importStar = (helpers && helpers.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
@@ -89157,9 +89018,9 @@ function requireHelpers () {
 	    return result;
 	};
 	Object.defineProperty(helpers, "__esModule", { value: true });
-	helpers.req = helpers.json = helpers.toBuffer = undefined;
+	helpers.req = helpers.json = helpers.toBuffer = void 0;
 	const http = __importStar(require$$2);
-	const https = __importStar(require$$1$3);
+	const https = __importStar(require$$1$2);
 	async function toBuffer(stream) {
 	    let length = 0;
 	    const chunks = [];
@@ -89207,7 +89068,7 @@ function requireDist$2 () {
 	if (hasRequiredDist$2) return dist$1;
 	hasRequiredDist$2 = 1;
 	(function (exports) {
-		var __createBinding = (dist$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (dist$1 && dist$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -89218,26 +89079,26 @@ function requireDist$2 () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (dist$1.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (dist$1 && dist$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (dist$1.__importStar) || function (mod) {
+		var __importStar = (dist$1 && dist$1.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __exportStar = (dist$1.__exportStar) || function(m, exports) {
+		var __exportStar = (dist$1 && dist$1.__exportStar) || function(m, exports) {
 		    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 		};
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.Agent = undefined;
-		const net = __importStar(require$$0$9);
+		exports.Agent = void 0;
+		const net = __importStar(require$$0$8);
 		const http = __importStar(require$$2);
-		const https_1 = require$$1$3;
+		const https_1 = require$$1$2;
 		__exportStar(requireHelpers(), exports);
 		const INTERNAL = Symbol('AgentBaseInternalState');
 		class Agent extends http.Agent {
@@ -89397,11 +89258,11 @@ var hasRequiredParseProxyResponse;
 function requireParseProxyResponse () {
 	if (hasRequiredParseProxyResponse) return parseProxyResponse;
 	hasRequiredParseProxyResponse = 1;
-	var __importDefault = (parseProxyResponse.__importDefault) || function (mod) {
+	var __importDefault = (parseProxyResponse && parseProxyResponse.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(parseProxyResponse, "__esModule", { value: true });
-	parseProxyResponse.parseProxyResponse = undefined;
+	parseProxyResponse.parseProxyResponse = void 0;
 	const debug_1 = __importDefault(requireSrc());
 	const debug = (0, debug_1.default)('https-proxy-agent:parse-proxy-response');
 	function parseProxyResponse$1(socket) {
@@ -89505,7 +89366,7 @@ var hasRequiredDist$1;
 function requireDist$1 () {
 	if (hasRequiredDist$1) return dist$2;
 	hasRequiredDist$1 = 1;
-	var __createBinding = (dist$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (dist$2 && dist$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -89516,25 +89377,25 @@ function requireDist$1 () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (dist$2.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (dist$2 && dist$2.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (dist$2.__importStar) || function (mod) {
+	var __importStar = (dist$2 && dist$2.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __importDefault = (dist$2.__importDefault) || function (mod) {
+	var __importDefault = (dist$2 && dist$2.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(dist$2, "__esModule", { value: true });
-	dist$2.HttpsProxyAgent = undefined;
-	const net = __importStar(require$$0$9);
-	const tls = __importStar(require$$1$2);
+	dist$2.HttpsProxyAgent = void 0;
+	const net = __importStar(require$$0$8);
+	const tls = __importStar(require$$1$4);
 	const assert_1 = __importDefault(require$$0$7);
 	const debug_1 = __importDefault(requireSrc());
 	const agent_base_1 = requireDist$2();
@@ -89696,7 +89557,7 @@ var hasRequiredDist;
 function requireDist () {
 	if (hasRequiredDist) return dist;
 	hasRequiredDist = 1;
-	var __createBinding = (dist.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (dist && dist.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -89707,27 +89568,27 @@ function requireDist () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (dist.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (dist && dist.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (dist.__importStar) || function (mod) {
+	var __importStar = (dist && dist.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __importDefault = (dist.__importDefault) || function (mod) {
+	var __importDefault = (dist && dist.__importDefault) || function (mod) {
 	    return (mod && mod.__esModule) ? mod : { "default": mod };
 	};
 	Object.defineProperty(dist, "__esModule", { value: true });
-	dist.HttpProxyAgent = undefined;
-	const net = __importStar(require$$0$9);
-	const tls = __importStar(require$$1$2);
+	dist.HttpProxyAgent = void 0;
+	const net = __importStar(require$$0$8);
+	const tls = __importStar(require$$1$4);
 	const debug_1 = __importDefault(requireSrc());
-	const events_1 = require$$1$4;
+	const events_1 = require$$1$3;
 	const agent_base_1 = requireDist$2();
 	const url_1 = require$$5$1;
 	const debug = (0, debug_1.default)('http-proxy-agent');
@@ -89894,7 +89755,7 @@ function isBypassed(uri, noProxyList, bypassedMap) {
         return false;
     }
     const host = new URL(uri).hostname;
-    if (bypassedMap === null || bypassedMap === undefined ? undefined : bypassedMap.has(host)) {
+    if (bypassedMap === null || bypassedMap === void 0 ? void 0 : bypassedMap.has(host)) {
         return bypassedMap.get(host);
     }
     let isBypassedFlag = false;
@@ -89917,7 +89778,7 @@ function isBypassed(uri, noProxyList, bypassedMap) {
             }
         }
     }
-    bypassedMap === null || bypassedMap === undefined ? undefined : bypassedMap.set(host, isBypassedFlag);
+    bypassedMap === null || bypassedMap === void 0 ? void 0 : bypassedMap.set(host, isBypassedFlag);
     return isBypassedFlag;
 }
 function loadNoProxy() {
@@ -90025,7 +89886,7 @@ function proxyPolicy(proxySettings, options) {
             var _a;
             if (!request.proxySettings &&
                 defaultProxy &&
-                !isBypassed(request.url, (_a = undefined ) !== null && _a !== undefined ? _a : globalNoProxyList, globalBypassedMap)) {
+                !isBypassed(request.url, (_a = void 0 ) !== null && _a !== void 0 ? _a : globalNoProxyList, globalBypassedMap)) {
                 setProxyAgentOnRequest(request, cachedAgents, defaultProxy);
             }
             else if (request.proxySettings) {
@@ -90139,7 +90000,7 @@ function requireState$1 () {
 	// Copyright (c) Microsoft Corporation.
 	// Licensed under the MIT License.
 	Object.defineProperty(state$3, "__esModule", { value: true });
-	state$3.state = undefined;
+	state$3.state = void 0;
 	/**
 	 * @internal
 	 *
@@ -90228,7 +90089,7 @@ function createTracingClient(options) {
     const { namespace, packageName, packageVersion } = options;
     function startSpan(name, operationOptions, spanOptions) {
         var _a;
-        const startSpanResult = getInstrumenter().startSpan(name, Object.assign(Object.assign({}, spanOptions), { packageName: packageName, packageVersion: packageVersion, tracingContext: (_a = operationOptions === null || operationOptions === undefined ? undefined : operationOptions.tracingOptions) === null || _a === undefined ? undefined : _a.tracingContext }));
+        const startSpanResult = getInstrumenter().startSpan(name, Object.assign(Object.assign({}, spanOptions), { packageName: packageName, packageVersion: packageVersion, tracingContext: (_a = operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions) === null || _a === void 0 ? void 0 : _a.tracingContext }));
         let tracingContext = startSpanResult.tracingContext;
         const span = startSpanResult.span;
         if (!tracingContext.getValue(knownContextKeys.namespace)) {
@@ -90236,7 +90097,7 @@ function createTracingClient(options) {
         }
         span.setAttribute("az.namespace", tracingContext.getValue(knownContextKeys.namespace));
         const updatedOptions = Object.assign({}, operationOptions, {
-            tracingOptions: Object.assign(Object.assign({}, operationOptions === null || operationOptions === undefined ? undefined : operationOptions.tracingOptions), { tracingContext }),
+            tracingOptions: Object.assign(Object.assign({}, operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions), { tracingContext }),
         });
         return {
             span,
@@ -90378,7 +90239,7 @@ function tracingPolicy(options = {}) {
             if (userAgent) {
                 spanAttributes["http.user_agent"] = userAgent;
             }
-            const { span, tracingContext } = (_a = tryCreateSpan(tracingClient, request, spanAttributes)) !== null && _a !== undefined ? _a : {};
+            const { span, tracingContext } = (_a = tryCreateSpan(tracingClient, request, spanAttributes)) !== null && _a !== void 0 ? _a : {};
             if (!span || !tracingContext) {
                 return next(request);
             }
@@ -90486,7 +90347,7 @@ function createPipelineFromOptions(options) {
     }
     pipeline.addPolicy(formDataPolicy(), { beforePolicies: [multipartPolicyName] });
     pipeline.addPolicy(userAgentPolicy(options.userAgentOptions));
-    pipeline.addPolicy(setClientRequestIdPolicy((_a = options.telemetryOptions) === null || _a === undefined ? undefined : _a.clientRequestIdHeaderName));
+    pipeline.addPolicy(setClientRequestIdPolicy((_a = options.telemetryOptions) === null || _a === void 0 ? void 0 : _a.clientRequestIdHeaderName));
     // The multipart policy is added after policies with no phase, so that
     // policies can be added between it and formDataPolicy to modify
     // properties (e.g., making the boundary constant in recorded tests).
@@ -90581,7 +90442,7 @@ class NodeHttpClient {
             }, request.timeout);
         }
         const acceptEncoding = request.headers.get("Accept-Encoding");
-        const shouldDecompress = (acceptEncoding === null || acceptEncoding === undefined ? undefined : acceptEncoding.includes("gzip")) || (acceptEncoding === null || acceptEncoding === undefined ? undefined : acceptEncoding.includes("deflate"));
+        const shouldDecompress = (acceptEncoding === null || acceptEncoding === void 0 ? void 0 : acceptEncoding.includes("gzip")) || (acceptEncoding === null || acceptEncoding === void 0 ? void 0 : acceptEncoding.includes("deflate"));
         let body = typeof request.body === "function" ? request.body() : request.body;
         if (body && !request.headers.has("Content-Length")) {
             const bodyLength = getBodyLength(body);
@@ -90658,7 +90519,7 @@ class NodeHttpClient {
                     var _a;
                     // eslint-disable-next-line promise/always-return
                     if (abortListener) {
-                        (_a = request.abortSignal) === null || _a === undefined ? undefined : _a.removeEventListener("abort", abortListener);
+                        (_a = request.abortSignal) === null || _a === void 0 ? void 0 : _a.removeEventListener("abort", abortListener);
                     }
                 })
                     .catch((e) => {
@@ -90674,7 +90535,7 @@ class NodeHttpClient {
         if (isInsecure && !request.allowInsecureConnection) {
             throw new Error(`Cannot connect to ${request.url} while allowInsecureConnection is false.`);
         }
-        const agent = (_a = request.agent) !== null && _a !== undefined ? _a : this.getOrCreateAgent(request, isInsecure);
+        const agent = (_a = request.agent) !== null && _a !== void 0 ? _a : this.getOrCreateAgent(request, isInsecure);
         const options = {
             agent,
             hostname: url.hostname,
@@ -90687,7 +90548,7 @@ class NodeHttpClient {
             const req = isInsecure ? require$$0$3.request(options, resolve) : https.request(options, resolve);
             req.once("error", (err) => {
                 var _a;
-                reject(new RestError(err.message, { code: (_a = err.code) !== null && _a !== undefined ? _a : RestError.REQUEST_SEND_ERROR, request }));
+                reject(new RestError(err.message, { code: (_a = err.code) !== null && _a !== void 0 ? _a : RestError.REQUEST_SEND_ERROR, request }));
             });
             abortController.signal.addEventListener("abort", () => {
                 const abortError = new AbortError("The operation was aborted.");
@@ -90737,7 +90598,7 @@ class NodeHttpClient {
                 return https.globalAgent;
             }
             // We use the tlsSettings to index cached clients
-            const tlsSettings = (_a = request.tlsSettings) !== null && _a !== undefined ? _a : DEFAULT_TLS_SETTINGS;
+            const tlsSettings = (_a = request.tlsSettings) !== null && _a !== void 0 ? _a : DEFAULT_TLS_SETTINGS;
             // Get the cached agent or create a new one with the
             // provided values for keepAlive and tlsSettings
             let agent = this.cachedHttpsAgents.get(tlsSettings);
@@ -90797,7 +90658,7 @@ function streamToText(stream) {
             resolve(Buffer.concat(buffer).toString("utf8"));
         });
         stream.on("error", (e) => {
-            if (e && (e === null || e === undefined ? undefined : e.name) === "AbortError") {
+            if (e && (e === null || e === void 0 ? void 0 : e.name) === "AbortError") {
                 reject(e);
             }
             else {
@@ -90853,22 +90714,22 @@ class PipelineRequestImpl {
         var _a, _b, _c, _d, _e, _f, _g;
         this.url = options.url;
         this.body = options.body;
-        this.headers = (_a = options.headers) !== null && _a !== undefined ? _a : createHttpHeaders();
-        this.method = (_b = options.method) !== null && _b !== undefined ? _b : "GET";
-        this.timeout = (_c = options.timeout) !== null && _c !== undefined ? _c : 0;
+        this.headers = (_a = options.headers) !== null && _a !== void 0 ? _a : createHttpHeaders();
+        this.method = (_b = options.method) !== null && _b !== void 0 ? _b : "GET";
+        this.timeout = (_c = options.timeout) !== null && _c !== void 0 ? _c : 0;
         this.multipartBody = options.multipartBody;
         this.formData = options.formData;
-        this.disableKeepAlive = (_d = options.disableKeepAlive) !== null && _d !== undefined ? _d : false;
+        this.disableKeepAlive = (_d = options.disableKeepAlive) !== null && _d !== void 0 ? _d : false;
         this.proxySettings = options.proxySettings;
         this.streamResponseStatusCodes = options.streamResponseStatusCodes;
-        this.withCredentials = (_e = options.withCredentials) !== null && _e !== undefined ? _e : false;
+        this.withCredentials = (_e = options.withCredentials) !== null && _e !== void 0 ? _e : false;
         this.abortSignal = options.abortSignal;
         this.tracingOptions = options.tracingOptions;
         this.onUploadProgress = options.onUploadProgress;
         this.onDownloadProgress = options.onDownloadProgress;
         this.requestId = options.requestId || randomUUID();
-        this.allowInsecureConnection = (_f = options.allowInsecureConnection) !== null && _f !== undefined ? _f : false;
-        this.enableBrowserStreams = (_g = options.enableBrowserStreams) !== null && _g !== undefined ? _g : false;
+        this.allowInsecureConnection = (_f = options.allowInsecureConnection) !== null && _f !== void 0 ? _f : false;
+        this.enableBrowserStreams = (_g = options.enableBrowserStreams) !== null && _g !== void 0 ? _g : false;
     }
 }
 /**
@@ -90965,10 +90826,10 @@ function createTokenCycler(credential, tokenCyclerOptions) {
             if (cycler.isRefreshing) {
                 return false;
             }
-            if ((token === null || token === undefined ? undefined : token.refreshAfterTimestamp) && token.refreshAfterTimestamp < Date.now()) {
+            if ((token === null || token === void 0 ? void 0 : token.refreshAfterTimestamp) && token.refreshAfterTimestamp < Date.now()) {
                 return true;
             }
-            return ((_a = token === null || token === undefined ? undefined : token.expiresOnTimestamp) !== null && _a !== undefined ? _a : 0) - options.refreshWindowInMs < Date.now();
+            return ((_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : 0) - options.refreshWindowInMs < Date.now();
         },
         /**
          * Produces true if the cycler MUST refresh (null or nearly-expired
@@ -90991,7 +90852,7 @@ function createTokenCycler(credential, tokenCyclerOptions) {
             // before the refresh can be considered done.
             refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs, 
             // If we don't have a token, then we should timeout immediately
-            (_a = token === null || token === undefined ? undefined : token.expiresOnTimestamp) !== null && _a !== undefined ? _a : Date.now())
+            (_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : Date.now())
                 .then((_token) => {
                 refreshWorker = null;
                 token = _token;
@@ -91107,7 +90968,7 @@ async function authorizeRequestOnCaeChallenge(onChallengeOptions, caeClaims) {
     if (!accessToken) {
         return false;
     }
-    onChallengeOptions.request.headers.set("Authorization", `${(_a = accessToken.tokenType) !== null && _a !== undefined ? _a : "Bearer"} ${accessToken.token}`);
+    onChallengeOptions.request.headers.set("Authorization", `${(_a = accessToken.tokenType) !== null && _a !== void 0 ? _a : "Bearer"} ${accessToken.token}`);
     return true;
 }
 /**
@@ -91119,8 +90980,8 @@ function bearerTokenAuthenticationPolicy(options) {
     const { credential, scopes, challengeCallbacks } = options;
     const logger = options.logger || logger$2;
     const callbacks = {
-        authorizeRequest: (_b = (_a = challengeCallbacks === null || challengeCallbacks === undefined ? undefined : challengeCallbacks.authorizeRequest) === null || _a === undefined ? undefined : _a.bind(challengeCallbacks)) !== null && _b !== undefined ? _b : defaultAuthorizeRequest,
-        authorizeRequestOnChallenge: (_c = challengeCallbacks === null || challengeCallbacks === undefined ? undefined : challengeCallbacks.authorizeRequestOnChallenge) === null || _c === undefined ? undefined : _c.bind(challengeCallbacks),
+        authorizeRequest: (_b = (_a = challengeCallbacks === null || challengeCallbacks === void 0 ? void 0 : challengeCallbacks.authorizeRequest) === null || _a === void 0 ? void 0 : _a.bind(challengeCallbacks)) !== null && _b !== void 0 ? _b : defaultAuthorizeRequest,
+        authorizeRequestOnChallenge: (_c = challengeCallbacks === null || challengeCallbacks === void 0 ? void 0 : challengeCallbacks.authorizeRequestOnChallenge) === null || _c === void 0 ? void 0 : _c.bind(challengeCallbacks),
     };
     // This function encapsulates the entire process of reliably retrieving the token
     // The options are left out of the public API until there's demand to configure this.
@@ -91273,7 +91134,7 @@ function getCaeChallengeClaims(challenges) {
     }
     // Find all challenges present in the header
     const parsedChallenges = parseChallenges(challenges);
-    return (_a = parsedChallenges.find((x) => x.scheme === "Bearer" && x.params.claims && x.params.error === "insufficient_claims")) === null || _a === undefined ? undefined : _a.params.claims;
+    return (_a = parsedChallenges.find((x) => x.scheme === "Bearer" && x.params.claims && x.params.error === "insufficient_claims")) === null || _a === void 0 ? void 0 : _a.params.claims;
 }
 
 // Copyright (c) Microsoft Corporation.
@@ -91369,7 +91230,7 @@ function isPrimitiveBody(value, mapperTypeName) {
         (typeof value === "string" ||
             typeof value === "number" ||
             typeof value === "boolean" ||
-            (mapperTypeName === null || mapperTypeName === undefined ? undefined : mapperTypeName.match(/^(Date|DateTime|DateTimeRfc1123|UnixTime|ByteArray|Base64Url)$/i)) !==
+            (mapperTypeName === null || mapperTypeName === void 0 ? void 0 : mapperTypeName.match(/^(Date|DateTime|DateTimeRfc1123|UnixTime|ByteArray|Base64Url)$/i)) !==
                 null ||
             value === undefined ||
             value === null));
@@ -91433,8 +91294,8 @@ function flattenResponse(fullResponse, responseSpec) {
         return Object.assign(Object.assign({}, parsedHeaders), { body: fullResponse.parsedBody });
     }
     const bodyMapper = responseSpec && responseSpec.bodyMapper;
-    const isNullable = Boolean(bodyMapper === null || bodyMapper === undefined ? undefined : bodyMapper.nullable);
-    const expectedBodyTypeName = bodyMapper === null || bodyMapper === undefined ? undefined : bodyMapper.type.name;
+    const isNullable = Boolean(bodyMapper === null || bodyMapper === void 0 ? void 0 : bodyMapper.nullable);
+    const expectedBodyTypeName = bodyMapper === null || bodyMapper === void 0 ? void 0 : bodyMapper.type.name;
     /** If the body is asked for, we look at the expected body type to handle it */
     if (expectedBodyTypeName === "Stream") {
         return Object.assign(Object.assign({}, parsedHeaders), { blobBody: fullResponse.blobBody, readableStreamBody: fullResponse.readableStreamBody });
@@ -91444,10 +91305,10 @@ function flattenResponse(fullResponse, responseSpec) {
         {};
     const isPageableResponse = Object.keys(modelProperties).some((k) => modelProperties[k].serializedName === "");
     if (expectedBodyTypeName === "Sequence" || isPageableResponse) {
-        const arrayResponse = (_a = fullResponse.parsedBody) !== null && _a !== undefined ? _a : [];
+        const arrayResponse = (_a = fullResponse.parsedBody) !== null && _a !== void 0 ? _a : [];
         for (const key of Object.keys(modelProperties)) {
             if (modelProperties[key].serializedName) {
-                arrayResponse[key] = (_b = fullResponse.parsedBody) === null || _b === undefined ? undefined : _b[key];
+                arrayResponse[key] = (_b = fullResponse.parsedBody) === null || _b === void 0 ? void 0 : _b[key];
             }
         }
         if (parsedHeaders) {
@@ -91542,9 +91403,9 @@ class SerializerImpl {
         var _a, _b, _c;
         const updatedOptions = {
             xml: {
-                rootName: (_a = options.xml.rootName) !== null && _a !== undefined ? _a : "",
-                includeRoot: (_b = options.xml.includeRoot) !== null && _b !== undefined ? _b : false,
-                xmlCharKey: (_c = options.xml.xmlCharKey) !== null && _c !== undefined ? _c : XML_CHARKEY$1,
+                rootName: (_a = options.xml.rootName) !== null && _a !== void 0 ? _a : "",
+                includeRoot: (_b = options.xml.includeRoot) !== null && _b !== void 0 ? _b : false,
+                xmlCharKey: (_c = options.xml.xmlCharKey) !== null && _c !== void 0 ? _c : XML_CHARKEY$1,
             },
         };
         let payload = {};
@@ -91629,11 +91490,11 @@ class SerializerImpl {
         var _a, _b, _c, _d;
         const updatedOptions = {
             xml: {
-                rootName: (_a = options.xml.rootName) !== null && _a !== undefined ? _a : "",
-                includeRoot: (_b = options.xml.includeRoot) !== null && _b !== undefined ? _b : false,
-                xmlCharKey: (_c = options.xml.xmlCharKey) !== null && _c !== undefined ? _c : XML_CHARKEY$1,
+                rootName: (_a = options.xml.rootName) !== null && _a !== void 0 ? _a : "",
+                includeRoot: (_b = options.xml.includeRoot) !== null && _b !== void 0 ? _b : false,
+                xmlCharKey: (_c = options.xml.xmlCharKey) !== null && _c !== void 0 ? _c : XML_CHARKEY$1,
             },
-            ignoreUnknownProperties: (_d = options.ignoreUnknownProperties) !== null && _d !== undefined ? _d : false,
+            ignoreUnknownProperties: (_d = options.ignoreUnknownProperties) !== null && _d !== void 0 ? _d : false,
         };
         if (responseBody === undefined || responseBody === null) {
             if (this.isXML && mapper.type.name === "Sequence" && !mapper.xmlIsWrapped) {
@@ -91912,7 +91773,7 @@ function serializeSequenceType(serializer, mapper, object, objectName, isXml, op
     // not have *all* properties declared (like uberParent),
     // so let's try to look up the full definition by name.
     if (elementType.type.name === "Composite" && elementType.type.className) {
-        elementType = (_a = serializer.modelMappers[elementType.type.className]) !== null && _a !== undefined ? _a : elementType;
+        elementType = (_a = serializer.modelMappers[elementType.type.className]) !== null && _a !== void 0 ? _a : elementType;
     }
     const tempArray = [];
     for (let i = 0; i < object.length; i++) {
@@ -91971,7 +91832,7 @@ function resolveAdditionalProperties(serializer, mapper, objectName) {
     const additionalProperties = mapper.type.additionalProperties;
     if (!additionalProperties && mapper.type.className) {
         const modelMapper = resolveReferencedMapper(serializer, mapper, objectName);
-        return modelMapper === null || modelMapper === undefined ? undefined : modelMapper.type.additionalProperties;
+        return modelMapper === null || modelMapper === void 0 ? void 0 : modelMapper.type.additionalProperties;
     }
     return additionalProperties;
 }
@@ -92000,7 +91861,7 @@ function resolveModelProperties(serializer, mapper, objectName) {
         if (!modelMapper) {
             throw new Error(`mapper() cannot be null or undefined for model "${mapper.type.className}".`);
         }
-        modelProps = modelMapper === null || modelMapper === undefined ? undefined : modelMapper.type.modelProperties;
+        modelProps = modelMapper === null || modelMapper === void 0 ? void 0 : modelMapper.type.modelProperties;
         if (!modelProps) {
             throw new Error(`modelProperties cannot be null or undefined in the ` +
                 `mapper "${JSON.stringify(modelMapper)}" of type "${mapper.type.className}" for object "${objectName}".`);
@@ -92121,7 +91982,7 @@ function isSpecialXmlProperty(propertyName, options) {
 }
 function deserializeCompositeType(serializer, mapper, responseBody, objectName, options) {
     var _a, _b;
-    const xmlCharKey = (_a = options.xml.xmlCharKey) !== null && _a !== undefined ? _a : XML_CHARKEY$1;
+    const xmlCharKey = (_a = options.xml.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY$1;
     if (getPolymorphicDiscriminatorRecursively(serializer, mapper)) {
         mapper = getPolymorphicMapper(serializer, mapper, responseBody, "serializedName");
     }
@@ -92180,7 +92041,7 @@ function deserializeCompositeType(serializer, mapper, responseBody, objectName, 
                       xmlName is "Cors" and xmlElementName is"CorsRule".
                     */
                     const wrapped = responseBody[xmlName];
-                    const elementList = (_b = wrapped === null || wrapped === undefined ? undefined : wrapped[xmlElementName]) !== null && _b !== undefined ? _b : [];
+                    const elementList = (_b = wrapped === null || wrapped === void 0 ? void 0 : wrapped[xmlElementName]) !== null && _b !== void 0 ? _b : [];
                     instance[key] = serializer.deserialize(propertyMapper, elementList, propertyObjectName, options);
                     handledPropertyNames.push(xmlName);
                 }
@@ -92303,7 +92164,7 @@ function deserializeSequenceType(serializer, mapper, responseBody, objectName, o
         // not have *all* properties declared (like uberParent),
         // so let's try to look up the full definition by name.
         if (element.type.name === "Composite" && element.type.className) {
-            element = (_a = serializer.modelMappers[element.type.className]) !== null && _a !== undefined ? _a : element;
+            element = (_a = serializer.modelMappers[element.type.className]) !== null && _a !== void 0 ? _a : element;
         }
         const tempArray = [];
         for (let i = 0; i < responseBody.length; i++) {
@@ -92346,7 +92207,7 @@ function getPolymorphicMapper(serializer, mapper, object, polymorphicPropertyNam
                 discriminatorName = discriminatorName.replace(/\\/gi, "");
             }
             const discriminatorValue = object[discriminatorName];
-            const typeName = (_a = mapper.type.uberParent) !== null && _a !== undefined ? _a : mapper.type.className;
+            const typeName = (_a = mapper.type.uberParent) !== null && _a !== void 0 ? _a : mapper.type.className;
             if (typeof discriminatorValue === "string" && typeName) {
                 const polymorphicMapper = getIndexDiscriminator(serializer.modelMappers.discriminators, discriminatorValue, typeName);
                 if (polymorphicMapper) {
@@ -92371,23 +92232,9 @@ function getPolymorphicDiscriminatorSafely(serializer, typeName) {
  * Known types of Mappers
  */
 const MapperTypeNames = {
-    Base64Url: "Base64Url",
-    Boolean: "Boolean",
-    ByteArray: "ByteArray",
-    Composite: "Composite",
-    Date: "Date",
-    DateTime: "DateTime",
-    DateTimeRfc1123: "DateTimeRfc1123",
-    Dictionary: "Dictionary",
-    Enum: "Enum",
-    Number: "Number",
-    Object: "Object",
     Sequence: "Sequence",
     String: "String",
-    Stream: "Stream",
-    TimeSpan: "TimeSpan",
-    UnixTime: "UnixTime",
-};
+    Stream: "Stream"};
 
 var state$1 = {};
 
@@ -92399,7 +92246,7 @@ function requireState () {
 	// Copyright (c) Microsoft Corporation.
 	// Licensed under the MIT license.
 	Object.defineProperty(state$1, "__esModule", { value: true });
-	state$1.state = undefined;
+	state$1.state = void 0;
 	/**
 	 * Holds the singleton operationRequestMap, to be shared across CJS and ESM imports.
 	 */
@@ -92527,15 +92374,15 @@ const deserializationPolicyName = "deserializationPolicy";
  */
 function deserializationPolicy(options = {}) {
     var _a, _b, _c, _d, _e, _f, _g;
-    const jsonContentTypes = (_b = (_a = options.expectedContentTypes) === null || _a === undefined ? undefined : _a.json) !== null && _b !== undefined ? _b : defaultJsonContentTypes;
-    const xmlContentTypes = (_d = (_c = options.expectedContentTypes) === null || _c === undefined ? undefined : _c.xml) !== null && _d !== undefined ? _d : defaultXmlContentTypes;
+    const jsonContentTypes = (_b = (_a = options.expectedContentTypes) === null || _a === void 0 ? void 0 : _a.json) !== null && _b !== void 0 ? _b : defaultJsonContentTypes;
+    const xmlContentTypes = (_d = (_c = options.expectedContentTypes) === null || _c === void 0 ? void 0 : _c.xml) !== null && _d !== void 0 ? _d : defaultXmlContentTypes;
     const parseXML = options.parseXML;
     const serializerOptions = options.serializerOptions;
     const updatedOptions = {
         xml: {
-            rootName: (_e = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.rootName) !== null && _e !== undefined ? _e : "",
-            includeRoot: (_f = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.includeRoot) !== null && _f !== undefined ? _f : false,
-            xmlCharKey: (_g = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.xmlCharKey) !== null && _g !== undefined ? _g : XML_CHARKEY$1,
+            rootName: (_e = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.rootName) !== null && _e !== void 0 ? _e : "",
+            includeRoot: (_f = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.includeRoot) !== null && _f !== void 0 ? _f : false,
+            xmlCharKey: (_g = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.xmlCharKey) !== null && _g !== void 0 ? _g : XML_CHARKEY$1,
         },
     };
     return {
@@ -92550,13 +92397,13 @@ function getOperationResponseMap(parsedResponse) {
     let result;
     const request = parsedResponse.request;
     const operationInfo = getOperationRequestInfo(request);
-    const operationSpec = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationSpec;
+    const operationSpec = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationSpec;
     if (operationSpec) {
-        if (!(operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationResponseGetter)) {
+        if (!(operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationResponseGetter)) {
             result = operationSpec.responses[parsedResponse.status];
         }
         else {
-            result = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationResponseGetter(operationSpec, parsedResponse);
+            result = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationResponseGetter(operationSpec, parsedResponse);
         }
     }
     return result;
@@ -92564,7 +92411,7 @@ function getOperationResponseMap(parsedResponse) {
 function shouldDeserializeResponse(parsedResponse) {
     const request = parsedResponse.request;
     const operationInfo = getOperationRequestInfo(request);
-    const shouldDeserialize = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.shouldDeserialize;
+    const shouldDeserialize = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.shouldDeserialize;
     let result;
     if (shouldDeserialize === undefined) {
         result = true;
@@ -92583,7 +92430,7 @@ async function deserializeResponseBody(jsonContentTypes, xmlContentTypes, respon
         return parsedResponse;
     }
     const operationInfo = getOperationRequestInfo(parsedResponse.request);
-    const operationSpec = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationSpec;
+    const operationSpec = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationSpec;
     if (!operationSpec || !operationSpec.responses) {
         return parsedResponse;
     }
@@ -92649,8 +92496,8 @@ function handleErrorResponse(parsedResponse, operationSpec, responseSpec, option
             return { error: null, shouldReturnResponse: false };
         }
     }
-    const errorResponseSpec = responseSpec !== null && responseSpec !== undefined ? responseSpec : operationSpec.responses.default;
-    const initialErrorMessage = ((_a = parsedResponse.request.streamResponseStatusCodes) === null || _a === undefined ? undefined : _a.has(parsedResponse.status))
+    const errorResponseSpec = responseSpec !== null && responseSpec !== void 0 ? responseSpec : operationSpec.responses.default;
+    const initialErrorMessage = ((_a = parsedResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(parsedResponse.status))
         ? `Unexpected status code: ${parsedResponse.status}`
         : parsedResponse.bodyAsText;
     const error = new RestError(initialErrorMessage, {
@@ -92704,7 +92551,7 @@ function handleErrorResponse(parsedResponse, operationSpec, responseSpec, option
 }
 async function parse$1(jsonContentTypes, xmlContentTypes, operationResponse, opts, parseXML) {
     var _a;
-    if (!((_a = operationResponse.request.streamResponseStatusCodes) === null || _a === undefined ? undefined : _a.has(operationResponse.status)) &&
+    if (!((_a = operationResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(operationResponse.status)) &&
         operationResponse.bodyAsText) {
         const text = operationResponse.bodyAsText;
         const contentType = operationResponse.headers.get("Content-Type") || "";
@@ -92795,8 +92642,8 @@ function serializationPolicy(options = {}) {
         name: serializationPolicyName,
         async sendRequest(request, next) {
             const operationInfo = getOperationRequestInfo(request);
-            const operationSpec = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationSpec;
-            const operationArguments = operationInfo === null || operationInfo === undefined ? undefined : operationInfo.operationArguments;
+            const operationSpec = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationSpec;
+            const operationArguments = operationInfo === null || operationInfo === void 0 ? void 0 : operationInfo.operationArguments;
             if (operationSpec && operationArguments) {
                 serializeHeaders(request, operationArguments, operationSpec);
                 serializeRequestBody(request, operationArguments, operationSpec, stringifyXML);
@@ -92828,7 +92675,7 @@ function serializeHeaders(request, operationArguments, operationSpec) {
             }
         }
     }
-    const customHeaders = (_b = (_a = operationArguments.options) === null || _a === undefined ? undefined : _a.requestOptions) === null || _b === undefined ? undefined : _b.customHeaders;
+    const customHeaders = (_b = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.requestOptions) === null || _b === void 0 ? void 0 : _b.customHeaders;
     if (customHeaders) {
         for (const customHeaderName of Object.keys(customHeaders)) {
             request.headers.set(customHeaderName, customHeaders[customHeaderName]);
@@ -92842,12 +92689,12 @@ function serializeRequestBody(request, operationArguments, operationSpec, string
     throw new Error("XML serialization unsupported!");
 }) {
     var _a, _b, _c, _d, _e;
-    const serializerOptions = (_a = operationArguments.options) === null || _a === undefined ? undefined : _a.serializerOptions;
+    const serializerOptions = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions;
     const updatedOptions = {
         xml: {
-            rootName: (_b = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.rootName) !== null && _b !== undefined ? _b : "",
-            includeRoot: (_c = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.includeRoot) !== null && _c !== undefined ? _c : false,
-            xmlCharKey: (_d = serializerOptions === null || serializerOptions === undefined ? undefined : serializerOptions.xml.xmlCharKey) !== null && _d !== undefined ? _d : XML_CHARKEY$1,
+            rootName: (_b = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.rootName) !== null && _b !== void 0 ? _b : "",
+            includeRoot: (_c = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.includeRoot) !== null && _c !== void 0 ? _c : false,
+            xmlCharKey: (_d = serializerOptions === null || serializerOptions === void 0 ? void 0 : serializerOptions.xml.xmlCharKey) !== null && _d !== void 0 ? _d : XML_CHARKEY$1,
         },
     };
     const xmlCharKey = updatedOptions.xml.xmlCharKey;
@@ -92937,7 +92784,7 @@ function prepareXMLRootList(obj, elementName, xmlNamespaceKey, xmlNamespace) {
  * @param options - Options to customize the created pipeline.
  */
 function createClientPipeline(options = {}) {
-    const pipeline = createPipelineFromOptions(options !== null && options !== undefined ? options : {});
+    const pipeline = createPipelineFromOptions(options !== null && options !== void 0 ? options : {});
     if (options.credentialOptions) {
         pipeline.addPolicy(bearerTokenAuthenticationPolicy({
             credential: options.credentialOptions.credential,
@@ -93013,7 +92860,7 @@ function replaceAll(input, replacements) {
 function calculateUrlReplacements(operationSpec, operationArguments, fallbackObject) {
     var _a;
     const result = new Map();
-    if ((_a = operationSpec.urlParameters) === null || _a === undefined ? undefined : _a.length) {
+    if ((_a = operationSpec.urlParameters) === null || _a === void 0 ? void 0 : _a.length) {
         for (const urlParameter of operationSpec.urlParameters) {
             let urlParameterValue = getOperationArgumentValueFromParameter(operationArguments, urlParameter, fallbackObject);
             const parameterPathString = getPathStringFromParameter(urlParameter);
@@ -93060,7 +92907,7 @@ function calculateQueryParameters(operationSpec, operationArguments, fallbackObj
     var _a;
     const result = new Map();
     const sequenceParams = new Set();
-    if ((_a = operationSpec.queryParameters) === null || _a === undefined ? undefined : _a.length) {
+    if ((_a = operationSpec.queryParameters) === null || _a === void 0 ? void 0 : _a.length) {
         for (const queryParameter of operationSpec.queryParameters) {
             if (queryParameter.mapper.type.name === "Sequence" && queryParameter.mapper.serializedName) {
                 sequenceParams.add(queryParameter.mapper.serializedName);
@@ -93212,14 +93059,14 @@ class ServiceClient {
     constructor(options = {}) {
         var _a, _b;
         this._requestContentType = options.requestContentType;
-        this._endpoint = (_a = options.endpoint) !== null && _a !== undefined ? _a : options.baseUri;
+        this._endpoint = (_a = options.endpoint) !== null && _a !== void 0 ? _a : options.baseUri;
         if (options.baseUri) {
             logger$1.warning("The baseUri option for SDK Clients has been deprecated, please use endpoint instead.");
         }
         this._allowInsecureConnection = options.allowInsecureConnection;
         this._httpClient = options.httpClient || getCachedDefaultHttpClient$1();
         this.pipeline = options.pipeline || createDefaultPipeline(options);
-        if ((_b = options.additionalPolicies) === null || _b === undefined ? undefined : _b.length) {
+        if ((_b = options.additionalPolicies) === null || _b === void 0 ? void 0 : _b.length) {
             for (const { policy, position } of options.additionalPolicies) {
                 // Sign happens after Retry and is commonly needed to occur
                 // before policies that intercept post-retry.
@@ -93304,11 +93151,11 @@ class ServiceClient {
             return flatResponse;
         }
         catch (error) {
-            if (typeof error === "object" && (error === null || error === undefined ? undefined : error.response)) {
+            if (typeof error === "object" && (error === null || error === void 0 ? void 0 : error.response)) {
                 const rawResponse = error.response;
                 const flatResponse = flattenResponse(rawResponse, operationSpec.responses[error.statusCode] || operationSpec.responses["default"]);
                 error.details = flatResponse;
-                if (options === null || options === undefined ? undefined : options.onResponse) {
+                if (options === null || options === void 0 ? void 0 : options.onResponse) {
                     options.onResponse(rawResponse, flatResponse, error);
                 }
             }
@@ -93496,7 +93343,7 @@ function toPipelineRequest(webResource, options = {}) {
 }
 function toWebResourceLike(request, options) {
     var _a;
-    const originalRequest = (_a = options === null || options === undefined ? undefined : options.originalRequest) !== null && _a !== undefined ? _a : request;
+    const originalRequest = (_a = options === null || options === void 0 ? void 0 : options.originalRequest) !== null && _a !== void 0 ? _a : request;
     const webResource = {
         url: request.url,
         method: request.method,
@@ -93522,7 +93369,7 @@ function toWebResourceLike(request, options) {
             /** do nothing */
         },
     };
-    if (options === null || options === undefined ? undefined : options.createProxy) {
+    if (options === null || options === void 0 ? void 0 : options.createProxy) {
         return new Proxy(webResource, {
             get(target, prop, receiver) {
                 if (prop === originalRequestSymbol) {
@@ -93718,7 +93565,7 @@ const originalResponse = Symbol("Original FullOperationResponse");
 function toCompatResponse(response, options) {
     let request = toWebResourceLike(response.request);
     let headers = toHttpHeadersLike(response.headers);
-    if (options === null || options === undefined ? undefined : options.createProxy) {
+    if (options === null || options === void 0 ? void 0 : options.createProxy) {
         return new Proxy(response, {
             get(target, prop, receiver) {
                 if (prop === "headers") {
@@ -93774,11 +93621,11 @@ class ExtendedServiceClient extends ServiceClient {
     constructor(options) {
         var _a, _b;
         super(options);
-        if (((_a = options.keepAliveOptions) === null || _a === undefined ? undefined : _a.enable) === false &&
+        if (((_a = options.keepAliveOptions) === null || _a === void 0 ? void 0 : _a.enable) === false &&
             !pipelineContainsDisableKeepAlivePolicy(this.pipeline)) {
             this.pipeline.addPolicy(createDisableKeepAlivePolicy());
         }
-        if (((_b = options.redirectOptions) === null || _b === undefined ? undefined : _b.handleRedirects) === false) {
+        if (((_b = options.redirectOptions) === null || _b === void 0 ? void 0 : _b.handleRedirects) === false) {
             this.pipeline.removePolicy({
                 name: redirectPolicyName,
             });
@@ -93793,7 +93640,7 @@ class ExtendedServiceClient extends ServiceClient {
      */
     async sendOperationRequest(operationArguments, operationSpec) {
         var _a;
-        const userProvidedCallBack = (_a = operationArguments === null || operationArguments === undefined ? undefined : operationArguments.options) === null || _a === undefined ? undefined : _a.onResponse;
+        const userProvidedCallBack = (_a = operationArguments === null || operationArguments === void 0 ? void 0 : operationArguments.options) === null || _a === void 0 ? void 0 : _a.onResponse;
         let lastResponse;
         function onResponse(rawResponse, flatResponse, error) {
             lastResponse = rawResponse;
@@ -94517,7 +94364,8 @@ function requireDocTypeReader () {
 	                else if( hasBody && isElement(xmlData, i))  i += 8;//Not supported
 	                else if( hasBody && isAttlist(xmlData, i))  i += 8;//Not supported
 	                else if( hasBody && isNotation(xmlData, i)) i += 9;//Not supported
-	                else comment = true;
+	                else if( isComment)                         comment = true;
+	                else                                        throw new Error("Invalid DOCTYPE");
 
 	                angleBracketsCount++;
 	                exp = "";
@@ -94575,6 +94423,13 @@ function requireDocTypeReader () {
 	        val += xmlData[i];
 	    }
 	    return [entityName, val, i];
+	}
+
+	function isComment(xmlData, i){
+	    if(xmlData[i+1] === '!' &&
+	    xmlData[i+2] === '-' &&
+	    xmlData[i+3] === '-') return true
+	    return false
 	}
 	function isEntity(xmlData, i){
 	    if(xmlData[i+1] === '!' &&
@@ -96054,14 +95909,14 @@ function getCommonOptions(options) {
     var _a;
     return {
         attributesGroupName: XML_ATTRKEY,
-        textNodeName: (_a = options.xmlCharKey) !== null && _a !== undefined ? _a : XML_CHARKEY,
+        textNodeName: (_a = options.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY,
         ignoreAttributes: false,
         suppressBooleanAttributes: false,
     };
 }
 function getSerializerOptions(options = {}) {
     var _a, _b;
-    return Object.assign(Object.assign({}, getCommonOptions(options)), { attributeNamePrefix: "@_", format: true, suppressEmptyNode: true, indentBy: "", rootNodeName: (_a = options.rootName) !== null && _a !== undefined ? _a : "root", cdataPropName: (_b = options.cdataPropName) !== null && _b !== undefined ? _b : "__cdata" });
+    return Object.assign(Object.assign({}, getCommonOptions(options)), { attributeNamePrefix: "@_", format: true, suppressEmptyNode: true, indentBy: "", rootNodeName: (_a = options.rootName) !== null && _a !== void 0 ? _a : "root", cdataPropName: (_b = options.cdataPropName) !== null && _b !== void 0 ? _b : "__cdata" });
 }
 function getParserOptions(options = {}) {
     return Object.assign(Object.assign({}, getCommonOptions(options)), { parseAttributeValue: false, parseTagValue: false, attributeNamePrefix: "", stopNodes: options.stopNodes, processEntities: true });
@@ -96174,7 +96029,6 @@ const StorageOAuthScopes = "https://storage.azure.com/.default";
 const URLConstants = {
     Parameters: {
         FORCE_BROWSER_NO_CACHE: "_",
-        SIGNATURE: "sig",
         SNAPSHOT: "snapshot",
         VERSIONID: "versionid",
         TIMEOUT: "timeout",
@@ -96182,13 +96036,10 @@ const URLConstants = {
 };
 const HeaderConstants = {
     AUTHORIZATION: "Authorization",
-    AUTHORIZATION_SCHEME: "Bearer",
     CONTENT_ENCODING: "Content-Encoding",
-    CONTENT_ID: "Content-ID",
     CONTENT_LANGUAGE: "Content-Language",
     CONTENT_LENGTH: "Content-Length",
     CONTENT_MD5: "Content-Md5",
-    CONTENT_TRANSFER_ENCODING: "Content-Transfer-Encoding",
     CONTENT_TYPE: "Content-Type",
     COOKIE: "Cookie",
     DATE: "date",
@@ -96198,14 +96049,7 @@ const HeaderConstants = {
     IF_UNMODIFIED_SINCE: "if-unmodified-since",
     PREFIX_FOR_STORAGE: "x-ms-",
     RANGE: "Range",
-    USER_AGENT: "User-Agent",
-    X_MS_CLIENT_REQUEST_ID: "x-ms-client-request-id",
-    X_MS_COPY_SOURCE: "x-ms-copy-source",
-    X_MS_DATE: "x-ms-date",
-    X_MS_ERROR_CODE: "x-ms-error-code",
-    X_MS_VERSION: "x-ms-version",
-    X_MS_CopySourceErrorCode: "x-ms-copy-source-error-code",
-};
+    X_MS_DATE: "x-ms-date"};
 const ETagNone = "";
 const ETagAny = "*";
 const EncryptionAlgorithmAES25 = "AES256";
@@ -96599,7 +96443,7 @@ function setURLParameter(url, name, value) {
 function getURLParameter(url, name) {
     var _a;
     const urlParsed = new URL(url);
-    return (_a = urlParsed.searchParams.get(name)) !== null && _a !== undefined ? _a : undefined;
+    return (_a = urlParsed.searchParams.get(name)) !== null && _a !== void 0 ? _a : undefined;
 }
 /**
  * Set URL host.
@@ -97205,7 +97049,7 @@ class StorageRetryPolicy extends BaseRequestPolicy {
         //     }
         //   }
         // }
-        if ((err === null || err === undefined ? undefined : err.code) === "PARSE_ERROR" && (err === null || err === undefined ? undefined : err.message.startsWith(`Error "Error: Unclosed root tag`))) {
+        if ((err === null || err === void 0 ? void 0 : err.code) === "PARSE_ERROR" && (err === null || err === void 0 ? void 0 : err.message.startsWith(`Error "Error: Unclosed root tag`))) {
             logger.info("RetryPolicy: Incomplete XML response likely due to service timeout, will retry.");
             return true;
         }
@@ -97678,12 +97522,12 @@ const RETRY_ABORT_ERROR = new AbortError("The operation was aborted.");
  */
 function storageRetryPolicy(options = {}) {
     var _a, _b, _c, _d, _e, _f;
-    const retryPolicyType = (_a = options.retryPolicyType) !== null && _a !== undefined ? _a : DEFAULT_RETRY_OPTIONS.retryPolicyType;
-    const maxTries = (_b = options.maxTries) !== null && _b !== undefined ? _b : DEFAULT_RETRY_OPTIONS.maxTries;
-    const retryDelayInMs = (_c = options.retryDelayInMs) !== null && _c !== undefined ? _c : DEFAULT_RETRY_OPTIONS.retryDelayInMs;
-    const maxRetryDelayInMs = (_d = options.maxRetryDelayInMs) !== null && _d !== undefined ? _d : DEFAULT_RETRY_OPTIONS.maxRetryDelayInMs;
-    const secondaryHost = (_e = options.secondaryHost) !== null && _e !== undefined ? _e : DEFAULT_RETRY_OPTIONS.secondaryHost;
-    const tryTimeoutInMs = (_f = options.tryTimeoutInMs) !== null && _f !== undefined ? _f : DEFAULT_RETRY_OPTIONS.tryTimeoutInMs;
+    const retryPolicyType = (_a = options.retryPolicyType) !== null && _a !== void 0 ? _a : DEFAULT_RETRY_OPTIONS.retryPolicyType;
+    const maxTries = (_b = options.maxTries) !== null && _b !== void 0 ? _b : DEFAULT_RETRY_OPTIONS.maxTries;
+    const retryDelayInMs = (_c = options.retryDelayInMs) !== null && _c !== void 0 ? _c : DEFAULT_RETRY_OPTIONS.retryDelayInMs;
+    const maxRetryDelayInMs = (_d = options.maxRetryDelayInMs) !== null && _d !== void 0 ? _d : DEFAULT_RETRY_OPTIONS.maxRetryDelayInMs;
+    const secondaryHost = (_e = options.secondaryHost) !== null && _e !== void 0 ? _e : DEFAULT_RETRY_OPTIONS.secondaryHost;
+    const tryTimeoutInMs = (_f = options.tryTimeoutInMs) !== null && _f !== void 0 ? _f : DEFAULT_RETRY_OPTIONS.tryTimeoutInMs;
     function shouldRetry({ isPrimaryRetry, attempt, response, error, }) {
         var _a, _b;
         if (attempt >= maxTries) {
@@ -97699,8 +97543,8 @@ function storageRetryPolicy(options = {}) {
                     return true;
                 }
             }
-            if ((error === null || error === undefined ? undefined : error.code) === "PARSE_ERROR" &&
-                (error === null || error === undefined ? undefined : error.message.startsWith(`Error "Error: Unclosed root tag`))) {
+            if ((error === null || error === void 0 ? void 0 : error.code) === "PARSE_ERROR" &&
+                (error === null || error === void 0 ? void 0 : error.message.startsWith(`Error "Error: Unclosed root tag`))) {
                 logger.info("RetryPolicy: Incomplete XML response likely due to service timeout, will retry.");
                 return true;
             }
@@ -97709,7 +97553,7 @@ function storageRetryPolicy(options = {}) {
         // the resource was not found. This may be due to replication delay. So, in this
         // case, we'll never try the secondary again for this operation.
         if (response || error) {
-            const statusCode = (_b = (_a = response === null || response === undefined ? undefined : response.status) !== null && _a !== undefined ? _a : error === null || error === undefined ? undefined : error.statusCode) !== null && _b !== undefined ? _b : 0;
+            const statusCode = (_b = (_a = response === null || response === void 0 ? void 0 : response.status) !== null && _a !== void 0 ? _a : error === null || error === void 0 ? void 0 : error.statusCode) !== null && _b !== void 0 ? _b : 0;
             if (!isPrimaryRetry && statusCode === 404) {
                 logger.info(`RetryPolicy: Secondary access with 404, will retry.`);
                 return true;
@@ -97801,7 +97645,7 @@ function storageRetryPolicy(options = {}) {
             if (response) {
                 return response;
             }
-            throw error !== null && error !== undefined ? error : new RestError("RetryPolicy failed without known error.");
+            throw error !== null && error !== void 0 ? error : new RestError("RetryPolicy failed without known error.");
         },
     };
 }
@@ -98160,7 +98004,7 @@ function getCoreClientOptions(pipeline) {
         if (isTokenCredential(credential)) {
             corePipeline.addPolicy(bearerTokenAuthenticationPolicy({
                 credential,
-                scopes: (_a = restOptions.audience) !== null && _a !== undefined ? _a : StorageOAuthScopes,
+                scopes: (_a = restOptions.audience) !== null && _a !== void 0 ? _a : StorageOAuthScopes,
                 challengeCallbacks: { authorizeRequestOnChallenge: authorizeRequestOnTenantChallenge },
             }), { phase: "Sign" });
         }
@@ -111390,7 +111234,7 @@ let StorageClient$1 = class StorageClient extends ExtendedServiceClient {
             : `${packageDetails}`;
         const optionsWithDefaults = Object.assign(Object.assign(Object.assign({}, defaults), options), { userAgentOptions: {
                 userAgentPrefix,
-            }, endpoint: (_b = (_a = options.endpoint) !== null && _a !== undefined ? _a : options.baseUri) !== null && _b !== undefined ? _b : "{url}" });
+            }, endpoint: (_b = (_a = options.endpoint) !== null && _a !== void 0 ? _a : options.baseUri) !== null && _b !== void 0 ? _b : "{url}" });
         super(optionsWithDefaults);
         // Parameter assignments
         this.url = url;
@@ -112776,9 +112620,9 @@ class BlobLeaseClient {
     async acquireLease(duration, options = {}) {
         var _a, _b, _c, _d, _e;
         if (this._isContainer &&
-            ((((_a = options.conditions) === null || _a === undefined ? undefined : _a.ifMatch) && ((_b = options.conditions) === null || _b === undefined ? undefined : _b.ifMatch) !== ETagNone) ||
-                (((_c = options.conditions) === null || _c === undefined ? undefined : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === undefined ? undefined : _d.ifNoneMatch) !== ETagNone) ||
-                ((_e = options.conditions) === null || _e === undefined ? undefined : _e.tagConditions))) {
+            ((((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone) ||
+                (((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone) ||
+                ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
             throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
         return tracingClient.withSpan("BlobLeaseClient-acquireLease", options, async (updatedOptions) => {
@@ -112786,7 +112630,7 @@ class BlobLeaseClient {
             return assertResponse(await this._containerOrBlobOperation.acquireLease({
                 abortSignal: options.abortSignal,
                 duration,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 proposedLeaseId: this._leaseId,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -112805,16 +112649,16 @@ class BlobLeaseClient {
     async changeLease(proposedLeaseId, options = {}) {
         var _a, _b, _c, _d, _e;
         if (this._isContainer &&
-            ((((_a = options.conditions) === null || _a === undefined ? undefined : _a.ifMatch) && ((_b = options.conditions) === null || _b === undefined ? undefined : _b.ifMatch) !== ETagNone) ||
-                (((_c = options.conditions) === null || _c === undefined ? undefined : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === undefined ? undefined : _d.ifNoneMatch) !== ETagNone) ||
-                ((_e = options.conditions) === null || _e === undefined ? undefined : _e.tagConditions))) {
+            ((((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone) ||
+                (((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone) ||
+                ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
             throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
         return tracingClient.withSpan("BlobLeaseClient-changeLease", options, async (updatedOptions) => {
             var _a;
             const response = assertResponse(await this._containerOrBlobOperation.changeLease(this._leaseId, proposedLeaseId, {
                 abortSignal: options.abortSignal,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
             this._leaseId = proposedLeaseId;
@@ -112834,16 +112678,16 @@ class BlobLeaseClient {
     async releaseLease(options = {}) {
         var _a, _b, _c, _d, _e;
         if (this._isContainer &&
-            ((((_a = options.conditions) === null || _a === undefined ? undefined : _a.ifMatch) && ((_b = options.conditions) === null || _b === undefined ? undefined : _b.ifMatch) !== ETagNone) ||
-                (((_c = options.conditions) === null || _c === undefined ? undefined : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === undefined ? undefined : _d.ifNoneMatch) !== ETagNone) ||
-                ((_e = options.conditions) === null || _e === undefined ? undefined : _e.tagConditions))) {
+            ((((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone) ||
+                (((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone) ||
+                ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
             throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
         return tracingClient.withSpan("BlobLeaseClient-releaseLease", options, async (updatedOptions) => {
             var _a;
             return assertResponse(await this._containerOrBlobOperation.releaseLease(this._leaseId, {
                 abortSignal: options.abortSignal,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -112860,16 +112704,16 @@ class BlobLeaseClient {
     async renewLease(options = {}) {
         var _a, _b, _c, _d, _e;
         if (this._isContainer &&
-            ((((_a = options.conditions) === null || _a === undefined ? undefined : _a.ifMatch) && ((_b = options.conditions) === null || _b === undefined ? undefined : _b.ifMatch) !== ETagNone) ||
-                (((_c = options.conditions) === null || _c === undefined ? undefined : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === undefined ? undefined : _d.ifNoneMatch) !== ETagNone) ||
-                ((_e = options.conditions) === null || _e === undefined ? undefined : _e.tagConditions))) {
+            ((((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone) ||
+                (((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone) ||
+                ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
             throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
         return tracingClient.withSpan("BlobLeaseClient-renewLease", options, async (updatedOptions) => {
             var _a;
             return this._containerOrBlobOperation.renewLease(this._leaseId, {
                 abortSignal: options.abortSignal,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             });
         });
@@ -112888,9 +112732,9 @@ class BlobLeaseClient {
     async breakLease(breakPeriod, options = {}) {
         var _a, _b, _c, _d, _e;
         if (this._isContainer &&
-            ((((_a = options.conditions) === null || _a === undefined ? undefined : _a.ifMatch) && ((_b = options.conditions) === null || _b === undefined ? undefined : _b.ifMatch) !== ETagNone) ||
-                (((_c = options.conditions) === null || _c === undefined ? undefined : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === undefined ? undefined : _d.ifNoneMatch) !== ETagNone) ||
-                ((_e = options.conditions) === null || _e === undefined ? undefined : _e.tagConditions))) {
+            ((((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone) ||
+                (((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone) ||
+                ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
             throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
         return tracingClient.withSpan("BlobLeaseClient-breakLease", options, async (updatedOptions) => {
@@ -112898,7 +112742,7 @@ class BlobLeaseClient {
             const operationOptions = {
                 abortSignal: options.abortSignal,
                 breakPeriod,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             };
             return assertResponse(await this._containerOrBlobOperation.breakLease(operationOptions));
@@ -113949,7 +113793,7 @@ class AvroReadableFromStream extends AvroReadable {
     }
     async read(size, options = {}) {
         var _a;
-        if ((_a = options.abortSignal) === null || _a === undefined ? undefined : _a.aborted) {
+        if ((_a = options.abortSignal) === null || _a === void 0 ? void 0 : _a.aborted) {
             throw ABORT_ERROR;
         }
         if (size < 0) {
@@ -115973,7 +115817,7 @@ class BlobClient extends StorageClient {
             const res = assertResponse(await this.blobContext.download({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 requestOptions: {
                     onDownloadProgress: isNode ? undefined : options.onProgress, // for Node.js, progress is reported by RetriableReadableStream
                 },
@@ -116013,7 +115857,7 @@ class BlobClient extends StorageClient {
                         ifModifiedSince: options.conditions.ifModifiedSince,
                         ifNoneMatch: options.conditions.ifNoneMatch,
                         ifUnmodifiedSince: options.conditions.ifUnmodifiedSince,
-                        ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions,
+                        ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions,
                     },
                     range: rangeToString({
                         count: offset + res.contentLength - start,
@@ -116093,7 +115937,7 @@ class BlobClient extends StorageClient {
             const res = assertResponse(await this.blobContext.getProperties({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -116117,7 +115961,7 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 deleteSnapshots: options.deleteSnapshots,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -116139,8 +115983,8 @@ class BlobClient extends StorageClient {
                 return Object.assign(Object.assign({ succeeded: true }, res), { _response: res._response });
             }
             catch (e) {
-                if (((_a = e.details) === null || _a === undefined ? undefined : _a.errorCode) === "BlobNotFound") {
-                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === undefined ? undefined : _b.parsedHeaders), { _response: e.response });
+                if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobNotFound") {
+                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
                 }
                 throw e;
             }
@@ -116186,7 +116030,7 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 blobHttpHeaders: blobHTTPHeaders,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 // cpkInfo: options.customerProvidedKey, // CPK is not included in Swagger, should change this back when this issue is fixed in Swagger.
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -116212,7 +116056,7 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
                 metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
                 tracingOptions: updatedOptions.tracingOptions,
@@ -116234,7 +116078,7 @@ class BlobClient extends StorageClient {
             return assertResponse(await this.blobContext.setTags({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
                 tags: toBlobTags(tags),
             }));
@@ -116251,7 +116095,7 @@ class BlobClient extends StorageClient {
             const response = assertResponse(await this.blobContext.getTags({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
             const wrappedResponse = Object.assign(Object.assign({}, response), { _response: response._response, tags: toTags({ blobTagSet: response.blobTagSet }) || {} });
@@ -116282,7 +116126,7 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
                 tracingOptions: updatedOptions.tracingOptions,
@@ -116414,19 +116258,19 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 metadata: options.metadata,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 sourceModifiedAccessConditions: {
-                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === undefined ? undefined : _b.ifMatch,
-                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === undefined ? undefined : _c.ifModifiedSince,
-                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === undefined ? undefined : _d.ifNoneMatch,
-                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === undefined ? undefined : _e.ifUnmodifiedSince,
+                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifMatch,
+                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifModifiedSince,
+                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch,
+                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.ifUnmodifiedSince,
                 },
                 sourceContentMD5: options.sourceContentMD5,
                 copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization),
                 tier: toAccessTier(options.tier),
                 blobTagsString: toBlobTagsString(options.tags),
-                immutabilityPolicyExpiry: (_f = options.immutabilityPolicy) === null || _f === undefined ? undefined : _f.expiriesOn,
-                immutabilityPolicyMode: (_g = options.immutabilityPolicy) === null || _g === undefined ? undefined : _g.policyMode,
+                immutabilityPolicyExpiry: (_f = options.immutabilityPolicy) === null || _f === void 0 ? void 0 : _f.expiriesOn,
+                immutabilityPolicyMode: (_g = options.immutabilityPolicy) === null || _g === void 0 ? void 0 : _g.policyMode,
                 legalHold: options.legalHold,
                 encryptionScope: options.encryptionScope,
                 copySourceTags: options.copySourceTags,
@@ -116451,7 +116295,7 @@ class BlobClient extends StorageClient {
             return assertResponse(await this.blobContext.setTier(toAccessTier(tier), {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 rehydratePriority: options.rehydratePriority,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -116473,7 +116317,7 @@ class BlobClient extends StorageClient {
             count = typeof param2 === "number" ? param2 : 0;
             options = param3 || {};
         }
-        let blockSize = (_a = options.blockSize) !== null && _a !== undefined ? _a : 0;
+        let blockSize = (_a = options.blockSize) !== null && _a !== void 0 ? _a : 0;
         if (blockSize < 0) {
             throw new RangeError("blockSize option must be >= 0");
         }
@@ -116639,7 +116483,7 @@ class BlobClient extends StorageClient {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 sourceModifiedAccessConditions: {
                     sourceIfMatch: options.sourceConditions.ifMatch,
                     sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
@@ -116647,8 +116491,8 @@ class BlobClient extends StorageClient {
                     sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
                     sourceIfTags: options.sourceConditions.tagConditions,
                 },
-                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === undefined ? undefined : _b.expiriesOn,
-                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === undefined ? undefined : _c.policyMode,
+                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn,
+                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode,
                 legalHold: options.legalHold,
                 rehydratePriority: options.rehydratePriority,
                 tier: toAccessTier(options.tier),
@@ -116891,11 +116735,11 @@ class AppendBlobClient extends BlobClient {
                 blobHttpHeaders: options.blobHTTPHeaders,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
-                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === undefined ? undefined : _b.expiriesOn,
-                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === undefined ? undefined : _c.policyMode,
+                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn,
+                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode,
                 legalHold: options.legalHold,
                 blobTagsString: toBlobTagsString(options.tags),
                 tracingOptions: updatedOptions.tracingOptions,
@@ -116918,8 +116762,8 @@ class AppendBlobClient extends BlobClient {
                 return Object.assign(Object.assign({ succeeded: true }, res), { _response: res._response });
             }
             catch (e) {
-                if (((_a = e.details) === null || _a === undefined ? undefined : _a.errorCode) === "BlobAlreadyExists") {
-                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === undefined ? undefined : _b.parsedHeaders), { _response: e.response });
+                if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
+                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
                 }
                 throw e;
             }
@@ -116938,7 +116782,7 @@ class AppendBlobClient extends BlobClient {
                 abortSignal: options.abortSignal,
                 appendPositionAccessConditions: options.conditions,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -116976,7 +116820,7 @@ class AppendBlobClient extends BlobClient {
                 abortSignal: options.abortSignal,
                 appendPositionAccessConditions: options.conditions,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 requestOptions: {
                     onUploadProgress: options.onProgress,
                 },
@@ -117015,12 +116859,12 @@ class AppendBlobClient extends BlobClient {
                 sourceContentCrc64: options.sourceContentCrc64,
                 leaseAccessConditions: options.conditions,
                 appendPositionAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 sourceModifiedAccessConditions: {
-                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === undefined ? undefined : _b.ifMatch,
-                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === undefined ? undefined : _c.ifModifiedSince,
-                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === undefined ? undefined : _d.ifNoneMatch,
-                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === undefined ? undefined : _e.ifUnmodifiedSince,
+                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifMatch,
+                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifModifiedSince,
+                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch,
+                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.ifUnmodifiedSince,
                 },
                 copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization),
                 cpkInfo: options.customerProvidedKey,
@@ -117162,7 +117006,7 @@ class BlockBlobClient extends BlobClient {
                     outputSerialization: toQuerySerialization(options.outputTextConfiguration),
                 },
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -117210,14 +117054,14 @@ class BlockBlobClient extends BlobClient {
                 blobHttpHeaders: options.blobHTTPHeaders,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 requestOptions: {
                     onUploadProgress: options.onProgress,
                 },
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
-                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === undefined ? undefined : _b.expiriesOn,
-                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === undefined ? undefined : _c.policyMode,
+                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn,
+                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode,
                 legalHold: options.legalHold,
                 tier: toAccessTier(options.tier),
                 blobTagsString: toBlobTagsString(options.tags),
@@ -117248,12 +117092,12 @@ class BlockBlobClient extends BlobClient {
         ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
         return tracingClient.withSpan("BlockBlobClient-syncUploadFromURL", options, async (updatedOptions) => {
             var _a, _b, _c, _d, _e, _f;
-            return assertResponse(await this.blockBlobContext.putBlobFromUrl(0, sourceURL, Object.assign(Object.assign({}, options), { blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }), sourceModifiedAccessConditions: {
-                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === undefined ? undefined : _b.ifMatch,
-                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === undefined ? undefined : _c.ifModifiedSince,
-                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === undefined ? undefined : _d.ifNoneMatch,
-                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === undefined ? undefined : _e.ifUnmodifiedSince,
-                    sourceIfTags: (_f = options.sourceConditions) === null || _f === undefined ? undefined : _f.tagConditions,
+            return assertResponse(await this.blockBlobContext.putBlobFromUrl(0, sourceURL, Object.assign(Object.assign({}, options), { blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
+                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifMatch,
+                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifModifiedSince,
+                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch,
+                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.ifUnmodifiedSince,
+                    sourceIfTags: (_f = options.sourceConditions) === null || _f === void 0 ? void 0 : _f.tagConditions,
                 }, cpkInfo: options.customerProvidedKey, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization), tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), copySourceTags: options.copySourceTags, tracingOptions: updatedOptions.tracingOptions })));
         });
     }
@@ -117344,11 +117188,11 @@ class BlockBlobClient extends BlobClient {
                 blobHttpHeaders: options.blobHTTPHeaders,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
-                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === undefined ? undefined : _b.expiriesOn,
-                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === undefined ? undefined : _c.policyMode,
+                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn,
+                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode,
                 legalHold: options.legalHold,
                 tier: toAccessTier(options.tier),
                 blobTagsString: toBlobTagsString(options.tags),
@@ -117372,7 +117216,7 @@ class BlockBlobClient extends BlobClient {
             const res = assertResponse(await this.blockBlobContext.getBlockList(listType, {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
             if (!res.committedBlocks) {
@@ -117464,11 +117308,11 @@ class BlockBlobClient extends BlobClient {
      */
     async uploadSeekableInternal(bodyFactory, size, options = {}) {
         var _a, _b;
-        let blockSize = (_a = options.blockSize) !== null && _a !== undefined ? _a : 0;
+        let blockSize = (_a = options.blockSize) !== null && _a !== void 0 ? _a : 0;
         if (blockSize < 0 || blockSize > BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES) {
             throw new RangeError(`blockSize option must be >= 0 and <= ${BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES}`);
         }
-        const maxSingleShotSize = (_b = options.maxSingleShotSize) !== null && _b !== undefined ? _b : BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES;
+        const maxSingleShotSize = (_b = options.maxSingleShotSize) !== null && _b !== void 0 ? _b : BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES;
         if (maxSingleShotSize < 0 || maxSingleShotSize > BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES) {
             throw new RangeError(`maxSingleShotSize option must be >= 0 and <= ${BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES}`);
         }
@@ -117710,11 +117554,11 @@ class PageBlobClient extends BlobClient {
                 blobSequenceNumber: options.blobSequenceNumber,
                 leaseAccessConditions: options.conditions,
                 metadata: options.metadata,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
-                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === undefined ? undefined : _b.expiriesOn,
-                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === undefined ? undefined : _c.policyMode,
+                immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn,
+                immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode,
                 legalHold: options.legalHold,
                 tier: toAccessTier(options.tier),
                 blobTagsString: toBlobTagsString(options.tags),
@@ -117740,8 +117584,8 @@ class PageBlobClient extends BlobClient {
                 return Object.assign(Object.assign({ succeeded: true }, res), { _response: res._response });
             }
             catch (e) {
-                if (((_a = e.details) === null || _a === undefined ? undefined : _a.errorCode) === "BlobAlreadyExists") {
-                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === undefined ? undefined : _b.parsedHeaders), { _response: e.response });
+                if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
+                    return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
                 }
                 throw e;
             }
@@ -117765,7 +117609,7 @@ class PageBlobClient extends BlobClient {
             return assertResponse(await this.pageBlobContext.uploadPages(count, body, {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 requestOptions: {
                     onUploadProgress: options.onProgress,
                 },
@@ -117802,12 +117646,12 @@ class PageBlobClient extends BlobClient {
                 sourceContentCrc64: options.sourceContentCrc64,
                 leaseAccessConditions: options.conditions,
                 sequenceNumberAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 sourceModifiedAccessConditions: {
-                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === undefined ? undefined : _b.ifMatch,
-                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === undefined ? undefined : _c.ifModifiedSince,
-                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === undefined ? undefined : _d.ifNoneMatch,
-                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === undefined ? undefined : _e.ifUnmodifiedSince,
+                    sourceIfMatch: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifMatch,
+                    sourceIfModifiedSince: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifModifiedSince,
+                    sourceIfNoneMatch: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch,
+                    sourceIfUnmodifiedSince: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.ifUnmodifiedSince,
                 },
                 cpkInfo: options.customerProvidedKey,
                 encryptionScope: options.encryptionScope,
@@ -117832,7 +117676,7 @@ class PageBlobClient extends BlobClient {
             return assertResponse(await this.pageBlobContext.clearPages(0, {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 range: rangeToString({ offset, count }),
                 sequenceNumberAccessConditions: options.conditions,
                 cpkInfo: options.customerProvidedKey,
@@ -117857,7 +117701,7 @@ class PageBlobClient extends BlobClient {
             const response = assertResponse(await this.pageBlobContext.getPageRanges({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 range: rangeToString({ offset, count }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -117882,7 +117726,7 @@ class PageBlobClient extends BlobClient {
             return assertResponse(await this.pageBlobContext.getPageRanges({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 range: rangeToString({ offset, count }),
                 marker: marker,
                 maxPageSize: options.maxPageSize,
@@ -118057,7 +117901,7 @@ class PageBlobClient extends BlobClient {
             const result = assertResponse(await this.pageBlobContext.getPageRangesDiff({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 prevsnapshot: prevSnapshot,
                 range: rangeToString({ offset, count }),
                 tracingOptions: updatedOptions.tracingOptions,
@@ -118083,16 +117927,16 @@ class PageBlobClient extends BlobClient {
         return tracingClient.withSpan("PageBlobClient-getPageRangesDiffSegment", options, async (updatedOptions) => {
             var _a;
             return assertResponse(await this.pageBlobContext.getPageRangesDiff({
-                abortSignal: options === null || options === undefined ? undefined : options.abortSignal,
-                leaseAccessConditions: options === null || options === undefined ? undefined : options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options === null || options === undefined ? undefined : options.conditions), { ifTags: (_a = options === null || options === undefined ? undefined : options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                abortSignal: options === null || options === void 0 ? void 0 : options.abortSignal,
+                leaseAccessConditions: options === null || options === void 0 ? void 0 : options.conditions,
+                modifiedAccessConditions: Object.assign(Object.assign({}, options === null || options === void 0 ? void 0 : options.conditions), { ifTags: (_a = options === null || options === void 0 ? void 0 : options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 prevsnapshot: prevSnapshotOrUrl,
                 range: rangeToString({
                     offset: offset,
                     count: count,
                 }),
                 marker: marker,
-                maxPageSize: options === null || options === undefined ? undefined : options.maxPageSize,
+                maxPageSize: options === null || options === void 0 ? void 0 : options.maxPageSize,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -118268,7 +118112,7 @@ class PageBlobClient extends BlobClient {
             const response = assertResponse(await this.pageBlobContext.getPageRangesDiff({
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 prevSnapshotUrl,
                 range: rangeToString({ offset, count }),
                 tracingOptions: updatedOptions.tracingOptions,
@@ -118291,7 +118135,7 @@ class PageBlobClient extends BlobClient {
             return assertResponse(await this.pageBlobContext.resize(size, {
                 abortSignal: options.abortSignal,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 encryptionScope: options.encryptionScope,
                 tracingOptions: updatedOptions.tracingOptions,
             }));
@@ -118314,7 +118158,7 @@ class PageBlobClient extends BlobClient {
                 abortSignal: options.abortSignal,
                 blobSequenceNumber: sequenceNumber,
                 leaseAccessConditions: options.conditions,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -118337,7 +118181,7 @@ class PageBlobClient extends BlobClient {
             var _a;
             return assertResponse(await this.pageBlobContext.copyIncremental(copySource, {
                 abortSignal: options.abortSignal,
-                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === undefined ? undefined : _a.tagConditions }),
+                modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }),
                 tracingOptions: updatedOptions.tracingOptions,
             }));
         });
@@ -118368,6 +118212,182 @@ function parse(input) {
   return range;
 }
 
+const E_CANCELED = new Error('request for lock canceled');
+
+var __awaiter$2 = function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+class Semaphore {
+    constructor(_value, _cancelError = E_CANCELED) {
+        this._value = _value;
+        this._cancelError = _cancelError;
+        this._queue = [];
+        this._weightedWaiters = [];
+    }
+    acquire(weight = 1, priority = 0) {
+        if (weight <= 0)
+            throw new Error(`invalid weight ${weight}: must be positive`);
+        return new Promise((resolve, reject) => {
+            const task = { resolve, reject, weight, priority };
+            const i = findIndexFromEnd(this._queue, (other) => priority <= other.priority);
+            if (i === -1 && weight <= this._value) {
+                // Needs immediate dispatch, skip the queue
+                this._dispatchItem(task);
+            }
+            else {
+                this._queue.splice(i + 1, 0, task);
+            }
+        });
+    }
+    runExclusive(callback_1) {
+        return __awaiter$2(this, arguments, void 0, function* (callback, weight = 1, priority = 0) {
+            const [value, release] = yield this.acquire(weight, priority);
+            try {
+                return yield callback(value);
+            }
+            finally {
+                release();
+            }
+        });
+    }
+    waitForUnlock(weight = 1, priority = 0) {
+        if (weight <= 0)
+            throw new Error(`invalid weight ${weight}: must be positive`);
+        if (this._couldLockImmediately(weight, priority)) {
+            return Promise.resolve();
+        }
+        else {
+            return new Promise((resolve) => {
+                if (!this._weightedWaiters[weight - 1])
+                    this._weightedWaiters[weight - 1] = [];
+                insertSorted(this._weightedWaiters[weight - 1], { resolve, priority });
+            });
+        }
+    }
+    isLocked() {
+        return this._value <= 0;
+    }
+    getValue() {
+        return this._value;
+    }
+    setValue(value) {
+        this._value = value;
+        this._dispatchQueue();
+    }
+    release(weight = 1) {
+        if (weight <= 0)
+            throw new Error(`invalid weight ${weight}: must be positive`);
+        this._value += weight;
+        this._dispatchQueue();
+    }
+    cancel() {
+        this._queue.forEach((entry) => entry.reject(this._cancelError));
+        this._queue = [];
+    }
+    _dispatchQueue() {
+        this._drainUnlockWaiters();
+        while (this._queue.length > 0 && this._queue[0].weight <= this._value) {
+            this._dispatchItem(this._queue.shift());
+            this._drainUnlockWaiters();
+        }
+    }
+    _dispatchItem(item) {
+        const previousValue = this._value;
+        this._value -= item.weight;
+        item.resolve([previousValue, this._newReleaser(item.weight)]);
+    }
+    _newReleaser(weight) {
+        let called = false;
+        return () => {
+            if (called)
+                return;
+            called = true;
+            this.release(weight);
+        };
+    }
+    _drainUnlockWaiters() {
+        if (this._queue.length === 0) {
+            for (let weight = this._value; weight > 0; weight--) {
+                const waiters = this._weightedWaiters[weight - 1];
+                if (!waiters)
+                    continue;
+                waiters.forEach((waiter) => waiter.resolve());
+                this._weightedWaiters[weight - 1] = [];
+            }
+        }
+        else {
+            const queuedPriority = this._queue[0].priority;
+            for (let weight = this._value; weight > 0; weight--) {
+                const waiters = this._weightedWaiters[weight - 1];
+                if (!waiters)
+                    continue;
+                const i = waiters.findIndex((waiter) => waiter.priority <= queuedPriority);
+                (i === -1 ? waiters : waiters.splice(0, i))
+                    .forEach((waiter => waiter.resolve()));
+            }
+        }
+    }
+    _couldLockImmediately(weight, priority) {
+        return (this._queue.length === 0 || this._queue[0].priority < priority) &&
+            weight <= this._value;
+    }
+}
+function insertSorted(a, v) {
+    const i = findIndexFromEnd(a, (other) => v.priority <= other.priority);
+    a.splice(i + 1, 0, v);
+}
+function findIndexFromEnd(a, predicate) {
+    for (let i = a.length - 1; i >= 0; i--) {
+        if (predicate(a[i])) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+var __awaiter$1 = function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+class Mutex {
+    constructor(cancelError) {
+        this._semaphore = new Semaphore(1, cancelError);
+    }
+    acquire() {
+        return __awaiter$1(this, arguments, void 0, function* (priority = 0) {
+            const [, releaser] = yield this._semaphore.acquire(1, priority);
+            return releaser;
+        });
+    }
+    runExclusive(callback, priority = 0) {
+        return this._semaphore.runExclusive(() => callback(), 1, priority);
+    }
+    isLocked() {
+        return this._semaphore.isLocked();
+    }
+    waitForUnlock(priority = 0) {
+        return this._semaphore.waitForUnlock(1, priority);
+    }
+    release() {
+        if (this._semaphore.isLocked())
+            this._semaphore.release();
+    }
+    cancel() {
+        return this._semaphore.cancel();
+    }
+}
+
 async function setupServer() {
     const svc = fastify({
         logger: true,
@@ -118377,6 +118397,7 @@ async function setupServer() {
         done(null);
     });
     const state = {
+        mutex: new Mutex(),
         cacheIdCounter: 1,
         reserved: {}
     };
@@ -118441,7 +118462,9 @@ async function setupServer() {
         if (!createResp.ok) {
             return resp.code(400).send({});
         }
-        const cacheId = state.cacheIdCounter++;
+        const cacheId = await state.mutex.runExclusive(async () => {
+            return state.cacheIdCounter++;
+        });
         state.reserved[cacheId] = {
             key: `${req.body.key}`,
             version: `${req.body.version}`,
