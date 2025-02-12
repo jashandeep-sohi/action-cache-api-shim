@@ -54,6 +54,7 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Run nix build
         run: |-
+          set -ex
           nix build .#ci-test-cache-one
           nix build .#ci-test-cache-two
           test "$(cat result/message)" = "First one: Done"
