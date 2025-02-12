@@ -25,7 +25,7 @@ export async function run(): Promise<void> {
       process.exit(0);
     }
 
-    const child = fork("dist/index.js", ["child"], {
+    const child = fork("./dist/index.js", ["child"], {
       detached: true,
       stdio: ["ignore", "ignore", "ignore", "ipc"]
     });

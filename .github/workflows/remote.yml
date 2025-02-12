@@ -1,4 +1,4 @@
-name: Remote 
+name: Remote
 
 on:
   workflow_dispatch:
