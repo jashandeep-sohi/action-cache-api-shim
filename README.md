@@ -17,6 +17,7 @@ no-op.
 steps:
   - uses: jashandeep-sohi/action-cache-api-shim@v1
 
+  # For docker:
   - name: Set up Docker Buildx
     uses: docker/setup-buildx-action@v3
     with:
@@ -32,6 +33,13 @@ steps:
       tags: user/app:latest
       cache-from: type=gha
       cache-to: type=gha,mode=max
+
+  # For magic-nix-cache:
+  - uses: DeterminateSystems/nix-installer-action@main
+  - uses: DeterminateSystems/magic-nix-cache-action@v8
+  - name: Run nix build
+    run: |-
+      nix build .
 ```
 
 ## Development
