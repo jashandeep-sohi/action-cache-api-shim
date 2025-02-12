@@ -7,6 +7,7 @@ import { BlobClient } from "@azure/storage-blob";
 import { randomBytes } from "crypto";
 import { parse as parseContentRange } from "content-range";
 import { Mutex } from "async-mutex";
+import { createHash } from "crypto";
 
 export async function setupServer() {
   const svc = fastify({
@@ -47,6 +48,9 @@ export async function setupServer() {
     reserved: {}
   };
 
+  const saltVersion = (v: string) =>
+    createHash("sha256").update(`v1|${v}`).digest("hex");
+
   const routePrefix = "/_apis/artifactcache";
 
   svc.get(
@@ -77,7 +81,7 @@ export async function setupServer() {
       const cacheEntryResp = await cacheClient.GetCacheEntryDownloadURL({
         key: primaryKey,
         restoreKeys: restoreKeys,
-        version: req.query.version
+        version: saltVersion(req.query.version)
       });
 
       if (!cacheEntryResp.ok) {
@@ -117,7 +121,7 @@ export async function setupServer() {
 
       const createResp = await cacheClient.CreateCacheEntry({
         key: req.body.key,
-        version: req.body.version
+        version: saltVersion(req.body.version)
       });
 
       if (!createResp.ok) {
@@ -129,8 +133,8 @@ export async function setupServer() {
       });
 
       state.reserved[`${cacheId}`] = {
-        key: `${req.body.key}`,
-        version: `${req.body.version}`,
+        key: req.body.key,
+        version: req.body.version,
         uploadUrl: createResp.signedUploadUrl,
         blocks: []
       };
@@ -247,7 +251,7 @@ export async function setupServer() {
 
       const finalizeResp = await cacheClient.FinalizeCacheEntryUpload({
         key,
-        version,
+        version: saltVersion(version),
         sizeBytes: `${totalSize}`
       });
 

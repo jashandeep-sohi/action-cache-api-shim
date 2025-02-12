@@ -1,6 +1,6 @@
 import require$$2$3, { fork } from 'child_process';
 import require$$0$5 from 'os';
-import require$$0$6, { randomUUID as randomUUID$1, createHmac, randomBytes } from 'crypto';
+import require$$0$6, { randomUUID as randomUUID$1, createHmac, createHash, randomBytes } from 'crypto';
 import * as require$$1$1 from 'fs';
 import require$$1__default from 'fs';
 import require$$3$2 from 'path';
@@ -118401,6 +118401,7 @@ async function setupServer() {
         cacheIdCounter: 1,
         reserved: {}
     };
+    const saltVersion = (v) => createHash("sha256").update(`v1|${v}`).digest("hex");
     const routePrefix = "/_apis/artifactcache";
     svc.get(`${routePrefix}/cache`, {
         schema: {
@@ -118425,7 +118426,7 @@ async function setupServer() {
         const cacheEntryResp = await cacheClient.GetCacheEntryDownloadURL({
             key: primaryKey,
             restoreKeys: restoreKeys,
-            version: req.query.version
+            version: saltVersion(req.query.version)
         });
         if (!cacheEntryResp.ok) {
             return {
@@ -118457,7 +118458,7 @@ async function setupServer() {
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const createResp = await cacheClient.CreateCacheEntry({
             key: req.body.key,
-            version: req.body.version
+            version: saltVersion(req.body.version)
         });
         if (!createResp.ok) {
             return resp.code(400).send({});
@@ -118466,8 +118467,8 @@ async function setupServer() {
             return state.cacheIdCounter++;
         });
         state.reserved[`${cacheId}`] = {
-            key: `${req.body.key}`,
-            version: `${req.body.version}`,
+            key: req.body.key,
+            version: req.body.version,
             uploadUrl: createResp.signedUploadUrl,
             blocks: []
         };
@@ -118559,7 +118560,7 @@ async function setupServer() {
         const cacheClient = cacheTwirpClientExports.internalCacheTwirpClient();
         const finalizeResp = await cacheClient.FinalizeCacheEntryUpload({
             key,
-            version,
+            version: saltVersion(version),
             sizeBytes: `${totalSize}`
         });
         if (!finalizeResp.ok) {
