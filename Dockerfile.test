@@ -1,11 +1,13 @@
 FROM busybox:1.37.0
 
-RUN echo 1
-RUN echo 2
-RUN echo 3
-RUN echo 4
-RUN echo 5
-RUN echo 6
-RUN echo 7
-RUN echo 8
-RUN echo 9
+RUN echo -n 1 >> out
+RUN echo -n 2 >> out
+RUN echo -n 3 >> out
+RUN echo -n 4 >> out
+RUN echo -n 5 >> out
+RUN echo -n 6 >> out
+RUN echo -n 7 >> out
+RUN echo -n 8 >> out
+RUN echo -n 9 >> out
+RUN cat out
+RUN test "$(sha256sum out)" = "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225  out"
