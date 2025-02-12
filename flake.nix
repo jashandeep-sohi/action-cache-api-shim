@@ -31,6 +31,17 @@
         # module parameters provide easy access to attributes of the same
         # system.
 
+        packages.ci-test-cache-one = pkgs.runCommand "ci-test-cache-one" {} ''
+          sleep 30s
+          mkdir $out
+          echo "Done" > $out/message
+        '';
+
+        packages.ci-test-cache-two = pkgs.runCommand "ci-test-cache-two" {} ''
+          mkdir $out
+          echo "First one: $(cat ${config.packages.ci-test-cache-one}/message)" > $out/message
+        '';
+
         devenv.shells.default = {
           devenv.root =
             let

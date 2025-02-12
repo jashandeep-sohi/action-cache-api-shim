@@ -104,3 +104,5 @@ __tests__/runner/*
 .devenv
 
 .direnv
+
+result

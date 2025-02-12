@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  test-action:
-    name: GitHub Actions Test
+  test-docker:
+    name: Test Docker
     runs-on: ubuntu-latest
 
     steps:
@@ -36,3 +36,21 @@ jobs:
           tags: user/app:latest
           cache-from: type=gha,url=${{ env.ACTIONS_CACHE_URL }}
           cache-to: type=gha,mode=max,url=${{ env.ACTIONS_CACHE_URL }}
+
+  test-magic-nix-cache:
+    name: Test Magic Nix Cache
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test Local Action
+        uses: ./
+        with:
+          require-v2: true
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Run nix build
+        run: nix build .#ci-test-cache-two
