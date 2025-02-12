@@ -53,4 +53,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Run nix build
-        run: nix build .#ci-test-cache-two
+        run: |-
+          nix build .#ci-test-cache-one
+          nix build .#ci-test-cache-two
+          nix build .#ci-test-cache-one
