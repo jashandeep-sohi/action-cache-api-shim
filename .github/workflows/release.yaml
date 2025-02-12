@@ -31,19 +31,18 @@ jobs:
             const [x, y, z] = tagName.slice(1).split(".");
 
             for (const elm of [`${x}`, `${x}.${y}`]) {
-              const ref = `refs/heads/v${elm}`;
               try {
                 await github.rest.git.createRef({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  ref: ref,
+                  ref: `refs/heads/v${elm}`,
                   sha: context.sha,
                 });
               } catch (error) {
                 await github.rest.git.updateRef({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  ref: ref,
+                  ref: `heads/v${elm}`,
                   sha: context.sha,
                   force: true,
                 });
