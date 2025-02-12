@@ -118465,7 +118465,7 @@ async function setupServer() {
         const cacheId = await state.mutex.runExclusive(async () => {
             return state.cacheIdCounter++;
         });
-        state.reserved[cacheId] = {
+        state.reserved[`${cacheId}`] = {
             key: `${req.body.key}`,
             version: `${req.body.version}`,
             uploadUrl: createResp.signedUploadUrl,
@@ -118493,7 +118493,8 @@ async function setupServer() {
             }
         }
     }, async (req, resp) => {
-        if (!(req.params.cacheID in state.reserved)) {
+        const cacheID = `${req.params.cacheID}`;
+        if (!(cacheID in state.reserved)) {
             return resp.code(404).send();
         }
         const contentRange = parse(req.headers["content-range"]);
@@ -118507,7 +118508,7 @@ async function setupServer() {
                 .send({ message: "content range components are null" });
         }
         const size = end - start + 1;
-        const { uploadUrl, blocks } = state.reserved[req.params.cacheID];
+        const { uploadUrl, blocks } = state.reserved[cacheID];
         const blobClient = new BlobClient(uploadUrl);
         const blockClient = blobClient.getBlockBlobClient();
         const blockId = randomBytes(64).toString("base64");
@@ -118538,10 +118539,11 @@ async function setupServer() {
             }
         }
     }, async (req, resp) => {
-        if (!(req.params.cacheID in state.reserved)) {
+        const cacheID = `${req.params.cacheID}`;
+        if (!(cacheID in state.reserved)) {
             return resp.code(404).send({ message: "cache id not found" });
         }
-        const { uploadUrl, blocks, key, version } = state.reserved[req.params.cacheID];
+        const { uploadUrl, blocks, key, version } = state.reserved[cacheID];
         const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
         if (totalSize != req.body.size) {
             return resp.code(400).send({
@@ -118563,7 +118565,7 @@ async function setupServer() {
         if (!finalizeResp.ok) {
             return resp.code(400).send({ message: "v2 API did not like it" });
         }
-        delete state.reserved[req.params.cacheID];
+        delete state.reserved[cacheID];
     });
     svc.listen({ host: "127.0.0.1", port: 0 }, (err, address) => {
         if (err) {

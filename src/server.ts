@@ -38,7 +38,7 @@ export async function setupServer() {
   type State = {
     mutex: Mutex;
     cacheIdCounter: CacheId;
-    reserved: Record<CacheId, ReservedKey>;
+    reserved: Record<string, ReservedKey>;
   };
 
   const state: State = {
@@ -128,7 +128,7 @@ export async function setupServer() {
         return state.cacheIdCounter++;
       });
 
-      state.reserved[cacheId] = {
+      state.reserved[`${cacheId}`] = {
         key: `${req.body.key}`,
         version: `${req.body.version}`,
         uploadUrl: createResp.signedUploadUrl,
@@ -162,7 +162,8 @@ export async function setupServer() {
       }
     },
     async (req, resp) => {
-      if (!(req.params.cacheID in state.reserved)) {
+      const cacheID = `${req.params.cacheID}`;
+      if (!(cacheID in state.reserved)) {
         return resp.code(404).send();
       }
 
@@ -179,7 +180,7 @@ export async function setupServer() {
 
       const size = end - start + 1;
 
-      const { uploadUrl, blocks } = state.reserved[req.params.cacheID];
+      const { uploadUrl, blocks } = state.reserved[cacheID];
 
       const blobClient = new BlobClient(uploadUrl);
       const blockClient = blobClient.getBlockBlobClient();
@@ -219,11 +220,11 @@ export async function setupServer() {
       }
     },
     async (req, resp) => {
-      if (!(req.params.cacheID in state.reserved)) {
+      const cacheID = `${req.params.cacheID}`;
+      if (!(cacheID in state.reserved)) {
         return resp.code(404).send({ message: "cache id not found" });
       }
-      const { uploadUrl, blocks, key, version } =
-        state.reserved[req.params.cacheID];
+      const { uploadUrl, blocks, key, version } = state.reserved[cacheID];
 
       const totalSize = blocks.reduce((sum, b) => sum + b.size, 0);
 
@@ -254,7 +255,7 @@ export async function setupServer() {
         return resp.code(400).send({ message: "v2 API did not like it" });
       }
 
-      delete state.reserved[req.params.cacheID];
+      delete state.reserved[cacheID];
     }
   );
 
