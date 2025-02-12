@@ -36,6 +36,8 @@ jobs:
           tags: user/app:latest
           cache-from: type=gha,url=${{ env.ACTIONS_CACHE_URL }}
           cache-to: type=gha,mode=max,url=${{ env.ACTIONS_CACHE_URL }}
+          build-args: |
+            CACHEBUST=${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
 
   test-magic-nix-cache:
     name: Test Magic Nix Cache
