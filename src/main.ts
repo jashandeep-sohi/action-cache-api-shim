@@ -1,6 +1,7 @@
 import { fork } from "child_process";
 import * as core from "@actions/core";
 import { setupServer } from "./server.js";
+import { fileURLToPath } from "url";
 
 /**
  * The main function for the action.
@@ -25,7 +26,9 @@ export async function run(): Promise<void> {
       process.exit(0);
     }
 
-    const child = fork("./dist/index.js", ["child"], {
+    const __filename = fileURLToPath(import.meta.url);
+
+    const child = fork(__filename, ["child"], {
       detached: true,
       stdio: ["ignore", "ignore", "ignore", "ipc"]
     });

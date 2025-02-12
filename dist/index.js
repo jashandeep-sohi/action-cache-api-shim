@@ -24,7 +24,7 @@ import require$$2$2 from 'perf_hooks';
 import require$$5 from 'util/types';
 import require$$4 from 'async_hooks';
 import require$$1$6 from 'console';
-import require$$5$1 from 'url';
+import require$$5$1, { fileURLToPath } from 'url';
 import require$$3$1 from 'zlib';
 import require$$6 from 'string_decoder';
 import require$$0$c from 'diagnostics_channel';
@@ -118417,7 +118417,8 @@ async function run() {
             exportActionsVariables();
             process.exit(0);
         }
-        const child = fork("./dist/index.js", ["child"], {
+        const __filename = fileURLToPath(import.meta.url);
+        const child = fork(__filename, ["child"], {
             detached: true,
             stdio: ["ignore", "ignore", "ignore", "ipc"]
         });
