@@ -56,4 +56,4 @@ jobs:
         run: |-
           nix build .#ci-test-cache-one
           nix build .#ci-test-cache-two
-          nix build .#ci-test-cache-one
+          test "$(cat result/message)" = "First one: Done"
