@@ -1,0 +1,19 @@
+name: Remote 
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    name: Smoke test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use master
+        uses: jashandeep-sohi/action-cache-api-shim@master
