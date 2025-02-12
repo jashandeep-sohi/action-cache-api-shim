@@ -118224,7 +118224,7 @@ async function setupServer() {
         cacheIdCounter: 1,
         reserved: {}
     };
-    const saltVersion = (v) => createHash("sha256").update(`v2|${v}`).digest("hex");
+    const saltVersion = (v) => createHash("sha256").update(`v3|${v}`).digest("hex");
     const routePrefix = "/_apis/artifactcache";
     svc.get(`${routePrefix}/cache`, {
         schema: {

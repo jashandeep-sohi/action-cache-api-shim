@@ -46,7 +46,7 @@ export async function setupServer() {
   };
 
   const saltVersion = (v: string) =>
-    createHash("sha256").update(`v2|${v}`).digest("hex");
+    createHash("sha256").update(`v3|${v}`).digest("hex");
 
   const routePrefix = "/_apis/artifactcache";
 
