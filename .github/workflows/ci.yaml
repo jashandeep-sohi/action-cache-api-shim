@@ -53,7 +53,7 @@ jobs:
           require-v2: true
 
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@v8
+      - uses: DeterminateSystems/magic-nix-cache-action@v9
       - name: Run nix build
         run: |-
           set -ex
