@@ -43,24 +43,24 @@
     "qs": "^6.14.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.6",
-    "@rollup/plugin-commonjs": "^28.0.2",
+    "@eslint/compat": "^1.2.7",
+    "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@types/node": "^20.17.17",
+    "@types/node": "^20.17.24",
     "@types/qs": "^6.9.18",
-    "@typescript-eslint/eslint-plugin": "^8.23.0",
-    "@typescript-eslint/parser": "^8.23.0",
-    "eslint": "^9.20.0",
-    "eslint-config-prettier": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "prettier": "^3.5.0",
+    "prettier": "^3.5.3",
     "prettier-eslint": "^16.3.0",
-    "rollup": "^4.34.6",
+    "rollup": "^4.36.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   }
 }
