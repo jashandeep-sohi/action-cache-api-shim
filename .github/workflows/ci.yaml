@@ -53,9 +53,9 @@ jobs:
           require-v2: true
 
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@v9
+      - uses: DeterminateSystems/magic-nix-cache-action@v8
         with:
-          source-tag: v0.1.3
+          source-url: https://github.com/jashandeep-sohi/action-cache-api-shim/releases/download/v1.0.2/magic-nix-cache-X64-Linux-v0.1.3
       - name: Run nix build
         run: |-
           set -ex
