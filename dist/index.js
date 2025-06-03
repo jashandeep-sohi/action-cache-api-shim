@@ -767,12 +767,12 @@ function requireSymbols$7 () {
 	return symbols$7;
 }
 
-var errors$6;
-var hasRequiredErrors$6;
+var errors$5;
+var hasRequiredErrors$5;
 
-function requireErrors$6 () {
-	if (hasRequiredErrors$6) return errors$6;
-	hasRequiredErrors$6 = 1;
+function requireErrors$5 () {
+	if (hasRequiredErrors$5) return errors$5;
+	hasRequiredErrors$5 = 1;
 
 	class UndiciError extends Error {
 	  constructor (message) {
@@ -980,7 +980,7 @@ function requireErrors$6 () {
 	  }
 	}
 
-	errors$6 = {
+	errors$5 = {
 	  HTTPParserError,
 	  UndiciError,
 	  HeadersTimeoutError,
@@ -1002,7 +1002,7 @@ function requireErrors$6 () {
 	  ResponseExceededMaxSizeError,
 	  RequestRetryError
 	};
-	return errors$6;
+	return errors$5;
 }
 
 var constants$7;
@@ -1131,19 +1131,19 @@ function requireConstants$7 () {
 	return constants$7;
 }
 
-var util$9;
-var hasRequiredUtil$9;
+var util$a;
+var hasRequiredUtil$a;
 
-function requireUtil$9 () {
-	if (hasRequiredUtil$9) return util$9;
-	hasRequiredUtil$9 = 1;
+function requireUtil$a () {
+	if (hasRequiredUtil$a) return util$a;
+	hasRequiredUtil$a = 1;
 
 	const assert = require$$0$7;
 	const { kDestroyed, kBodyUsed } = requireSymbols$7();
 	const { IncomingMessage } = require$$2;
 	const stream = require$$0$9;
 	const net = require$$0$8;
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 	const { Blob } = require$$7;
 	const nodeUtil = require$$0__default;
 	const { stringify } = require$$8;
@@ -1621,7 +1621,7 @@ function requireUtil$9 () {
 	const kEnumerableProperty = Object.create(null);
 	kEnumerableProperty.enumerable = true;
 
-	util$9 = {
+	util$a = {
 	  kEnumerableProperty,
 	  nop,
 	  isDisturbed,
@@ -1658,7 +1658,7 @@ function requireUtil$9 () {
 	  nodeHasAutoSelectFamily: nodeMajor > 18 || (nodeMajor === 18 && nodeMinor >= 13),
 	  safeHTTPMethods: ['GET', 'HEAD', 'OPTIONS', 'TRACE']
 	};
-	return util$9;
+	return util$a;
 }
 
 var timers;
@@ -3600,17 +3600,17 @@ function requireGlobal$1 () {
 	return global$2;
 }
 
-var util$8;
-var hasRequiredUtil$8;
+var util$9;
+var hasRequiredUtil$9;
 
-function requireUtil$8 () {
-	if (hasRequiredUtil$8) return util$8;
-	hasRequiredUtil$8 = 1;
+function requireUtil$9 () {
+	if (hasRequiredUtil$9) return util$9;
+	hasRequiredUtil$9 = 1;
 
 	const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = requireConstants$6();
 	const { getGlobalOrigin } = requireGlobal$1();
 	const { performance } = require$$2$2;
-	const { isBlobLike, toUSVString, ReadableStreamFrom } = requireUtil$9();
+	const { isBlobLike, toUSVString, ReadableStreamFrom } = requireUtil$a();
 	const assert = require$$0$7;
 	const { isUint8Array } = require$$5;
 
@@ -4701,7 +4701,7 @@ function requireUtil$8 () {
 	 */
 	const hasOwn = Object.hasOwn || ((dict, key) => Object.prototype.hasOwnProperty.call(dict, key));
 
-	util$8 = {
+	util$9 = {
 	  isAborted,
 	  isCancelled,
 	  createDeferredPromise,
@@ -4748,7 +4748,7 @@ function requireUtil$8 () {
 	  normalizeMethodRecord,
 	  parseMetadata
 	};
-	return util$8;
+	return util$9;
 }
 
 var symbols$6;
@@ -4777,7 +4777,7 @@ function requireWebidl () {
 	hasRequiredWebidl = 1;
 
 	const { types } = require$$0__default;
-	const { hasOwn, toUSVString } = requireUtil$8();
+	const { hasOwn, toUSVString } = requireUtil$9();
 
 	/** @type {import('../../types/webidl').Webidl} */
 	const webidl = {};
@@ -5431,7 +5431,7 @@ function requireDataURL () {
 	hasRequiredDataURL = 1;
 	const assert = require$$0$7;
 	const { atob } = require$$7;
-	const { isomorphicDecode } = requireUtil$8();
+	const { isomorphicDecode } = requireUtil$9();
 
 	const encoder = new TextEncoder();
 
@@ -6069,10 +6069,10 @@ function requireFile () {
 	const { Blob, File: NativeFile } = require$$7;
 	const { types } = require$$0__default;
 	const { kState } = requireSymbols$6();
-	const { isBlobLike } = requireUtil$8();
+	const { isBlobLike } = requireUtil$9();
 	const { webidl } = requireWebidl();
 	const { parseMIMEType, serializeAMimeType } = requireDataURL();
-	const { kEnumerableProperty } = requireUtil$9();
+	const { kEnumerableProperty } = requireUtil$a();
 	const encoder = new TextEncoder();
 
 	class File extends Blob {
@@ -6418,7 +6418,7 @@ function requireFormdata () {
 	if (hasRequiredFormdata) return formdata;
 	hasRequiredFormdata = 1;
 
-	const { isBlobLike, toUSVString, makeIterator } = requireUtil$8();
+	const { isBlobLike, toUSVString, makeIterator } = requireUtil$9();
 	const { kState } = requireSymbols$6();
 	const { File: UndiciFile, FileLike, isFileLike } = requireFile();
 	const { webidl } = requireWebidl();
@@ -6692,7 +6692,7 @@ function requireBody () {
 	hasRequiredBody = 1;
 
 	const Busboy = requireMain();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const {
 	  ReadableStreamFrom,
 	  isBlobLike,
@@ -6700,7 +6700,7 @@ function requireBody () {
 	  readableStreamClose,
 	  createDeferredPromise,
 	  fullyReadBody
-	} = requireUtil$8();
+	} = requireUtil$9();
 	const { FormData } = requireFormdata();
 	const { kState } = requireSymbols$6();
 	const { webidl } = requireWebidl();
@@ -6708,7 +6708,7 @@ function requireBody () {
 	const { Blob, File: NativeFile } = require$$7;
 	const { kBodyUsed } = requireSymbols$7();
 	const assert = require$$0$7;
-	const { isErrored } = requireUtil$9();
+	const { isErrored } = requireUtil$a();
 	const { isUint8Array, isArrayBuffer } = require$$5;
 	const { File: UndiciFile } = requireFile();
 	const { parseMIMEType, serializeAMimeType } = requireDataURL();
@@ -7305,20 +7305,20 @@ function requireBody () {
 	return body$1;
 }
 
-var request$4;
-var hasRequiredRequest$4;
+var request$3;
+var hasRequiredRequest$3;
 
-function requireRequest$4 () {
-	if (hasRequiredRequest$4) return request$4;
-	hasRequiredRequest$4 = 1;
+function requireRequest$3 () {
+	if (hasRequiredRequest$3) return request$3;
+	hasRequiredRequest$3 = 1;
 
 	const {
 	  InvalidArgumentError,
 	  NotSupportedError
-	} = requireErrors$6();
+	} = requireErrors$5();
 	const assert = require$$0$7;
 	const { kHTTP2BuildRequest, kHTTP2CopyHeaders, kHTTP1BuildRequest } = requireSymbols$7();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 
 	// tokenRegExp and headerCharRegex have been lifted from
 	// https://github.com/nodejs/node/blob/main/lib/_http_common.js
@@ -7808,8 +7808,8 @@ function requireRequest$4 () {
 	  }
 	}
 
-	request$4 = Request;
-	return request$4;
+	request$3 = Request;
+	return request$3;
 }
 
 var dispatcher;
@@ -7851,7 +7851,7 @@ function requireDispatcherBase () {
 	  ClientDestroyedError,
 	  ClientClosedError,
 	  InvalidArgumentError
-	} = requireErrors$6();
+	} = requireErrors$5();
 	const { kDestroy, kClose, kDispatch, kInterceptors } = requireSymbols$7();
 
 	const kDestroyed = Symbol('destroyed');
@@ -8048,8 +8048,8 @@ function requireConnect () {
 
 	const net = require$$0$8;
 	const assert = require$$0$7;
-	const util = requireUtil$9();
-	const { InvalidArgumentError, ConnectTimeoutError } = requireErrors$6();
+	const util = requireUtil$a();
+	const { InvalidArgumentError, ConnectTimeoutError } = requireErrors$5();
 
 	let tls; // include tls conditionally since it is not always available
 
@@ -8550,10 +8550,10 @@ function requireRedirectHandler () {
 	if (hasRequiredRedirectHandler) return RedirectHandler_1;
 	hasRequiredRedirectHandler = 1;
 
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const { kBodyUsed } = requireSymbols$7();
 	const assert = require$$0$7;
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 	const EE = require$$1$3;
 
 	const redirectableStatusCodes = [300, 301, 302, 303, 307, 308];
@@ -8816,9 +8816,9 @@ function requireClient () {
 	const net = require$$0$8;
 	const http = require$$2;
 	const { pipeline } = require$$0$9;
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const timers = requireTimers();
-	const Request = requireRequest$4();
+	const Request = requireRequest$3();
 	const DispatcherBase = requireDispatcherBase();
 	const {
 	  RequestContentLengthMismatchError,
@@ -8833,7 +8833,7 @@ function requireClient () {
 	  HTTPParserError,
 	  ResponseExceededMaxSizeError,
 	  ClientDestroyedError
-	} = requireErrors$6();
+	} = requireErrors$5();
 	const buildConnector = requireConnect();
 	const {
 	  kUrl,
@@ -11477,8 +11477,8 @@ function requirePool () {
 	const Client = requireClient();
 	const {
 	  InvalidArgumentError
-	} = requireErrors$6();
-	const util = requireUtil$9();
+	} = requireErrors$5();
+	const util = requireUtil$a();
 	const { kUrl, kInterceptors } = requireSymbols$7();
 	const buildConnector = requireConnect();
 
@@ -11540,6 +11540,20 @@ function requirePool () {
 	      ? { ...options.interceptors }
 	      : undefined;
 	    this[kFactory] = factory;
+
+	    this.on('connectionError', (origin, targets, error) => {
+	      // If a connection error occurs, we remove the client from the pool,
+	      // and emit a connectionError event. They will not be re-used.
+	      // Fixes https://github.com/nodejs/undici/issues/3895
+	      for (const target of targets) {
+	        // Do not use kRemoveClient here, as it will close the client,
+	        // but the client cannot be closed in this state.
+	        const idx = this[kClients].indexOf(target);
+	        if (idx !== -1) {
+	          this[kClients].splice(idx, 1);
+	        }
+	      }
+	    });
 	  }
 
 	  [kGetDispatcher] () {
@@ -11572,7 +11586,7 @@ function requireBalancedPool () {
 	const {
 	  BalancedPoolMissingUpstreamError,
 	  InvalidArgumentError
-	} = requireErrors$6();
+	} = requireErrors$5();
 	const {
 	  PoolBase,
 	  kClients,
@@ -11583,7 +11597,7 @@ function requireBalancedPool () {
 	} = requirePoolBase();
 	const Pool = requirePool();
 	const { kUrl, kInterceptors } = requireSymbols$7();
-	const { parseOrigin } = requireUtil$9();
+	const { parseOrigin } = requireUtil$a();
 	const kFactory = Symbol('factory');
 
 	const kOptions = Symbol('options');
@@ -11823,12 +11837,12 @@ function requireAgent () {
 	if (hasRequiredAgent) return agent;
 	hasRequiredAgent = 1;
 
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 	const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = requireSymbols$7();
 	const DispatcherBase = requireDispatcherBase();
 	const Pool = requirePool();
 	const Client = requireClient();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const createRedirectInterceptor = requireRedirectInterceptor();
 	const { WeakRef, FinalizationRegistry } = requireDispatcherWeakref()();
 
@@ -11985,9 +11999,9 @@ function requireReadable () {
 
 	const assert = require$$0$7;
 	const { Readable } = require$$0$9;
-	const { RequestAbortedError, NotSupportedError, InvalidArgumentError } = requireErrors$6();
-	const util = requireUtil$9();
-	const { ReadableStreamFrom, toUSVString } = requireUtil$9();
+	const { RequestAbortedError, NotSupportedError, InvalidArgumentError } = requireErrors$5();
+	const util = requireUtil$a();
+	const { ReadableStreamFrom, toUSVString } = requireUtil$a();
 
 	let Blob;
 
@@ -12304,17 +12318,17 @@ function requireReadable () {
 	return readable;
 }
 
-var util$7;
-var hasRequiredUtil$7;
+var util$8;
+var hasRequiredUtil$8;
 
-function requireUtil$7 () {
-	if (hasRequiredUtil$7) return util$7;
-	hasRequiredUtil$7 = 1;
+function requireUtil$8 () {
+	if (hasRequiredUtil$8) return util$8;
+	hasRequiredUtil$8 = 1;
 	const assert = require$$0$7;
 	const {
 	  ResponseStatusCodeError
-	} = requireErrors$6();
-	const { toUSVString } = requireUtil$9();
+	} = requireErrors$5();
+	const { toUSVString } = requireUtil$a();
 
 	async function getResolveErrorBodyCallback ({ callback, body, contentType, statusCode, statusMessage, headers }) {
 	  assert(body);
@@ -12355,8 +12369,8 @@ function requireUtil$7 () {
 	  process.nextTick(callback, new ResponseStatusCodeError(`Response status code ${statusCode}${statusMessage ? `: ${statusMessage}` : ''}`, statusCode, headers));
 	}
 
-	util$7 = { getResolveErrorBodyCallback };
-	return util$7;
+	util$8 = { getResolveErrorBodyCallback };
+	return util$8;
 }
 
 var abortSignal;
@@ -12365,8 +12379,8 @@ var hasRequiredAbortSignal;
 function requireAbortSignal () {
 	if (hasRequiredAbortSignal) return abortSignal;
 	hasRequiredAbortSignal = 1;
-	const { addAbortListener } = requireUtil$9();
-	const { RequestAbortedError } = requireErrors$6();
+	const { addAbortListener } = requireUtil$a();
+	const { RequestAbortedError } = requireErrors$5();
 
 	const kListener = Symbol('kListener');
 	const kSignal = Symbol('kSignal');
@@ -12432,9 +12446,9 @@ function requireApiRequest () {
 	const {
 	  InvalidArgumentError,
 	  RequestAbortedError
-	} = requireErrors$6();
-	const util = requireUtil$9();
-	const { getResolveErrorBodyCallback } = requireUtil$7();
+	} = requireErrors$5();
+	const util = requireUtil$a();
+	const { getResolveErrorBodyCallback } = requireUtil$8();
 	const { AsyncResource } = require$$4;
 	const { addSignal, removeSignal } = requireAbortSignal();
 
@@ -12621,9 +12635,9 @@ function requireApiStream () {
 	  InvalidArgumentError,
 	  InvalidReturnValueError,
 	  RequestAbortedError
-	} = requireErrors$6();
-	const util = requireUtil$9();
-	const { getResolveErrorBodyCallback } = requireUtil$7();
+	} = requireErrors$5();
+	const util = requireUtil$a();
+	const { getResolveErrorBodyCallback } = requireUtil$8();
 	const { AsyncResource } = require$$4;
 	const { addSignal, removeSignal } = requireAbortSignal();
 
@@ -12853,8 +12867,8 @@ function requireApiPipeline () {
 	  InvalidArgumentError,
 	  InvalidReturnValueError,
 	  RequestAbortedError
-	} = requireErrors$6();
-	const util = requireUtil$9();
+	} = requireErrors$5();
+	const util = requireUtil$a();
 	const { AsyncResource } = require$$4;
 	const { addSignal, removeSignal } = requireAbortSignal();
 	const assert = require$$0$7;
@@ -13101,9 +13115,9 @@ function requireApiUpgrade () {
 	if (hasRequiredApiUpgrade) return apiUpgrade;
 	hasRequiredApiUpgrade = 1;
 
-	const { InvalidArgumentError, RequestAbortedError, SocketError } = requireErrors$6();
+	const { InvalidArgumentError, RequestAbortedError, SocketError } = requireErrors$5();
 	const { AsyncResource } = require$$4;
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const { addSignal, removeSignal } = requireAbortSignal();
 	const assert = require$$0$7;
 
@@ -13215,8 +13229,8 @@ function requireApiConnect () {
 	hasRequiredApiConnect = 1;
 
 	const { AsyncResource } = require$$4;
-	const { InvalidArgumentError, RequestAbortedError, SocketError } = requireErrors$6();
-	const util = requireUtil$9();
+	const { InvalidArgumentError, RequestAbortedError, SocketError } = requireErrors$5();
+	const util = requireUtil$a();
 	const { addSignal, removeSignal } = requireAbortSignal();
 
 	class ConnectHandler extends AsyncResource {
@@ -13340,7 +13354,7 @@ function requireMockErrors () {
 	if (hasRequiredMockErrors) return mockErrors;
 	hasRequiredMockErrors = 1;
 
-	const { UndiciError } = requireErrors$6();
+	const { UndiciError } = requireErrors$5();
 
 	class MockNotMatchedError extends UndiciError {
 	  constructor (message) {
@@ -13404,7 +13418,7 @@ function requireMockUtils () {
 	  kOrigin,
 	  kGetNetConnect
 	} = requireMockSymbols();
-	const { buildURL, nop } = requireUtil$9();
+	const { buildURL, nop } = requireUtil$a();
 	const { STATUS_CODES } = require$$2;
 	const {
 	  types: {
@@ -13765,8 +13779,8 @@ function requireMockInterceptor () {
 	  kContentLength,
 	  kMockDispatch
 	} = requireMockSymbols();
-	const { InvalidArgumentError } = requireErrors$6();
-	const { buildURL } = requireUtil$9();
+	const { InvalidArgumentError } = requireErrors$5();
+	const { buildURL } = requireUtil$a();
 
 	/**
 	 * Defines the scope API for an interceptor reply
@@ -13984,7 +13998,7 @@ function requireMockClient () {
 	} = requireMockSymbols();
 	const { MockInterceptor } = requireMockInterceptor();
 	const Symbols = requireSymbols$7();
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 
 	/**
 	 * MockClient provides an API that extends the Client to influence the mockDispatches.
@@ -14051,7 +14065,7 @@ function requireMockPool () {
 	} = requireMockSymbols();
 	const { MockInterceptor } = requireMockInterceptor();
 	const Symbols = requireSymbols$7();
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 
 	/**
 	 * MockPool provides an API that extends the Pool to influence the mockDispatches.
@@ -14205,7 +14219,7 @@ function requireMockAgent () {
 	const MockClient = requireMockClient();
 	const MockPool = requireMockPool();
 	const { matchValue, buildMockOptions } = requireMockUtils();
-	const { InvalidArgumentError, UndiciError } = requireErrors$6();
+	const { InvalidArgumentError, UndiciError } = requireErrors$5();
 	const Dispatcher = requireDispatcher();
 	const Pluralizer = requirePluralizer();
 	const PendingInterceptorsFormatter = requirePendingInterceptorsFormatter();
@@ -14373,7 +14387,7 @@ function requireProxyAgent () {
 	const Agent = requireAgent();
 	const Pool = requirePool();
 	const DispatcherBase = requireDispatcherBase();
-	const { InvalidArgumentError, RequestAbortedError } = requireErrors$6();
+	const { InvalidArgumentError, RequestAbortedError } = requireErrors$5();
 	const buildConnector = requireConnect();
 
 	const kAgent = Symbol('proxy agent');
@@ -14567,8 +14581,8 @@ function requireRetryHandler () {
 	const assert = require$$0$7;
 
 	const { kRetryHandlerDefaultRetry } = requireSymbols$7();
-	const { RequestRetryError } = requireErrors$6();
-	const { isDisturbed, parseHeaders, parseRangeHeader } = requireUtil$9();
+	const { RequestRetryError } = requireErrors$5();
+	const { isDisturbed, parseHeaders, parseRangeHeader } = requireUtil$a();
 
 	function calculateRetryAfterHeader (retryAfter) {
 	  const current = Date.now();
@@ -14913,7 +14927,7 @@ function requireGlobal () {
 	// We include a version number for the Dispatcher API. In case of breaking changes,
 	// this version number must be increased to avoid conflicts.
 	const globalDispatcher = Symbol.for('undici.globalDispatcher.1');
-	const { InvalidArgumentError } = requireErrors$6();
+	const { InvalidArgumentError } = requireErrors$5();
 	const Agent = requireAgent();
 
 	if (getGlobalDispatcher() === undefined) {
@@ -14995,12 +15009,13 @@ function requireHeaders () {
 
 	const { kHeadersList, kConstruct } = requireSymbols$7();
 	const { kGuard } = requireSymbols$6();
-	const { kEnumerableProperty } = requireUtil$9();
+	const { kEnumerableProperty } = requireUtil$a();
 	const {
 	  makeIterator,
 	  isValidHeaderName,
 	  isValidHeaderValue
-	} = requireUtil$8();
+	} = requireUtil$9();
+	const util = require$$0__default;
 	const { webidl } = requireWebidl();
 	const assert = require$$0$7;
 
@@ -15547,6 +15562,9 @@ function requireHeaders () {
 	  [Symbol.toStringTag]: {
 	    value: 'Headers',
 	    configurable: true
+	  },
+	  [util.inspect.custom]: {
+	    enumerable: false
 	  }
 	});
 
@@ -15583,7 +15601,7 @@ function requireResponse$1 () {
 
 	const { Headers, HeadersList, fill } = requireHeaders();
 	const { extractBody, cloneBody, mixinBody } = requireBody();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const { kEnumerableProperty } = util;
 	const {
 	  isValidReasonPhrase,
@@ -15593,7 +15611,7 @@ function requireResponse$1 () {
 	  serializeJavascriptValueToJSONString,
 	  isErrorLike,
 	  isomorphicEncode
-	} = requireUtil$8();
+	} = requireUtil$9();
 	const {
 	  redirectStatusSet,
 	  nullBodyStatus,
@@ -16155,24 +16173,24 @@ function requireResponse$1 () {
 
 /* globals AbortController */
 
-var request$3;
-var hasRequiredRequest$3;
+var request$2;
+var hasRequiredRequest$2;
 
-function requireRequest$3 () {
-	if (hasRequiredRequest$3) return request$3;
-	hasRequiredRequest$3 = 1;
+function requireRequest$2 () {
+	if (hasRequiredRequest$2) return request$2;
+	hasRequiredRequest$2 = 1;
 
 	const { extractBody, mixinBody, cloneBody } = requireBody();
 	const { Headers, fill: fillHeaders, HeadersList } = requireHeaders();
 	const { FinalizationRegistry } = requireDispatcherWeakref()();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const {
 	  isValidHTTPToken,
 	  sameOrigin,
 	  normalizeMethod,
 	  makePolicyContainer,
 	  normalizeMethodRecord
-	} = requireUtil$8();
+	} = requireUtil$9();
 	const {
 	  forbiddenMethodsSet,
 	  corsSafeListedMethodsSet,
@@ -17103,8 +17121,8 @@ function requireRequest$3 () {
 	  }
 	]);
 
-	request$3 = { Request, makeRequest };
-	return request$3;
+	request$2 = { Request, makeRequest };
+	return request$2;
 }
 
 var fetch_1;
@@ -17122,7 +17140,7 @@ function requireFetch () {
 	  makeResponse
 	} = requireResponse$1();
 	const { Headers } = requireHeaders();
-	const { Request, makeRequest } = requireRequest$3();
+	const { Request, makeRequest } = requireRequest$2();
 	const zlib = require$$3$1;
 	const {
 	  bytesMatch,
@@ -17153,7 +17171,7 @@ function requireFetch () {
 	  urlIsLocal,
 	  urlIsHttpHttpsScheme,
 	  urlHasHttpsScheme
-	} = requireUtil$8();
+	} = requireUtil$9();
 	const { kState, kHeaders, kGuard, kRealm } = requireSymbols$6();
 	const assert = require$$0$7;
 	const { safelyExtractBody } = requireBody();
@@ -17168,7 +17186,7 @@ function requireFetch () {
 	const { kHeadersList } = requireSymbols$7();
 	const EE = require$$1$3;
 	const { Readable, pipeline } = require$$0$9;
-	const { addAbortListener, isErrored, isReadable, nodeMajor, nodeMinor } = requireUtil$9();
+	const { addAbortListener, isErrored, isReadable, nodeMajor, nodeMinor } = requireUtil$a();
 	const { dataURLProcessor, serializeAMimeType } = requireDataURL();
 	const { TransformStream } = require$$14;
 	const { getGlobalDispatcher } = requireGlobal();
@@ -19589,12 +19607,12 @@ function requireEncoding () {
 	return encoding;
 }
 
-var util$6;
-var hasRequiredUtil$6;
+var util$7;
+var hasRequiredUtil$7;
 
-function requireUtil$6 () {
-	if (hasRequiredUtil$6) return util$6;
-	hasRequiredUtil$6 = 1;
+function requireUtil$7 () {
+	if (hasRequiredUtil$7) return util$7;
+	hasRequiredUtil$7 = 1;
 
 	const {
 	  kState,
@@ -19981,12 +19999,12 @@ function requireUtil$6 () {
 	  }, new Uint8Array(size))
 	}
 
-	util$6 = {
+	util$7 = {
 	  staticPropertyDescriptors,
 	  readOperation,
 	  fireAProgressEvent
 	};
-	return util$6;
+	return util$7;
 }
 
 var filereader;
@@ -20000,7 +20018,7 @@ function requireFilereader () {
 	  staticPropertyDescriptors,
 	  readOperation,
 	  fireAProgressEvent
-	} = requireUtil$6();
+	} = requireUtil$7();
 	const {
 	  kState,
 	  kError,
@@ -20009,7 +20027,7 @@ function requireFilereader () {
 	  kAborted
 	} = requireSymbols$5();
 	const { webidl } = requireWebidl();
-	const { kEnumerableProperty } = requireUtil$9();
+	const { kEnumerableProperty } = requireUtil$a();
 
 	class FileReader extends EventTarget {
 	  constructor () {
@@ -20354,16 +20372,16 @@ function requireSymbols$4 () {
 	return symbols$4;
 }
 
-var util$5;
-var hasRequiredUtil$5;
+var util$6;
+var hasRequiredUtil$6;
 
-function requireUtil$5 () {
-	if (hasRequiredUtil$5) return util$5;
-	hasRequiredUtil$5 = 1;
+function requireUtil$6 () {
+	if (hasRequiredUtil$6) return util$6;
+	hasRequiredUtil$6 = 1;
 
 	const assert = require$$0$7;
 	const { URLSerializer } = requireDataURL();
-	const { isValidHeaderName } = requireUtil$8();
+	const { isValidHeaderName } = requireUtil$9();
 
 	/**
 	 * @see https://url.spec.whatwg.org/#concept-url-equals
@@ -20404,11 +20422,11 @@ function requireUtil$5 () {
 	  return values
 	}
 
-	util$5 = {
+	util$6 = {
 	  urlEquals,
 	  fieldValues
 	};
-	return util$5;
+	return util$6;
 }
 
 var cache$1;
@@ -20419,15 +20437,15 @@ function requireCache$1 () {
 	hasRequiredCache$1 = 1;
 
 	const { kConstruct } = requireSymbols$4();
-	const { urlEquals, fieldValues: getFieldValues } = requireUtil$5();
-	const { kEnumerableProperty, isDisturbed } = requireUtil$9();
+	const { urlEquals, fieldValues: getFieldValues } = requireUtil$6();
+	const { kEnumerableProperty, isDisturbed } = requireUtil$a();
 	const { kHeadersList } = requireSymbols$7();
 	const { webidl } = requireWebidl();
 	const { Response, cloneResponse } = requireResponse$1();
-	const { Request } = requireRequest$3();
+	const { Request } = requireRequest$2();
 	const { kState, kHeaders, kGuard, kRealm } = requireSymbols$6();
 	const { fetching } = requireFetch();
-	const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = requireUtil$8();
+	const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = requireUtil$9();
 	const assert = require$$0$7;
 	const { getGlobalDispatcher } = requireGlobal();
 
@@ -21267,7 +21285,7 @@ function requireCachestorage () {
 	const { kConstruct } = requireSymbols$4();
 	const { Cache } = requireCache$1();
 	const { webidl } = requireWebidl();
-	const { kEnumerableProperty } = requireUtil$9();
+	const { kEnumerableProperty } = requireUtil$a();
 
 	class CacheStorage {
 	  /**
@@ -21429,16 +21447,17 @@ function requireConstants$4 () {
 	return constants$4;
 }
 
-var util$4;
-var hasRequiredUtil$4;
+var util$5;
+var hasRequiredUtil$5;
 
-function requireUtil$4 () {
-	if (hasRequiredUtil$4) return util$4;
-	hasRequiredUtil$4 = 1;
+function requireUtil$5 () {
+	if (hasRequiredUtil$5) return util$5;
+	hasRequiredUtil$5 = 1;
 
-	const assert = require$$0$7;
-	const { kHeadersList } = requireSymbols$7();
-
+	/**
+	 * @param {string} value
+	 * @returns {boolean}
+	 */
 	function isCTLExcludingHtab (value) {
 	  if (value.length === 0) {
 	    return false
@@ -21699,33 +21718,15 @@ function requireUtil$4 () {
 	  return out.join('; ')
 	}
 
-	let kHeadersListNode;
-
-	function getHeadersList (headers) {
-	  if (headers[kHeadersList]) {
-	    return headers[kHeadersList]
-	  }
-
-	  if (!kHeadersListNode) {
-	    kHeadersListNode = Object.getOwnPropertySymbols(headers).find(
-	      (symbol) => symbol.description === 'headers list'
-	    );
-
-	    assert(kHeadersListNode, 'Headers cannot be parsed');
-	  }
-
-	  const headersList = headers[kHeadersListNode];
-	  assert(headersList);
-
-	  return headersList
-	}
-
-	util$4 = {
+	util$5 = {
 	  isCTLExcludingHtab,
-	  stringify,
-	  getHeadersList
+	  validateCookieName,
+	  validateCookiePath,
+	  validateCookieValue,
+	  toIMFDate,
+	  stringify
 	};
-	return util$4;
+	return util$5;
 }
 
 var parse$4;
@@ -21736,7 +21737,7 @@ function requireParse$5 () {
 	hasRequiredParse$5 = 1;
 
 	const { maxNameValuePairSize, maxAttributeValueSize } = requireConstants$4();
-	const { isCTLExcludingHtab } = requireUtil$4();
+	const { isCTLExcludingHtab } = requireUtil$5();
 	const { collectASequenceOfCodePointsFast } = requireDataURL();
 	const assert = require$$0$7;
 
@@ -22061,7 +22062,7 @@ function requireCookies () {
 	hasRequiredCookies = 1;
 
 	const { parseSetCookie } = requireParse$5();
-	const { stringify, getHeadersList } = requireUtil$4();
+	const { stringify } = requireUtil$5();
 	const { webidl } = requireWebidl();
 	const { Headers } = requireHeaders();
 
@@ -22137,14 +22138,13 @@ function requireCookies () {
 
 	  webidl.brandCheck(headers, Headers, { strict: false });
 
-	  const cookies = getHeadersList(headers).cookies;
+	  const cookies = headers.getSetCookie();
 
 	  if (!cookies) {
 	    return []
 	  }
 
-	  // In older versions of undici, cookies is a list of name:value.
-	  return cookies.map((pair) => parseSetCookie(Array.isArray(pair) ? pair[1] : pair))
+	  return cookies.map((pair) => parseSetCookie(pair))
 	}
 
 	/**
@@ -22332,7 +22332,7 @@ function requireEvents () {
 	hasRequiredEvents = 1;
 
 	const { webidl } = requireWebidl();
-	const { kEnumerableProperty } = requireUtil$9();
+	const { kEnumerableProperty } = requireUtil$a();
 	const { MessagePort } = require$$2$1;
 
 	/**
@@ -22635,12 +22635,12 @@ function requireEvents () {
 	return events;
 }
 
-var util$3;
-var hasRequiredUtil$3;
+var util$4;
+var hasRequiredUtil$4;
 
-function requireUtil$3 () {
-	if (hasRequiredUtil$3) return util$3;
-	hasRequiredUtil$3 = 1;
+function requireUtil$4 () {
+	if (hasRequiredUtil$4) return util$4;
+	hasRequiredUtil$4 = 1;
 
 	const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = requireSymbols$3();
 	const { states, opcodes } = requireConstants$3();
@@ -22830,7 +22830,7 @@ function requireUtil$3 () {
 	  }
 	}
 
-	util$3 = {
+	util$4 = {
 	  isEstablished,
 	  isClosing,
 	  isClosed,
@@ -22840,7 +22840,7 @@ function requireUtil$3 () {
 	  failWebsocketConnection,
 	  websocketMessageReceived
 	};
-	return util$3;
+	return util$4;
 }
 
 var connection;
@@ -22858,9 +22858,9 @@ function requireConnection () {
 	  kByteParser,
 	  kReceivedClose
 	} = requireSymbols$3();
-	const { fireEvent, failWebsocketConnection } = requireUtil$3();
+	const { fireEvent, failWebsocketConnection } = requireUtil$4();
 	const { CloseEvent } = requireEvents();
-	const { makeRequest } = requireRequest$3();
+	const { makeRequest } = requireRequest$2();
 	const { fetching } = requireFetch();
 	const { Headers } = requireHeaders();
 	const { getGlobalDispatcher } = requireGlobal();
@@ -23234,7 +23234,7 @@ function requireReceiver () {
 	const diagnosticsChannel = require$$0$c;
 	const { parserStates, opcodes, states, emptyBuffer } = requireConstants$3();
 	const { kReadyState, kSentClose, kResponse, kReceivedClose } = requireSymbols$3();
-	const { isValidStatusCode, failWebsocketConnection, websocketMessageReceived } = requireUtil$3();
+	const { isValidStatusCode, failWebsocketConnection, websocketMessageReceived } = requireUtil$4();
 	const { WebsocketFrameSend } = requireFrame();
 
 	// This code was influenced by ws released under the MIT license.
@@ -23596,11 +23596,11 @@ function requireWebsocket () {
 	  kSentClose,
 	  kByteParser
 	} = requireSymbols$3();
-	const { isEstablished, isClosing, isValidSubprotocol, failWebsocketConnection, fireEvent } = requireUtil$3();
+	const { isEstablished, isClosing, isValidSubprotocol, failWebsocketConnection, fireEvent } = requireUtil$4();
 	const { establishWebSocketConnection } = requireConnection();
 	const { WebsocketFrameSend } = requireFrame();
 	const { ByteParser } = requireReceiver();
-	const { kEnumerableProperty, isBlobLike } = requireUtil$9();
+	const { kEnumerableProperty, isBlobLike } = requireUtil$a();
 	const { getGlobalDispatcher } = requireGlobal();
 	const { types } = require$$0__default;
 
@@ -24229,11 +24229,11 @@ function requireUndici () {
 
 	const Client = requireClient();
 	const Dispatcher = requireDispatcher();
-	const errors = requireErrors$6();
+	const errors = requireErrors$5();
 	const Pool = requirePool();
 	const BalancedPool = requireBalancedPool();
 	const Agent = requireAgent();
-	const util = requireUtil$9();
+	const util = requireUtil$a();
 	const { InvalidArgumentError } = errors;
 	const api = requireApi();
 	const buildConnector = requireConnect();
@@ -24344,7 +24344,7 @@ function requireUndici () {
 	  };
 	  undici.Headers = requireHeaders().Headers;
 	  undici.Response = requireResponse$1().Response;
-	  undici.Request = requireRequest$3().Request;
+	  undici.Request = requireRequest$2().Request;
 	  undici.FormData = requireFormdata().FormData;
 	  undici.File = requireFile().File;
 	  undici.FileReader = requireFilereader().FileReader;
@@ -27719,16 +27719,16 @@ function requireError$1 () {
 	return error$1.exports;
 }
 
-var errors$5;
-var hasRequiredErrors$5;
+var errors$4;
+var hasRequiredErrors$4;
 
-function requireErrors$5 () {
-	if (hasRequiredErrors$5) return errors$5;
-	hasRequiredErrors$5 = 1;
+function requireErrors$4 () {
+	if (hasRequiredErrors$4) return errors$4;
+	hasRequiredErrors$4 = 1;
 
 	const { createError } = requireError$1();
 
-	errors$5 = {
+	errors$4 = {
 	  AVV_ERR_EXPOSE_ALREADY_DEFINED: createError(
 	    'AVV_ERR_EXPOSE_ALREADY_DEFINED',
 	    "'%s' is already defined, specify an expose option for '%s'"
@@ -27762,7 +27762,7 @@ function requireErrors$5 () {
 	    "Plugin did not start in time: '%s'. You may have forgotten to call 'done' function or to resolve a Promise"
 	  )
 	};
-	return errors$5;
+	return errors$4;
 }
 
 var symbols$2;
@@ -28165,7 +28165,7 @@ function requirePlugin () {
 	const { inherits } = require$$1$5;
 	const { debug } = requireDebug$1();
 	const { createPromise } = requireCreatePromise();
-	const { AVV_ERR_PLUGIN_EXEC_TIMEOUT } = requireErrors$5();
+	const { AVV_ERR_PLUGIN_EXEC_TIMEOUT } = requireErrors$4();
 	const { getPluginName } = requireGetPluginName();
 	const { isPromiseLike } = requireIsPromiseLike();
 
@@ -28448,7 +28448,7 @@ function requireValidatePlugin () {
 	if (hasRequiredValidatePlugin) return validatePlugin_1;
 	hasRequiredValidatePlugin = 1;
 
-	const { AVV_ERR_PLUGIN_NOT_VALID } = requireErrors$5();
+	const { AVV_ERR_PLUGIN_NOT_VALID } = requireErrors$4();
 
 	/**
 	 * @param {any} maybePlugin
@@ -28626,7 +28626,7 @@ function requireBoot () {
 	  AVV_ERR_ROOT_PLG_BOOTED,
 	  AVV_ERR_READY_TIMEOUT,
 	  AVV_ERR_ATTRIBUTE_ALREADY_DEFINED
-	} = requireErrors$5();
+	} = requireErrors$4();
 	const {
 	  kAvvio,
 	  kIsOnCloseHandler
@@ -29295,15 +29295,15 @@ function requireSymbols$1 () {
 	return symbols$1;
 }
 
-var server$1 = {};
+var server = {};
 
-var errors$4 = {exports: {}};
+var errors$3 = {exports: {}};
 
-var hasRequiredErrors$4;
+var hasRequiredErrors$3;
 
-function requireErrors$4 () {
-	if (hasRequiredErrors$4) return errors$4.exports;
-	hasRequiredErrors$4 = 1;
+function requireErrors$3 () {
+	if (hasRequiredErrors$3) return errors$3.exports;
+	hasRequiredErrors$3 = 1;
 
 	const createError = requireError$1();
 
@@ -29791,9 +29791,9 @@ function requireErrors$4 () {
 	  return newErr
 	}
 
-	errors$4.exports = codes;
-	errors$4.exports.appendStackTrace = appendStackTrace;
-	errors$4.exports.AVVIO_ERRORS_MAP = {
+	errors$3.exports = codes;
+	errors$3.exports.appendStackTrace = appendStackTrace;
+	errors$3.exports.AVVIO_ERRORS_MAP = {
 	  AVV_ERR_CALLBACK_NOT_FN: codes.FST_ERR_PLUGIN_CALLBACK_NOT_FN,
 	  AVV_ERR_PLUGIN_NOT_VALID: codes.FST_ERR_PLUGIN_NOT_VALID,
 	  AVV_ERR_ROOT_PLG_BOOTED: codes.FST_ERR_ROOT_PLG_BOOTED,
@@ -29801,15 +29801,15 @@ function requireErrors$4 () {
 	  AVV_ERR_READY_TIMEOUT: codes.FST_ERR_PLUGIN_TIMEOUT,
 	  AVV_ERR_PLUGIN_EXEC_TIMEOUT: codes.FST_ERR_PLUGIN_TIMEOUT
 	};
-	return errors$4.exports;
+	return errors$3.exports;
 }
 
-var hooks$1;
-var hasRequiredHooks$1;
+var hooks;
+var hasRequiredHooks;
 
-function requireHooks$1 () {
-	if (hasRequiredHooks$1) return hooks$1;
-	hasRequiredHooks$1 = 1;
+function requireHooks () {
+	if (hasRequiredHooks) return hooks;
+	hasRequiredHooks = 1;
 
 	const applicationHooks = [
 	  'onRoute',
@@ -29840,7 +29840,7 @@ function requireHooks$1 () {
 	  FST_ERR_HOOK_NOT_SUPPORTED,
 	  AVVIO_ERRORS_MAP,
 	  appendStackTrace
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const {
 	  kChildren,
@@ -30219,7 +30219,7 @@ function requireHooks$1 () {
 	  return fn(request, reply, next)
 	}
 
-	hooks$1 = {
+	hooks = {
 	  Hooks,
 	  buildHooks,
 	  hookRunnerGenerator,
@@ -30238,14 +30238,14 @@ function requireHooks$1 () {
 	  lifecycleHooks,
 	  supportedHooks
 	};
-	return hooks$1;
+	return hooks;
 }
 
-var hasRequiredServer$1;
+var hasRequiredServer;
 
-function requireServer$1 () {
-	if (hasRequiredServer$1) return server$1;
-	hasRequiredServer$1 = 1;
+function requireServer () {
+	if (hasRequiredServer) return server;
+	hasRequiredServer = 1;
 
 	const http = require$$0__default$1;
 	const https = https__default;
@@ -30253,15 +30253,15 @@ function requireServer$1 () {
 	const os = os__default;
 
 	const { kState, kOptions, kServerBindings } = requireSymbols$1();
-	const { onListenHookRunner } = requireHooks$1();
+	const { onListenHookRunner } = requireHooks();
 	const {
 	  FST_ERR_HTTP2_INVALID_VERSION,
 	  FST_ERR_REOPENED_CLOSE_SERVER,
 	  FST_ERR_REOPENED_SERVER,
 	  FST_ERR_LISTEN_OPTIONS_INVALID
-	} = requireErrors$4();
+	} = requireErrors$3();
 
-	server$1.createServer = createServer;
+	server.createServer = createServer;
 
 	function defaultResolveServerListeningText (address) {
 	  return `Server listening at ${address}`
@@ -30615,7 +30615,7 @@ function requireServer$1 () {
 	function close () {
 	  this.close();
 	}
-	return server$1;
+	return server;
 }
 
 var reply = {exports: {}};
@@ -30811,7 +30811,7 @@ function requireValidation$1 () {
 
 	const {
 	  FST_ERR_SCH_RESPONSE_SCHEMA_NOT_NESTED_2XX
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const { FSTWRN001 } = requireWarnings();
 
@@ -31154,7 +31154,7 @@ function requireHandleRequest () {
 
 		const diagnostics = require$$1$7;
 		const { validate: validateSchema } = requireValidation$1();
-		const { preValidationHookRunner, preHandlerHookRunner } = requireHooks$1();
+		const { preValidationHookRunner, preHandlerHookRunner } = requireHooks();
 		const wrapThenable = requireWrapThenable();
 		const {
 		  kReplyIsError,
@@ -36693,7 +36693,7 @@ function requireLoggerPino () {
 	const { serializersSym } = pino.symbols;
 	const {
 	  FST_ERR_LOG_INVALID_DESTINATION,
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	function createPinoLogger (opts) {
 	  if (opts.stream && opts.file) {
@@ -36764,7 +36764,7 @@ function requireLoggerFactory () {
 	  FST_ERR_LOG_INVALID_LOGGER_CONFIG,
 	  FST_ERR_LOG_INVALID_LOGGER_INSTANCE,
 	  FST_ERR_LOG_INVALID_LOGGER
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	/**
 	 * Utility for creating a child logger with the appropriate bindings, logger factory
@@ -37118,7 +37118,7 @@ function requireSchemas () {
 	  FST_ERR_SCH_ALREADY_PRESENT,
 	  FST_ERR_SCH_DUPLICATE,
 	  FST_ERR_SCH_CONTENT_MISSING_SCHEMA
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const SCHEMAS_SOURCE = ['params', 'body', 'querystring', 'query', 'headers'];
 
@@ -37605,7 +37605,7 @@ function requireErrorHandler () {
 	const {
 	  FST_ERR_REP_INVALID_PAYLOAD_TYPE,
 	  FST_ERR_FAILED_ERROR_SERIALIZATION
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const { getSchemaSerializer } = requireSchemas();
 
@@ -37801,7 +37801,7 @@ function requireReply () {
 	  onResponseHookRunner,
 	  preHandlerHookRunner,
 	  preSerializationHookRunner
-	} = requireHooks$1();
+	} = requireHooks();
 
 	const internals = requireHandleRequest()[Symbol.for('internals')];
 	const loggerUtils = requireLoggerFactory();
@@ -37825,7 +37825,7 @@ function requireReply () {
 	  FST_ERR_BAD_TRAILER_VALUE,
 	  FST_ERR_MISSING_SERIALIZATION_FN,
 	  FST_ERR_MISSING_CONTENTTYPE_SERIALIZATION_FN
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const toString = Object.prototype.toString;
 
@@ -38706,7 +38706,7 @@ function requireReply () {
 	return reply.exports;
 }
 
-var request$2 = {exports: {}};
+var request$1 = {exports: {}};
 
 var proxyAddr = {exports: {}};
 
@@ -40188,11 +40188,11 @@ function requireProxyAddr () {
 	return proxyAddr.exports;
 }
 
-var hasRequiredRequest$2;
+var hasRequiredRequest$1;
 
-function requireRequest$2 () {
-	if (hasRequiredRequest$2) return request$2.exports;
-	hasRequiredRequest$2 = 1;
+function requireRequest$1 () {
+	if (hasRequiredRequest$1) return request$1.exports;
+	hasRequiredRequest$1 = 1;
 
 	const proxyAddr = requireProxyAddr();
 	const {
@@ -40207,7 +40207,7 @@ function requireRequest$2 () {
 	  kRouteContext,
 	  kRequestOriginalUrl
 	} = requireSymbols$1();
-	const { FST_ERR_REQ_INVALID_VALIDATION_INVOCATION } = requireErrors$4();
+	const { FST_ERR_REQ_INVALID_VALIDATION_INVOCATION } = requireErrors$3();
 
 	const HTTP_PART_SYMBOL_MAP = {
 	  body: kSchemaBody,
@@ -40540,17 +40540,17 @@ function requireRequest$2 () {
 	  }
 	});
 
-	request$2.exports = Request;
-	request$2.exports.buildRequest = buildRequest;
-	return request$2.exports;
+	request$1.exports = Request;
+	request$1.exports.buildRequest = buildRequest;
+	return request$1.exports;
 }
 
-var context$1;
-var hasRequiredContext$1;
+var context;
+var hasRequiredContext;
 
-function requireContext$1 () {
-	if (hasRequiredContext$1) return context$1;
-	hasRequiredContext$1 = 1;
+function requireContext () {
+	if (hasRequiredContext) return context;
+	hasRequiredContext = 1;
 
 	const {
 	  kFourOhFourContext,
@@ -40644,8 +40644,8 @@ function requireContext$1 () {
 	  return new Error(text.slice(0, -separator.length))
 	}
 
-	context$1 = Context;
-	return context$1;
+	context = Context;
+	return context;
 }
 
 var decorate_1;
@@ -40668,7 +40668,7 @@ function requireDecorate () {
 	  FST_ERR_DEC_AFTER_START,
 	  FST_ERR_DEC_REFERENCE_TYPE,
 	  FST_ERR_DEC_DEPENDENCY_INVALID_TYPE
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	function decorate (instance, name, fn, dependencies) {
 	  if (Object.hasOwn(instance, name)) {
@@ -41850,7 +41850,7 @@ function requireContentTypeParser () {
 		  FST_ERR_CTP_INVALID_CONTENT_LENGTH,
 		  FST_ERR_CTP_EMPTY_JSON_BODY,
 		  FST_ERR_CTP_INSTANCE_ALREADY_STARTED
-		} = requireErrors$4();
+		} = requireErrors$3();
 		const { FSTSEC001 } = requireWarnings();
 
 		function ContentTypeParser (bodyLimit, onProtoPoisoning, onConstructorPoisoning) {
@@ -42637,7 +42637,7 @@ var validate = {};
 
 var boolSchema = {};
 
-var errors$3 = {};
+var errors$2 = {};
 
 var codegen = {};
 
@@ -43668,15 +43668,15 @@ function requireCodegen () {
 	return codegen;
 }
 
-var util$2 = {};
+var util$3 = {};
 
-var hasRequiredUtil$2;
+var hasRequiredUtil$3;
 
-function requireUtil$2 () {
-	if (hasRequiredUtil$2) return util$2;
-	hasRequiredUtil$2 = 1;
-	Object.defineProperty(util$2, "__esModule", { value: true });
-	util$2.checkStrictMode = util$2.getErrorPath = util$2.Type = util$2.useFunc = util$2.setEvaluated = util$2.evaluatedPropsToName = util$2.mergeEvaluated = util$2.eachItem = util$2.unescapeJsonPointer = util$2.escapeJsonPointer = util$2.escapeFragment = util$2.unescapeFragment = util$2.schemaRefOrVal = util$2.schemaHasRulesButRef = util$2.schemaHasRules = util$2.checkUnknownRules = util$2.alwaysValidSchema = util$2.toHash = void 0;
+function requireUtil$3 () {
+	if (hasRequiredUtil$3) return util$3;
+	hasRequiredUtil$3 = 1;
+	Object.defineProperty(util$3, "__esModule", { value: true });
+	util$3.checkStrictMode = util$3.getErrorPath = util$3.Type = util$3.useFunc = util$3.setEvaluated = util$3.evaluatedPropsToName = util$3.mergeEvaluated = util$3.eachItem = util$3.unescapeJsonPointer = util$3.escapeJsonPointer = util$3.escapeFragment = util$3.unescapeFragment = util$3.schemaRefOrVal = util$3.schemaHasRulesButRef = util$3.schemaHasRules = util$3.checkUnknownRules = util$3.alwaysValidSchema = util$3.toHash = void 0;
 	const codegen_1 = requireCodegen();
 	const code_1 = requireCode$1();
 	// TODO refactor to use Set
@@ -43686,7 +43686,7 @@ function requireUtil$2 () {
 	        hash[item] = true;
 	    return hash;
 	}
-	util$2.toHash = toHash;
+	util$3.toHash = toHash;
 	function alwaysValidSchema(it, schema) {
 	    if (typeof schema == "boolean")
 	        return schema;
@@ -43695,7 +43695,7 @@ function requireUtil$2 () {
 	    checkUnknownRules(it, schema);
 	    return !schemaHasRules(schema, it.self.RULES.all);
 	}
-	util$2.alwaysValidSchema = alwaysValidSchema;
+	util$3.alwaysValidSchema = alwaysValidSchema;
 	function checkUnknownRules(it, schema = it.schema) {
 	    const { opts, self } = it;
 	    if (!opts.strictSchema)
@@ -43708,7 +43708,7 @@ function requireUtil$2 () {
 	            checkStrictMode(it, `unknown keyword: "${key}"`);
 	    }
 	}
-	util$2.checkUnknownRules = checkUnknownRules;
+	util$3.checkUnknownRules = checkUnknownRules;
 	function schemaHasRules(schema, rules) {
 	    if (typeof schema == "boolean")
 	        return !schema;
@@ -43717,7 +43717,7 @@ function requireUtil$2 () {
 	            return true;
 	    return false;
 	}
-	util$2.schemaHasRules = schemaHasRules;
+	util$3.schemaHasRules = schemaHasRules;
 	function schemaHasRulesButRef(schema, RULES) {
 	    if (typeof schema == "boolean")
 	        return !schema;
@@ -43726,7 +43726,7 @@ function requireUtil$2 () {
 	            return true;
 	    return false;
 	}
-	util$2.schemaHasRulesButRef = schemaHasRulesButRef;
+	util$3.schemaHasRulesButRef = schemaHasRulesButRef;
 	function schemaRefOrVal({ topSchemaRef, schemaPath }, schema, keyword, $data) {
 	    if (!$data) {
 	        if (typeof schema == "number" || typeof schema == "boolean")
@@ -43736,25 +43736,25 @@ function requireUtil$2 () {
 	    }
 	    return (0, codegen_1._) `${topSchemaRef}${schemaPath}${(0, codegen_1.getProperty)(keyword)}`;
 	}
-	util$2.schemaRefOrVal = schemaRefOrVal;
+	util$3.schemaRefOrVal = schemaRefOrVal;
 	function unescapeFragment(str) {
 	    return unescapeJsonPointer(decodeURIComponent(str));
 	}
-	util$2.unescapeFragment = unescapeFragment;
+	util$3.unescapeFragment = unescapeFragment;
 	function escapeFragment(str) {
 	    return encodeURIComponent(escapeJsonPointer(str));
 	}
-	util$2.escapeFragment = escapeFragment;
+	util$3.escapeFragment = escapeFragment;
 	function escapeJsonPointer(str) {
 	    if (typeof str == "number")
 	        return `${str}`;
 	    return str.replace(/~/g, "~0").replace(/\//g, "~1");
 	}
-	util$2.escapeJsonPointer = escapeJsonPointer;
+	util$3.escapeJsonPointer = escapeJsonPointer;
 	function unescapeJsonPointer(str) {
 	    return str.replace(/~1/g, "/").replace(/~0/g, "~");
 	}
-	util$2.unescapeJsonPointer = unescapeJsonPointer;
+	util$3.unescapeJsonPointer = unescapeJsonPointer;
 	function eachItem(xs, f) {
 	    if (Array.isArray(xs)) {
 	        for (const x of xs)
@@ -43764,7 +43764,7 @@ function requireUtil$2 () {
 	        f(xs);
 	    }
 	}
-	util$2.eachItem = eachItem;
+	util$3.eachItem = eachItem;
 	function makeMergeEvaluated({ mergeNames, mergeToName, mergeValues, resultToName, }) {
 	    return (gen, from, to, toName) => {
 	        const res = to === undefined
@@ -43777,7 +43777,7 @@ function requireUtil$2 () {
 	        return toName === codegen_1.Name && !(res instanceof codegen_1.Name) ? resultToName(gen, res) : res;
 	    };
 	}
-	util$2.mergeEvaluated = {
+	util$3.mergeEvaluated = {
 	    props: makeMergeEvaluated({
 	        mergeNames: (gen, from, to) => gen.if((0, codegen_1._) `${to} !== true && ${from} !== undefined`, () => {
 	            gen.if((0, codegen_1._) `${from} === true`, () => gen.assign(to, true), () => gen.assign(to, (0, codegen_1._) `${to} || {}`).code((0, codegen_1._) `Object.assign(${to}, ${from})`));
@@ -43809,11 +43809,11 @@ function requireUtil$2 () {
 	        setEvaluated(gen, props, ps);
 	    return props;
 	}
-	util$2.evaluatedPropsToName = evaluatedPropsToName;
+	util$3.evaluatedPropsToName = evaluatedPropsToName;
 	function setEvaluated(gen, props, ps) {
 	    Object.keys(ps).forEach((p) => gen.assign((0, codegen_1._) `${props}${(0, codegen_1.getProperty)(p)}`, true));
 	}
-	util$2.setEvaluated = setEvaluated;
+	util$3.setEvaluated = setEvaluated;
 	const snippets = {};
 	function useFunc(gen, f) {
 	    return gen.scopeValue("func", {
@@ -43821,12 +43821,12 @@ function requireUtil$2 () {
 	        code: snippets[f.code] || (snippets[f.code] = new code_1._Code(f.code)),
 	    });
 	}
-	util$2.useFunc = useFunc;
+	util$3.useFunc = useFunc;
 	var Type;
 	(function (Type) {
 	    Type[Type["Num"] = 0] = "Num";
 	    Type[Type["Str"] = 1] = "Str";
-	})(Type || (util$2.Type = Type = {}));
+	})(Type || (util$3.Type = Type = {}));
 	function getErrorPath(dataProp, dataPropType, jsPropertySyntax) {
 	    // let path
 	    if (dataProp instanceof codegen_1.Name) {
@@ -43841,7 +43841,7 @@ function requireUtil$2 () {
 	    }
 	    return jsPropertySyntax ? (0, codegen_1.getProperty)(dataProp).toString() : "/" + escapeJsonPointer(dataProp);
 	}
-	util$2.getErrorPath = getErrorPath;
+	util$3.getErrorPath = getErrorPath;
 	function checkStrictMode(it, msg, mode = it.opts.strictSchema) {
 	    if (!mode)
 	        return;
@@ -43850,9 +43850,9 @@ function requireUtil$2 () {
 	        throw new Error(msg);
 	    it.self.logger.warn(msg);
 	}
-	util$2.checkStrictMode = checkStrictMode;
+	util$3.checkStrictMode = checkStrictMode;
 	
-	return util$2;
+	return util$3;
 }
 
 var names = {};
@@ -43892,16 +43892,16 @@ function requireNames () {
 	return names;
 }
 
-var hasRequiredErrors$3;
+var hasRequiredErrors$2;
 
-function requireErrors$3 () {
-	if (hasRequiredErrors$3) return errors$3;
-	hasRequiredErrors$3 = 1;
+function requireErrors$2 () {
+	if (hasRequiredErrors$2) return errors$2;
+	hasRequiredErrors$2 = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
 		exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
 		const codegen_1 = requireCodegen();
-		const util_1 = requireUtil$2();
+		const util_1 = requireUtil$3();
 		const names_1 = requireNames();
 		exports.keywordError = {
 		    message: ({ keyword }) => (0, codegen_1.str) `must pass "${keyword}" keyword validation`,
@@ -44020,8 +44020,8 @@ function requireErrors$3 () {
 		        keyValues.push([E.propertyName, propertyName]);
 		}
 		
-	} (errors$3));
-	return errors$3;
+	} (errors$2));
+	return errors$2;
 }
 
 var hasRequiredBoolSchema;
@@ -44031,7 +44031,7 @@ function requireBoolSchema () {
 	hasRequiredBoolSchema = 1;
 	Object.defineProperty(boolSchema, "__esModule", { value: true });
 	boolSchema.boolOrEmptySchema = boolSchema.topBoolOrEmptySchema = void 0;
-	const errors_1 = requireErrors$3();
+	const errors_1 = requireErrors$2();
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
 	const boolError = {
@@ -44155,9 +44155,9 @@ function requireDataType () {
 	dataType.reportTypeError = dataType.checkDataTypes = dataType.checkDataType = dataType.coerceAndCheckDataType = dataType.getJSONTypes = dataType.getSchemaTypes = dataType.DataType = void 0;
 	const rules_1 = requireRules();
 	const applicability_1 = requireApplicability();
-	const errors_1 = requireErrors$3();
+	const errors_1 = requireErrors$2();
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	var DataType;
 	(function (DataType) {
 	    DataType[DataType["Correct"] = 0] = "Correct";
@@ -44366,7 +44366,7 @@ function requireDefaults () {
 	Object.defineProperty(defaults, "__esModule", { value: true });
 	defaults.assignDefaults = void 0;
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	function assignDefaults(it, ty) {
 	    const { properties, items } = it.schema;
 	    if (ty === "object" && properties) {
@@ -44412,9 +44412,9 @@ function requireCode () {
 	Object.defineProperty(code, "__esModule", { value: true });
 	code.validateUnion = code.validateArray = code.usePattern = code.callValidateCode = code.schemaProperties = code.allSchemaProperties = code.noPropertyInData = code.propertyInData = code.isOwnProperty = code.hasPropFunc = code.reportMissingProp = code.checkMissingProp = code.checkReportMissingProp = void 0;
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const names_1 = requireNames();
-	const util_2 = requireUtil$2();
+	const util_2 = requireUtil$3();
 	function checkReportMissingProp(cxt, prop) {
 	    const { gen, data, it } = cxt;
 	    gen.if(noPropertyInData(gen, data, prop, it.opts.ownProperties), () => {
@@ -44552,7 +44552,7 @@ function requireKeyword () {
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
 	const code_1 = requireCode();
-	const errors_1 = requireErrors$3();
+	const errors_1 = requireErrors$2();
 	function macroKeywordCode(cxt, def) {
 	    const { gen, keyword, schema, parentSchema, it } = cxt;
 	    const macroSchema = def.macro.call(it.self, schema, parentSchema, it);
@@ -44683,7 +44683,7 @@ function requireSubschema () {
 	Object.defineProperty(subschema, "__esModule", { value: true });
 	subschema.extendSubschemaMode = subschema.extendSubschemaData = subschema.getSubschema = void 0;
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	function getSubschema(it, { keyword, schemaProp, schema, schemaPath, errSchemaPath, topSchemaRef }) {
 	    if (keyword !== undefined && schema !== undefined) {
 	        throw new Error('both "keyword" and "schema" passed, only one allowed');
@@ -44928,7 +44928,7 @@ function requireResolve () {
 	hasRequiredResolve = 1;
 	Object.defineProperty(resolve, "__esModule", { value: true });
 	resolve.getSchemaRefs = resolve.resolveUrl = resolve.normalizeId = resolve._getFullPath = resolve.getFullPath = resolve.inlineRef = void 0;
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const equal = requireFastDeepEqual();
 	const traverse = requireJsonSchemaTraverse();
 	// TODO refactor to use keyword definitions
@@ -45100,8 +45100,8 @@ function requireValidate () {
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
 	const resolve_1 = requireResolve();
-	const util_1 = requireUtil$2();
-	const errors_1 = requireErrors$3();
+	const util_1 = requireUtil$3();
+	const errors_1 = requireErrors$2();
 	// schema compilation - generates validation function, subschemaCode (below) is used for subschemas
 	function validateFunctionCode(it) {
 	    if (isSchemaObj(it)) {
@@ -45663,7 +45663,7 @@ function requireCompile () {
 	const validation_error_1 = requireValidation_error();
 	const names_1 = requireNames();
 	const resolve_1 = requireResolve();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const validate_1 = requireValidate();
 	class SchemaEnv {
 	    constructor(env) {
@@ -46766,7 +46766,7 @@ function requireCore$1 () {
 		const codegen_2 = requireCodegen();
 		const resolve_1 = requireResolve();
 		const dataType_1 = requireDataType();
-		const util_1 = requireUtil$2();
+		const util_1 = requireUtil$3();
 		const $dataRefSchema = require$$9;
 		const uri_1 = requireUri$1();
 		const defaultRegExp = (str, flags) => new RegExp(str, flags);
@@ -47406,7 +47406,7 @@ function requireRef$2 () {
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
 	const compile_1 = requireCompile();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const def = {
 	    keyword: "$ref",
 	    schemaType: "string",
@@ -47661,7 +47661,7 @@ function requireLimitLength () {
 	hasRequiredLimitLength = 1;
 	Object.defineProperty(limitLength, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const ucs2length_1 = requireUcs2length();
 	const error = {
 	    message({ keyword, schemaCode }) {
@@ -47764,7 +47764,7 @@ function requireRequired () {
 	Object.defineProperty(required, "__esModule", { value: true });
 	const code_1 = requireCode();
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: ({ params: { missingProperty } }) => (0, codegen_1.str) `must have required property '${missingProperty}'`,
 	    params: ({ params: { missingProperty } }) => (0, codegen_1._) `{missingProperty: ${missingProperty}}`,
@@ -47901,7 +47901,7 @@ function requireUniqueItems () {
 	Object.defineProperty(uniqueItems, "__esModule", { value: true });
 	const dataType_1 = requireDataType();
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const equal_1 = requireEqual();
 	const error = {
 	    message: ({ params: { i, j } }) => (0, codegen_1.str) `must NOT have duplicate items (items ## ${j} and ${i} are identical)`,
@@ -47973,7 +47973,7 @@ function require_const () {
 	hasRequired_const = 1;
 	Object.defineProperty(_const, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const equal_1 = requireEqual();
 	const error = {
 	    message: "must be equal to constant",
@@ -48007,7 +48007,7 @@ function require_enum$1 () {
 	hasRequired_enum$1 = 1;
 	Object.defineProperty(_enum$1, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const equal_1 = requireEqual();
 	const error = {
 	    message: "must be equal to one of the allowed values",
@@ -48107,7 +48107,7 @@ function requireAdditionalItems () {
 	Object.defineProperty(additionalItems, "__esModule", { value: true });
 	additionalItems.validateAdditionalItems = void 0;
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: ({ params: { len } }) => (0, codegen_1.str) `must NOT have more than ${len} items`,
 	    params: ({ params: { len } }) => (0, codegen_1._) `{limit: ${len}}`,
@@ -48167,7 +48167,7 @@ function requireItems () {
 	Object.defineProperty(items, "__esModule", { value: true });
 	items.validateTuple = void 0;
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const code_1 = requireCode();
 	const def = {
 	    keyword: "items",
@@ -48246,7 +48246,7 @@ function requireItems2020 () {
 	hasRequiredItems2020 = 1;
 	Object.defineProperty(items2020, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const code_1 = requireCode();
 	const additionalItems_1 = requireAdditionalItems();
 	const error = {
@@ -48285,7 +48285,7 @@ function requireContains () {
 	hasRequiredContains = 1;
 	Object.defineProperty(contains, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: ({ params: { min, max } }) => max === undefined
 	        ? (0, codegen_1.str) `must contain at least ${min} valid item(s)`
@@ -48391,7 +48391,7 @@ function requireDependencies () {
 		Object.defineProperty(exports, "__esModule", { value: true });
 		exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
 		const codegen_1 = requireCodegen();
-		const util_1 = requireUtil$2();
+		const util_1 = requireUtil$3();
 		const code_1 = requireCode();
 		exports.error = {
 		    message: ({ params: { property, depsCount, deps } }) => {
@@ -48485,7 +48485,7 @@ function requirePropertyNames () {
 	hasRequiredPropertyNames = 1;
 	Object.defineProperty(propertyNames, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: "property name must be valid",
 	    params: ({ params }) => (0, codegen_1._) `{propertyName: ${params.propertyName}}`,
@@ -48534,7 +48534,7 @@ function requireAdditionalProperties () {
 	const code_1 = requireCode();
 	const codegen_1 = requireCodegen();
 	const names_1 = requireNames();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: "must NOT have additional properties",
 	    params: ({ params }) => (0, codegen_1._) `{additionalProperty: ${params.additionalProperty}}`,
@@ -48648,7 +48648,7 @@ function requireProperties$1 () {
 	Object.defineProperty(properties$2, "__esModule", { value: true });
 	const validate_1 = requireValidate();
 	const code_1 = requireCode();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const additionalProperties_1 = requireAdditionalProperties();
 	const def = {
 	    keyword: "properties",
@@ -48711,8 +48711,8 @@ function requirePatternProperties () {
 	Object.defineProperty(patternProperties, "__esModule", { value: true });
 	const code_1 = requireCode();
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
-	const util_2 = requireUtil$2();
+	const util_1 = requireUtil$3();
+	const util_2 = requireUtil$3();
 	const def = {
 	    keyword: "patternProperties",
 	    type: "object",
@@ -48793,7 +48793,7 @@ function requireNot () {
 	if (hasRequiredNot) return not;
 	hasRequiredNot = 1;
 	Object.defineProperty(not, "__esModule", { value: true });
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const def = {
 	    keyword: "not",
 	    schemaType: ["object", "boolean"],
@@ -48850,7 +48850,7 @@ function requireOneOf () {
 	hasRequiredOneOf = 1;
 	Object.defineProperty(oneOf, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: "must match exactly one schema in oneOf",
 	    params: ({ params }) => (0, codegen_1._) `{passingSchemas: ${params.passing}}`,
@@ -48918,7 +48918,7 @@ function requireAllOf () {
 	if (hasRequiredAllOf) return allOf;
 	hasRequiredAllOf = 1;
 	Object.defineProperty(allOf, "__esModule", { value: true });
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const def = {
 	    keyword: "allOf",
 	    schemaType: "array",
@@ -48951,7 +48951,7 @@ function require_if () {
 	hasRequired_if = 1;
 	Object.defineProperty(_if, "__esModule", { value: true });
 	const codegen_1 = requireCodegen();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: ({ params }) => (0, codegen_1.str) `must match "${params.ifClause}" schema`,
 	    params: ({ params }) => (0, codegen_1._) `{failingKeyword: ${params.ifClause}}`,
@@ -49025,7 +49025,7 @@ function requireThenElse () {
 	if (hasRequiredThenElse) return thenElse;
 	hasRequiredThenElse = 1;
 	Object.defineProperty(thenElse, "__esModule", { value: true });
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const def = {
 	    keyword: ["then", "else"],
 	    schemaType: ["object", "boolean"],
@@ -49287,7 +49287,7 @@ function requireDiscriminator$1 () {
 	const types_1 = requireTypes$3();
 	const compile_1 = requireCompile();
 	const ref_error_1 = requireRef_error();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const error = {
 	    message: ({ params: { discrError, tagName } }) => discrError === types_1.DiscrError.Tag
 	        ? `tag "${tagName}" must be string`
@@ -51313,12 +51313,12 @@ function requireSchemaValidator () {
 	return schemaValidator.exports;
 }
 
-var errors$2;
-var hasRequiredErrors$2;
+var errors$1;
+var hasRequiredErrors$1;
 
-function requireErrors$2 () {
-	if (hasRequiredErrors$2) return errors$2;
-	hasRequiredErrors$2 = 1;
+function requireErrors$1 () {
+	if (hasRequiredErrors$1) return errors$1;
+	hasRequiredErrors$1 = 1;
 
 	class MergeError extends Error {
 	  constructor (keyword, schemas) {
@@ -51349,12 +51349,12 @@ function requireErrors$2 () {
 	  }
 	}
 
-	errors$2 = {
+	errors$1 = {
 	  MergeError,
 	  ResolverNotFoundError,
 	  InvalidOnConflictOptionError
 	};
-	return errors$2;
+	return errors$1;
 }
 
 var resolvers;
@@ -51365,7 +51365,7 @@ function requireResolvers () {
 	hasRequiredResolvers = 1;
 
 	const { dequal: deepEqual } = requireDist$6();
-	const { MergeError } = requireErrors$2();
+	const { MergeError } = requireErrors$1();
 
 	function _arraysIntersection (arrays) {
 	  let intersection = arrays[0];
@@ -51501,7 +51501,7 @@ function requireMergeJsonSchemas () {
 
 	const { dequal: deepEqual } = requireDist$6();
 	const resolvers = requireResolvers();
-	const errors = requireErrors$2();
+	const errors = requireErrors$1();
 
 	const keywordsResolvers = {
 	  $id: resolvers.skip,
@@ -53050,7 +53050,7 @@ function requireMetadata () {
 	hasRequiredMetadata = 1;
 	Object.defineProperty(metadata$1, "__esModule", { value: true });
 	metadata$1.checkMetadata = void 0;
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const def = {
 	    keyword: "metadata",
 	    schemaType: "object",
@@ -53151,14 +53151,14 @@ function requireRef$1 () {
 
 var type$1 = {};
 
-var timestamp$1 = {};
+var timestamp = {};
 
-var hasRequiredTimestamp$1;
+var hasRequiredTimestamp;
 
-function requireTimestamp$1 () {
-	if (hasRequiredTimestamp$1) return timestamp$1;
-	hasRequiredTimestamp$1 = 1;
-	Object.defineProperty(timestamp$1, "__esModule", { value: true });
+function requireTimestamp () {
+	if (hasRequiredTimestamp) return timestamp;
+	hasRequiredTimestamp = 1;
+	Object.defineProperty(timestamp, "__esModule", { value: true });
 	const DT_SEPARATOR = /t|\s/i;
 	const DATE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
 	const TIME = /^(\d\d):(\d\d):(\d\d)(?:\.\d+)?(?:z|([+-]\d\d)(?::?(\d\d))?)$/i;
@@ -53169,7 +53169,7 @@ function requireTimestamp$1 () {
 	    return ((dt.length === 2 && validDate(dt[0]) && validTime(dt[1])) ||
 	        (allowDate && dt.length === 1 && validDate(dt[0])));
 	}
-	timestamp$1.default = validTimestamp;
+	timestamp.default = validTimestamp;
 	function validDate(str) {
 	    const matches = DATE.exec(str);
 	    if (!matches)
@@ -53199,7 +53199,7 @@ function requireTimestamp$1 () {
 	}
 	validTimestamp.code = 'require("ajv/dist/runtime/timestamp").default';
 	
-	return timestamp$1;
+	return timestamp;
 }
 
 var error = {};
@@ -53240,8 +53240,8 @@ function requireType$1 () {
 		Object.defineProperty(exports, "__esModule", { value: true });
 		exports.intRange = void 0;
 		const codegen_1 = requireCodegen();
-		const timestamp_1 = requireTimestamp$1();
-		const util_1 = requireUtil$2();
+		const timestamp_1 = requireTimestamp();
+		const util_1 = requireUtil$3();
 		const metadata_1 = requireMetadata();
 		const error_1 = requireError();
 		exports.intRange = {
@@ -53400,7 +53400,7 @@ function requireElements () {
 	if (hasRequiredElements) return elements;
 	hasRequiredElements = 1;
 	Object.defineProperty(elements, "__esModule", { value: true });
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const code_1 = requireCode();
 	const codegen_1 = requireCodegen();
 	const metadata_1 = requireMetadata();
@@ -53436,7 +53436,7 @@ function requireProperties () {
 		Object.defineProperty(exports, "__esModule", { value: true });
 		exports.validateProperties = exports.error = void 0;
 		const code_1 = requireCode();
-		const util_1 = requireUtil$2();
+		const util_1 = requireUtil$3();
 		const codegen_1 = requireCodegen();
 		const metadata_1 = requireMetadata();
 		const nullable_1 = requireNullable();
@@ -53697,7 +53697,7 @@ function requireValues () {
 	if (hasRequiredValues) return values;
 	hasRequiredValues = 1;
 	Object.defineProperty(values, "__esModule", { value: true });
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const codegen_1 = requireCodegen();
 	const metadata_1 = requireMetadata();
 	const nullable_1 = requireNullable();
@@ -54010,7 +54010,7 @@ function requireSerialize () {
 	const names_1 = requireNames();
 	const code_1 = requireCode();
 	const ref_1 = requireRef$1();
-	const util_1 = requireUtil$2();
+	const util_1 = requireUtil$3();
 	const quote_1 = requireQuote();
 	const genSerialize = {
 	    elements: serializeElements,
@@ -54444,8 +54444,8 @@ function requireParse$3 () {
 	const ref_1 = requireRef$1();
 	const type_1 = requireType$1();
 	const parseJson_1 = requireParseJson();
-	const util_1 = requireUtil$2();
-	const timestamp_1 = requireTimestamp$1();
+	const util_1 = requireUtil$3();
+	const timestamp_1 = requireTimestamp();
 	const genParse = {
 	    elements: parseElements,
 	    values: parseValues,
@@ -58037,7 +58037,7 @@ function requirePluginUtils () {
 		  FST_ERR_PLUGIN_VERSION_MISMATCH,
 		  FST_ERR_PLUGIN_NOT_PRESENT_IN_INSTANCE,
 		  FST_ERR_PLUGIN_INVALID_ASYNC_HANDLER
-		} = requireErrors$4();
+		} = requireErrors$3();
 
 		function getMeta (fn) {
 		  return fn[Symbol.for('plugin-meta')]
@@ -58805,7 +58805,7 @@ function requireTypes () {
 
 var tokenizer = {};
 
-var util$1 = {};
+var util$2 = {};
 
 var sets = {};
 
@@ -58859,32 +58859,32 @@ function requireSets () {
 	return sets;
 }
 
-var hasRequiredUtil$1;
+var hasRequiredUtil$2;
 
-function requireUtil$1 () {
-	if (hasRequiredUtil$1) return util$1;
-	hasRequiredUtil$1 = 1;
-	var __createBinding = (util$1 && util$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+function requireUtil$2 () {
+	if (hasRequiredUtil$2) return util$2;
+	hasRequiredUtil$2 = 1;
+	var __createBinding = (util$2 && util$2.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (util$1 && util$1.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (util$2 && util$2.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (util$1 && util$1.__importStar) || function (mod) {
+	var __importStar = (util$2 && util$2.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	Object.defineProperty(util$1, "__esModule", { value: true });
-	util$1.tokenizeClass = util$1.strToChars = void 0;
+	Object.defineProperty(util$2, "__esModule", { value: true });
+	util$2.tokenizeClass = util$2.strToChars = void 0;
 	const types_1 = requireTypes();
 	const sets = __importStar(requireSets());
 	const CTRL = '@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ ?';
@@ -58895,7 +58895,7 @@ function requireUtil$1 () {
 	 * @param {string} str
 	 * @returns {string}
 	 */
-	util$1.strToChars = (str) => {
+	util$2.strToChars = (str) => {
 	    const charsRegex = /(\[\\b\])|(\\)?\\(?:u([A-F0-9]{4})|x([A-F0-9]{2})|c([@A-Z[\\\]^?])|([0tnvfr]))/g;
 	    return str.replace(charsRegex, (s, b, lbs, a16, b16, dctrl, eslsh) => {
 	        if (lbs) {
@@ -58925,7 +58925,7 @@ function requireUtil$1 () {
 	 * @param {string} regexpStr
 	 * @returns {Array.<Array.<Object>, number>}
 	 */
-	util$1.tokenizeClass = (str, regexpStr) => {
+	util$2.tokenizeClass = (str, regexpStr) => {
 	    var _a, _b, _c, _d, _e, _f, _g;
 	    let tokens = [], rs, c;
 	    const regexp = /\\(?:(w)|(d)|(s)|(W)|(D)|(S))|((?:(?:\\)(.)|([^\]\\]))-(((?:\\)])|(((?:\\)?([^\]])))))|(\])|(?:\\)?([^])/g;
@@ -58945,7 +58945,7 @@ function requireUtil$1 () {
 	    throw new SyntaxError(`Invalid regular expression: /${regexpStr}/: Unterminated character class`);
 	};
 	
-	return util$1;
+	return util$2;
 }
 
 var hasRequiredTokenizer;
@@ -58974,7 +58974,7 @@ function requireTokenizer () {
 	};
 	Object.defineProperty(tokenizer, "__esModule", { value: true });
 	tokenizer.tokenizer = void 0;
-	const util = __importStar(requireUtil$1());
+	const util = __importStar(requireUtil$2());
 	const types_1 = requireTypes();
 	const sets = __importStar(requireSets());
 	/**
@@ -61600,9 +61600,9 @@ function requireRoute () {
 	hasRequiredRoute = 1;
 
 	const FindMyWay = requireFindMyWay();
-	const Context = requireContext$1();
+	const Context = requireContext();
 	const handleRequest = requireHandleRequest();
-	const { onRequestAbortHookRunner, lifecycleHooks, preParsingHookRunner, onTimeoutHookRunner, onRequestHookRunner } = requireHooks$1();
+	const { onRequestAbortHookRunner, lifecycleHooks, preParsingHookRunner, onTimeoutHookRunner, onRequestHookRunner } = requireHooks();
 	const { normalizeSchema } = requireSchemas();
 	const { parseHeadOnSendHandlers } = requireHeadRoute();
 
@@ -61626,7 +61626,7 @@ function requireRoute () {
 	  FST_ERR_ROUTE_BODY_VALIDATION_SCHEMA_NOT_SUPPORTED,
 	  FST_ERR_ROUTE_BODY_LIMIT_OPTION_NOT_INT,
 	  FST_ERR_HOOK_INVALID_ASYNC_HANDLER
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const {
 	  kRoutePrefix,
@@ -62196,8 +62196,8 @@ function requireFourOhFour () {
 	const FindMyWay = requireFindMyWay();
 
 	const Reply = requireReply();
-	const Request = requireRequest$2();
-	const Context = requireContext$1();
+	const Request = requireRequest$1();
+	const Context = requireContext();
 	const {
 	  kRoutePrefix,
 	  kCanSetNotFoundHandler,
@@ -62206,11 +62206,11 @@ function requireFourOhFour () {
 	  kHooks,
 	  kErrorHandler
 	} = requireSymbols$1();
-	const { lifecycleHooks } = requireHooks$1();
+	const { lifecycleHooks } = requireHooks();
 	const { buildErrorHandler } = requireErrorHandler();
 	const {
 	  FST_ERR_NOT_FOUND
-	} = requireErrors$4();
+	} = requireErrors$3();
 	const { createChildLogger } = requireLoggerFactory();
 	const { getGenReqId } = requireReqIdGenFactory();
 
@@ -63495,7 +63495,7 @@ function requireInitialConfigValidation () {
 
 	const validate = requireConfigValidator$1();
 	const deepClone = requireRfdc()({ circles: true, proto: false });
-	const { FST_ERR_INIT_OPTS_INVALID } = requireErrors$4();
+	const { FST_ERR_INIT_OPTS_INVALID } = requireErrors$3();
 
 	function validateInitialConfig (options) {
 	  const opts = deepClone(options);
@@ -63554,10 +63554,10 @@ function requirePluginOverride () {
 	} = requireSymbols$1();
 
 	const Reply = requireReply();
-	const Request = requireRequest$2();
+	const Request = requireRequest$1();
 	const SchemaController = requireSchemaController();
 	const ContentTypeParser = requireContentTypeParser();
-	const { buildHooks } = requireHooks$1();
+	const { buildHooks } = requireHooks();
 	const pluginUtils = requirePluginUtils();
 
 	// Function that runs the encapsulation magic.
@@ -63647,7 +63647,7 @@ function requireNoopSet () {
 
 var lightMyRequest = {exports: {}};
 
-var request$1 = {exports: {}};
+var request = {exports: {}};
 
 var dist$3 = {};
 
@@ -64040,11 +64040,11 @@ function requireFormData () {
 	return formData;
 }
 
-var hasRequiredRequest$1;
+var hasRequiredRequest;
 
-function requireRequest$1 () {
-	if (hasRequiredRequest$1) return request$1.exports;
-	hasRequiredRequest$1 = 1;
+function requireRequest () {
+	if (hasRequiredRequest) return request.exports;
+	hasRequiredRequest = 1;
 
 	/* eslint no-prototype-builtins: 0 */
 
@@ -64330,10 +64330,10 @@ function requireRequest$1 () {
 	  process.nextTick(() => this.emit('close'));
 	};
 
-	request$1.exports = Request;
-	request$1.exports.Request = Request;
-	request$1.exports.CustomRequest = CustomRequest;
-	return request$1.exports;
+	request.exports = Request;
+	request.exports.Request = Request;
+	request.exports.CustomRequest = CustomRequest;
+	return request.exports;
 }
 
 var setCookie = {exports: {}};
@@ -65748,7 +65748,7 @@ function requireLightMyRequest () {
 	hasRequiredLightMyRequest = 1;
 
 	const assert = require$$0$f;
-	const Request = requireRequest$1();
+	const Request = requireRequest();
 	const Response = requireResponse();
 
 	const errorMessage = 'The dispatch function has already been invoked';
@@ -65982,14 +65982,14 @@ function requireFastify () {
 	  kGenReqId
 	} = requireSymbols$1();
 
-	const { createServer } = requireServer$1();
+	const { createServer } = requireServer();
 	const Reply = requireReply();
-	const Request = requireRequest$2();
-	const Context = requireContext$1();
+	const Request = requireRequest$1();
+	const Context = requireContext();
 	const decorator = requireDecorate();
 	const ContentTypeParser = requireContentTypeParser();
 	const SchemaController = requireSchemaController();
-	const { Hooks, hookRunnerApplication, supportedHooks } = requireHooks$1();
+	const { Hooks, hookRunnerApplication, supportedHooks } = requireHooks();
 	const { createChildLogger, defaultChildLoggerFactory, createLogger } = requireLoggerFactory();
 	const pluginUtils = requirePluginUtils();
 	const { getGenReqId, reqIdGenFactory } = requireReqIdGenFactory();
@@ -66002,7 +66002,7 @@ function requireFastify () {
 	  appendStackTrace,
 	  AVVIO_ERRORS_MAP,
 	  ...errorCodes
-	} = requireErrors$4();
+	} = requireErrors$3();
 
 	const { defaultInitOptions } = getSecuredInitialConfig;
 
@@ -67003,7 +67003,7 @@ function Clone(value) {
 
 /** Clones a Type */
 function CloneType(schema, options) {
-    return Clone(schema) ;
+    return options === undefined ? Clone(schema) : Clone({ ...options, ...schema });
 }
 
 // --------------------------------------------------------------------------
@@ -67159,6 +67159,10 @@ function IsOptional$1(value) {
 /** `[Kind-Only]` Returns true if the given value is TAny */
 function IsAny$1(value) {
     return IsKindOf$1(value, 'Any');
+}
+/** `[Kind-Only]` Returns true if the given value is TArgument */
+function IsArgument$1(value) {
+    return IsKindOf$1(value, 'Argument');
 }
 /** `[Kind-Only]` Returns true if the given value is TArray */
 function IsArray$1(value) {
@@ -67316,6 +67320,7 @@ function IsKind$1(value) {
 function IsSchema$1(value) {
     // prettier-ignore
     return (IsAny$1(value) ||
+        IsArgument$1(value) ||
         IsArray$1(value) ||
         IsBoolean$1(value) ||
         IsBigInt$1(value) ||
@@ -67354,6 +67359,7 @@ function IsSchema$1(value) {
 }
 
 const KnownTypes = [
+    'Argument',
     'Any',
     'Array',
     'AsyncIterator',
@@ -67445,6 +67451,12 @@ function IsAny(value) {
     // prettier-ignore
     return (IsKindOf(value, 'Any') &&
         IsOptionalString(value.$id));
+}
+/** Returns true if the given value is TArgument */
+function IsArgument(value) {
+    // prettier-ignore
+    return (IsKindOf(value, 'Argument') &&
+        IsNumber$3(value.index));
 }
 /** Returns true if the given value is TArray */
 function IsArray(value) {
@@ -67786,6 +67798,7 @@ function IsKind(value) {
 function IsSchema(value) {
     // prettier-ignore
     return (IsObject$3(value)) && (IsAny(value) ||
+        IsArgument(value) ||
         IsArray(value) ||
         IsBoolean(value) ||
         IsBigInt(value) ||
@@ -67875,6 +67888,11 @@ function Any(options) {
 /** `[Json]` Creates an Array type */
 function Array$1(items, options) {
     return CreateType({ [Kind]: 'Array', type: 'array', items }, options);
+}
+
+/** `[JavaScript]` Creates an Argument Type. */
+function Argument(index) {
+    return CreateType({ [Kind]: 'Argument', index });
 }
 
 /** `[JavaScript]` Creates a AsyncIterator type */
@@ -68257,7 +68275,7 @@ function String$1(options) {
 // SyntaxParsers
 // ------------------------------------------------------------------
 // prettier-ignore
-function* FromUnion$8(syntax) {
+function* FromUnion$9(syntax) {
     const trim = syntax.trim().replace(/"|'/g, '');
     return (trim === 'boolean' ? yield Boolean$1() :
         trim === 'number' ? yield Number$1() :
@@ -68279,7 +68297,7 @@ function* FromTerminal(syntax) {
     }
     for (let i = 2; i < syntax.length; i++) {
         if (syntax[i] === '}') {
-            const L = FromUnion$8(syntax.slice(2, i));
+            const L = FromUnion$9(syntax.slice(2, i));
             const R = FromSyntax(syntax.slice(i + 1));
             return yield* [...L, ...R];
         }
@@ -68351,7 +68369,7 @@ function FromTemplateLiteral$2(templateLiteral) {
     return keys.map(key => key.toString());
 }
 // prettier-ignore
-function FromUnion$7(types) {
+function FromUnion$8(types) {
     const result = [];
     for (const type of types)
         result.push(...IndexPropertyKeys(type));
@@ -68366,7 +68384,7 @@ function FromLiteral$1(literalValue) {
 // prettier-ignore
 function IndexPropertyKeys(type) {
     return [...new Set((IsTemplateLiteral$1(type) ? FromTemplateLiteral$2(type) :
-            IsUnion$1(type) ? FromUnion$7(type.anyOf) :
+            IsUnion$1(type) ? FromUnion$8(type.anyOf) :
                 IsLiteral$1(type) ? FromLiteral$1(type.const) :
                     IsNumber$1(type) ? ['[number]'] :
                         IsInteger$1(type) ? ['[number]'] :
@@ -68374,7 +68392,7 @@ function IndexPropertyKeys(type) {
 }
 
 // prettier-ignore
-function FromProperties$h(type, properties, options) {
+function FromProperties$i(type, properties, options) {
     const result = {};
     for (const K2 of Object.getOwnPropertyNames(properties)) {
         result[K2] = Index(type, IndexPropertyKeys(properties[K2]), options);
@@ -68383,7 +68401,7 @@ function FromProperties$h(type, properties, options) {
 }
 // prettier-ignore
 function FromMappedResult$b(type, mappedResult, options) {
-    return FromProperties$h(type, mappedResult.properties, options);
+    return FromProperties$i(type, mappedResult.properties, options);
 }
 // prettier-ignore
 function IndexFromMappedResult(type, mappedResult, options) {
@@ -68392,7 +68410,7 @@ function IndexFromMappedResult(type, mappedResult, options) {
 }
 
 // prettier-ignore
-function FromRest$7(types, key) {
+function FromRest$6(types, key) {
     return types.map(type => IndexFromPropertyKey(type, key));
 }
 // prettier-ignore
@@ -68400,8 +68418,8 @@ function FromIntersectRest(types) {
     return types.filter(type => !IsNever$1(type));
 }
 // prettier-ignore
-function FromIntersect$6(types, key) {
-    return (IntersectEvaluated(FromIntersectRest(FromRest$7(types, key))));
+function FromIntersect$7(types, key) {
+    return (IntersectEvaluated(FromIntersectRest(FromRest$6(types, key))));
 }
 // prettier-ignore
 function FromUnionRest(types) {
@@ -68410,32 +68428,32 @@ function FromUnionRest(types) {
         : types);
 }
 // prettier-ignore
-function FromUnion$6(types, key) {
-    return (UnionEvaluated(FromUnionRest(FromRest$7(types, key))));
+function FromUnion$7(types, key) {
+    return (UnionEvaluated(FromUnionRest(FromRest$6(types, key))));
 }
 // prettier-ignore
-function FromTuple$3(types, key) {
+function FromTuple$4(types, key) {
     return (key in types ? types[key] :
         key === '[number]' ? UnionEvaluated(types) :
             Never());
 }
 // prettier-ignore
-function FromArray$4(type, key) {
+function FromArray$5(type, key) {
     return (key === '[number]'
         ? type
         : Never());
 }
 // prettier-ignore
-function FromProperty$1(properties, propertyKey) {
+function FromProperty$2(properties, propertyKey) {
     return (propertyKey in properties ? properties[propertyKey] : Never());
 }
 // prettier-ignore
 function IndexFromPropertyKey(type, propertyKey) {
-    return (IsIntersect$1(type) ? FromIntersect$6(type.allOf, propertyKey) :
-        IsUnion$1(type) ? FromUnion$6(type.anyOf, propertyKey) :
-            IsTuple$1(type) ? FromTuple$3(type.items ?? [], propertyKey) :
-                IsArray$1(type) ? FromArray$4(type.items, propertyKey) :
-                    IsObject$1(type) ? FromProperty$1(type.properties, propertyKey) :
+    return (IsIntersect$1(type) ? FromIntersect$7(type.allOf, propertyKey) :
+        IsUnion$1(type) ? FromUnion$7(type.anyOf, propertyKey) :
+            IsTuple$1(type) ? FromTuple$4(type.items ?? [], propertyKey) :
+                IsArray$1(type) ? FromArray$5(type.items, propertyKey) :
+                    IsObject$1(type) ? FromProperty$2(type.properties, propertyKey) :
                         Never());
 }
 // prettier-ignore
@@ -68532,7 +68550,7 @@ function Readonly(schema, enable) {
 }
 
 // prettier-ignore
-function FromProperties$g(K, F) {
+function FromProperties$h(K, F) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(K))
         Acc[K2] = Readonly(K[K2], F);
@@ -68540,7 +68558,7 @@ function FromProperties$g(K, F) {
 }
 // prettier-ignore
 function FromMappedResult$a(R, F) {
-    return FromProperties$g(R.properties, F);
+    return FromProperties$h(R.properties, F);
 }
 // prettier-ignore
 function ReadonlyFromMappedResult(R, F) {
@@ -68585,11 +68603,11 @@ function FromMappedKey$3(K, P) {
     return FromMappedResult$9(K, R);
 }
 // prettier-ignore
-function FromRest$6(K, T) {
+function FromRest$5(K, T) {
     return T.map(L => FromSchemaType(K, L));
 }
 // prettier-ignore
-function FromProperties$f(K, T) {
+function FromProperties$g(K, T) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(T))
         Acc[K2] = FromSchemaType(K, T[K2]);
@@ -68607,14 +68625,14 @@ function FromSchemaType(K, T) {
             IsMappedResult$1(T) ? FromMappedResult$9(K, T.properties) :
                 IsMappedKey$1(T) ? FromMappedKey$3(K, T.keys) :
                     // unevaluated types
-                    IsConstructor$1(T) ? Constructor(FromRest$6(K, T.parameters), FromSchemaType(K, T.returns), options) :
-                        IsFunction$1(T) ? Function$1(FromRest$6(K, T.parameters), FromSchemaType(K, T.returns), options) :
+                    IsConstructor$1(T) ? Constructor(FromRest$5(K, T.parameters), FromSchemaType(K, T.returns), options) :
+                        IsFunction$1(T) ? Function$1(FromRest$5(K, T.parameters), FromSchemaType(K, T.returns), options) :
                             IsAsyncIterator$1(T) ? AsyncIterator$1(FromSchemaType(K, T.items), options) :
                                 IsIterator$1(T) ? Iterator(FromSchemaType(K, T.items), options) :
-                                    IsIntersect$1(T) ? Intersect(FromRest$6(K, T.allOf), options) :
-                                        IsUnion$1(T) ? Union(FromRest$6(K, T.anyOf), options) :
-                                            IsTuple$1(T) ? Tuple(FromRest$6(K, T.items ?? []), options) :
-                                                IsObject$1(T) ? Object$1(FromProperties$f(K, T.properties), options) :
+                                    IsIntersect$1(T) ? Intersect(FromRest$5(K, T.allOf), options) :
+                                        IsUnion$1(T) ? Union(FromRest$5(K, T.anyOf), options) :
+                                            IsTuple$1(T) ? Tuple(FromRest$5(K, T.items ?? []), options) :
+                                                IsObject$1(T) ? Object$1(FromProperties$g(K, T.properties), options) :
                                                     IsArray$1(T) ? Array$1(FromSchemaType(K, T.items), options) :
                                                         IsPromise$1(T) ? Promise$1(FromSchemaType(K, T.item), options) :
                                                             T);
@@ -68653,7 +68671,7 @@ function Optional(schema, enable) {
 }
 
 // prettier-ignore
-function FromProperties$e(P, F) {
+function FromProperties$f(P, F) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(P))
         Acc[K2] = Optional(P[K2], F);
@@ -68661,7 +68679,7 @@ function FromProperties$e(P, F) {
 }
 // prettier-ignore
 function FromMappedResult$8(R, F) {
-    return FromProperties$e(R.properties, F);
+    return FromProperties$f(R.properties, F);
 }
 // prettier-ignore
 function OptionalFromMappedResult(R, F) {
@@ -68740,55 +68758,55 @@ function FromRef$3($ref) {
     return Computed('Awaited', [Ref($ref)]);
 }
 // prettier-ignore
-function FromIntersect$5(types) {
-    return Intersect(FromRest$5(types));
+function FromIntersect$6(types) {
+    return Intersect(FromRest$4(types));
 }
 // prettier-ignore
-function FromUnion$5(types) {
-    return Union(FromRest$5(types));
+function FromUnion$6(types) {
+    return Union(FromRest$4(types));
 }
 // prettier-ignore
-function FromPromise$1(type) {
+function FromPromise$2(type) {
     return Awaited(type);
 }
 // prettier-ignore
-function FromRest$5(types) {
+function FromRest$4(types) {
     return types.map(type => Awaited(type));
 }
 /** `[JavaScript]` Constructs a type by recursively unwrapping Promise types */
 function Awaited(type, options) {
-    return CreateType(IsComputed$1(type) ? FromComputed$4(type.target, type.parameters) : IsIntersect$1(type) ? FromIntersect$5(type.allOf) : IsUnion$1(type) ? FromUnion$5(type.anyOf) : IsPromise$1(type) ? FromPromise$1(type.item) : IsRef$1(type) ? FromRef$3(type.$ref) : type, options);
+    return CreateType(IsComputed$1(type) ? FromComputed$4(type.target, type.parameters) : IsIntersect$1(type) ? FromIntersect$6(type.allOf) : IsUnion$1(type) ? FromUnion$6(type.anyOf) : IsPromise$1(type) ? FromPromise$2(type.item) : IsRef$1(type) ? FromRef$3(type.$ref) : type, options);
 }
 
 // prettier-ignore
-function FromRest$4(types) {
+function FromRest$3(types) {
     const result = [];
     for (const L of types)
         result.push(KeyOfPropertyKeys(L));
     return result;
 }
 // prettier-ignore
-function FromIntersect$4(types) {
-    const propertyKeysArray = FromRest$4(types);
+function FromIntersect$5(types) {
+    const propertyKeysArray = FromRest$3(types);
     const propertyKeys = SetUnionMany(propertyKeysArray);
     return propertyKeys;
 }
 // prettier-ignore
-function FromUnion$4(types) {
-    const propertyKeysArray = FromRest$4(types);
+function FromUnion$5(types) {
+    const propertyKeysArray = FromRest$3(types);
     const propertyKeys = SetIntersectMany(propertyKeysArray);
     return propertyKeys;
 }
 // prettier-ignore
-function FromTuple$2(types) {
+function FromTuple$3(types) {
     return types.map((_, indexer) => indexer.toString());
 }
 // prettier-ignore
-function FromArray$3(_) {
+function FromArray$4(_) {
     return (['[number]']);
 }
 // prettier-ignore
-function FromProperties$d(T) {
+function FromProperties$e(T) {
     return (globalThis.Object.getOwnPropertyNames(T));
 }
 // ------------------------------------------------------------------
@@ -68801,11 +68819,11 @@ function FromPatternProperties(patternProperties) {
 /** Returns a tuple of PropertyKeys derived from the given TSchema. */
 // prettier-ignore
 function KeyOfPropertyKeys(type) {
-    return (IsIntersect$1(type) ? FromIntersect$4(type.allOf) :
-        IsUnion$1(type) ? FromUnion$4(type.anyOf) :
-            IsTuple$1(type) ? FromTuple$2(type.items ?? []) :
-                IsArray$1(type) ? FromArray$3(type.items) :
-                    IsObject$1(type) ? FromProperties$d(type.properties) :
+    return (IsIntersect$1(type) ? FromIntersect$5(type.allOf) :
+        IsUnion$1(type) ? FromUnion$5(type.anyOf) :
+            IsTuple$1(type) ? FromTuple$3(type.items ?? []) :
+                IsArray$1(type) ? FromArray$4(type.items) :
+                    IsObject$1(type) ? FromProperties$e(type.properties) :
                         IsRecord$1(type) ? FromPatternProperties(type.patternProperties) :
                             []);
 }
@@ -68835,7 +68853,7 @@ function KeyOf(type, options) {
 }
 
 // prettier-ignore
-function FromProperties$c(properties, options) {
+function FromProperties$d(properties, options) {
     const result = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(properties))
         result[K2] = KeyOf(properties[K2], Clone(options));
@@ -68843,7 +68861,7 @@ function FromProperties$c(properties, options) {
 }
 // prettier-ignore
 function FromMappedResult$7(mappedResult, options) {
-    return FromProperties$c(mappedResult.properties, options);
+    return FromProperties$d(mappedResult.properties, options);
 }
 // prettier-ignore
 function KeyOfFromMappedResult(mappedResult, options) {
@@ -68916,11 +68934,11 @@ function Unknown(options) {
 }
 
 // prettier-ignore
-function FromArray$2(T) {
+function FromArray$3(T) {
     return T.map(L => FromValue(L, false));
 }
 // prettier-ignore
-function FromProperties$b(value) {
+function FromProperties$c(value) {
     const Acc = {};
     for (const K of globalThis.Object.getOwnPropertyNames(value))
         Acc[K] = Readonly(FromValue(value[K], false));
@@ -68933,10 +68951,10 @@ function ConditionalReadonly(T, root) {
 function FromValue(value, root) {
     return (IsAsyncIterator$2(value) ? ConditionalReadonly(Any(), root) :
         IsIterator$2(value) ? ConditionalReadonly(Any(), root) :
-            IsArray$3(value) ? Readonly(Tuple(FromArray$2(value))) :
+            IsArray$3(value) ? Readonly(Tuple(FromArray$3(value))) :
                 IsUint8Array$2(value) ? Uint8Array$1() :
                     IsDate$2(value) ? Date$1() :
-                        IsObject$3(value) ? ConditionalReadonly(Object$1(FromProperties$b(value)), root) :
+                        IsObject$3(value) ? ConditionalReadonly(Object$1(FromProperties$c(value)), root) :
                             IsFunction$2(value) ? ConditionalReadonly(Function$1([], Unknown()), root) :
                                 IsUndefined$3(value) ? Undefined() :
                                     IsNull$2(value) ? Null() :
@@ -69038,7 +69056,7 @@ function FromArrayRight(left, right) {
                 ExtendsResult.False);
 }
 // prettier-ignore
-function FromArray$1(left, right) {
+function FromArray$2(left, right) {
     return (IsObject(right) && IsObjectArrayLike(right) ? ExtendsResult.True :
         IsStructuralRight(right) ? StructuralRight(left, right) :
             !IsArray(right) ? ExtendsResult.False :
@@ -69048,7 +69066,7 @@ function FromArray$1(left, right) {
 // AsyncIterator
 // ------------------------------------------------------------------
 // prettier-ignore
-function FromAsyncIterator$1(left, right) {
+function FromAsyncIterator$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         !IsAsyncIterator(right) ? ExtendsResult.False :
             IntoBooleanResult(Visit(left.items, right.items)));
@@ -69085,7 +69103,7 @@ function FromBoolean(left, right) {
 // Constructor
 // ------------------------------------------------------------------
 // prettier-ignore
-function FromConstructor$1(left, right) {
+function FromConstructor$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsObject(right) ? FromObjectRight(left, right) :
             !IsConstructor(right) ? ExtendsResult.False :
@@ -69108,7 +69126,7 @@ function FromDate(left, right) {
 // Function
 // ------------------------------------------------------------------
 // prettier-ignore
-function FromFunction$1(left, right) {
+function FromFunction$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsObject(right) ? FromObjectRight(left, right) :
             !IsFunction(right) ? ExtendsResult.False :
@@ -69143,7 +69161,7 @@ function FromIntersectRight(left, right) {
         : ExtendsResult.False;
 }
 // prettier-ignore
-function FromIntersect$3(left, right) {
+function FromIntersect$4(left, right) {
     return left.allOf.some((schema) => Visit(schema, right) === ExtendsResult.True)
         ? ExtendsResult.True
         : ExtendsResult.False;
@@ -69152,7 +69170,7 @@ function FromIntersect$3(left, right) {
 // Iterator
 // ------------------------------------------------------------------
 // prettier-ignore
-function FromIterator$1(left, right) {
+function FromIterator$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         !IsIterator(right) ? ExtendsResult.False :
             IntoBooleanResult(Visit(left.items, right.items)));
@@ -69318,18 +69336,18 @@ function FromObjectRight(left, right) {
             (IsDate(left) && IsObjectDateLike(right)) ||
             (IsConstructor(left) && IsObjectConstructorLike(right)) ||
             (IsFunction(left) && IsObjectFunctionLike(right))) ? ExtendsResult.True :
-            (IsRecord(left) && IsString(RecordKey(left))) ? (() => {
+            (IsRecord(left) && IsString(RecordKey$1(left))) ? (() => {
                 // When expressing a Record with literal key values, the Record is converted into a Object with
                 // the Hint assigned as `Record`. This is used to invert the extends logic.
                 return right[Hint] === 'Record' ? ExtendsResult.True : ExtendsResult.False;
             })() :
-                (IsRecord(left) && IsNumber(RecordKey(left))) ? (() => {
+                (IsRecord(left) && IsNumber(RecordKey$1(left))) ? (() => {
                     return IsObjectPropertyCount(right, 0) ? ExtendsResult.True : ExtendsResult.False;
                 })() :
                     ExtendsResult.False);
 }
 // prettier-ignore
-function FromObject$5(left, right) {
+function FromObject$6(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsRecord(right) ? FromRecordRight(left, right) :
             !IsObject(right) ? ExtendsResult.False :
@@ -69352,7 +69370,7 @@ function FromObject$5(left, right) {
 // Promise
 // ------------------------------------------------------------------
 // prettier-ignore
-function FromPromise(left, right) {
+function FromPromise$1(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsObject(right) && IsObjectPromiseLike(right) ? ExtendsResult.True :
             !IsPromise(right) ? ExtendsResult.False :
@@ -69362,20 +69380,20 @@ function FromPromise(left, right) {
 // Record
 // ------------------------------------------------------------------
 // prettier-ignore
-function RecordKey(schema) {
+function RecordKey$1(schema) {
     return (PatternNumberExact in schema.patternProperties ? Number$1() :
         PatternStringExact in schema.patternProperties ? String$1() :
             Throw('Unknown record key pattern'));
 }
 // prettier-ignore
-function RecordValue(schema) {
+function RecordValue$1(schema) {
     return (PatternNumberExact in schema.patternProperties ? schema.patternProperties[PatternNumberExact] :
         PatternStringExact in schema.patternProperties ? schema.patternProperties[PatternStringExact] :
             Throw('Unable to get record value schema'));
 }
 // prettier-ignore
 function FromRecordRight(left, right) {
-    const [Key, Value] = [RecordKey(right), RecordValue(right)];
+    const [Key, Value] = [RecordKey$1(right), RecordValue$1(right)];
     return ((IsLiteralString(left) && IsNumber(Key) && IntoBooleanResult(Visit(left, Value)) === ExtendsResult.True) ? ExtendsResult.True :
         IsUint8Array(left) && IsNumber(Key) ? Visit(left, Value) :
             IsString(left) && IsNumber(Key) ? Visit(left, Value) :
@@ -69391,11 +69409,11 @@ function FromRecordRight(left, right) {
                         ExtendsResult.False);
 }
 // prettier-ignore
-function FromRecord$1(left, right) {
+function FromRecord$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsObject(right) ? FromObjectRight(left, right) :
             !IsRecord(right) ? ExtendsResult.False :
-                Visit(RecordValue(left), RecordValue(right)));
+                Visit(RecordValue$1(left), RecordValue$1(right)));
 }
 // ------------------------------------------------------------------
 // RegExp
@@ -69465,7 +69483,7 @@ function FromTupleRight(left, right) {
                 ExtendsResult.False);
 }
 // prettier-ignore
-function FromTuple$1(left, right) {
+function FromTuple$2(left, right) {
     return (IsStructuralRight(right) ? StructuralRight(left, right) :
         IsObject(right) && IsObjectArrayLike(right) ? ExtendsResult.True :
             IsArray(right) && IsArrayOfTuple(left, right) ? ExtendsResult.True :
@@ -69508,7 +69526,7 @@ function FromUnionRight(left, right) {
         : ExtendsResult.False;
 }
 // prettier-ignore
-function FromUnion$3(left, right) {
+function FromUnion$4(left, right) {
     return left.anyOf.every((schema) => Visit(schema, right) === ExtendsResult.True)
         ? ExtendsResult.True
         : ExtendsResult.False;
@@ -69564,29 +69582,29 @@ function Visit(left, right) {
             (IsNot(left) || IsNot(right)) ? FromNot(left, right) :
                 // standard
                 IsAny(left) ? FromAny(left, right) :
-                    IsArray(left) ? FromArray$1(left, right) :
+                    IsArray(left) ? FromArray$2(left, right) :
                         IsBigInt(left) ? FromBigInt(left, right) :
                             IsBoolean(left) ? FromBoolean(left, right) :
-                                IsAsyncIterator(left) ? FromAsyncIterator$1(left, right) :
-                                    IsConstructor(left) ? FromConstructor$1(left, right) :
+                                IsAsyncIterator(left) ? FromAsyncIterator$2(left, right) :
+                                    IsConstructor(left) ? FromConstructor$2(left, right) :
                                         IsDate(left) ? FromDate(left, right) :
-                                            IsFunction(left) ? FromFunction$1(left, right) :
+                                            IsFunction(left) ? FromFunction$2(left, right) :
                                                 IsInteger(left) ? FromInteger(left, right) :
-                                                    IsIntersect(left) ? FromIntersect$3(left, right) :
-                                                        IsIterator(left) ? FromIterator$1(left, right) :
+                                                    IsIntersect(left) ? FromIntersect$4(left, right) :
+                                                        IsIterator(left) ? FromIterator$2(left, right) :
                                                             IsLiteral(left) ? FromLiteral(left, right) :
                                                                 IsNever(left) ? FromNever() :
                                                                     IsNull(left) ? FromNull(left, right) :
                                                                         IsNumber(left) ? FromNumber(left, right) :
-                                                                            IsObject(left) ? FromObject$5(left, right) :
-                                                                                IsRecord(left) ? FromRecord$1(left, right) :
+                                                                            IsObject(left) ? FromObject$6(left, right) :
+                                                                                IsRecord(left) ? FromRecord$2(left, right) :
                                                                                     IsString(left) ? FromString(left, right) :
                                                                                         IsSymbol(left) ? FromSymbol(left, right) :
-                                                                                            IsTuple(left) ? FromTuple$1(left, right) :
-                                                                                                IsPromise(left) ? FromPromise(left, right) :
+                                                                                            IsTuple(left) ? FromTuple$2(left, right) :
+                                                                                                IsPromise(left) ? FromPromise$1(left, right) :
                                                                                                     IsUint8Array(left) ? FromUint8Array(left, right) :
                                                                                                         IsUndefined(left) ? FromUndefined(left, right) :
-                                                                                                            IsUnion(left) ? FromUnion$3(left, right) :
+                                                                                                            IsUnion(left) ? FromUnion$4(left, right) :
                                                                                                                 IsUnknown(left) ? FromUnknown(left, right) :
                                                                                                                     IsVoid(left) ? FromVoid(left, right) :
                                                                                                                         Throw(`Unknown left type operand '${left[Kind]}'`));
@@ -69596,7 +69614,7 @@ function ExtendsCheck(left, right) {
 }
 
 // prettier-ignore
-function FromProperties$a(P, Right, True, False, options) {
+function FromProperties$b(P, Right, True, False, options) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(P))
         Acc[K2] = Extends(P[K2], Right, True, False, Clone(options));
@@ -69604,7 +69622,7 @@ function FromProperties$a(P, Right, True, False, options) {
 }
 // prettier-ignore
 function FromMappedResult$6(Left, Right, True, False, options) {
-    return FromProperties$a(Left.properties, Right, True, False, options);
+    return FromProperties$b(Left.properties, Right, True, False, options);
 }
 // prettier-ignore
 function ExtendsFromMappedResult(Left, Right, True, False, options) {
@@ -69670,7 +69688,7 @@ function Exclude(L, R, options = {}) {
 }
 
 // prettier-ignore
-function FromProperties$9(P, U) {
+function FromProperties$a(P, U) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(P))
         Acc[K2] = Exclude(P[K2], U);
@@ -69678,7 +69696,7 @@ function FromProperties$9(P, U) {
 }
 // prettier-ignore
 function FromMappedResult$5(R, T) {
-    return FromProperties$9(R.properties, T);
+    return FromProperties$a(R.properties, T);
 }
 // prettier-ignore
 function ExcludeFromMappedResult(R, T) {
@@ -69707,7 +69725,7 @@ function Extract(L, R, options) {
 }
 
 // prettier-ignore
-function FromProperties$8(P, T) {
+function FromProperties$9(P, T) {
     const Acc = {};
     for (const K2 of globalThis.Object.getOwnPropertyNames(P))
         Acc[K2] = Extract(P[K2], T);
@@ -69715,7 +69733,7 @@ function FromProperties$8(P, T) {
 }
 // prettier-ignore
 function FromMappedResult$4(R, T) {
-    return FromProperties$8(R.properties, T);
+    return FromProperties$9(R.properties, T);
 }
 // prettier-ignore
 function ExtractFromMappedResult(R, T) {
@@ -69726,6 +69744,217 @@ function ExtractFromMappedResult(R, T) {
 /** `[JavaScript]` Extracts the InstanceType from the given Constructor type */
 function InstanceType(schema, options) {
     return (IsConstructor$1(schema) ? CreateType(schema.returns, options) : Never(options));
+}
+
+/** `[Json]` Creates a Readonly and Optional property */
+function ReadonlyOptional(schema) {
+    return Readonly(Optional(schema));
+}
+
+// ------------------------------------------------------------------
+// RecordCreateFromPattern
+// ------------------------------------------------------------------
+// prettier-ignore
+function RecordCreateFromPattern(pattern, T, options) {
+    return CreateType({ [Kind]: 'Record', type: 'object', patternProperties: { [pattern]: T } }, options);
+}
+// ------------------------------------------------------------------
+// RecordCreateFromKeys
+// ------------------------------------------------------------------
+// prettier-ignore
+function RecordCreateFromKeys(K, T, options) {
+    const result = {};
+    for (const K2 of K)
+        result[K2] = T;
+    return Object$1(result, { ...options, [Hint]: 'Record' });
+}
+// prettier-ignore
+function FromTemplateLiteralKey(K, T, options) {
+    return (IsTemplateLiteralFinite(K)
+        ? RecordCreateFromKeys(IndexPropertyKeys(K), T, options)
+        : RecordCreateFromPattern(K.pattern, T, options));
+}
+// prettier-ignore
+function FromUnionKey(key, type, options) {
+    return RecordCreateFromKeys(IndexPropertyKeys(Union(key)), type, options);
+}
+// prettier-ignore
+function FromLiteralKey(key, type, options) {
+    return RecordCreateFromKeys([key.toString()], type, options);
+}
+// prettier-ignore
+function FromRegExpKey(key, type, options) {
+    return RecordCreateFromPattern(key.source, type, options);
+}
+// prettier-ignore
+function FromStringKey(key, type, options) {
+    const pattern = IsUndefined$3(key.pattern) ? PatternStringExact : key.pattern;
+    return RecordCreateFromPattern(pattern, type, options);
+}
+// prettier-ignore
+function FromAnyKey(_, type, options) {
+    return RecordCreateFromPattern(PatternStringExact, type, options);
+}
+// prettier-ignore
+function FromNeverKey(_key, type, options) {
+    return RecordCreateFromPattern(PatternNeverExact, type, options);
+}
+// prettier-ignore
+function FromBooleanKey(_key, type, options) {
+    return Object$1({ true: type, false: type }, options);
+}
+// prettier-ignore
+function FromIntegerKey(_key, type, options) {
+    return RecordCreateFromPattern(PatternNumberExact, type, options);
+}
+// prettier-ignore
+function FromNumberKey(_, type, options) {
+    return RecordCreateFromPattern(PatternNumberExact, type, options);
+}
+// ------------------------------------------------------------------
+// TRecordOrObject
+// ------------------------------------------------------------------
+/** `[Json]` Creates a Record type */
+function Record(key, type, options = {}) {
+    // prettier-ignore
+    return (IsUnion$1(key) ? FromUnionKey(key.anyOf, type, options) :
+        IsTemplateLiteral$1(key) ? FromTemplateLiteralKey(key, type, options) :
+            IsLiteral$1(key) ? FromLiteralKey(key.const, type, options) :
+                IsBoolean$1(key) ? FromBooleanKey(key, type, options) :
+                    IsInteger$1(key) ? FromIntegerKey(key, type, options) :
+                        IsNumber$1(key) ? FromNumberKey(key, type, options) :
+                            IsRegExp$1(key) ? FromRegExpKey(key, type, options) :
+                                IsString$1(key) ? FromStringKey(key, type, options) :
+                                    IsAny$1(key) ? FromAnyKey(key, type, options) :
+                                        IsNever$1(key) ? FromNeverKey(key, type, options) :
+                                            Never(options));
+}
+// ------------------------------------------------------------------
+// Record Utilities
+// ------------------------------------------------------------------
+/** Gets the Records Pattern */
+function RecordPattern(record) {
+    return globalThis.Object.getOwnPropertyNames(record.patternProperties)[0];
+}
+/** Gets the Records Key Type */
+// prettier-ignore
+function RecordKey(type) {
+    const pattern = RecordPattern(type);
+    return (pattern === PatternStringExact ? String$1() :
+        pattern === PatternNumberExact ? Number$1() :
+            String$1({ pattern }));
+}
+/** Gets a Record Value Type */
+// prettier-ignore
+function RecordValue(type) {
+    return type.patternProperties[RecordPattern(type)];
+}
+
+// prettier-ignore
+function FromConstructor$1(args, type) {
+    type.parameters = FromTypes$1(args, type.parameters);
+    type.returns = FromType$1(args, type.returns);
+    return type;
+}
+// prettier-ignore
+function FromFunction$1(args, type) {
+    type.parameters = FromTypes$1(args, type.parameters);
+    type.returns = FromType$1(args, type.returns);
+    return type;
+}
+// prettier-ignore
+function FromIntersect$3(args, type) {
+    type.allOf = FromTypes$1(args, type.allOf);
+    return type;
+}
+// prettier-ignore
+function FromUnion$3(args, type) {
+    type.anyOf = FromTypes$1(args, type.anyOf);
+    return type;
+}
+// prettier-ignore
+function FromTuple$1(args, type) {
+    if (IsUndefined$3(type.items))
+        return type;
+    type.items = FromTypes$1(args, type.items);
+    return type;
+}
+// prettier-ignore
+function FromArray$1(args, type) {
+    type.items = FromType$1(args, type.items);
+    return type;
+}
+// prettier-ignore
+function FromAsyncIterator$1(args, type) {
+    type.items = FromType$1(args, type.items);
+    return type;
+}
+// prettier-ignore
+function FromIterator$1(args, type) {
+    type.items = FromType$1(args, type.items);
+    return type;
+}
+// prettier-ignore
+function FromPromise(args, type) {
+    type.item = FromType$1(args, type.item);
+    return type;
+}
+// prettier-ignore
+function FromObject$5(args, type) {
+    const mappedProperties = FromProperties$8(args, type.properties);
+    return { ...type, ...Object$1(mappedProperties) }; // retain options
+}
+// prettier-ignore
+function FromRecord$1(args, type) {
+    const mappedKey = FromType$1(args, RecordKey(type));
+    const mappedValue = FromType$1(args, RecordValue(type));
+    const result = Record(mappedKey, mappedValue);
+    return { ...type, ...result }; // retain options
+}
+// prettier-ignore
+function FromArgument(args, argument) {
+    return argument.index in args ? args[argument.index] : Unknown();
+}
+// prettier-ignore
+function FromProperty$1(args, type) {
+    const isReadonly = IsReadonly(type);
+    const isOptional = IsOptional$1(type);
+    const mapped = FromType$1(args, type);
+    return (isReadonly && isOptional ? ReadonlyOptional(mapped) :
+        isReadonly && !isOptional ? Readonly(mapped) :
+            !isReadonly && isOptional ? Optional(mapped) :
+                mapped);
+}
+// prettier-ignore
+function FromProperties$8(args, properties) {
+    return globalThis.Object.getOwnPropertyNames(properties).reduce((result, key) => {
+        return { ...result, [key]: FromProperty$1(args, properties[key]) };
+    }, {});
+}
+// prettier-ignore
+function FromTypes$1(args, types) {
+    return types.map(type => FromType$1(args, type));
+}
+// prettier-ignore
+function FromType$1(args, type) {
+    return (IsConstructor$1(type) ? FromConstructor$1(args, type) :
+        IsFunction$1(type) ? FromFunction$1(args, type) :
+            IsIntersect$1(type) ? FromIntersect$3(args, type) :
+                IsUnion$1(type) ? FromUnion$3(args, type) :
+                    IsTuple$1(type) ? FromTuple$1(args, type) :
+                        IsArray$1(type) ? FromArray$1(args, type) :
+                            IsAsyncIterator$1(type) ? FromAsyncIterator$1(args, type) :
+                                IsIterator$1(type) ? FromIterator$1(args, type) :
+                                    IsPromise$1(type) ? FromPromise(args, type) :
+                                        IsObject$1(type) ? FromObject$5(args, type) :
+                                            IsRecord$1(type) ? FromRecord$1(args, type) :
+                                                IsArgument$1(type) ? FromArgument(args, type) :
+                                                    type);
+}
+/** `[JavaScript]` Instantiates a type with the given parameters */
+// prettier-ignore
+function Instantiate(type, args) {
+    return FromType$1(args, CloneType(type));
 }
 
 /** `[Json]` Creates an Integer type */
@@ -69782,7 +70011,7 @@ function FromTemplateLiteral(schema, mode, options) {
         return { ...schema, pattern: FromLiteralValue(schema.pattern, mode) };
     const strings = [...TemplateLiteralExpressionGenerate(expression)];
     const literals = strings.map((value) => Literal(value));
-    const mapped = FromRest$3(literals, mode);
+    const mapped = FromRest$2(literals, mode);
     const union = Union(mapped);
     return TemplateLiteral([union], options);
 }
@@ -69795,7 +70024,7 @@ function FromLiteralValue(value, mode) {
                     value) : value.toString());
 }
 // prettier-ignore
-function FromRest$3(T, M) {
+function FromRest$2(T, M) {
     return T.map(L => Intrinsic(L, M));
 }
 /** Applies an intrinsic string manipulation to the given type. */
@@ -69806,7 +70035,7 @@ function Intrinsic(schema, mode, options = {}) {
     IsMappedKey$1(schema) ? IntrinsicFromMappedKey(schema, mode, options) :
         // Standard-Inference
         IsTemplateLiteral$1(schema) ? FromTemplateLiteral(schema, mode, options) :
-            IsUnion$1(schema) ? Union(FromRest$3(schema.anyOf, mode), options) :
+            IsUnion$1(schema) ? Union(FromRest$2(schema.anyOf, mode), options) :
                 IsLiteral$1(schema) ? Literal(FromLiteralValue(schema.const, mode), options) :
                     // Default Type
                     CreateType(schema, options));
@@ -70025,13 +70254,13 @@ function FromProperties$3(properties) {
     return partialProperties;
 }
 // prettier-ignore
-function FromObject$2(T) {
-    const options = Discard(T, [TransformKind, '$id', 'required', 'properties']);
-    const properties = FromProperties$3(T['properties']);
+function FromObject$2(type) {
+    const options = Discard(type, [TransformKind, '$id', 'required', 'properties']);
+    const properties = FromProperties$3(type['properties']);
     return Object$1(properties, options);
 }
 // prettier-ignore
-function FromRest$2(types) {
+function FromRest$1(types) {
     return types.map(type => PartialResolve(type));
 }
 // ------------------------------------------------------------------
@@ -70039,12 +70268,25 @@ function FromRest$2(types) {
 // ------------------------------------------------------------------
 // prettier-ignore
 function PartialResolve(type) {
-    return (IsComputed$1(type) ? FromComputed$2(type.target, type.parameters) :
+    return (
+    // Mappable
+    IsComputed$1(type) ? FromComputed$2(type.target, type.parameters) :
         IsRef$1(type) ? FromRef$1(type.$ref) :
-            IsIntersect$1(type) ? Intersect(FromRest$2(type.allOf)) :
-                IsUnion$1(type) ? Union(FromRest$2(type.anyOf)) :
+            IsIntersect$1(type) ? Intersect(FromRest$1(type.allOf)) :
+                IsUnion$1(type) ? Union(FromRest$1(type.anyOf)) :
                     IsObject$1(type) ? FromObject$2(type) :
-                        Object$1({}));
+                        // Intrinsic
+                        IsBigInt$1(type) ? type :
+                            IsBoolean$1(type) ? type :
+                                IsInteger$1(type) ? type :
+                                    IsLiteral$1(type) ? type :
+                                        IsNull$1(type) ? type :
+                                            IsNumber$1(type) ? type :
+                                                IsString$1(type) ? type :
+                                                    IsSymbol$1(type) ? type :
+                                                        IsUndefined$1(type) ? type :
+                                                            // Passthrough
+                                                            Object$1({}));
 }
 /** `[Json]` Constructs a type where all properties are optional */
 function Partial(type, options) {
@@ -70074,83 +70316,6 @@ function PartialFromMappedResult(R, options) {
     return MappedResult(P);
 }
 
-// ------------------------------------------------------------------
-// RecordCreateFromPattern
-// ------------------------------------------------------------------
-// prettier-ignore
-function RecordCreateFromPattern(pattern, T, options) {
-    return CreateType({ [Kind]: 'Record', type: 'object', patternProperties: { [pattern]: T } }, options);
-}
-// ------------------------------------------------------------------
-// RecordCreateFromKeys
-// ------------------------------------------------------------------
-// prettier-ignore
-function RecordCreateFromKeys(K, T, options) {
-    const result = {};
-    for (const K2 of K)
-        result[K2] = T;
-    return Object$1(result, { ...options, [Hint]: 'Record' });
-}
-// prettier-ignore
-function FromTemplateLiteralKey(K, T, options) {
-    return (IsTemplateLiteralFinite(K)
-        ? RecordCreateFromKeys(IndexPropertyKeys(K), T, options)
-        : RecordCreateFromPattern(K.pattern, T, options));
-}
-// prettier-ignore
-function FromUnionKey(key, type, options) {
-    return RecordCreateFromKeys(IndexPropertyKeys(Union(key)), type, options);
-}
-// prettier-ignore
-function FromLiteralKey(key, type, options) {
-    return RecordCreateFromKeys([key.toString()], type, options);
-}
-// prettier-ignore
-function FromRegExpKey(key, type, options) {
-    return RecordCreateFromPattern(key.source, type, options);
-}
-// prettier-ignore
-function FromStringKey(key, type, options) {
-    const pattern = IsUndefined$3(key.pattern) ? PatternStringExact : key.pattern;
-    return RecordCreateFromPattern(pattern, type, options);
-}
-// prettier-ignore
-function FromAnyKey(_, type, options) {
-    return RecordCreateFromPattern(PatternStringExact, type, options);
-}
-// prettier-ignore
-function FromNeverKey(_key, type, options) {
-    return RecordCreateFromPattern(PatternNeverExact, type, options);
-}
-// prettier-ignore
-function FromIntegerKey(_key, type, options) {
-    return RecordCreateFromPattern(PatternNumberExact, type, options);
-}
-// prettier-ignore
-function FromNumberKey(_, type, options) {
-    return RecordCreateFromPattern(PatternNumberExact, type, options);
-}
-// ------------------------------------------------------------------
-// TRecordOrObject
-// ------------------------------------------------------------------
-/** `[Json]` Creates a Record type */
-function Record(key, type, options = {}) {
-    // prettier-ignore
-    return (IsComputed$1(type) ? Computed('Record', [key, Computed(type.target, type.parameters)], options) :
-        IsComputed$1(key) ? Computed('Record', [Computed(type.target, type.parameters), type], options) :
-            IsRef$1(key) ? Computed('Record', [Ref(key.$ref), type]) :
-                IsUnion$1(key) ? FromUnionKey(key.anyOf, type, options) :
-                    IsTemplateLiteral$1(key) ? FromTemplateLiteralKey(key, type, options) :
-                        IsLiteral$1(key) ? FromLiteralKey(key.const, type, options) :
-                            IsInteger$1(key) ? FromIntegerKey(key, type, options) :
-                                IsNumber$1(key) ? FromNumberKey(key, type, options) :
-                                    IsRegExp$1(key) ? FromRegExpKey(key, type, options) :
-                                        IsString$1(key) ? FromStringKey(key, type, options) :
-                                            IsAny$1(key) ? FromAnyKey(key, type, options) :
-                                                IsNever$1(key) ? FromNeverKey(key, type, options) :
-                                                    Never(options));
-}
-
 // prettier-ignore
 function FromComputed$1(target, parameters) {
     return Computed('Required', [Computed(target, parameters)]);
@@ -70173,7 +70338,7 @@ function FromObject$1(type) {
     return Object$1(properties, options);
 }
 // prettier-ignore
-function FromRest$1(types) {
+function FromRest(types) {
     return types.map(type => RequiredResolve(type));
 }
 // ------------------------------------------------------------------
@@ -70181,12 +70346,25 @@ function FromRest$1(types) {
 // ------------------------------------------------------------------
 // prettier-ignore
 function RequiredResolve(type) {
-    return (IsComputed$1(type) ? FromComputed$1(type.target, type.parameters) :
+    return (
+    // Mappable
+    IsComputed$1(type) ? FromComputed$1(type.target, type.parameters) :
         IsRef$1(type) ? FromRef(type.$ref) :
-            IsIntersect$1(type) ? Intersect(FromRest$1(type.allOf)) :
-                IsUnion$1(type) ? Union(FromRest$1(type.anyOf)) :
+            IsIntersect$1(type) ? Intersect(FromRest(type.allOf)) :
+                IsUnion$1(type) ? Union(FromRest(type.anyOf)) :
                     IsObject$1(type) ? FromObject$1(type) :
-                        Object$1({}));
+                        // Intrinsic
+                        IsBigInt$1(type) ? type :
+                            IsBoolean$1(type) ? type :
+                                IsInteger$1(type) ? type :
+                                    IsLiteral$1(type) ? type :
+                                        IsNull$1(type) ? type :
+                                            IsNumber$1(type) ? type :
+                                                IsString$1(type) ? type :
+                                                    IsSymbol$1(type) ? type :
+                                                        IsUndefined$1(type) ? type :
+                                                            // Passthrough
+                                                            Object$1({}));
 }
 /** `[Json]` Constructs a type where all properties are required */
 function Required(type, options) {
@@ -70217,18 +70395,18 @@ function RequiredFromMappedResult(R, options) {
 }
 
 // prettier-ignore
-function DerefParameters(moduleProperties, types) {
+function DereferenceParameters(moduleProperties, types) {
     return types.map((type) => {
         return IsRef$1(type)
-            ? Deref(moduleProperties, type.$ref)
+            ? Dereference(moduleProperties, type.$ref)
             : FromType(moduleProperties, type);
     });
 }
 // prettier-ignore
-function Deref(moduleProperties, ref) {
+function Dereference(moduleProperties, ref) {
     return (ref in moduleProperties
         ? IsRef$1(moduleProperties[ref])
-            ? Deref(moduleProperties, moduleProperties[ref].$ref)
+            ? Dereference(moduleProperties, moduleProperties[ref].$ref)
             : FromType(moduleProperties, moduleProperties[ref])
         : Never());
 }
@@ -70257,47 +70435,20 @@ function FromPick(parameters) {
     return Pick(parameters[0], parameters[1]);
 }
 // prettier-ignore
-function FromRecord(parameters) {
-    return Record(parameters[0], parameters[1]);
-}
-// prettier-ignore
 function FromRequired(parameters) {
     return Required(parameters[0]);
 }
 // prettier-ignore
 function FromComputed(moduleProperties, target, parameters) {
-    const dereferenced = DerefParameters(moduleProperties, parameters);
+    const dereferenced = DereferenceParameters(moduleProperties, parameters);
     return (target === 'Awaited' ? FromAwaited(dereferenced) :
         target === 'Index' ? FromIndex(dereferenced) :
             target === 'KeyOf' ? FromKeyOf(dereferenced) :
                 target === 'Partial' ? FromPartial(dereferenced) :
                     target === 'Omit' ? FromOmit(dereferenced) :
                         target === 'Pick' ? FromPick(dereferenced) :
-                            target === 'Record' ? FromRecord(dereferenced) :
-                                target === 'Required' ? FromRequired(dereferenced) :
-                                    Never());
-}
-function FromObject(moduleProperties, properties) {
-    return Object$1(globalThis.Object.keys(properties).reduce((result, key) => {
-        return { ...result, [key]: FromType(moduleProperties, properties[key]) };
-    }, {}));
-}
-// prettier-ignore
-function FromConstructor(moduleProperties, parameters, instanceType) {
-    return Constructor(FromRest(moduleProperties, parameters), FromType(moduleProperties, instanceType));
-}
-// prettier-ignore
-function FromFunction(moduleProperties, parameters, returnType) {
-    return Function$1(FromRest(moduleProperties, parameters), FromType(moduleProperties, returnType));
-}
-function FromTuple(moduleProperties, types) {
-    return Tuple(FromRest(moduleProperties, types));
-}
-function FromIntersect(moduleProperties, types) {
-    return Intersect(FromRest(moduleProperties, types));
-}
-function FromUnion(moduleProperties, types) {
-    return Union(FromRest(moduleProperties, types));
+                            target === 'Required' ? FromRequired(dereferenced) :
+                                Never());
 }
 function FromArray(moduleProperties, type) {
     return Array$1(FromType(moduleProperties, type));
@@ -70305,30 +70456,68 @@ function FromArray(moduleProperties, type) {
 function FromAsyncIterator(moduleProperties, type) {
     return AsyncIterator$1(FromType(moduleProperties, type));
 }
+// prettier-ignore
+function FromConstructor(moduleProperties, parameters, instanceType) {
+    return Constructor(FromTypes(moduleProperties, parameters), FromType(moduleProperties, instanceType));
+}
+// prettier-ignore
+function FromFunction(moduleProperties, parameters, returnType) {
+    return Function$1(FromTypes(moduleProperties, parameters), FromType(moduleProperties, returnType));
+}
+function FromIntersect(moduleProperties, types) {
+    return Intersect(FromTypes(moduleProperties, types));
+}
 function FromIterator(moduleProperties, type) {
     return Iterator(FromType(moduleProperties, type));
 }
-function FromRest(moduleProperties, types) {
+function FromObject(moduleProperties, properties) {
+    return Object$1(globalThis.Object.keys(properties).reduce((result, key) => {
+        return { ...result, [key]: FromType(moduleProperties, properties[key]) };
+    }, {}));
+}
+// prettier-ignore
+function FromRecord(moduleProperties, type) {
+    const [value, pattern] = [FromType(moduleProperties, RecordValue(type)), RecordPattern(type)];
+    const result = CloneType(type);
+    result.patternProperties[pattern] = value;
+    return result;
+}
+// prettier-ignore
+function FromTransform(moduleProperties, transform) {
+    return (IsRef$1(transform))
+        ? { ...Dereference(moduleProperties, transform.$ref), [TransformKind]: transform[TransformKind] }
+        : transform;
+}
+function FromTuple(moduleProperties, types) {
+    return Tuple(FromTypes(moduleProperties, types));
+}
+function FromUnion(moduleProperties, types) {
+    return Union(FromTypes(moduleProperties, types));
+}
+function FromTypes(moduleProperties, types) {
     return types.map((type) => FromType(moduleProperties, type));
 }
 // prettier-ignore
 function FromType(moduleProperties, type) {
     return (
-    // Modifier Unwrap - Reapplied via CreateType Options
+    // Modifiers
     IsOptional$1(type) ? CreateType(FromType(moduleProperties, Discard(type, [OptionalKind])), type) :
         IsReadonly(type) ? CreateType(FromType(moduleProperties, Discard(type, [ReadonlyKind])), type) :
-            // Traveral
-            IsArray$1(type) ? CreateType(FromArray(moduleProperties, type.items), type) :
-                IsAsyncIterator$1(type) ? CreateType(FromAsyncIterator(moduleProperties, type.items), type) :
-                    IsComputed$1(type) ? CreateType(FromComputed(moduleProperties, type.target, type.parameters)) :
-                        IsConstructor$1(type) ? CreateType(FromConstructor(moduleProperties, type.parameters, type.returns), type) :
-                            IsFunction$1(type) ? CreateType(FromFunction(moduleProperties, type.parameters, type.returns), type) :
-                                IsIntersect$1(type) ? CreateType(FromIntersect(moduleProperties, type.allOf), type) :
-                                    IsIterator$1(type) ? CreateType(FromIterator(moduleProperties, type.items), type) :
-                                        IsObject$1(type) ? CreateType(FromObject(moduleProperties, type.properties), type) :
-                                            IsTuple$1(type) ? CreateType(FromTuple(moduleProperties, type.items || []), type) :
-                                                IsUnion$1(type) ? CreateType(FromUnion(moduleProperties, type.anyOf), type) :
-                                                    type);
+            // Transform
+            IsTransform$1(type) ? CreateType(FromTransform(moduleProperties, type), type) :
+                // Types
+                IsArray$1(type) ? CreateType(FromArray(moduleProperties, type.items), type) :
+                    IsAsyncIterator$1(type) ? CreateType(FromAsyncIterator(moduleProperties, type.items), type) :
+                        IsComputed$1(type) ? CreateType(FromComputed(moduleProperties, type.target, type.parameters)) :
+                            IsConstructor$1(type) ? CreateType(FromConstructor(moduleProperties, type.parameters, type.returns), type) :
+                                IsFunction$1(type) ? CreateType(FromFunction(moduleProperties, type.parameters, type.returns), type) :
+                                    IsIntersect$1(type) ? CreateType(FromIntersect(moduleProperties, type.allOf), type) :
+                                        IsIterator$1(type) ? CreateType(FromIterator(moduleProperties, type.items), type) :
+                                            IsObject$1(type) ? CreateType(FromObject(moduleProperties, type.properties), type) :
+                                                IsRecord$1(type) ? CreateType(FromRecord(moduleProperties, type)) :
+                                                    IsTuple$1(type) ? CreateType(FromTuple(moduleProperties, type.items || []), type) :
+                                                        IsUnion$1(type) ? CreateType(FromUnion(moduleProperties, type.anyOf), type) :
+                                                            type);
 }
 // prettier-ignore
 function ComputeType(moduleProperties, key) {
@@ -70378,11 +70567,6 @@ function Not(type, options) {
 /** `[JavaScript]` Extracts the Parameters from the given Function type */
 function Parameters(schema, options) {
     return (IsFunction$1(schema) ? Tuple(schema.parameters, options) : Never());
-}
-
-/** `[Json]` Creates a Readonly and Optional property */
-function ReadonlyOptional(schema) {
-    return Readonly(Optional(schema));
 }
 
 // Auto Tracked For Recursive Types without ID's
@@ -70476,6 +70660,7 @@ function Void(options) {
 var TypeBuilder = /*#__PURE__*/Object.freeze({
 	__proto__: null,
 	Any: Any,
+	Argument: Argument,
 	Array: Array$1,
 	AsyncIterator: AsyncIterator$1,
 	Awaited: Awaited,
@@ -70494,6 +70679,7 @@ var TypeBuilder = /*#__PURE__*/Object.freeze({
 	Function: Function$1,
 	Index: Index,
 	InstanceType: InstanceType,
+	Instantiate: Instantiate,
 	Integer: Integer,
 	Intersect: Intersect,
 	Iterator: Iterator,
@@ -73517,7 +73703,7 @@ var cacheTwirpClient = {};
 
 var userAgent = {};
 
-var version$1 = "4.0.0";
+var version$1 = "4.0.3";
 var require$$0$1 = {
 	version: version$1};
 
@@ -73541,15 +73727,15 @@ function requireUserAgent () {
 	return userAgent;
 }
 
-var errors$1 = {};
+var errors = {};
 
-var hasRequiredErrors$1;
+var hasRequiredErrors;
 
-function requireErrors$1 () {
-	if (hasRequiredErrors$1) return errors$1;
-	hasRequiredErrors$1 = 1;
-	Object.defineProperty(errors$1, "__esModule", { value: true });
-	errors$1.UsageError = errors$1.NetworkError = errors$1.GHESNotSupportedError = errors$1.CacheNotFoundError = errors$1.InvalidResponseError = errors$1.FilesNotFoundError = void 0;
+function requireErrors () {
+	if (hasRequiredErrors) return errors;
+	hasRequiredErrors = 1;
+	Object.defineProperty(errors, "__esModule", { value: true });
+	errors.UsageError = errors.NetworkError = errors.GHESNotSupportedError = errors.CacheNotFoundError = errors.InvalidResponseError = errors.FilesNotFoundError = void 0;
 	class FilesNotFoundError extends Error {
 	    constructor(files = []) {
 	        let message = 'No files were found to upload';
@@ -73561,28 +73747,28 @@ function requireErrors$1 () {
 	        this.name = 'FilesNotFoundError';
 	    }
 	}
-	errors$1.FilesNotFoundError = FilesNotFoundError;
+	errors.FilesNotFoundError = FilesNotFoundError;
 	class InvalidResponseError extends Error {
 	    constructor(message) {
 	        super(message);
 	        this.name = 'InvalidResponseError';
 	    }
 	}
-	errors$1.InvalidResponseError = InvalidResponseError;
+	errors.InvalidResponseError = InvalidResponseError;
 	class CacheNotFoundError extends Error {
 	    constructor(message = 'Cache not found') {
 	        super(message);
 	        this.name = 'CacheNotFoundError';
 	    }
 	}
-	errors$1.CacheNotFoundError = CacheNotFoundError;
+	errors.CacheNotFoundError = CacheNotFoundError;
 	class GHESNotSupportedError extends Error {
 	    constructor(message = '@actions/cache v4.1.4+, actions/cache/save@v4+ and actions/cache/restore@v4+ are not currently supported on GHES.') {
 	        super(message);
 	        this.name = 'GHESNotSupportedError';
 	    }
 	}
-	errors$1.GHESNotSupportedError = GHESNotSupportedError;
+	errors.GHESNotSupportedError = GHESNotSupportedError;
 	class NetworkError extends Error {
 	    constructor(code) {
 	        const message = `Unable to make request: ${code}\nIf you are using self-hosted runners, please make sure your runner has access to all GitHub endpoints: https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners#communication-between-self-hosted-runners-and-github`;
@@ -73591,7 +73777,7 @@ function requireErrors$1 () {
 	        this.name = 'NetworkError';
 	    }
 	}
-	errors$1.NetworkError = NetworkError;
+	errors.NetworkError = NetworkError;
 	NetworkError.isNetworkErrorCode = (code) => {
 	    if (!code)
 	        return false;
@@ -73610,14 +73796,14 @@ function requireErrors$1 () {
 	        this.name = 'UsageError';
 	    }
 	}
-	errors$1.UsageError = UsageError;
+	errors.UsageError = UsageError;
 	UsageError.isUsageErrorMessage = (msg) => {
 	    if (!msg)
 	        return false;
 	    return msg.includes('insufficient usage');
 	};
 	
-	return errors$1;
+	return errors;
 }
 
 var config = {};
@@ -77922,1762 +78108,7 @@ function requireCacheUtils () {
 	return cacheUtils;
 }
 
-var cache_twirp = {};
-
-var twirp = {};
-
-var context = {};
-
-var hasRequiredContext;
-
-function requireContext () {
-	if (hasRequiredContext) return context;
-	hasRequiredContext = 1;
-	Object.defineProperty(context, "__esModule", { value: true });
-	return context;
-}
-
-var server = {};
-
-var hooks = {};
-
-var hasRequiredHooks;
-
-function requireHooks () {
-	if (hasRequiredHooks) return hooks;
-	hasRequiredHooks = 1;
-	var __awaiter = (hooks && hooks.__awaiter) || function (thisArg, _arguments, P, generator) {
-	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-	    return new (P || (P = Promise))(function (resolve, reject) {
-	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-	        step((generator = generator.apply(thisArg, _arguments || [])).next());
-	    });
-	};
-	Object.defineProperty(hooks, "__esModule", { value: true });
-	hooks.isHook = hooks.chainHooks = void 0;
-	// ChainHooks creates a new ServerHook which chains the callbacks in
-	// each of the constituent hooks passed in. Each hook function will be
-	// called in the order of the ServerHooks values passed in.
-	//
-	// For the erroring hooks, RequestReceived and RequestRouted, any returned
-	// errors prevent processing by later hooks.
-	function chainHooks(...hooks) {
-	    if (hooks.length === 0) {
-	        return null;
-	    }
-	    if (hooks.length === 1) {
-	        return hooks[0];
-	    }
-	    const serverHook = {
-	        requestReceived(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.requestReceived) {
-	                        continue;
-	                    }
-	                    yield hook.requestReceived(ctx);
-	                }
-	            });
-	        },
-	        requestPrepared(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.requestPrepared) {
-	                        continue;
-	                    }
-	                    console.warn("hook requestPrepared is deprecated and will be removed in the next release. " +
-	                        "Please use responsePrepared instead.");
-	                    yield hook.requestPrepared(ctx);
-	                }
-	            });
-	        },
-	        responsePrepared(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.responsePrepared) {
-	                        continue;
-	                    }
-	                    yield hook.responsePrepared(ctx);
-	                }
-	            });
-	        },
-	        requestSent(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.requestSent) {
-	                        continue;
-	                    }
-	                    console.warn("hook requestSent is deprecated and will be removed in the next release. " +
-	                        "Please use responseSent instead.");
-	                    yield hook.requestSent(ctx);
-	                }
-	            });
-	        },
-	        responseSent(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.responseSent) {
-	                        continue;
-	                    }
-	                    yield hook.responseSent(ctx);
-	                }
-	            });
-	        },
-	        requestRouted(ctx) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.requestRouted) {
-	                        continue;
-	                    }
-	                    yield hook.requestRouted(ctx);
-	                }
-	            });
-	        },
-	        error(ctx, err) {
-	            return __awaiter(this, void 0, void 0, function* () {
-	                for (const hook of hooks) {
-	                    if (!hook.error) {
-	                        continue;
-	                    }
-	                    yield hook.error(ctx, err);
-	                }
-	            });
-	        },
-	    };
-	    return serverHook;
-	}
-	hooks.chainHooks = chainHooks;
-	function isHook(object) {
-	    return ("requestReceived" in object ||
-	        "requestPrepared" in object ||
-	        "requestSent" in object ||
-	        "requestRouted" in object ||
-	        "responsePrepared" in object ||
-	        "responseSent" in object ||
-	        "error" in object);
-	}
-	hooks.isHook = isHook;
-	return hooks;
-}
-
-var request = {};
-
-var errors = {};
-
-var hasRequiredErrors;
-
-function requireErrors () {
-	if (hasRequiredErrors) return errors;
-	hasRequiredErrors = 1;
-	(function (exports) {
-		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.isValidErrorCode = exports.httpStatusFromErrorCode = exports.TwirpErrorCode = exports.BadRouteError = exports.InternalServerErrorWith = exports.InternalServerError = exports.RequiredArgumentError = exports.InvalidArgumentError = exports.NotFoundError = exports.TwirpError = void 0;
-		/**
-		 * Represents a twirp error
-		 */
-		class TwirpError extends Error {
-		    constructor(code, msg) {
-		        super(msg);
-		        this.code = TwirpErrorCode.Internal;
-		        this.meta = {};
-		        this.code = code;
-		        this.msg = msg;
-		        Object.setPrototypeOf(this, TwirpError.prototype);
-		    }
-		    /**
-		     * Adds a metadata kv to the error
-		     * @param key
-		     * @param value
-		     */
-		    withMeta(key, value) {
-		        this.meta[key] = value;
-		        return this;
-		    }
-		    /**
-		     * Returns a single metadata value
-		     * return "" if not found
-		     * @param key
-		     */
-		    getMeta(key) {
-		        return this.meta[key] || "";
-		    }
-		    /**
-		     * Add the original error cause
-		     * @param err
-		     * @param addMeta
-		     */
-		    withCause(err, addMeta = false) {
-		        this._originalCause = err;
-		        if (addMeta) {
-		            this.withMeta("cause", err.message);
-		        }
-		        return this;
-		    }
-		    cause() {
-		        return this._originalCause;
-		    }
-		    /**
-		     * Returns the error representation to JSON
-		     */
-		    toJSON() {
-		        try {
-		            return JSON.stringify({
-		                code: this.code,
-		                msg: this.msg,
-		                meta: this.meta,
-		            });
-		        }
-		        catch (e) {
-		            return `{"code": "internal", "msg": "There was an error but it could not be serialized into JSON"}`;
-		        }
-		    }
-		    /**
-		     * Create a twirp error from an object
-		     * @param obj
-		     */
-		    static fromObject(obj) {
-		        const code = obj["code"] || TwirpErrorCode.Unknown;
-		        const msg = obj["msg"] || "unknown";
-		        const error = new TwirpError(code, msg);
-		        if (obj["meta"]) {
-		            Object.keys(obj["meta"]).forEach((key) => {
-		                error.withMeta(key, obj["meta"][key]);
-		            });
-		        }
-		        return error;
-		    }
-		}
-		exports.TwirpError = TwirpError;
-		/**
-		 * NotFoundError constructor for the common NotFound error.
-		 */
-		class NotFoundError extends TwirpError {
-		    constructor(msg) {
-		        super(TwirpErrorCode.NotFound, msg);
-		    }
-		}
-		exports.NotFoundError = NotFoundError;
-		/**
-		 * InvalidArgumentError constructor for the common InvalidArgument error. Can be
-		 * used when an argument has invalid format, is a number out of range, is a bad
-		 * option, etc).
-		 */
-		class InvalidArgumentError extends TwirpError {
-		    constructor(argument, validationMsg) {
-		        super(TwirpErrorCode.InvalidArgument, argument + " " + validationMsg);
-		        this.withMeta("argument", argument);
-		    }
-		}
-		exports.InvalidArgumentError = InvalidArgumentError;
-		/**
-		 * RequiredArgumentError is a more specific constructor for InvalidArgument
-		 * error. Should be used when the argument is required (expected to have a
-		 * non-zero value).
-		 */
-		class RequiredArgumentError extends InvalidArgumentError {
-		    constructor(argument) {
-		        super(argument, "is required");
-		    }
-		}
-		exports.RequiredArgumentError = RequiredArgumentError;
-		/**
-		 * InternalError constructor for the common Internal error. Should be used to
-		 * specify that something bad or unexpected happened.
-		 */
-		class InternalServerError extends TwirpError {
-		    constructor(msg) {
-		        super(TwirpErrorCode.Internal, msg);
-		    }
-		}
-		exports.InternalServerError = InternalServerError;
-		/**
-		 * InternalErrorWith makes an internal error, wrapping the original error and using it
-		 * for the error message, and with metadata "cause" with the original error type.
-		 * This function is used by Twirp services to wrap non-Twirp errors as internal errors.
-		 * The wrapped error can be extracted later with err.cause()
-		 */
-		class InternalServerErrorWith extends InternalServerError {
-		    constructor(err) {
-		        super(err.message);
-		        this.withMeta("cause", err.name);
-		        this.withCause(err);
-		    }
-		}
-		exports.InternalServerErrorWith = InternalServerErrorWith;
-		/**
-		 * A standard BadRoute Error
-		 */
-		class BadRouteError extends TwirpError {
-		    constructor(msg, method, url) {
-		        super(TwirpErrorCode.BadRoute, msg);
-		        this.withMeta("twirp_invalid_route", method + " " + url);
-		    }
-		}
-		exports.BadRouteError = BadRouteError;
-		var TwirpErrorCode;
-		(function (TwirpErrorCode) {
-		    // Canceled indicates the operation was cancelled (typically by the caller).
-		    TwirpErrorCode["Canceled"] = "canceled";
-		    // Unknown error. For example when handling errors raised by APIs that do not
-		    // return enough error information.
-		    TwirpErrorCode["Unknown"] = "unknown";
-		    // InvalidArgument indicates client specified an invalid argument. It
-		    // indicates arguments that are problematic regardless of the state of the
-		    // system (i.e. a malformed file name, required argument, number out of range,
-		    // etc.).
-		    TwirpErrorCode["InvalidArgument"] = "invalid_argument";
-		    // Malformed indicates an error occurred while decoding the client's request.
-		    // This may mean that the message was encoded improperly, or that there is a
-		    // disagreement in message format between the client and server.
-		    TwirpErrorCode["Malformed"] = "malformed";
-		    // DeadlineExceeded means operation expired before completion. For operations
-		    // that change the state of the system, this error may be returned even if the
-		    // operation has completed successfully (timeout).
-		    TwirpErrorCode["DeadlineExceeded"] = "deadline_exceeded";
-		    // NotFound means some requested entity was not found.
-		    TwirpErrorCode["NotFound"] = "not_found";
-		    // BadRoute means that the requested URL path wasn't routable to a Twirp
-		    // service and method. This is returned by the generated server, and usually
-		    // shouldn't be returned by applications. Instead, applications should use
-		    // NotFound or Unimplemented.
-		    TwirpErrorCode["BadRoute"] = "bad_route";
-		    // AlreadyExists means an attempt to create an entity failed because one
-		    // already exists.
-		    TwirpErrorCode["AlreadyExists"] = "already_exists";
-		    // PermissionDenied indicates the caller does not have permission to execute
-		    // the specified operation. It must not be used if the caller cannot be
-		    // identified (Unauthenticated).
-		    TwirpErrorCode["PermissionDenied"] = "permission_denied";
-		    // Unauthenticated indicates the request does not have valid authentication
-		    // credentials for the operation.
-		    TwirpErrorCode["Unauthenticated"] = "unauthenticated";
-		    // ResourceExhausted indicates some resource has been exhausted, perhaps a
-		    // per-user quota, or perhaps the entire file system is out of space.
-		    TwirpErrorCode["ResourceExhausted"] = "resource_exhausted";
-		    // FailedPrecondition indicates operation was rejected because the system is
-		    // not in a state required for the operation's execution. For example, doing
-		    // an rmdir operation on a directory that is non-empty, or on a non-directory
-		    // object, or when having conflicting read-modify-write on the same resource.
-		    TwirpErrorCode["FailedPrecondition"] = "failed_precondition";
-		    // Aborted indicates the operation was aborted, typically due to a concurrency
-		    // issue like sequencer check failures, transaction aborts, etc.
-		    TwirpErrorCode["Aborted"] = "aborted";
-		    // OutOfRange means operation was attempted past the valid range. For example,
-		    // seeking or reading past end of a paginated collection.
-		    //
-		    // Unlike InvalidArgument, this error indicates a problem that may be fixed if
-		    // the system state changes (i.e. adding more items to the collection).
-		    //
-		    // There is a fair bit of overlap between FailedPrecondition and OutOfRange.
-		    // We recommend using OutOfRange (the more specific error) when it applies so
-		    // that callers who are iterating through a space can easily look for an
-		    // OutOfRange error to detect when they are done.
-		    TwirpErrorCode["OutOfRange"] = "out_of_range";
-		    // Unimplemented indicates operation is not implemented or not
-		    // supported/enabled in this service.
-		    TwirpErrorCode["Unimplemented"] = "unimplemented";
-		    // Internal errors. When some invariants expected by the underlying system
-		    // have been broken. In other words, something bad happened in the library or
-		    // backend service. Do not confuse with HTTP Internal Server Error; an
-		    // Internal error could also happen on the client code, i.e. when parsing a
-		    // server response.
-		    TwirpErrorCode["Internal"] = "internal";
-		    // Unavailable indicates the service is currently unavailable. This is a most
-		    // likely a transient condition and may be corrected by retrying with a
-		    // backoff.
-		    TwirpErrorCode["Unavailable"] = "unavailable";
-		    // DataLoss indicates unrecoverable data loss or corruption.
-		    TwirpErrorCode["DataLoss"] = "data_loss";
-		})(TwirpErrorCode = exports.TwirpErrorCode || (exports.TwirpErrorCode = {}));
-		// ServerHTTPStatusFromErrorCode maps a Twirp error type into a similar HTTP
-		// response status. It is used by the Twirp server handler to set the HTTP
-		// response status code. Returns 0 if the ErrorCode is invalid.
-		function httpStatusFromErrorCode(code) {
-		    switch (code) {
-		        case TwirpErrorCode.Canceled:
-		            return 408; // RequestTimeout
-		        case TwirpErrorCode.Unknown:
-		            return 500; // Internal Server Error
-		        case TwirpErrorCode.InvalidArgument:
-		            return 400; // BadRequest
-		        case TwirpErrorCode.Malformed:
-		            return 400; // BadRequest
-		        case TwirpErrorCode.DeadlineExceeded:
-		            return 408; // RequestTimeout
-		        case TwirpErrorCode.NotFound:
-		            return 404; // Not Found
-		        case TwirpErrorCode.BadRoute:
-		            return 404; // Not Found
-		        case TwirpErrorCode.AlreadyExists:
-		            return 409; // Conflict
-		        case TwirpErrorCode.PermissionDenied:
-		            return 403; // Forbidden
-		        case TwirpErrorCode.Unauthenticated:
-		            return 401; // Unauthorized
-		        case TwirpErrorCode.ResourceExhausted:
-		            return 429; // Too Many Requests
-		        case TwirpErrorCode.FailedPrecondition:
-		            return 412; // Precondition Failed
-		        case TwirpErrorCode.Aborted:
-		            return 409; // Conflict
-		        case TwirpErrorCode.OutOfRange:
-		            return 400; // Bad Request
-		        case TwirpErrorCode.Unimplemented:
-		            return 501; // Not Implemented
-		        case TwirpErrorCode.Internal:
-		            return 500; // Internal Server Error
-		        case TwirpErrorCode.Unavailable:
-		            return 503; // Service Unavailable
-		        case TwirpErrorCode.DataLoss:
-		            return 500; // Internal Server Error
-		        default:
-		            return 0; // Invalid!
-		    }
-		}
-		exports.httpStatusFromErrorCode = httpStatusFromErrorCode;
-		// IsValidErrorCode returns true if is one of the valid predefined constants.
-		function isValidErrorCode(code) {
-		    return httpStatusFromErrorCode(code) != 0;
-		}
-		exports.isValidErrorCode = isValidErrorCode; 
-	} (errors));
-	return errors;
-}
-
-var hasRequiredRequest;
-
-function requireRequest () {
-	if (hasRequiredRequest) return request;
-	hasRequiredRequest = 1;
-	(function (exports) {
-		var __awaiter = (request && request.__awaiter) || function (thisArg, _arguments, P, generator) {
-		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-		    return new (P || (P = Promise))(function (resolve, reject) {
-		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-		        step((generator = generator.apply(thisArg, _arguments || [])).next());
-		    });
-		};
-		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.parseTwirpPath = exports.getRequestData = exports.validateRequest = exports.getContentType = exports.TwirpContentType = void 0;
-		const errors_1 = requireErrors();
-		/**
-		 * Supported Twirp Content-Type
-		 */
-		var TwirpContentType;
-		(function (TwirpContentType) {
-		    TwirpContentType[TwirpContentType["Protobuf"] = 0] = "Protobuf";
-		    TwirpContentType[TwirpContentType["JSON"] = 1] = "JSON";
-		    TwirpContentType[TwirpContentType["Unknown"] = 2] = "Unknown";
-		})(TwirpContentType = exports.TwirpContentType || (exports.TwirpContentType = {}));
-		/**
-		 * Get supported content-type
-		 * @param mimeType
-		 */
-		function getContentType(mimeType) {
-		    switch (mimeType) {
-		        case "application/protobuf":
-		            return TwirpContentType.Protobuf;
-		        case "application/json":
-		            return TwirpContentType.JSON;
-		        default:
-		            return TwirpContentType.Unknown;
-		    }
-		}
-		exports.getContentType = getContentType;
-		/**
-		 * Validate a twirp request
-		 * @param ctx
-		 * @param request
-		 * @param pathPrefix
-		 */
-		function validateRequest(ctx, request, pathPrefix) {
-		    if (request.method !== "POST") {
-		        const msg = `unsupported method ${request.method} (only POST is allowed)`;
-		        throw new errors_1.BadRouteError(msg, request.method || "", request.url || "");
-		    }
-		    const path = parseTwirpPath(request.url || "");
-		    if (path.pkgService !==
-		        (ctx.packageName ? ctx.packageName + "." : "") + ctx.serviceName) {
-		        const msg = `no handler for path ${request.url}`;
-		        throw new errors_1.BadRouteError(msg, request.method || "", request.url || "");
-		    }
-		    if (path.prefix !== pathPrefix) {
-		        const msg = `invalid path prefix ${path.prefix}, expected ${pathPrefix}, on path ${request.url}`;
-		        throw new errors_1.BadRouteError(msg, request.method || "", request.url || "");
-		    }
-		    const mimeContentType = request.headers["content-type"] || "";
-		    if (ctx.contentType === TwirpContentType.Unknown) {
-		        const msg = `unexpected Content-Type: ${request.headers["content-type"]}`;
-		        throw new errors_1.BadRouteError(msg, request.method || "", request.url || "");
-		    }
-		    return Object.assign(Object.assign({}, path), { mimeContentType, contentType: ctx.contentType });
-		}
-		exports.validateRequest = validateRequest;
-		/**
-		 * Get request data from the body
-		 * @param req
-		 */
-		function getRequestData(req) {
-		    return new Promise((resolve, reject) => {
-		        const reqWithRawBody = req;
-		        if (reqWithRawBody.rawBody instanceof Buffer) {
-		            resolve(reqWithRawBody.rawBody);
-		            return;
-		        }
-		        const chunks = [];
-		        req.on("data", (chunk) => chunks.push(chunk));
-		        req.on("end", () => __awaiter(this, void 0, void 0, function* () {
-		            const data = Buffer.concat(chunks);
-		            resolve(data);
-		        }));
-		        req.on("error", (err) => {
-		            if (req.aborted) {
-		                reject(new errors_1.TwirpError(errors_1.TwirpErrorCode.DeadlineExceeded, "failed to read request: deadline exceeded"));
-		            }
-		            else {
-		                reject(new errors_1.TwirpError(errors_1.TwirpErrorCode.Malformed, err.message).withCause(err));
-		            }
-		        });
-		        req.on("close", () => {
-		            reject(new errors_1.TwirpError(errors_1.TwirpErrorCode.Canceled, "failed to read request: context canceled"));
-		        });
-		    });
-		}
-		exports.getRequestData = getRequestData;
-		/**
-		 * Parses twirp url path
-		 * @param path
-		 */
-		function parseTwirpPath(path) {
-		    const parts = path.split("/");
-		    if (parts.length < 2) {
-		        return {
-		            pkgService: "",
-		            method: "",
-		            prefix: "",
-		        };
-		    }
-		    return {
-		        method: parts[parts.length - 1],
-		        pkgService: parts[parts.length - 2],
-		        prefix: parts.slice(0, parts.length - 2).join("/"),
-		    };
-		}
-		exports.parseTwirpPath = parseTwirpPath; 
-	} (request));
-	return request;
-}
-
-var hasRequiredServer;
-
-function requireServer () {
-	if (hasRequiredServer) return server;
-	hasRequiredServer = 1;
-	var __awaiter = (server && server.__awaiter) || function (thisArg, _arguments, P, generator) {
-	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-	    return new (P || (P = Promise))(function (resolve, reject) {
-	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-	        step((generator = generator.apply(thisArg, _arguments || [])).next());
-	    });
-	};
-	Object.defineProperty(server, "__esModule", { value: true });
-	server.writeError = server.TwirpServer = void 0;
-	const hooks_1 = requireHooks();
-	const request_1 = requireRequest();
-	const errors_1 = requireErrors();
-	/**
-	 * Runtime server implementation of a TwirpServer
-	 */
-	class TwirpServer {
-	    constructor(options) {
-	        this.pathPrefix = "/twirp";
-	        this.hooks = [];
-	        this.interceptors = [];
-	        this.packageName = options.packageName;
-	        this.serviceName = options.serviceName;
-	        this.methodList = options.methodList;
-	        this.matchRoute = options.matchRoute;
-	        this.service = options.service;
-	    }
-	    /**
-	     * Returns the prefix for this server
-	     */
-	    get prefix() {
-	        return this.pathPrefix;
-	    }
-	    /**
-	     * The http handler for twirp complaint endpoints
-	     * @param options
-	     */
-	    httpHandler(options) {
-	        return (req, resp) => {
-	            // setup prefix
-	            if ((options === null || options === void 0 ? void 0 : options.prefix) !== undefined) {
-	                this.withPrefix(options.prefix);
-	            }
-	            return this._httpHandler(req, resp);
-	        };
-	    }
-	    /**
-	     * Adds interceptors or hooks to the request stack
-	     * @param middlewares
-	     */
-	    use(...middlewares) {
-	        middlewares.forEach((middleware) => {
-	            if (hooks_1.isHook(middleware)) {
-	                this.hooks.push(middleware);
-	                return this;
-	            }
-	            this.interceptors.push(middleware);
-	        });
-	        return this;
-	    }
-	    /**
-	     * Adds a prefix to the service url path
-	     * @param prefix
-	     */
-	    withPrefix(prefix) {
-	        if (prefix === false) {
-	            this.pathPrefix = "";
-	        }
-	        else {
-	            this.pathPrefix = prefix;
-	        }
-	        return this;
-	    }
-	    /**
-	     * Returns the regex matching path for this twirp server
-	     */
-	    matchingPath() {
-	        const baseRegex = this.baseURI().replace(/\./g, "\\.");
-	        return new RegExp(`${baseRegex}\/(${this.methodList.join("|")})`);
-	    }
-	    /**
-	     * Returns the base URI for this twirp server
-	     */
-	    baseURI() {
-	        return `${this.pathPrefix}/${this.packageName ? this.packageName + "." : ""}${this.serviceName}`;
-	    }
-	    /**
-	     * Create a twirp context
-	     * @param req
-	     * @param res
-	     * @private
-	     */
-	    createContext(req, res) {
-	        return {
-	            packageName: this.packageName,
-	            serviceName: this.serviceName,
-	            methodName: "",
-	            contentType: request_1.getContentType(req.headers["content-type"]),
-	            req: req,
-	            res: res,
-	        };
-	    }
-	    /**
-	     * Twrip server http handler implementation
-	     * @param req
-	     * @param resp
-	     * @private
-	     */
-	    _httpHandler(req, resp) {
-	        return __awaiter(this, void 0, void 0, function* () {
-	            const ctx = this.createContext(req, resp);
-	            try {
-	                yield this.invokeHook("requestReceived", ctx);
-	                const { method, mimeContentType } = request_1.validateRequest(ctx, req, this.pathPrefix || "");
-	                const handler = this.matchRoute(method, {
-	                    onMatch: (ctx) => {
-	                        return this.invokeHook("requestRouted", ctx);
-	                    },
-	                    onNotFound: () => {
-	                        const msg = `no handler for path ${req.url}`;
-	                        throw new errors_1.BadRouteError(msg, req.method || "", req.url || "");
-	                    },
-	                });
-	                const body = yield request_1.getRequestData(req);
-	                const response = yield handler(ctx, this.service, body, this.interceptors);
-	                yield Promise.all([
-	                    this.invokeHook("responsePrepared", ctx),
-	                    // keep backwards compatibility till next release
-	                    this.invokeHook("requestPrepared", ctx),
-	                ]);
-	                resp.statusCode = 200;
-	                resp.setHeader("Content-Type", mimeContentType);
-	                resp.end(response);
-	            }
-	            catch (e) {
-	                yield this.invokeHook("error", ctx, mustBeTwirpError(e));
-	                if (!resp.headersSent) {
-	                    writeError(resp, e);
-	                }
-	            }
-	            finally {
-	                yield Promise.all([
-	                    this.invokeHook("responseSent", ctx),
-	                    // keep backwards compatibility till next release
-	                    this.invokeHook("requestSent", ctx),
-	                ]);
-	            }
-	        });
-	    }
-	    /**
-	     * Invoke a hook
-	     * @param hookName
-	     * @param ctx
-	     * @param err
-	     * @protected
-	     */
-	    invokeHook(hookName, ctx, err) {
-	        return __awaiter(this, void 0, void 0, function* () {
-	            if (this.hooks.length === 0) {
-	                return;
-	            }
-	            const chainedHooks = hooks_1.chainHooks(...this.hooks);
-	            const hook = chainedHooks === null || chainedHooks === void 0 ? void 0 : chainedHooks[hookName];
-	            if (hook) {
-	                yield hook(ctx, err || new errors_1.InternalServerError("internal server error"));
-	            }
-	        });
-	    }
-	}
-	server.TwirpServer = TwirpServer;
-	/**
-	 * Write http error response
-	 * @param res
-	 * @param error
-	 */
-	function writeError(res, error) {
-	    const twirpError = mustBeTwirpError(error);
-	    res.setHeader("Content-Type", "application/json");
-	    res.statusCode = errors_1.httpStatusFromErrorCode(twirpError.code);
-	    res.end(twirpError.toJSON());
-	}
-	server.writeError = writeError;
-	/**
-	 * Make sure that the error passed is a TwirpError
-	 * otherwise it will wrap it into an InternalError
-	 * @param err
-	 */
-	function mustBeTwirpError(err) {
-	    if (err instanceof errors_1.TwirpError) {
-	        return err;
-	    }
-	    return new errors_1.InternalServerErrorWith(err);
-	}
-	return server;
-}
-
-var interceptors = {};
-
-var hasRequiredInterceptors;
-
-function requireInterceptors () {
-	if (hasRequiredInterceptors) return interceptors;
-	hasRequiredInterceptors = 1;
-	var __awaiter = (interceptors && interceptors.__awaiter) || function (thisArg, _arguments, P, generator) {
-	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-	    return new (P || (P = Promise))(function (resolve, reject) {
-	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-	        step((generator = generator.apply(thisArg, _arguments || [])).next());
-	    });
-	};
-	Object.defineProperty(interceptors, "__esModule", { value: true });
-	interceptors.chainInterceptors = void 0;
-	// chains multiple Interceptors into a single Interceptor.
-	// The first interceptor wraps the second one, and so on.
-	// Returns null if interceptors is empty.
-	function chainInterceptors(...interceptors) {
-	    if (interceptors.length === 0) {
-	        return;
-	    }
-	    if (interceptors.length === 1) {
-	        return interceptors[0];
-	    }
-	    const first = interceptors[0];
-	    return (ctx, request, handler) => __awaiter(this, void 0, void 0, function* () {
-	        let next = handler;
-	        for (let i = interceptors.length - 1; i > 0; i--) {
-	            next = ((next) => (ctx, typedRequest) => {
-	                return interceptors[i](ctx, typedRequest, next);
-	            })(next);
-	        }
-	        return first(ctx, request, next);
-	    });
-	}
-	interceptors.chainInterceptors = chainInterceptors;
-	return interceptors;
-}
-
-var gateway = {};
-
-var dotObject;
-var hasRequiredDotObject;
-
-function requireDotObject () {
-	if (hasRequiredDotObject) return dotObject;
-	hasRequiredDotObject = 1;
-
-	function _process (v, mod) {
-	  var i;
-	  var r;
-
-	  if (typeof mod === 'function') {
-	    r = mod(v);
-	    if (r !== undefined) {
-	      v = r;
-	    }
-	  } else if (Array.isArray(mod)) {
-	    for (i = 0; i < mod.length; i++) {
-	      r = mod[i](v);
-	      if (r !== undefined) {
-	        v = r;
-	      }
-	    }
-	  }
-
-	  return v
-	}
-
-	function parseKey (key, val) {
-	  // detect negative index notation
-	  if (key[0] === '-' && Array.isArray(val) && /^-\d+$/.test(key)) {
-	    return val.length + parseInt(key, 10)
-	  }
-	  return key
-	}
-
-	function isIndex (k) {
-	  return /^\d+$/.test(k)
-	}
-
-	function isObject (val) {
-	  return Object.prototype.toString.call(val) === '[object Object]'
-	}
-
-	function isArrayOrObject (val) {
-	  return Object(val) === val
-	}
-
-	function isEmptyObject (val) {
-	  return Object.keys(val).length === 0
-	}
-
-	var blacklist = ['__proto__', 'prototype', 'constructor'];
-	var blacklistFilter = function (part) { return blacklist.indexOf(part) === -1 };
-
-	function parsePath (path, sep) {
-	  if (path.indexOf('[') >= 0) {
-	    path = path.replace(/\[/g, sep).replace(/]/g, '');
-	  }
-
-	  var parts = path.split(sep);
-
-	  var check = parts.filter(blacklistFilter);
-
-	  if (check.length !== parts.length) {
-	    throw Error('Refusing to update blacklisted property ' + path)
-	  }
-
-	  return parts
-	}
-
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-	function DotObject (separator, override, useArray, useBrackets) {
-	  if (!(this instanceof DotObject)) {
-	    return new DotObject(separator, override, useArray, useBrackets)
-	  }
-
-	  if (typeof override === 'undefined') override = false;
-	  if (typeof useArray === 'undefined') useArray = true;
-	  if (typeof useBrackets === 'undefined') useBrackets = true;
-	  this.separator = separator || '.';
-	  this.override = override;
-	  this.useArray = useArray;
-	  this.useBrackets = useBrackets;
-	  this.keepArray = false;
-
-	  // contains touched arrays
-	  this.cleanup = [];
-	}
-
-	var dotDefault = new DotObject('.', false, true, true);
-	function wrap (method) {
-	  return function () {
-	    return dotDefault[method].apply(dotDefault, arguments)
-	  }
-	}
-
-	DotObject.prototype._fill = function (a, obj, v, mod) {
-	  var k = a.shift();
-
-	  if (a.length > 0) {
-	    obj[k] = obj[k] || (this.useArray && isIndex(a[0]) ? [] : {});
-
-	    if (!isArrayOrObject(obj[k])) {
-	      if (this.override) {
-	        obj[k] = {};
-	      } else {
-	        if (!(isArrayOrObject(v) && isEmptyObject(v))) {
-	          throw new Error(
-	            'Trying to redefine `' + k + '` which is a ' + typeof obj[k]
-	          )
-	        }
-
-	        return
-	      }
-	    }
-
-	    this._fill(a, obj[k], v, mod);
-	  } else {
-	    if (!this.override && isArrayOrObject(obj[k]) && !isEmptyObject(obj[k])) {
-	      if (!(isArrayOrObject(v) && isEmptyObject(v))) {
-	        throw new Error("Trying to redefine non-empty obj['" + k + "']")
-	      }
-
-	      return
-	    }
-
-	    obj[k] = _process(v, mod);
-	  }
-	};
-
-	/**
-	 *
-	 * Converts an object with dotted-key/value pairs to it's expanded version
-	 *
-	 * Optionally transformed by a set of modifiers.
-	 *
-	 * Usage:
-	 *
-	 *   var row = {
-	 *     'nr': 200,
-	 *     'doc.name': '  My Document  '
-	 *   }
-	 *
-	 *   var mods = {
-	 *     'doc.name': [_s.trim, _s.underscored]
-	 *   }
-	 *
-	 *   dot.object(row, mods)
-	 *
-	 * @param {Object} obj
-	 * @param {Object} mods
-	 */
-	DotObject.prototype.object = function (obj, mods) {
-	  var self = this;
-
-	  Object.keys(obj).forEach(function (k) {
-	    var mod = mods === undefined ? null : mods[k];
-	    // normalize array notation.
-	    var ok = parsePath(k, self.separator).join(self.separator);
-
-	    if (ok.indexOf(self.separator) !== -1) {
-	      self._fill(ok.split(self.separator), obj, obj[k], mod);
-	      delete obj[k];
-	    } else {
-	      obj[k] = _process(obj[k], mod);
-	    }
-	  });
-
-	  return obj
-	};
-
-	/**
-	 * @param {String} path dotted path
-	 * @param {String} v value to be set
-	 * @param {Object} obj object to be modified
-	 * @param {Function|Array} mod optional modifier
-	 */
-	DotObject.prototype.str = function (path, v, obj, mod) {
-	  var ok = parsePath(path, this.separator).join(this.separator);
-
-	  if (path.indexOf(this.separator) !== -1) {
-	    this._fill(ok.split(this.separator), obj, v, mod);
-	  } else {
-	    obj[path] = _process(v, mod);
-	  }
-
-	  return obj
-	};
-
-	/**
-	 *
-	 * Pick a value from an object using dot notation.
-	 *
-	 * Optionally remove the value
-	 *
-	 * @param {String} path
-	 * @param {Object} obj
-	 * @param {Boolean} remove
-	 */
-	DotObject.prototype.pick = function (path, obj, remove, reindexArray) {
-	  var i;
-	  var keys;
-	  var val;
-	  var key;
-	  var cp;
-
-	  keys = parsePath(path, this.separator);
-	  for (i = 0; i < keys.length; i++) {
-	    key = parseKey(keys[i], obj);
-	    if (obj && typeof obj === 'object' && key in obj) {
-	      if (i === keys.length - 1) {
-	        if (remove) {
-	          val = obj[key];
-	          if (reindexArray && Array.isArray(obj)) {
-	            obj.splice(key, 1);
-	          } else {
-	            delete obj[key];
-	          }
-	          if (Array.isArray(obj)) {
-	            cp = keys.slice(0, -1).join('.');
-	            if (this.cleanup.indexOf(cp) === -1) {
-	              this.cleanup.push(cp);
-	            }
-	          }
-	          return val
-	        } else {
-	          return obj[key]
-	        }
-	      } else {
-	        obj = obj[key];
-	      }
-	    } else {
-	      return undefined
-	    }
-	  }
-	  if (remove && Array.isArray(obj)) {
-	    obj = obj.filter(function (n) {
-	      return n !== undefined
-	    });
-	  }
-	  return obj
-	};
-	/**
-	 *
-	 * Delete value from an object using dot notation.
-	 *
-	 * @param {String} path
-	 * @param {Object} obj
-	 * @return {any} The removed value
-	 */
-	DotObject.prototype.delete = function (path, obj) {
-	  return this.remove(path, obj, true)
-	};
-
-	/**
-	 *
-	 * Remove value from an object using dot notation.
-	 *
-	 * Will remove multiple items if path is an array.
-	 * In this case array indexes will be retained until all
-	 * removals have been processed.
-	 *
-	 * Use dot.delete() to automatically  re-index arrays.
-	 *
-	 * @param {String|Array<String>} path
-	 * @param {Object} obj
-	 * @param {Boolean} reindexArray
-	 * @return {any} The removed value
-	 */
-	DotObject.prototype.remove = function (path, obj, reindexArray) {
-	  var i;
-
-	  this.cleanup = [];
-	  if (Array.isArray(path)) {
-	    for (i = 0; i < path.length; i++) {
-	      this.pick(path[i], obj, true, reindexArray);
-	    }
-	    if (!reindexArray) {
-	      this._cleanup(obj);
-	    }
-	    return obj
-	  } else {
-	    return this.pick(path, obj, true, reindexArray)
-	  }
-	};
-
-	DotObject.prototype._cleanup = function (obj) {
-	  var ret;
-	  var i;
-	  var keys;
-	  var root;
-	  if (this.cleanup.length) {
-	    for (i = 0; i < this.cleanup.length; i++) {
-	      keys = this.cleanup[i].split('.');
-	      root = keys.splice(0, -1).join('.');
-	      ret = root ? this.pick(root, obj) : obj;
-	      ret = ret[keys[0]].filter(function (v) {
-	        return v !== undefined
-	      });
-	      this.set(this.cleanup[i], ret, obj);
-	    }
-	    this.cleanup = [];
-	  }
-	};
-
-	/**
-	 * Alias method  for `dot.remove`
-	 *
-	 * Note: this is not an alias for dot.delete()
-	 *
-	 * @param {String|Array<String>} path
-	 * @param {Object} obj
-	 * @param {Boolean} reindexArray
-	 * @return {any} The removed value
-	 */
-	DotObject.prototype.del = DotObject.prototype.remove;
-
-	/**
-	 *
-	 * Move a property from one place to the other.
-	 *
-	 * If the source path does not exist (undefined)
-	 * the target property will not be set.
-	 *
-	 * @param {String} source
-	 * @param {String} target
-	 * @param {Object} obj
-	 * @param {Function|Array} mods
-	 * @param {Boolean} merge
-	 */
-	DotObject.prototype.move = function (source, target, obj, mods, merge) {
-	  if (typeof mods === 'function' || Array.isArray(mods)) {
-	    this.set(target, _process(this.pick(source, obj, true), mods), obj, merge);
-	  } else {
-	    merge = mods;
-	    this.set(target, this.pick(source, obj, true), obj, merge);
-	  }
-
-	  return obj
-	};
-
-	/**
-	 *
-	 * Transfer a property from one object to another object.
-	 *
-	 * If the source path does not exist (undefined)
-	 * the property on the other object will not be set.
-	 *
-	 * @param {String} source
-	 * @param {String} target
-	 * @param {Object} obj1
-	 * @param {Object} obj2
-	 * @param {Function|Array} mods
-	 * @param {Boolean} merge
-	 */
-	DotObject.prototype.transfer = function (
-	  source,
-	  target,
-	  obj1,
-	  obj2,
-	  mods,
-	  merge
-	) {
-	  if (typeof mods === 'function' || Array.isArray(mods)) {
-	    this.set(
-	      target,
-	      _process(this.pick(source, obj1, true), mods),
-	      obj2,
-	      merge
-	    );
-	  } else {
-	    merge = mods;
-	    this.set(target, this.pick(source, obj1, true), obj2, merge);
-	  }
-
-	  return obj2
-	};
-
-	/**
-	 *
-	 * Copy a property from one object to another object.
-	 *
-	 * If the source path does not exist (undefined)
-	 * the property on the other object will not be set.
-	 *
-	 * @param {String} source
-	 * @param {String} target
-	 * @param {Object} obj1
-	 * @param {Object} obj2
-	 * @param {Function|Array} mods
-	 * @param {Boolean} merge
-	 */
-	DotObject.prototype.copy = function (source, target, obj1, obj2, mods, merge) {
-	  if (typeof mods === 'function' || Array.isArray(mods)) {
-	    this.set(
-	      target,
-	      _process(
-	        // clone what is picked
-	        JSON.parse(JSON.stringify(this.pick(source, obj1, false))),
-	        mods
-	      ),
-	      obj2,
-	      merge
-	    );
-	  } else {
-	    merge = mods;
-	    this.set(target, this.pick(source, obj1, false), obj2, merge);
-	  }
-
-	  return obj2
-	};
-
-	/**
-	 *
-	 * Set a property on an object using dot notation.
-	 *
-	 * @param {String} path
-	 * @param {any} val
-	 * @param {Object} obj
-	 * @param {Boolean} merge
-	 */
-	DotObject.prototype.set = function (path, val, obj, merge) {
-	  var i;
-	  var k;
-	  var keys;
-	  var key;
-
-	  // Do not operate if the value is undefined.
-	  if (typeof val === 'undefined') {
-	    return obj
-	  }
-	  keys = parsePath(path, this.separator);
-
-	  for (i = 0; i < keys.length; i++) {
-	    key = keys[i];
-	    if (i === keys.length - 1) {
-	      if (merge && isObject(val) && isObject(obj[key])) {
-	        for (k in val) {
-	          if (hasOwnProperty.call(val, k)) {
-	            obj[key][k] = val[k];
-	          }
-	        }
-	      } else if (merge && Array.isArray(obj[key]) && Array.isArray(val)) {
-	        for (var j = 0; j < val.length; j++) {
-	          obj[keys[i]].push(val[j]);
-	        }
-	      } else {
-	        obj[key] = val;
-	      }
-	    } else if (
-	      // force the value to be an object
-	      !hasOwnProperty.call(obj, key) ||
-	      (!isObject(obj[key]) && !Array.isArray(obj[key]))
-	    ) {
-	      // initialize as array if next key is numeric
-	      if (/^\d+$/.test(keys[i + 1])) {
-	        obj[key] = [];
-	      } else {
-	        obj[key] = {};
-	      }
-	    }
-	    obj = obj[key];
-	  }
-	  return obj
-	};
-
-	/**
-	 *
-	 * Transform an object
-	 *
-	 * Usage:
-	 *
-	 *   var obj = {
-	 *     "id": 1,
-	 *    "some": {
-	 *      "thing": "else"
-	 *    }
-	 *   }
-	 *
-	 *   var transform = {
-	 *     "id": "nr",
-	 *    "some.thing": "name"
-	 *   }
-	 *
-	 *   var tgt = dot.transform(transform, obj)
-	 *
-	 * @param {Object} recipe Transform recipe
-	 * @param {Object} obj Object to be transformed
-	 * @param {Array} mods modifiers for the target
-	 */
-	DotObject.prototype.transform = function (recipe, obj, tgt) {
-	  obj = obj || {};
-	  tgt = tgt || {};
-	  Object.keys(recipe).forEach(
-	    function (key) {
-	      this.set(recipe[key], this.pick(key, obj), tgt);
-	    }.bind(this)
-	  );
-	  return tgt
-	};
-
-	/**
-	 *
-	 * Convert object to dotted-key/value pair
-	 *
-	 * Usage:
-	 *
-	 *   var tgt = dot.dot(obj)
-	 *
-	 *   or
-	 *
-	 *   var tgt = {}
-	 *   dot.dot(obj, tgt)
-	 *
-	 * @param {Object} obj source object
-	 * @param {Object} tgt target object
-	 * @param {Array} path path array (internal)
-	 */
-	DotObject.prototype.dot = function (obj, tgt, path) {
-	  tgt = tgt || {};
-	  path = path || [];
-	  var isArray = Array.isArray(obj);
-
-	  Object.keys(obj).forEach(
-	    function (key) {
-	      var index = isArray && this.useBrackets ? '[' + key + ']' : key;
-	      if (
-	        isArrayOrObject(obj[key]) &&
-	        ((isObject(obj[key]) && !isEmptyObject(obj[key])) ||
-	          (Array.isArray(obj[key]) && !this.keepArray && obj[key].length !== 0))
-	      ) {
-	        if (isArray && this.useBrackets) {
-	          var previousKey = path[path.length - 1] || '';
-	          return this.dot(
-	            obj[key],
-	            tgt,
-	            path.slice(0, -1).concat(previousKey + index)
-	          )
-	        } else {
-	          return this.dot(obj[key], tgt, path.concat(index))
-	        }
-	      } else {
-	        if (isArray && this.useBrackets) {
-	          tgt[path.join(this.separator).concat('[' + key + ']')] = obj[key];
-	        } else {
-	          tgt[path.concat(index).join(this.separator)] = obj[key];
-	        }
-	      }
-	    }.bind(this)
-	  );
-	  return tgt
-	};
-
-	DotObject.pick = wrap('pick');
-	DotObject.move = wrap('move');
-	DotObject.transfer = wrap('transfer');
-	DotObject.transform = wrap('transform');
-	DotObject.copy = wrap('copy');
-	DotObject.object = wrap('object');
-	DotObject.str = wrap('str');
-	DotObject.set = wrap('set');
-	DotObject.delete = wrap('delete');
-	DotObject.del = DotObject.remove = wrap('remove');
-	DotObject.dot = wrap('dot');
-	['override', 'overwrite'].forEach(function (prop) {
-	  Object.defineProperty(DotObject, prop, {
-	    get: function () {
-	      return dotDefault.override
-	    },
-	    set: function (val) {
-	      dotDefault.override = !!val;
-	    }
-	  });
-	});
-	['useArray', 'keepArray', 'useBrackets'].forEach(function (prop) {
-	  Object.defineProperty(DotObject, prop, {
-	    get: function () {
-	      return dotDefault[prop]
-	    },
-	    set: function (val) {
-	      dotDefault[prop] = val;
-	    }
-	  });
-	});
-
-	DotObject._process = _process;
-
-	dotObject = DotObject;
-	return dotObject;
-}
-
-var http_client = {};
-
-var hasRequiredHttp_client;
-
-function requireHttp_client () {
-	if (hasRequiredHttp_client) return http_client;
-	hasRequiredHttp_client = 1;
-	var __createBinding = (http_client && http_client.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-	    if (k2 === undefined) k2 = k;
-	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-	}) : (function(o, m, k, k2) {
-	    if (k2 === undefined) k2 = k;
-	    o[k2] = m[k];
-	}));
-	var __setModuleDefault = (http_client && http_client.__setModuleDefault) || (Object.create ? (function(o, v) {
-	    Object.defineProperty(o, "default", { enumerable: true, value: v });
-	}) : function(o, v) {
-	    o["default"] = v;
-	});
-	var __importStar = (http_client && http_client.__importStar) || function (mod) {
-	    if (mod && mod.__esModule) return mod;
-	    var result = {};
-	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-	    __setModuleDefault(result, mod);
-	    return result;
-	};
-	var __awaiter = (http_client && http_client.__awaiter) || function (thisArg, _arguments, P, generator) {
-	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-	    return new (P || (P = Promise))(function (resolve, reject) {
-	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-	        step((generator = generator.apply(thisArg, _arguments || [])).next());
-	    });
-	};
-	Object.defineProperty(http_client, "__esModule", { value: true });
-	http_client.FetchRPC = http_client.wrapErrorResponseToTwirpError = http_client.NodeHttpRPC = void 0;
-	const http = __importStar(require$$2);
-	const https = __importStar(require$$1$2);
-	const url_1 = require$$5$1;
-	const errors_1 = requireErrors();
-	/**
-	 * a node HTTP RPC implementation
-	 * @param options
-	 * @constructor
-	 */
-	const NodeHttpRPC = (options) => ({
-	    request(service, method, contentType, data) {
-	        let client;
-	        return new Promise((resolve, rejected) => {
-	            const responseChunks = [];
-	            const requestData = contentType === "application/protobuf"
-	                ? Buffer.from(data)
-	                : JSON.stringify(data);
-	            const url = new url_1.URL(options.baseUrl);
-	            const isHttps = url.protocol === "https:";
-	            if (isHttps) {
-	                client = https;
-	            }
-	            else {
-	                client = http;
-	            }
-	            const prefix = url.pathname !== "/" ? url.pathname : "";
-	            const req = client
-	                .request(Object.assign(Object.assign({}, (options ? options : {})), { method: "POST", protocol: url.protocol, host: url.hostname, port: url.port ? url.port : isHttps ? 443 : 80, path: `${prefix}/${service}/${method}`, headers: Object.assign(Object.assign({}, (options.headers ? options.headers : {})), { "Content-Type": contentType, "Content-Length": contentType === "application/protobuf"
-	                        ? Buffer.byteLength(requestData)
-	                        : Buffer.from(requestData).byteLength }) }), (res) => {
-	                res.on("data", (chunk) => responseChunks.push(chunk));
-	                res.on("end", () => {
-	                    const data = Buffer.concat(responseChunks);
-	                    if (res.statusCode != 200) {
-	                        rejected(wrapErrorResponseToTwirpError(data.toString()));
-	                    }
-	                    else {
-	                        if (contentType === "application/json") {
-	                            resolve(JSON.parse(data.toString()));
-	                        }
-	                        else {
-	                            resolve(data);
-	                        }
-	                    }
-	                });
-	                res.on("error", (err) => {
-	                    rejected(err);
-	                });
-	            })
-	                .on("error", (err) => {
-	                rejected(err);
-	            });
-	            req.end(requestData);
-	        });
-	    },
-	});
-	http_client.NodeHttpRPC = NodeHttpRPC;
-	function wrapErrorResponseToTwirpError(errorResponse) {
-	    return errors_1.TwirpError.fromObject(JSON.parse(errorResponse));
-	}
-	http_client.wrapErrorResponseToTwirpError = wrapErrorResponseToTwirpError;
-	/**
-	 * a browser fetch RPC implementation
-	 */
-	const FetchRPC = (options) => ({
-	    request(service, method, contentType, data) {
-	        return __awaiter(this, void 0, void 0, function* () {
-	            const headers = new Headers(options.headers);
-	            headers.set("content-type", contentType);
-	            const response = yield fetch(`${options.baseUrl}/${service}/${method}`, Object.assign(Object.assign({}, options), { method: "POST", headers, body: data instanceof Uint8Array ? data : JSON.stringify(data) }));
-	            if (response.status === 200) {
-	                if (contentType === "application/json") {
-	                    return yield response.json();
-	                }
-	                return new Uint8Array(yield response.arrayBuffer());
-	            }
-	            throw errors_1.TwirpError.fromObject(yield response.json());
-	        });
-	    },
-	});
-	http_client.FetchRPC = FetchRPC;
-	return http_client;
-}
-
-var hasRequiredGateway;
-
-function requireGateway () {
-	if (hasRequiredGateway) return gateway;
-	hasRequiredGateway = 1;
-	(function (exports) {
-		var __createBinding = (gateway && gateway.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-		    if (k2 === undefined) k2 = k;
-		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-		}) : (function(o, m, k, k2) {
-		    if (k2 === undefined) k2 = k;
-		    o[k2] = m[k];
-		}));
-		var __setModuleDefault = (gateway && gateway.__setModuleDefault) || (Object.create ? (function(o, v) {
-		    Object.defineProperty(o, "default", { enumerable: true, value: v });
-		}) : function(o, v) {
-		    o["default"] = v;
-		});
-		var __importStar = (gateway && gateway.__importStar) || function (mod) {
-		    if (mod && mod.__esModule) return mod;
-		    var result = {};
-		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-		    __setModuleDefault(result, mod);
-		    return result;
-		};
-		var __awaiter = (gateway && gateway.__awaiter) || function (thisArg, _arguments, P, generator) {
-		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-		    return new (P || (P = Promise))(function (resolve, reject) {
-		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-		        step((generator = generator.apply(thisArg, _arguments || [])).next());
-		    });
-		};
-		var __rest = (gateway && gateway.__rest) || function (s, e) {
-		    var t = {};
-		    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-		        t[p] = s[p];
-		    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-		        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-		            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-		                t[p[i]] = s[p[i]];
-		        }
-		    return t;
-		};
-		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.Gateway = exports.Pattern = void 0;
-		const querystring_1 = require$$8;
-		const dotObject = __importStar(requireDotObject());
-		const request_1 = requireRequest();
-		const errors_1 = requireErrors();
-		const http_client_1 = requireHttp_client();
-		const server_1 = requireServer();
-		(function (Pattern) {
-		    Pattern["POST"] = "post";
-		    Pattern["GET"] = "get";
-		    Pattern["PATCH"] = "patch";
-		    Pattern["PUT"] = "put";
-		    Pattern["DELETE"] = "delete";
-		})(exports.Pattern || (exports.Pattern = {}));
-		/**
-		 * The Gateway proxies http requests to Twirp Compliant
-		 * handlers
-		 */
-		class Gateway {
-		    constructor(routes) {
-		        this.routes = routes;
-		    }
-		    /**
-		     * Middleware that rewrite the current request
-		     * to a Twirp compliant request
-		     */
-		    twirpRewrite(prefix = "/twirp") {
-		        return (req, resp, next) => {
-		            this.rewrite(req, resp, prefix)
-		                .then(() => next())
-		                .catch((e) => {
-		                if (e instanceof errors_1.TwirpError) {
-		                    if (e.code !== errors_1.TwirpErrorCode.NotFound) {
-		                        server_1.writeError(resp, e);
-		                    }
-		                    else {
-		                        next();
-		                    }
-		                }
-		            });
-		        };
-		    }
-		    /**
-		     * Rewrite an incoming request to a Twirp compliant request
-		     * @param req
-		     * @param resp
-		     * @param prefix
-		     */
-		    rewrite(req, resp, prefix = "/twirp") {
-		        return __awaiter(this, void 0, void 0, function* () {
-		            const [match, route] = this.matchRoute(req);
-		            const body = yield this.prepareTwirpBody(req, match, route);
-		            const twirpUrl = `${prefix}/${route.packageName}.${route.serviceName}/${route.methodName}`;
-		            req.url = twirpUrl;
-		            req.originalUrl = twirpUrl;
-		            req.method = "POST";
-		            req.headers["content-type"] = "application/json";
-		            req.rawBody = Buffer.from(JSON.stringify(body));
-		            if (route.responseBodyKey) {
-		                const endFn = resp.end.bind(resp);
-		                resp.end = function (chunk) {
-		                    if (resp.statusCode === 200) {
-		                        endFn(`{ "${route.responseBodyKey}": ${chunk} }`);
-		                    }
-		                    else {
-		                        endFn(chunk);
-		                    }
-		                };
-		            }
-		        });
-		    }
-		    /**
-		     * Create a reverse proxy handler to
-		     * proxy http requests to Twirp Compliant handlers
-		     * @param httpClientOption
-		     */
-		    reverseProxy(httpClientOption) {
-		        const client = http_client_1.NodeHttpRPC(httpClientOption);
-		        return (req, res) => __awaiter(this, void 0, void 0, function* () {
-		            try {
-		                const [match, route] = this.matchRoute(req);
-		                const body = yield this.prepareTwirpBody(req, match, route);
-		                const response = yield client.request(`${route.packageName}.${route.serviceName}`, route.methodName, "application/json", body);
-		                res.statusCode = 200;
-		                res.setHeader("content-type", "application/json");
-		                let jsonResponse;
-		                if (route.responseBodyKey) {
-		                    jsonResponse = JSON.stringify({ [route.responseBodyKey]: response });
-		                }
-		                else {
-		                    jsonResponse = JSON.stringify(response);
-		                }
-		                res.end(jsonResponse);
-		            }
-		            catch (e) {
-		                server_1.writeError(res, e);
-		            }
-		        });
-		    }
-		    /**
-		     * Prepares twirp body requests using http.google.annotions
-		     * compliant spec
-		     *
-		     * @param req
-		     * @param match
-		     * @param route
-		     * @protected
-		     */
-		    prepareTwirpBody(req, match, route) {
-		        return __awaiter(this, void 0, void 0, function* () {
-		            const _a = match.params, { query_string } = _a, params = __rest(_a, ["query_string"]);
-		            let requestBody = Object.assign({}, params);
-		            if (query_string && route.bodyKey !== "*") {
-		                const queryParams = this.parseQueryString(query_string);
-		                requestBody = Object.assign(Object.assign({}, queryParams), requestBody);
-		            }
-		            let body = {};
-		            if (route.bodyKey) {
-		                const data = yield request_1.getRequestData(req);
-		                try {
-		                    const jsonBody = JSON.parse(data.toString() || "{}");
-		                    if (route.bodyKey === "*") {
-		                        body = jsonBody;
-		                    }
-		                    else {
-		                        body[route.bodyKey] = jsonBody;
-		                    }
-		                }
-		                catch (e) {
-		                    const msg = "the json request could not be decoded";
-		                    throw new errors_1.TwirpError(errors_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		                }
-		            }
-		            return Object.assign(Object.assign({}, body), requestBody);
-		        });
-		    }
-		    /**
-		     * Matches a route
-		     * @param req
-		     */
-		    matchRoute(req) {
-		        var _a;
-		        const httpMethod = (_a = req.method) === null || _a === void 0 ? void 0 : _a.toLowerCase();
-		        if (!httpMethod) {
-		            throw new errors_1.BadRouteError(`method not allowed`, req.method || "", req.url || "");
-		        }
-		        const routes = this.routes[httpMethod];
-		        for (const route of routes) {
-		            const match = route.matcher(req.url || "/");
-		            if (match) {
-		                return [match, route];
-		            }
-		        }
-		        throw new errors_1.NotFoundError(`url ${req.url} not found`);
-		    }
-		    /**
-		     * Parse query string
-		     * @param queryString
-		     */
-		    parseQueryString(queryString) {
-		        const queryParams = querystring_1.parse(queryString.replace("?", ""));
-		        return dotObject.object(queryParams);
-		    }
-		}
-		exports.Gateway = Gateway; 
-	} (gateway));
-	return gateway;
-}
-
-var hasRequiredTwirp;
-
-function requireTwirp () {
-	if (hasRequiredTwirp) return twirp;
-	hasRequiredTwirp = 1;
-	(function (exports) {
-		var __createBinding = (twirp && twirp.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-		    if (k2 === undefined) k2 = k;
-		    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-		}) : (function(o, m, k, k2) {
-		    if (k2 === undefined) k2 = k;
-		    o[k2] = m[k];
-		}));
-		var __exportStar = (twirp && twirp.__exportStar) || function(m, exports) {
-		    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-		};
-		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.TwirpContentType = void 0;
-		__exportStar(requireContext(), exports);
-		__exportStar(requireServer(), exports);
-		__exportStar(requireInterceptors(), exports);
-		__exportStar(requireHooks(), exports);
-		__exportStar(requireErrors(), exports);
-		__exportStar(requireGateway(), exports);
-		__exportStar(requireHttp_client(), exports);
-		var request_1 = requireRequest();
-		Object.defineProperty(exports, "TwirpContentType", { enumerable: true, get: function () { return request_1.TwirpContentType; } }); 
-	} (twirp));
-	return twirp;
-}
+var cache_twirpClient = {};
 
 var cache = {};
 
@@ -81624,12 +80055,16 @@ class ReflectionJsonReader {
                         target[localName] = field.T().internalJsonRead(jsonValue, options, target[localName]);
                         break;
                     case "enum":
+                        if (jsonValue === null)
+                            continue;
                         let val = this.enum(field.T(), jsonValue, field.name, options.ignoreUnknownFields);
                         if (val === false)
                             continue;
                         target[localName] = val;
                         break;
                     case "scalar":
+                        if (jsonValue === null)
+                            continue;
                         target[localName] = this.scalar(jsonValue, field.T, field.L, field.name);
                         break;
                 }
@@ -84009,266 +82444,6 @@ var require$$0 = /*@__PURE__*/getAugmentedNamespace(es2015);
 
 var require$$1 = /*@__PURE__*/getAugmentedNamespace(es2015$1);
 
-var cacheentry = {};
-
-var timestamp = {};
-
-var hasRequiredTimestamp;
-
-function requireTimestamp () {
-	if (hasRequiredTimestamp) return timestamp;
-	hasRequiredTimestamp = 1;
-	Object.defineProperty(timestamp, "__esModule", { value: true });
-	timestamp.Timestamp = void 0;
-	const runtime_1 = require$$1;
-	const runtime_2 = require$$1;
-	const runtime_3 = require$$1;
-	const runtime_4 = require$$1;
-	const runtime_5 = require$$1;
-	const runtime_6 = require$$1;
-	const runtime_7 = require$$1;
-	// @generated message type with reflection information, may provide speed optimized methods
-	class Timestamp$Type extends runtime_7.MessageType {
-	    constructor() {
-	        super("google.protobuf.Timestamp", [
-	            { no: 1, name: "seconds", kind: "scalar", T: 3 /*ScalarType.INT64*/ },
-	            { no: 2, name: "nanos", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
-	        ]);
-	    }
-	    /**
-	     * Creates a new `Timestamp` for the current time.
-	     */
-	    now() {
-	        const msg = this.create();
-	        const ms = Date.now();
-	        msg.seconds = runtime_6.PbLong.from(Math.floor(ms / 1000)).toString();
-	        msg.nanos = (ms % 1000) * 1000000;
-	        return msg;
-	    }
-	    /**
-	     * Converts a `Timestamp` to a JavaScript Date.
-	     */
-	    toDate(message) {
-	        return new Date(runtime_6.PbLong.from(message.seconds).toNumber() * 1000 + Math.ceil(message.nanos / 1000000));
-	    }
-	    /**
-	     * Converts a JavaScript Date to a `Timestamp`.
-	     */
-	    fromDate(date) {
-	        const msg = this.create();
-	        const ms = date.getTime();
-	        msg.seconds = runtime_6.PbLong.from(Math.floor(ms / 1000)).toString();
-	        msg.nanos = (ms % 1000) * 1000000;
-	        return msg;
-	    }
-	    /**
-	     * In JSON format, the `Timestamp` type is encoded as a string
-	     * in the RFC 3339 format.
-	     */
-	    internalJsonWrite(message, options) {
-	        let ms = runtime_6.PbLong.from(message.seconds).toNumber() * 1000;
-	        if (ms < Date.parse("0001-01-01T00:00:00Z") || ms > Date.parse("9999-12-31T23:59:59Z"))
-	            throw new Error("Unable to encode Timestamp to JSON. Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.");
-	        if (message.nanos < 0)
-	            throw new Error("Unable to encode invalid Timestamp to JSON. Nanos must not be negative.");
-	        let z = "Z";
-	        if (message.nanos > 0) {
-	            let nanosStr = (message.nanos + 1000000000).toString().substring(1);
-	            if (nanosStr.substring(3) === "000000")
-	                z = "." + nanosStr.substring(0, 3) + "Z";
-	            else if (nanosStr.substring(6) === "000")
-	                z = "." + nanosStr.substring(0, 6) + "Z";
-	            else
-	                z = "." + nanosStr + "Z";
-	        }
-	        return new Date(ms).toISOString().replace(".000Z", z);
-	    }
-	    /**
-	     * In JSON format, the `Timestamp` type is encoded as a string
-	     * in the RFC 3339 format.
-	     */
-	    internalJsonRead(json, options, target) {
-	        if (typeof json !== "string")
-	            throw new Error("Unable to parse Timestamp from JSON " + (0, runtime_5.typeofJsonValue)(json) + ".");
-	        let matches = json.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})(?:Z|\.([0-9]{3,9})Z|([+-][0-9][0-9]:[0-9][0-9]))$/);
-	        if (!matches)
-	            throw new Error("Unable to parse Timestamp from JSON. Invalid format.");
-	        let ms = Date.parse(matches[1] + "-" + matches[2] + "-" + matches[3] + "T" + matches[4] + ":" + matches[5] + ":" + matches[6] + (matches[8] ? matches[8] : "Z"));
-	        if (Number.isNaN(ms))
-	            throw new Error("Unable to parse Timestamp from JSON. Invalid value.");
-	        if (ms < Date.parse("0001-01-01T00:00:00Z") || ms > Date.parse("9999-12-31T23:59:59Z"))
-	            throw new globalThis.Error("Unable to parse Timestamp from JSON. Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.");
-	        if (!target)
-	            target = this.create();
-	        target.seconds = runtime_6.PbLong.from(ms / 1000).toString();
-	        target.nanos = 0;
-	        if (matches[7])
-	            target.nanos = (parseInt("1" + matches[7] + "0".repeat(9 - matches[7].length)) - 1000000000);
-	        return target;
-	    }
-	    create(value) {
-	        const message = { seconds: "0", nanos: 0 };
-	        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-	        if (value !== undefined)
-	            (0, runtime_3.reflectionMergePartial)(this, message, value);
-	        return message;
-	    }
-	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-	        while (reader.pos < end) {
-	            let [fieldNo, wireType] = reader.tag();
-	            switch (fieldNo) {
-	                case /* int64 seconds */ 1:
-	                    message.seconds = reader.int64().toString();
-	                    break;
-	                case /* int32 nanos */ 2:
-	                    message.nanos = reader.int32();
-	                    break;
-	                default:
-	                    let u = options.readUnknownField;
-	                    if (u === "throw")
-	                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-	                    let d = reader.skip(wireType);
-	                    if (u !== false)
-	                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-	            }
-	        }
-	        return message;
-	    }
-	    internalBinaryWrite(message, writer, options) {
-	        /* int64 seconds = 1; */
-	        if (message.seconds !== "0")
-	            writer.tag(1, runtime_1.WireType.Varint).int64(message.seconds);
-	        /* int32 nanos = 2; */
-	        if (message.nanos !== 0)
-	            writer.tag(2, runtime_1.WireType.Varint).int32(message.nanos);
-	        let u = options.writeUnknownFields;
-	        if (u !== false)
-	            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-	        return writer;
-	    }
-	}
-	/**
-	 * @generated MessageType for protobuf message google.protobuf.Timestamp
-	 */
-	timestamp.Timestamp = new Timestamp$Type();
-	
-	return timestamp;
-}
-
-var hasRequiredCacheentry;
-
-function requireCacheentry () {
-	if (hasRequiredCacheentry) return cacheentry;
-	hasRequiredCacheentry = 1;
-	Object.defineProperty(cacheentry, "__esModule", { value: true });
-	cacheentry.CacheEntry = void 0;
-	const runtime_1 = require$$1;
-	const runtime_2 = require$$1;
-	const runtime_3 = require$$1;
-	const runtime_4 = require$$1;
-	const runtime_5 = require$$1;
-	const timestamp_1 = requireTimestamp();
-	// @generated message type with reflection information, may provide speed optimized methods
-	class CacheEntry$Type extends runtime_5.MessageType {
-	    constructor() {
-	        super("github.actions.results.entities.v1.CacheEntry", [
-	            { no: 1, name: "key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-	            { no: 2, name: "hash", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-	            { no: 3, name: "size_bytes", kind: "scalar", T: 3 /*ScalarType.INT64*/ },
-	            { no: 4, name: "scope", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-	            { no: 5, name: "version", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-	            { no: 6, name: "created_at", kind: "message", T: () => timestamp_1.Timestamp },
-	            { no: 7, name: "last_accessed_at", kind: "message", T: () => timestamp_1.Timestamp },
-	            { no: 8, name: "expires_at", kind: "message", T: () => timestamp_1.Timestamp }
-	        ]);
-	    }
-	    create(value) {
-	        const message = { key: "", hash: "", sizeBytes: "0", scope: "", version: "" };
-	        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-	        if (value !== undefined)
-	            (0, runtime_3.reflectionMergePartial)(this, message, value);
-	        return message;
-	    }
-	    internalBinaryRead(reader, length, options, target) {
-	        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-	        while (reader.pos < end) {
-	            let [fieldNo, wireType] = reader.tag();
-	            switch (fieldNo) {
-	                case /* string key */ 1:
-	                    message.key = reader.string();
-	                    break;
-	                case /* string hash */ 2:
-	                    message.hash = reader.string();
-	                    break;
-	                case /* int64 size_bytes */ 3:
-	                    message.sizeBytes = reader.int64().toString();
-	                    break;
-	                case /* string scope */ 4:
-	                    message.scope = reader.string();
-	                    break;
-	                case /* string version */ 5:
-	                    message.version = reader.string();
-	                    break;
-	                case /* google.protobuf.Timestamp created_at */ 6:
-	                    message.createdAt = timestamp_1.Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.createdAt);
-	                    break;
-	                case /* google.protobuf.Timestamp last_accessed_at */ 7:
-	                    message.lastAccessedAt = timestamp_1.Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.lastAccessedAt);
-	                    break;
-	                case /* google.protobuf.Timestamp expires_at */ 8:
-	                    message.expiresAt = timestamp_1.Timestamp.internalBinaryRead(reader, reader.uint32(), options, message.expiresAt);
-	                    break;
-	                default:
-	                    let u = options.readUnknownField;
-	                    if (u === "throw")
-	                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-	                    let d = reader.skip(wireType);
-	                    if (u !== false)
-	                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-	            }
-	        }
-	        return message;
-	    }
-	    internalBinaryWrite(message, writer, options) {
-	        /* string key = 1; */
-	        if (message.key !== "")
-	            writer.tag(1, runtime_1.WireType.LengthDelimited).string(message.key);
-	        /* string hash = 2; */
-	        if (message.hash !== "")
-	            writer.tag(2, runtime_1.WireType.LengthDelimited).string(message.hash);
-	        /* int64 size_bytes = 3; */
-	        if (message.sizeBytes !== "0")
-	            writer.tag(3, runtime_1.WireType.Varint).int64(message.sizeBytes);
-	        /* string scope = 4; */
-	        if (message.scope !== "")
-	            writer.tag(4, runtime_1.WireType.LengthDelimited).string(message.scope);
-	        /* string version = 5; */
-	        if (message.version !== "")
-	            writer.tag(5, runtime_1.WireType.LengthDelimited).string(message.version);
-	        /* google.protobuf.Timestamp created_at = 6; */
-	        if (message.createdAt)
-	            timestamp_1.Timestamp.internalBinaryWrite(message.createdAt, writer.tag(6, runtime_1.WireType.LengthDelimited).fork(), options).join();
-	        /* google.protobuf.Timestamp last_accessed_at = 7; */
-	        if (message.lastAccessedAt)
-	            timestamp_1.Timestamp.internalBinaryWrite(message.lastAccessedAt, writer.tag(7, runtime_1.WireType.LengthDelimited).fork(), options).join();
-	        /* google.protobuf.Timestamp expires_at = 8; */
-	        if (message.expiresAt)
-	            timestamp_1.Timestamp.internalBinaryWrite(message.expiresAt, writer.tag(8, runtime_1.WireType.LengthDelimited).fork(), options).join();
-	        let u = options.writeUnknownFields;
-	        if (u !== false)
-	            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-	        return writer;
-	    }
-	}
-	/**
-	 * @generated MessageType for protobuf message github.actions.results.entities.v1.CacheEntry
-	 */
-	cacheentry.CacheEntry = new CacheEntry$Type();
-	
-	return cacheentry;
-}
-
 var cachemetadata = {};
 
 var cachescope = {};
@@ -84421,7 +82596,7 @@ function requireCache () {
 	hasRequiredCache = 1;
 	(function (exports) {
 		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.CacheService = exports.LookupCacheEntryResponse = exports.LookupCacheEntryRequest = exports.ListCacheEntriesResponse = exports.ListCacheEntriesRequest = exports.DeleteCacheEntryResponse = exports.DeleteCacheEntryRequest = exports.GetCacheEntryDownloadURLResponse = exports.GetCacheEntryDownloadURLRequest = exports.FinalizeCacheEntryUploadResponse = exports.FinalizeCacheEntryUploadRequest = exports.CreateCacheEntryResponse = exports.CreateCacheEntryRequest = void 0;
+		exports.CacheService = exports.GetCacheEntryDownloadURLResponse = exports.GetCacheEntryDownloadURLRequest = exports.FinalizeCacheEntryUploadResponse = exports.FinalizeCacheEntryUploadRequest = exports.CreateCacheEntryResponse = exports.CreateCacheEntryRequest = void 0;
 		// @generated by protobuf-ts 2.9.1 with parameter long_type_string,client_none,generate_dependencies
 		// @generated from protobuf file "results/api/v1/cache.proto" (package "github.actions.results.api.v1", syntax proto3)
 		// tslint:disable
@@ -84431,7 +82606,6 @@ function requireCache () {
 		const runtime_3 = require$$1;
 		const runtime_4 = require$$1;
 		const runtime_5 = require$$1;
-		const cacheentry_1 = requireCacheentry();
 		const cachemetadata_1 = requireCachemetadata();
 		// @generated message type with reflection information, may provide speed optimized methods
 		class CreateCacheEntryRequest$Type extends runtime_5.MessageType {
@@ -84799,969 +82973,175 @@ function requireCache () {
 		 * @generated MessageType for protobuf message github.actions.results.api.v1.GetCacheEntryDownloadURLResponse
 		 */
 		exports.GetCacheEntryDownloadURLResponse = new GetCacheEntryDownloadURLResponse$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class DeleteCacheEntryRequest$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.DeleteCacheEntryRequest", [
-		            { no: 1, name: "metadata", kind: "message", T: () => cachemetadata_1.CacheMetadata },
-		            { no: 2, name: "key", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { key: "" };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* github.actions.results.entities.v1.CacheMetadata metadata */ 1:
-		                    message.metadata = cachemetadata_1.CacheMetadata.internalBinaryRead(reader, reader.uint32(), options, message.metadata);
-		                    break;
-		                case /* string key */ 2:
-		                    message.key = reader.string();
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* github.actions.results.entities.v1.CacheMetadata metadata = 1; */
-		        if (message.metadata)
-		            cachemetadata_1.CacheMetadata.internalBinaryWrite(message.metadata, writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
-		        /* string key = 2; */
-		        if (message.key !== "")
-		            writer.tag(2, runtime_1.WireType.LengthDelimited).string(message.key);
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.DeleteCacheEntryRequest
-		 */
-		exports.DeleteCacheEntryRequest = new DeleteCacheEntryRequest$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class DeleteCacheEntryResponse$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.DeleteCacheEntryResponse", [
-		            { no: 1, name: "ok", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-		            { no: 2, name: "entry_id", kind: "scalar", T: 3 /*ScalarType.INT64*/ }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { ok: false, entryId: "0" };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* bool ok */ 1:
-		                    message.ok = reader.bool();
-		                    break;
-		                case /* int64 entry_id */ 2:
-		                    message.entryId = reader.int64().toString();
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* bool ok = 1; */
-		        if (message.ok !== false)
-		            writer.tag(1, runtime_1.WireType.Varint).bool(message.ok);
-		        /* int64 entry_id = 2; */
-		        if (message.entryId !== "0")
-		            writer.tag(2, runtime_1.WireType.Varint).int64(message.entryId);
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.DeleteCacheEntryResponse
-		 */
-		exports.DeleteCacheEntryResponse = new DeleteCacheEntryResponse$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class ListCacheEntriesRequest$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.ListCacheEntriesRequest", [
-		            { no: 1, name: "metadata", kind: "message", T: () => cachemetadata_1.CacheMetadata },
-		            { no: 2, name: "key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-		            { no: 3, name: "restore_keys", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { key: "", restoreKeys: [] };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* github.actions.results.entities.v1.CacheMetadata metadata */ 1:
-		                    message.metadata = cachemetadata_1.CacheMetadata.internalBinaryRead(reader, reader.uint32(), options, message.metadata);
-		                    break;
-		                case /* string key */ 2:
-		                    message.key = reader.string();
-		                    break;
-		                case /* repeated string restore_keys */ 3:
-		                    message.restoreKeys.push(reader.string());
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* github.actions.results.entities.v1.CacheMetadata metadata = 1; */
-		        if (message.metadata)
-		            cachemetadata_1.CacheMetadata.internalBinaryWrite(message.metadata, writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
-		        /* string key = 2; */
-		        if (message.key !== "")
-		            writer.tag(2, runtime_1.WireType.LengthDelimited).string(message.key);
-		        /* repeated string restore_keys = 3; */
-		        for (let i = 0; i < message.restoreKeys.length; i++)
-		            writer.tag(3, runtime_1.WireType.LengthDelimited).string(message.restoreKeys[i]);
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.ListCacheEntriesRequest
-		 */
-		exports.ListCacheEntriesRequest = new ListCacheEntriesRequest$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class ListCacheEntriesResponse$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.ListCacheEntriesResponse", [
-		            { no: 1, name: "entries", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => cacheentry_1.CacheEntry }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { entries: [] };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* repeated github.actions.results.entities.v1.CacheEntry entries */ 1:
-		                    message.entries.push(cacheentry_1.CacheEntry.internalBinaryRead(reader, reader.uint32(), options));
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* repeated github.actions.results.entities.v1.CacheEntry entries = 1; */
-		        for (let i = 0; i < message.entries.length; i++)
-		            cacheentry_1.CacheEntry.internalBinaryWrite(message.entries[i], writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.ListCacheEntriesResponse
-		 */
-		exports.ListCacheEntriesResponse = new ListCacheEntriesResponse$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class LookupCacheEntryRequest$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.LookupCacheEntryRequest", [
-		            { no: 1, name: "metadata", kind: "message", T: () => cachemetadata_1.CacheMetadata },
-		            { no: 2, name: "key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-		            { no: 3, name: "restore_keys", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
-		            { no: 4, name: "version", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { key: "", restoreKeys: [], version: "" };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* github.actions.results.entities.v1.CacheMetadata metadata */ 1:
-		                    message.metadata = cachemetadata_1.CacheMetadata.internalBinaryRead(reader, reader.uint32(), options, message.metadata);
-		                    break;
-		                case /* string key */ 2:
-		                    message.key = reader.string();
-		                    break;
-		                case /* repeated string restore_keys */ 3:
-		                    message.restoreKeys.push(reader.string());
-		                    break;
-		                case /* string version */ 4:
-		                    message.version = reader.string();
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* github.actions.results.entities.v1.CacheMetadata metadata = 1; */
-		        if (message.metadata)
-		            cachemetadata_1.CacheMetadata.internalBinaryWrite(message.metadata, writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
-		        /* string key = 2; */
-		        if (message.key !== "")
-		            writer.tag(2, runtime_1.WireType.LengthDelimited).string(message.key);
-		        /* repeated string restore_keys = 3; */
-		        for (let i = 0; i < message.restoreKeys.length; i++)
-		            writer.tag(3, runtime_1.WireType.LengthDelimited).string(message.restoreKeys[i]);
-		        /* string version = 4; */
-		        if (message.version !== "")
-		            writer.tag(4, runtime_1.WireType.LengthDelimited).string(message.version);
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.LookupCacheEntryRequest
-		 */
-		exports.LookupCacheEntryRequest = new LookupCacheEntryRequest$Type();
-		// @generated message type with reflection information, may provide speed optimized methods
-		class LookupCacheEntryResponse$Type extends runtime_5.MessageType {
-		    constructor() {
-		        super("github.actions.results.api.v1.LookupCacheEntryResponse", [
-		            { no: 1, name: "exists", kind: "scalar", T: 8 /*ScalarType.BOOL*/ },
-		            { no: 2, name: "entry", kind: "message", T: () => cacheentry_1.CacheEntry }
-		        ]);
-		    }
-		    create(value) {
-		        const message = { exists: false };
-		        globalThis.Object.defineProperty(message, runtime_4.MESSAGE_TYPE, { enumerable: false, value: this });
-		        if (value !== undefined)
-		            (0, runtime_3.reflectionMergePartial)(this, message, value);
-		        return message;
-		    }
-		    internalBinaryRead(reader, length, options, target) {
-		        let message = target !== null && target !== void 0 ? target : this.create(), end = reader.pos + length;
-		        while (reader.pos < end) {
-		            let [fieldNo, wireType] = reader.tag();
-		            switch (fieldNo) {
-		                case /* bool exists */ 1:
-		                    message.exists = reader.bool();
-		                    break;
-		                case /* github.actions.results.entities.v1.CacheEntry entry */ 2:
-		                    message.entry = cacheentry_1.CacheEntry.internalBinaryRead(reader, reader.uint32(), options, message.entry);
-		                    break;
-		                default:
-		                    let u = options.readUnknownField;
-		                    if (u === "throw")
-		                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-		                    let d = reader.skip(wireType);
-		                    if (u !== false)
-		                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-		            }
-		        }
-		        return message;
-		    }
-		    internalBinaryWrite(message, writer, options) {
-		        /* bool exists = 1; */
-		        if (message.exists !== false)
-		            writer.tag(1, runtime_1.WireType.Varint).bool(message.exists);
-		        /* github.actions.results.entities.v1.CacheEntry entry = 2; */
-		        if (message.entry)
-		            cacheentry_1.CacheEntry.internalBinaryWrite(message.entry, writer.tag(2, runtime_1.WireType.LengthDelimited).fork(), options).join();
-		        let u = options.writeUnknownFields;
-		        if (u !== false)
-		            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-		        return writer;
-		    }
-		}
-		/**
-		 * @generated MessageType for protobuf message github.actions.results.api.v1.LookupCacheEntryResponse
-		 */
-		exports.LookupCacheEntryResponse = new LookupCacheEntryResponse$Type();
 		/**
 		 * @generated ServiceType for protobuf service github.actions.results.api.v1.CacheService
 		 */
 		exports.CacheService = new runtime_rpc_1.ServiceType("github.actions.results.api.v1.CacheService", [
 		    { name: "CreateCacheEntry", options: {}, I: exports.CreateCacheEntryRequest, O: exports.CreateCacheEntryResponse },
 		    { name: "FinalizeCacheEntryUpload", options: {}, I: exports.FinalizeCacheEntryUploadRequest, O: exports.FinalizeCacheEntryUploadResponse },
-		    { name: "GetCacheEntryDownloadURL", options: {}, I: exports.GetCacheEntryDownloadURLRequest, O: exports.GetCacheEntryDownloadURLResponse },
-		    { name: "DeleteCacheEntry", options: {}, I: exports.DeleteCacheEntryRequest, O: exports.DeleteCacheEntryResponse },
-		    { name: "ListCacheEntries", options: {}, I: exports.ListCacheEntriesRequest, O: exports.ListCacheEntriesResponse },
-		    { name: "LookupCacheEntry", options: {}, I: exports.LookupCacheEntryRequest, O: exports.LookupCacheEntryResponse }
+		    { name: "GetCacheEntryDownloadURL", options: {}, I: exports.GetCacheEntryDownloadURLRequest, O: exports.GetCacheEntryDownloadURLResponse }
 		]);
 		
 	} (cache));
 	return cache;
 }
 
-var hasRequiredCache_twirp;
+var hasRequiredCache_twirpClient;
 
-function requireCache_twirp () {
-	if (hasRequiredCache_twirp) return cache_twirp;
-	hasRequiredCache_twirp = 1;
-	(function (exports) {
-		var __awaiter = (cache_twirp && cache_twirp.__awaiter) || function (thisArg, _arguments, P, generator) {
-		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-		    return new (P || (P = Promise))(function (resolve, reject) {
-		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-		        step((generator = generator.apply(thisArg, _arguments || [])).next());
-		    });
-		};
-		Object.defineProperty(exports, "__esModule", { value: true });
-		exports.createCacheServiceServer = exports.CacheServiceMethodList = exports.CacheServiceMethod = exports.CacheServiceClientProtobuf = exports.CacheServiceClientJSON = void 0;
-		const twirp_ts_1 = requireTwirp();
-		const cache_1 = requireCache();
-		class CacheServiceClientJSON {
-		    constructor(rpc) {
-		        this.rpc = rpc;
-		        this.CreateCacheEntry.bind(this);
-		        this.FinalizeCacheEntryUpload.bind(this);
-		        this.GetCacheEntryDownloadURL.bind(this);
-		        this.DeleteCacheEntry.bind(this);
-		        this.ListCacheEntries.bind(this);
-		        this.LookupCacheEntry.bind(this);
-		    }
-		    CreateCacheEntry(request) {
-		        const data = cache_1.CreateCacheEntryRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "CreateCacheEntry", "application/json", data);
-		        return promise.then((data) => cache_1.CreateCacheEntryResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		    FinalizeCacheEntryUpload(request) {
-		        const data = cache_1.FinalizeCacheEntryUploadRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "FinalizeCacheEntryUpload", "application/json", data);
-		        return promise.then((data) => cache_1.FinalizeCacheEntryUploadResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		    GetCacheEntryDownloadURL(request) {
-		        const data = cache_1.GetCacheEntryDownloadURLRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "GetCacheEntryDownloadURL", "application/json", data);
-		        return promise.then((data) => cache_1.GetCacheEntryDownloadURLResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		    DeleteCacheEntry(request) {
-		        const data = cache_1.DeleteCacheEntryRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "DeleteCacheEntry", "application/json", data);
-		        return promise.then((data) => cache_1.DeleteCacheEntryResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		    ListCacheEntries(request) {
-		        const data = cache_1.ListCacheEntriesRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "ListCacheEntries", "application/json", data);
-		        return promise.then((data) => cache_1.ListCacheEntriesResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		    LookupCacheEntry(request) {
-		        const data = cache_1.LookupCacheEntryRequest.toJson(request, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        });
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "LookupCacheEntry", "application/json", data);
-		        return promise.then((data) => cache_1.LookupCacheEntryResponse.fromJson(data, {
-		            ignoreUnknownFields: true,
-		        }));
-		    }
-		}
-		exports.CacheServiceClientJSON = CacheServiceClientJSON;
-		class CacheServiceClientProtobuf {
-		    constructor(rpc) {
-		        this.rpc = rpc;
-		        this.CreateCacheEntry.bind(this);
-		        this.FinalizeCacheEntryUpload.bind(this);
-		        this.GetCacheEntryDownloadURL.bind(this);
-		        this.DeleteCacheEntry.bind(this);
-		        this.ListCacheEntries.bind(this);
-		        this.LookupCacheEntry.bind(this);
-		    }
-		    CreateCacheEntry(request) {
-		        const data = cache_1.CreateCacheEntryRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "CreateCacheEntry", "application/protobuf", data);
-		        return promise.then((data) => cache_1.CreateCacheEntryResponse.fromBinary(data));
-		    }
-		    FinalizeCacheEntryUpload(request) {
-		        const data = cache_1.FinalizeCacheEntryUploadRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "FinalizeCacheEntryUpload", "application/protobuf", data);
-		        return promise.then((data) => cache_1.FinalizeCacheEntryUploadResponse.fromBinary(data));
-		    }
-		    GetCacheEntryDownloadURL(request) {
-		        const data = cache_1.GetCacheEntryDownloadURLRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "GetCacheEntryDownloadURL", "application/protobuf", data);
-		        return promise.then((data) => cache_1.GetCacheEntryDownloadURLResponse.fromBinary(data));
-		    }
-		    DeleteCacheEntry(request) {
-		        const data = cache_1.DeleteCacheEntryRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "DeleteCacheEntry", "application/protobuf", data);
-		        return promise.then((data) => cache_1.DeleteCacheEntryResponse.fromBinary(data));
-		    }
-		    ListCacheEntries(request) {
-		        const data = cache_1.ListCacheEntriesRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "ListCacheEntries", "application/protobuf", data);
-		        return promise.then((data) => cache_1.ListCacheEntriesResponse.fromBinary(data));
-		    }
-		    LookupCacheEntry(request) {
-		        const data = cache_1.LookupCacheEntryRequest.toBinary(request);
-		        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "LookupCacheEntry", "application/protobuf", data);
-		        return promise.then((data) => cache_1.LookupCacheEntryResponse.fromBinary(data));
-		    }
-		}
-		exports.CacheServiceClientProtobuf = CacheServiceClientProtobuf;
-		var CacheServiceMethod;
-		(function (CacheServiceMethod) {
-		    CacheServiceMethod["CreateCacheEntry"] = "CreateCacheEntry";
-		    CacheServiceMethod["FinalizeCacheEntryUpload"] = "FinalizeCacheEntryUpload";
-		    CacheServiceMethod["GetCacheEntryDownloadURL"] = "GetCacheEntryDownloadURL";
-		    CacheServiceMethod["DeleteCacheEntry"] = "DeleteCacheEntry";
-		    CacheServiceMethod["ListCacheEntries"] = "ListCacheEntries";
-		    CacheServiceMethod["LookupCacheEntry"] = "LookupCacheEntry";
-		})(CacheServiceMethod || (exports.CacheServiceMethod = CacheServiceMethod = {}));
-		exports.CacheServiceMethodList = [
-		    CacheServiceMethod.CreateCacheEntry,
-		    CacheServiceMethod.FinalizeCacheEntryUpload,
-		    CacheServiceMethod.GetCacheEntryDownloadURL,
-		    CacheServiceMethod.DeleteCacheEntry,
-		    CacheServiceMethod.ListCacheEntries,
-		    CacheServiceMethod.LookupCacheEntry,
-		];
-		function createCacheServiceServer(service) {
-		    return new twirp_ts_1.TwirpServer({
-		        service,
-		        packageName: "github.actions.results.api.v1",
-		        serviceName: "CacheService",
-		        methodList: exports.CacheServiceMethodList,
-		        matchRoute: matchCacheServiceRoute,
-		    });
-		}
-		exports.createCacheServiceServer = createCacheServiceServer;
-		function matchCacheServiceRoute(method, events) {
-		    switch (method) {
-		        case "CreateCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "CreateCacheEntry" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceCreateCacheEntryRequest(ctx, service, data, interceptors);
-		            });
-		        case "FinalizeCacheEntryUpload":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "FinalizeCacheEntryUpload" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceFinalizeCacheEntryUploadRequest(ctx, service, data, interceptors);
-		            });
-		        case "GetCacheEntryDownloadURL":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "GetCacheEntryDownloadURL" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceGetCacheEntryDownloadURLRequest(ctx, service, data, interceptors);
-		            });
-		        case "DeleteCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "DeleteCacheEntry" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceDeleteCacheEntryRequest(ctx, service, data, interceptors);
-		            });
-		        case "ListCacheEntries":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "ListCacheEntries" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceListCacheEntriesRequest(ctx, service, data, interceptors);
-		            });
-		        case "LookupCacheEntry":
-		            return (ctx, service, data, interceptors) => __awaiter(this, void 0, void 0, function* () {
-		                ctx = Object.assign(Object.assign({}, ctx), { methodName: "LookupCacheEntry" });
-		                yield events.onMatch(ctx);
-		                return handleCacheServiceLookupCacheEntryRequest(ctx, service, data, interceptors);
-		            });
-		        default:
-		            events.onNotFound();
-		            const msg = `no handler found`;
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceCreateCacheEntryRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceCreateCacheEntryJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceCreateCacheEntryProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceFinalizeCacheEntryUploadRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceFinalizeCacheEntryUploadJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceFinalizeCacheEntryUploadProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceGetCacheEntryDownloadURLRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceGetCacheEntryDownloadURLJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceGetCacheEntryDownloadURLProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceDeleteCacheEntryRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceDeleteCacheEntryJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceDeleteCacheEntryProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceListCacheEntriesRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceListCacheEntriesJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceListCacheEntriesProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceLookupCacheEntryRequest(ctx, service, data, interceptors) {
-		    switch (ctx.contentType) {
-		        case twirp_ts_1.TwirpContentType.JSON:
-		            return handleCacheServiceLookupCacheEntryJSON(ctx, service, data, interceptors);
-		        case twirp_ts_1.TwirpContentType.Protobuf:
-		            return handleCacheServiceLookupCacheEntryProtobuf(ctx, service, data, interceptors);
-		        default:
-		            const msg = "unexpected Content-Type";
-		            throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.BadRoute, msg);
-		    }
-		}
-		function handleCacheServiceCreateCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.CreateCacheEntryRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.CreateCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.CreateCacheEntry(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.CreateCacheEntryResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceFinalizeCacheEntryUploadJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.FinalizeCacheEntryUploadRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.FinalizeCacheEntryUpload(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.FinalizeCacheEntryUpload(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.FinalizeCacheEntryUploadResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceGetCacheEntryDownloadURLJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.GetCacheEntryDownloadURLRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.GetCacheEntryDownloadURL(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.GetCacheEntryDownloadURL(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.GetCacheEntryDownloadURLResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceDeleteCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.DeleteCacheEntryRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.DeleteCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.DeleteCacheEntry(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.DeleteCacheEntryResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceListCacheEntriesJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.ListCacheEntriesRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.ListCacheEntries(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.ListCacheEntries(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.ListCacheEntriesResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceLookupCacheEntryJSON(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            const body = JSON.parse(data.toString() || "{}");
-		            request = cache_1.LookupCacheEntryRequest.fromJson(body, {
-		                ignoreUnknownFields: true,
-		            });
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the json request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.LookupCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.LookupCacheEntry(ctx, request);
-		        }
-		        return JSON.stringify(cache_1.LookupCacheEntryResponse.toJson(response, {
-		            useProtoFieldName: true,
-		            emitDefaultValues: false,
-		        }));
-		    });
-		}
-		function handleCacheServiceCreateCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.CreateCacheEntryRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.CreateCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.CreateCacheEntry(ctx, request);
-		        }
-		        return Buffer.from(cache_1.CreateCacheEntryResponse.toBinary(response));
-		    });
-		}
-		function handleCacheServiceFinalizeCacheEntryUploadProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.FinalizeCacheEntryUploadRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.FinalizeCacheEntryUpload(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.FinalizeCacheEntryUpload(ctx, request);
-		        }
-		        return Buffer.from(cache_1.FinalizeCacheEntryUploadResponse.toBinary(response));
-		    });
-		}
-		function handleCacheServiceGetCacheEntryDownloadURLProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.GetCacheEntryDownloadURLRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.GetCacheEntryDownloadURL(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.GetCacheEntryDownloadURL(ctx, request);
-		        }
-		        return Buffer.from(cache_1.GetCacheEntryDownloadURLResponse.toBinary(response));
-		    });
-		}
-		function handleCacheServiceDeleteCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.DeleteCacheEntryRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.DeleteCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.DeleteCacheEntry(ctx, request);
-		        }
-		        return Buffer.from(cache_1.DeleteCacheEntryResponse.toBinary(response));
-		    });
-		}
-		function handleCacheServiceListCacheEntriesProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.ListCacheEntriesRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.ListCacheEntries(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.ListCacheEntries(ctx, request);
-		        }
-		        return Buffer.from(cache_1.ListCacheEntriesResponse.toBinary(response));
-		    });
-		}
-		function handleCacheServiceLookupCacheEntryProtobuf(ctx, service, data, interceptors) {
-		    return __awaiter(this, void 0, void 0, function* () {
-		        let request;
-		        let response;
-		        try {
-		            request = cache_1.LookupCacheEntryRequest.fromBinary(data);
-		        }
-		        catch (e) {
-		            if (e instanceof Error) {
-		                const msg = "the protobuf request could not be decoded";
-		                throw new twirp_ts_1.TwirpError(twirp_ts_1.TwirpErrorCode.Malformed, msg).withCause(e, true);
-		            }
-		        }
-		        if (interceptors && interceptors.length > 0) {
-		            const interceptor = (0, twirp_ts_1.chainInterceptors)(...interceptors);
-		            response = yield interceptor(ctx, request, (ctx, inputReq) => {
-		                return service.LookupCacheEntry(ctx, inputReq);
-		            });
-		        }
-		        else {
-		            response = yield service.LookupCacheEntry(ctx, request);
-		        }
-		        return Buffer.from(cache_1.LookupCacheEntryResponse.toBinary(response));
-		    });
-		}
-		
-	} (cache_twirp));
-	return cache_twirp;
+function requireCache_twirpClient () {
+	if (hasRequiredCache_twirpClient) return cache_twirpClient;
+	hasRequiredCache_twirpClient = 1;
+	Object.defineProperty(cache_twirpClient, "__esModule", { value: true });
+	cache_twirpClient.CacheServiceClientProtobuf = cache_twirpClient.CacheServiceClientJSON = void 0;
+	const cache_1 = requireCache();
+	class CacheServiceClientJSON {
+	    constructor(rpc) {
+	        this.rpc = rpc;
+	        this.CreateCacheEntry.bind(this);
+	        this.FinalizeCacheEntryUpload.bind(this);
+	        this.GetCacheEntryDownloadURL.bind(this);
+	    }
+	    CreateCacheEntry(request) {
+	        const data = cache_1.CreateCacheEntryRequest.toJson(request, {
+	            useProtoFieldName: true,
+	            emitDefaultValues: false,
+	        });
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "CreateCacheEntry", "application/json", data);
+	        return promise.then((data) => cache_1.CreateCacheEntryResponse.fromJson(data, {
+	            ignoreUnknownFields: true,
+	        }));
+	    }
+	    FinalizeCacheEntryUpload(request) {
+	        const data = cache_1.FinalizeCacheEntryUploadRequest.toJson(request, {
+	            useProtoFieldName: true,
+	            emitDefaultValues: false,
+	        });
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "FinalizeCacheEntryUpload", "application/json", data);
+	        return promise.then((data) => cache_1.FinalizeCacheEntryUploadResponse.fromJson(data, {
+	            ignoreUnknownFields: true,
+	        }));
+	    }
+	    GetCacheEntryDownloadURL(request) {
+	        const data = cache_1.GetCacheEntryDownloadURLRequest.toJson(request, {
+	            useProtoFieldName: true,
+	            emitDefaultValues: false,
+	        });
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "GetCacheEntryDownloadURL", "application/json", data);
+	        return promise.then((data) => cache_1.GetCacheEntryDownloadURLResponse.fromJson(data, {
+	            ignoreUnknownFields: true,
+	        }));
+	    }
+	}
+	cache_twirpClient.CacheServiceClientJSON = CacheServiceClientJSON;
+	class CacheServiceClientProtobuf {
+	    constructor(rpc) {
+	        this.rpc = rpc;
+	        this.CreateCacheEntry.bind(this);
+	        this.FinalizeCacheEntryUpload.bind(this);
+	        this.GetCacheEntryDownloadURL.bind(this);
+	    }
+	    CreateCacheEntry(request) {
+	        const data = cache_1.CreateCacheEntryRequest.toBinary(request);
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "CreateCacheEntry", "application/protobuf", data);
+	        return promise.then((data) => cache_1.CreateCacheEntryResponse.fromBinary(data));
+	    }
+	    FinalizeCacheEntryUpload(request) {
+	        const data = cache_1.FinalizeCacheEntryUploadRequest.toBinary(request);
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "FinalizeCacheEntryUpload", "application/protobuf", data);
+	        return promise.then((data) => cache_1.FinalizeCacheEntryUploadResponse.fromBinary(data));
+	    }
+	    GetCacheEntryDownloadURL(request) {
+	        const data = cache_1.GetCacheEntryDownloadURLRequest.toBinary(request);
+	        const promise = this.rpc.request("github.actions.results.api.v1.CacheService", "GetCacheEntryDownloadURL", "application/protobuf", data);
+	        return promise.then((data) => cache_1.GetCacheEntryDownloadURLResponse.fromBinary(data));
+	    }
+	}
+	cache_twirpClient.CacheServiceClientProtobuf = CacheServiceClientProtobuf;
+	
+	return cache_twirpClient;
+}
+
+var util$1 = {};
+
+var hasRequiredUtil$1;
+
+function requireUtil$1 () {
+	if (hasRequiredUtil$1) return util$1;
+	hasRequiredUtil$1 = 1;
+	Object.defineProperty(util$1, "__esModule", { value: true });
+	util$1.maskSecretUrls = util$1.maskSigUrl = void 0;
+	const core_1 = requireCore$2();
+	/**
+	 * Masks the `sig` parameter in a URL and sets it as a secret.
+	 *
+	 * @param url - The URL containing the signature parameter to mask
+	 * @remarks
+	 * This function attempts to parse the provided URL and identify the 'sig' query parameter.
+	 * If found, it registers both the raw and URL-encoded signature values as secrets using
+	 * the Actions `setSecret` API, which prevents them from being displayed in logs.
+	 *
+	 * The function handles errors gracefully if URL parsing fails, logging them as debug messages.
+	 *
+	 * @example
+	 * ```typescript
+	 * // Mask a signature in an Azure SAS token URL
+	 * maskSigUrl('https://example.blob.core.windows.net/container/file.txt?sig=abc123&se=2023-01-01');
+	 * ```
+	 */
+	function maskSigUrl(url) {
+	    if (!url)
+	        return;
+	    try {
+	        const parsedUrl = new URL(url);
+	        const signature = parsedUrl.searchParams.get('sig');
+	        if (signature) {
+	            (0, core_1.setSecret)(signature);
+	            (0, core_1.setSecret)(encodeURIComponent(signature));
+	        }
+	    }
+	    catch (error) {
+	        (0, core_1.debug)(`Failed to parse URL: ${url} ${error instanceof Error ? error.message : String(error)}`);
+	    }
+	}
+	util$1.maskSigUrl = maskSigUrl;
+	/**
+	 * Masks sensitive information in URLs containing signature parameters.
+	 * Currently supports masking 'sig' parameters in the 'signed_upload_url'
+	 * and 'signed_download_url' properties of the provided object.
+	 *
+	 * @param body - The object should contain a signature
+	 * @remarks
+	 * This function extracts URLs from the object properties and calls maskSigUrl
+	 * on each one to redact sensitive signature information. The function doesn't
+	 * modify the original object; it only marks the signatures as secrets for
+	 * logging purposes.
+	 *
+	 * @example
+	 * ```typescript
+	 * const responseBody = {
+	 *   signed_upload_url: 'https://blob.core.windows.net/?sig=abc123',
+	 *   signed_download_url: 'https://blob.core/windows.net/?sig=def456'
+	 * };
+	 * maskSecretUrls(responseBody);
+	 * ```
+	 */
+	function maskSecretUrls(body) {
+	    if (typeof body !== 'object' || body === null) {
+	        (0, core_1.debug)('body is not an object or is null');
+	        return;
+	    }
+	    if ('signed_upload_url' in body &&
+	        typeof body.signed_upload_url === 'string') {
+	        maskSigUrl(body.signed_upload_url);
+	    }
+	    if ('signed_download_url' in body &&
+	        typeof body.signed_download_url === 'string') {
+	        maskSigUrl(body.signed_download_url);
+	    }
+	}
+	util$1.maskSecretUrls = maskSecretUrls;
+	
+	return util$1;
 }
 
 var hasRequiredCacheTwirpClient;
@@ -85782,12 +83162,13 @@ function requireCacheTwirpClient () {
 	cacheTwirpClient.internalCacheTwirpClient = void 0;
 	const core_1 = requireCore$2();
 	const user_agent_1 = requireUserAgent();
-	const errors_1 = requireErrors$1();
+	const errors_1 = requireErrors();
 	const config_1 = requireConfig();
 	const cacheUtils_1 = requireCacheUtils();
 	const auth_1 = requireAuth();
 	const http_client_1 = requireLib$2();
-	const cache_twirp_1 = requireCache_twirp();
+	const cache_twirp_client_1 = requireCache_twirpClient();
+	const util_1 = requireUtil$1();
 	/**
 	 * This class is a wrapper around the CacheServiceClientJSON class generated by Twirp.
 	 *
@@ -85847,6 +83228,7 @@ function requireCacheTwirpClient () {
 	                    (0, core_1.debug)(`[Response] - ${response.message.statusCode}`);
 	                    (0, core_1.debug)(`Headers: ${JSON.stringify(response.message.headers, null, 2)}`);
 	                    const body = JSON.parse(rawBody);
+	                    (0, util_1.maskSecretUrls)(body);
 	                    (0, core_1.debug)(`Body: ${JSON.stringify(body, null, 2)}`);
 	                    if (this.isSuccessStatusCode(statusCode)) {
 	                        return { response, body };
@@ -85924,7 +83306,7 @@ function requireCacheTwirpClient () {
 	}
 	function internalCacheTwirpClient(options) {
 	    const client = new CacheServiceClient((0, user_agent_1.getUserAgentString)(), options === null || options === void 0 ? void 0 : options.maxAttempts, options === null || options === void 0 ? void 0 : options.retryIntervalMs, options === null || options === void 0 ? void 0 : options.retryMultiplier);
-	    return new cache_twirp_1.CacheServiceClientJSON(client);
+	    return new cache_twirp_client_1.CacheServiceClientJSON(client);
 	}
 	cacheTwirpClient.internalCacheTwirpClient = internalCacheTwirpClient;
 	
