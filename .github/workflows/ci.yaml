@@ -54,6 +54,8 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          source-revision: a65ff39edd28b978db090e3877495f2e57c9ba95
       - name: Run nix build
         run: |-
           set -ex
