@@ -44,6 +44,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Expose GitHub Runtime
+        uses: crazy-max/ghaction-github-runtime@v3
+        
       - name: pre env
         run: |-
           env
