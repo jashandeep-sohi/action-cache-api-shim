@@ -67,6 +67,7 @@ jobs:
         run: |-
           set -ex
           env
+          export ACTION_CACHE_URL
           nix build .#ci-test-cache-one
           nix build .#ci-test-cache-two
           test "$(cat result/message)" = "First one: Done"
