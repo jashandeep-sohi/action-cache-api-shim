@@ -58,6 +58,10 @@ jobs:
         uses: ./
         with:
           require-v2: true
+          
+      - name: post env
+        run: |-
+          env
 
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
