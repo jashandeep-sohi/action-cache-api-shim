@@ -115818,6 +115818,7 @@ async function run() {
                 coreExports.info(`Serving on ${cacheUrl}`);
                 process.env.ACTIONS_CACHE_URL = cacheUrl;
                 exportActionsVariables();
+                coreExports.setOutput("url", cacheUrl);
                 child.disconnect();
                 process.exit(0);
             }

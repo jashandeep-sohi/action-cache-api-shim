@@ -51,6 +51,7 @@ export async function run(): Promise<void> {
 
         process.env.ACTIONS_CACHE_URL = cacheUrl;
         exportActionsVariables();
+        core.setOutput("url", cacheUrl);
 
         child.disconnect();
         process.exit(0);

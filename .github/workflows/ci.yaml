@@ -43,7 +43,7 @@ jobs:
     name: Test Magic Nix Cache
     runs-on: ubuntu-latest
 
-    steps:          
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -51,7 +51,7 @@ jobs:
         uses: ./
         with:
           require-v2: true
-          
+
       - name: post env
         run: |-
           env
