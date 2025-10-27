@@ -37,7 +37,7 @@
     "@actions/core": "^1.11.1",
     "@azure/storage-blob": "^12.26.0",
     "@fastify/type-provider-typebox": "^5.1.0",
-    "@sinclair/typebox": "^0.34.33",
+    "@sinclair/typebox": "^0.34.41",
     "content-range": "^2.0.2",
     "fastify": "^5.2.1",
     "qs": "^6.14.0"
