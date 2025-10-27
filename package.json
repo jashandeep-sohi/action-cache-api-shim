@@ -35,7 +35,7 @@
   "dependencies": {
     "@actions/cache": "^4.0.3",
     "@actions/core": "^1.11.1",
-    "@azure/storage-blob": "^12.26.0",
+    "@azure/storage-blob": "^12.29.1",
     "@fastify/type-provider-typebox": "^5.1.0",
     "@sinclair/typebox": "^0.34.33",
     "content-range": "^2.0.2",
